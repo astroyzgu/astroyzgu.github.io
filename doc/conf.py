@@ -43,8 +43,8 @@ extensions = [
 
 
 #source_suffix = ['.rst', '.md'] 
-from markdown_it import MarkdownIt
-md = MarkdownIt("commonmark").enable('table')
+#from markdown_it import MarkdownIt
+#md = MarkdownIt("commonmark").enable('table')
 
 source_suffix = {'.rst':'restructuredtext', '.md': 'markdown', }
 myst_enable_extensions = ["dollarmath", "amsmath"] 
