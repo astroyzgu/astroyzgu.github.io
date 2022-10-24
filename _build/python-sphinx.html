@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -42,8 +43,8 @@
 <li class="toctree-l1"><a class="reference internal" href="hello_world.html">hello world</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">python-sphinx 记录</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sphinx">安装sphinx和插件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">使用</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">快速入门和配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">快速入门和配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rst">RST文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demo">demo</a></li>
 </ul>
@@ -79,24 +80,26 @@
            <div itemprop="articleBody">
              
   <section id="python-sphinx">
-<h1>python-sphinx 记录<a class="headerlink" href="#python-sphinx" title="Permalink to this headline"></a></h1>
+<h1>python-sphinx 记录<a class="headerlink" href="#python-sphinx" title="Permalink to this heading"></a></h1>
 <p><a class="reference external" href="https://coderefinery.github.io/documentation/gh_workflow/">https://coderefinery.github.io/documentation/gh_workflow/</a></p>
 <section id="sphinx">
-<h2>安装sphinx和插件<a class="headerlink" href="#sphinx" title="Permalink to this headline"></a></h2>
+<h2>安装sphinx和插件<a class="headerlink" href="#sphinx" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jieba3k</span> <span class="pre">#</span> <span class="pre">支持中文</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx_rtd_theme</span> <span class="pre">#</span> <span class="pre">安装主题</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">recommonmark</span> <span class="pre">#</span> <span class="pre">支持markdown</span></code></div>
 <div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx-markdown-tables</span> <span class="pre">#</span>&#160; <span class="pre">支持markdown</span> <span class="pre">table</span></code></div>
-<div class="line"><a href="#id1"><span class="problematic" id="id2">``</span></a>pip install myst_parser ``</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">myst_parser</span></code></div>
 </div>
-<p>Document: <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html">https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html</a></p>
+<blockquote>
+<div><p>Document: <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html">https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html</a></p>
+</div></blockquote>
 </section>
-<section id="id3">
-<h2>使用<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
-<section id="id4">
-<h3>快速入门和配置<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<section id="id1">
+<h2>使用<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<section id="id2">
+<h3>快速入门和配置<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><p>建立放置文档的文件夹</p>
 <p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">doc;</span> <span class="pre">cd</span> <span class="pre">doc</span></code></p>
@@ -150,7 +153,7 @@
 </ol>
 </section>
 <section id="rst">
-<h3>RST文件<a class="headerlink" href="#rst" title="Permalink to this headline"></a></h3>
+<h3>RST文件<a class="headerlink" href="#rst" title="Permalink to this heading"></a></h3>
 <p>可以将 RST 文件理解为 Python 使用的 Markup 文件。</p>
 <ul class="simple">
 <li><p>Sphinx 使用手册, RESTRUCTUREDTEXT(rst)简介: <a class="reference external" href="https://zh-sphinx-doc.readthedocs.io/en/latest/rest.html">https://zh-sphinx-doc.readthedocs.io/en/latest/rest.html</a></p></li>
@@ -162,7 +165,7 @@
 </ul>
 </section>
 <section id="demo">
-<h3>demo<a class="headerlink" href="#demo" title="Permalink to this headline"></a></h3>
+<h3>demo<a class="headerlink" href="#demo" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>写法一 demo1.py</p>
 <blockquote>

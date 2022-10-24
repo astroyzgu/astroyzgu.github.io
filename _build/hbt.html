@@ -14,10 +14,11 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -79,9 +80,9 @@
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="hbt">
-<h1>HBT<a class="headerlink" href="#hbt" title="Permalink to this headline"></a></h1>
+<h1>HBT<a class="headerlink" href="#hbt" title="Permalink to this heading"></a></h1>
 <section id="subhalo-files">
-<h2>Subhalo files<a class="headerlink" href="#subhalo-files" title="Permalink to this headline"></a></h2>
+<h2>Subhalo files<a class="headerlink" href="#subhalo-files" title="Permalink to this heading"></a></h2>
 <p>Subhalo files are generated with HBT+ code (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2018MNRAS.474..604H/abstract">Han et al. 2018</a>). You can find a general description of output at <a class="reference external" href="https://github.com/Kambrian/HBTplus/wiki/Outputs">this website</a>. Dataset is saved in such a <strong>‘Subhalo_xxx.ppp.hdf5’</strong> file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Subhalo_xxx</span><span class="o">.</span><span class="n">ppp</span><span class="o">.</span><span class="n">hdf5</span><span class="p">:</span>
 <span class="n">xxx</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">snapshot</span> <span class="n">number</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mf">127.</span> <span class="n">Here</span> <span class="mi">127</span> <span class="n">corresponds</span> <span class="n">to</span> <span class="n">redshift</span> <span class="n">z</span><span class="o">=</span><span class="mf">0.</span> 
@@ -91,7 +92,7 @@
 <p>We show the adopted parameters during HBT+ running in the following.</p>
 </section>
 <section id="code-parameters">
-<h2>Code parameters<a class="headerlink" href="#code-parameters" title="Permalink to this headline"></a></h2>
+<h2>Code parameters<a class="headerlink" href="#code-parameters" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
@@ -121,9 +122,7 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BoxSize</span></code></p></td>
-<td><p>1000 <div class="math notranslate nohighlight">
-\[Mpc/h\]</div>
-</p></td>
+<td><p>1000 <span class="math notranslate nohighlight">\(Mpc/h\)</span></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SofteningHalo</span></code></p></td>
@@ -151,9 +150,7 @@
 <td><p>minimum number of particles in subhalos</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MassInMsunh</span></code></p></td>
-<td><p>1e+10 <div class="math notranslate nohighlight">
-\[M_{\odot}/h\]</div>
-</p></td>
+<td><p>1e+10 <span class="math notranslate nohighlight">\(M_{\odot}/h\)</span></p></td>
 <td><p>mass unit</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LengthInMpch</span></code></p></td>
@@ -237,7 +234,7 @@
 <p>We show the information of <strong>‘Subhalo_xxx.ppp.hdf5’</strong> file in the following.</p>
 </section>
 <section id="keys-value">
-<h2>keys value<a class="headerlink" href="#keys-value" title="Permalink to this headline"></a></h2>
+<h2>keys value<a class="headerlink" href="#keys-value" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
@@ -279,7 +276,7 @@
 </div>
 </section>
 <section id="fields-in-cosmology">
-<h2>fields in <code class="docutils literal notranslate"><span class="pre">Cosmology</span></code><a class="headerlink" href="#fields-in-cosmology" title="Permalink to this headline"></a></h2>
+<h2>fields in <code class="docutils literal notranslate"><span class="pre">Cosmology</span></code><a class="headerlink" href="#fields-in-cosmology" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
@@ -294,15 +291,11 @@
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OmegaLambda0</span></code></p></td>
 <td><p>0.6889</p></td>
-<td><p><div class="math notranslate nohighlight">
-\[O_{\Lambda0}\]</div>
-</p></td>
+<td><p><span class="math notranslate nohighlight">\(O_{\Lambda0}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OmegaM0</span></code></p></td>
 <td><p>0.3111</p></td>
-<td><p><div class="math notranslate nohighlight">
-\[O_{m0}\]</div>
-</p></td>
+<td><p><span class="math notranslate nohighlight">\(O_{m0}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ScaleFactor</span></code></p></td>
 <td><p>1</p></td>
@@ -312,7 +305,7 @@
 </table>
 </section>
 <section id="fields-in-subhalos">
-<h2>fields in <code class="docutils literal notranslate"><span class="pre">Subhalos</span></code><a class="headerlink" href="#fields-in-subhalos" title="Permalink to this headline"></a></h2>
+<h2>fields in <code class="docutils literal notranslate"><span class="pre">Subhalos</span></code><a class="headerlink" href="#fields-in-subhalos" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
@@ -419,11 +412,7 @@
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BoundM200Crit</span></code></p></td>
 <td><p>M200 under critica density</p></td>
-<td><p><div class="math notranslate nohighlight">
-\[10^{10}\]</div>
- <div class="math notranslate nohighlight">
-\[M_{\odot}/h\]</div>
-</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{10}\)</span> <span class="math notranslate nohighlight">\(M_{\odot}/h\)</span></p></td>
 <td><p>float32</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SpecificSelfPotentialEnergy</span></code></p></td>
