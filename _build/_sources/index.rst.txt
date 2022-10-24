@@ -6,12 +6,16 @@
 Welcome to yzastro's documentation!
 ===================================
 
+- github: https://github.com/astroyzgu  
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
-   hello_world.rst 
+   hello_world.md 
+   python-sphinx.rst 
+   usage-github.rst 
+   hbt.md 
 
 
 Indices and tables

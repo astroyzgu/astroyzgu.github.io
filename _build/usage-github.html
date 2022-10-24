@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[入门笔记] Github - 基于git的代码托管平台 &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="HBT" href="hbt.html" />
+    <link rel="prev" title="python-sphinx 记录" href="python-sphinx.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">[入门笔记] Github - 基于git的代码托管平台</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#https-zhuanlan-zhihu-com-p-437280775">[参考网页] https://zhuanlan.zhihu.com/p/437280775</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hbt.html">HBT</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>[入门笔记] Github - 基于git的代码托管平台</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage-github.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="github-git">
+<h1>[入门笔记] Github - 基于git的代码托管平台<a class="headerlink" href="#github-git" title="Permalink to this headline"></a></h1>
+<section id="https-zhuanlan-zhihu-com-p-437280775">
+<h2>[参考网页] <a class="reference external" href="https://zhuanlan.zhihu.com/p/437280775">https://zhuanlan.zhihu.com/p/437280775</a><a class="headerlink" href="#https-zhuanlan-zhihu-com-p-437280775" title="Permalink to this headline"></a></h2>
+<p># 网页注册
+[Username] X YZ
+[Email]    <a class="reference external" href="mailto:xyz&#37;&#52;&#48;abc&#46;com">xyz<span>&#64;</span>abc<span>&#46;</span>com</a>
+[Password] uvwxyz1234567890</p>
+<p>ssh-keygen -t rsa -C “你的注册邮箱” # 在本地创建ssh key</p>
+<p>vi ~/.ssh/id_rsa.pub # 复制里面的key
+打开网页登陆-右上角头像下拉-&gt; settings SSH and GP Gkeys -&gt; SSH keys
+将复制好的key添加进去，title自便</p>
+<p># 连接上github了
+ssh -T <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a></p>
+<p># 设置用于登陆远端服务器的邮箱和用户名
+git config –global user.name “你的用户名”
+git config –global user.email “你的注册邮箱”
+——————————————————————————
+[本地仓库] git维护的三棵”树”
+working dir  - 工作目录，它持有实际文件
+Index        - 缓存区域，临时保存你的改动
+Head         - 指向最后一次提交的结果</p>
+<p># 建立 GitHub 仓库
+git commit -m # “更新的信息”
+git log # 查看日志</p>
+<p># 本地仓库(respository)创建和复制
+mkdir respository-test
+cd  respository-test
+git init      # 初始化仓库, On branch master
+echo “hello world” &gt; helloworld.txt # 随意创建一个文件
+git status    # 检查仓库的状态, helloworld.txt没有被提交（红色的）
+git add -A    # 添加此目录下所有文到缓存区（注意此时还没有实际改动）
+git status    # 再次检查仓库的状态, helloworld.txt已被提交(绿色的)
+git commit -m # 将改动提交到Head(此时仅在本地做了实际改动，远端仓库并没有影响)
+git status    # 再次检查仓库的状态, 发现nothing to commit
+echo “guyzastro 2020 ” &gt;&gt; helloworld.txt # 修改创建的文件
+git status    # 再次检查仓库的状态, 发现modified:   helloworld.txt
+git checkout – helloworld.txt # 放弃修改</p>
+<p>git clone /path/to/repository # 复制本地服务器上的仓库</p>
+<dl class="simple">
+<dt># 远端服务器仓库(respository)创建</dt><dd><p>在网页上创建 create a new respository -&gt; respository-test</p>
+</dd>
+</dl>
+<p># 本地仓库(respository)创建和复制
+mkdir respository-test; cd respository-test/  # 创建并进入本地文件夹
+git init                                      # 初始化一个空的本地仓
+git status                                    # 检查仓库的状态</p>
+<blockquote>
+<div><p># 也可以直接复制远端服务器上的仓库
+# git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:astroyzgu/guyzastro-web.git</p>
+</div></blockquote>
+<p># 随意创建一个文件, 并最后提交, 设立分支branch1
+echo “h” &gt; helloworld.txt                     # 随意创建一个文件
+git add helloworld.txt                        # 添加到缓存区
+git commit -m ‘change to: h ‘                 # 提交到Head
+git branch branch1                            # 标记一个分支点branch1, -d为删除</p>
+<p># 随意修改一个文件, 并最后提交, 设立分支branch2
+echo “hello” &gt; helloworld.txt                 # 随意修改一个文件
+git add helloworld.txt                        # 添加到缓存区
+git commit -m ‘change to: hello’              # 提交到Head
+git branch branch2                            # 标记一个分支点branch2, -d为删除</p>
+<p># 再次随意修改一个文件, 并最后提交，默认分支名为master
+echo “hello world” &gt; helloworld.txt           # 随意修改一个文件
+git add helloworld.txt                        # 添加到缓存区
+git commit -m ‘change to: hello world’        # 提交到Head</p>
+<p># 连接远端服务器，推送当前分支到远端服务器
+git remote add origin <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:astroyzgu/respository-test.git
+git push -u origin master   # 将master 推送到远端仓库
+git push -u origin branch2  # 将branch2推送到远端仓库
+git push origin -d branch2  # 将远端仓库中的branch2删除</p>
+<p>git branch -a          # 查看所有分支, 标*为当前所在分支
+git checkout &lt;branch&gt;  # 切换到&lt;branch&gt;这个分支</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>↗—-&gt; origin/Master [远程仓库]</p>
+</div></blockquote>
+<p>↗</p>
+</div></blockquote>
+<p>↗—-&gt; branch 1               ↗ push</p>
+</div></blockquote>
+<p>↗                             ↗</p>
+</div></blockquote>
+<dl class="simple">
+<dt>—-&gt; modify 1 —-&gt; modify 2 —-&gt; modify 3 → branch Master [本地默认仓库]</dt><dd><dl class="simple">
+<dt>h              hello        hello world</dt><dd><dl class="simple">
+<dt>↘</dt><dd><p>↘—-&gt; branch 2</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<hr class="docutils" />
+<p># Github安装和配置Git</p>
+<p>「README」 是 markdown 格式文本，在 README.md 中可以查看项目的发起者对项目所作的图文说明</p>
+<p>– or create a new repository on the command line</p>
+<p>echo “# test” &gt;&gt; README.md
+git init
+git add README.md
+git commit -m “first commit”
+git branch -M main
+git remote add origin <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:astroyzgu/test.git
+git push -u origin main</p>
+<p># 没有指定本地 master 分支和远程 origin/master 的连接
+git branch –set-upstream-to=origin/main main</p>
+<p>– or push an existing repository from the command line
+git remote add origin <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:astroyzgu/test.git
+git branch -M main
+git push -u origin main</p>
+<p>collaborate (see also: git help workflows)
+fetch[拿来]    Download objects and refs from another repository
+pull[拉来合并] Fetch and integrate with another repository or a local branch
+push[推送]     Update remote refs along with associated objects</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python-sphinx.html" class="btn btn-neutral float-left" title="python-sphinx 记录" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hbt.html" class="btn btn-neutral float-right" title="HBT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

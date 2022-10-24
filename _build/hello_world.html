@@ -14,11 +14,14 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="python-sphinx 记录" href="python-sphinx.html" />
     <link rel="prev" title="Welcome to yzastro’s documentation!" href="index.html" /> 
 </head>
 
@@ -40,6 +43,9 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hbt.html">HBT</a></li>
 </ul>
 
         </div>
@@ -58,7 +64,7 @@
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>hello world</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/hello_world.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/hello_world.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -66,9 +72,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="hello-world">
-<h1>hello world<a class="headerlink" href="#hello-world" title="Permalink to this heading"></a></h1>
-<p>This is a test!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hello-world">
+<h1>hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline"></a></h1>
+<p>This is a test <span class="math notranslate nohighlight">\(\int\  sin(x) \,dx\)</span>!</p>
+<div class="math notranslate nohighlight">
+\[\int\  sin(x) \,dx\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f4326c30-c24e-4096-a75d-1757fc3cd498">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f4326c30-c24e-4096-a75d-1757fc3cd498" title="Permalink to this equation"></a></span>\[\begin{eqnarray}
+   y    &amp; = &amp; ax^2 + bx + c \\
+   f(x) &amp; = &amp; x^2 + 2xy + y^2
+\end{eqnarray}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   y    &amp; = &amp; ax^2 + bx + c \\
+   f(x) &amp; = &amp; x^2 + 2xy + y^2
+\end{split}\]</div>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>value</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SnapshotPath</span></code></p></td>
+<td><p>/home/cossim/Jiutian/M1000/simu</p></td>
+<td><p>snapshot path</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HaloPath</span></code></p></td>
+<td><p>/home/cossim/Jiutian/M1000/groups</p></td>
+<td><p>host halo path</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SubhaloPath</span></code></p></td>
+<td><p>/home/cossim/Jiutian/M1000/hbt</p></td>
+<td><p>subhalo path</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SnapshotFileBase</span></code></p></td>
+<td><p>snapshot</p></td>
+<td><p><div class="math notranslate nohighlight">
+\[1000Mpc/h\]</div>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MaxSnapshotIndex</span></code></p></td>
+<td><p>127</p></td>
+<td><p><span class="math notranslate nohighlight">\(1000Mpc/h\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BoxSize</span></code></p></td>
+<td><p>1000<span class="math notranslate nohighlight">\(Mpc/h\)</span></p></td>
+<td><p>1000 <div class="math notranslate nohighlight">
+\[Mpc/h\]</div>
+</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 
 
@@ -76,6 +132,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to yzastro’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python-sphinx.html" class="btn btn-neutral float-right" title="python-sphinx 记录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

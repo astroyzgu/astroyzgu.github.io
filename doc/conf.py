@@ -31,7 +31,41 @@ release = '0.0.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-]
+# 'recommonmark', 
+"myst_parser",
+#'sphinx_markdown_tables', 
+'sphinx_math_dollar', 
+'sphinx.ext.mathjax', 
+'sphinx.ext.autodoc',
+'sphinx.ext.napoleon',
+'sphinx.ext.viewcode',]
+
+
+
+#source_suffix = ['.rst', '.md'] 
+from markdown_it import MarkdownIt
+md = MarkdownIt("commonmark").enable('table')
+
+source_suffix = {'.rst':'restructuredtext', '.md': 'markdown', }
+myst_enable_extensions = ["dollarmath", "amsmath"] 
+myst_dmath_double_inline= True  
+myst_dmath_allow_labels = False 
+myst_dmath_allow_space  = False  
+myst_dmath_allow_digits = True  
+
+mathjax_config = {
+    'tex2jax': {
+        'inlineMath': [ ["\\(","\\)"] ],
+        'displayMath': [["\\[","\\]"] ],
+    },
+}
+
+mathjax3_config = {
+  "tex": {
+    "inlineMath": [['\\(', '\\)']],
+    "displayMath": [["\\[", "\\]"]],
+  }
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

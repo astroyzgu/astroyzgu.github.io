@@ -12,9 +12,10 @@ Welcome to yzastro's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   hello_world.md 
    python-sphinx.rst 
    usage-github.rst 
-   hello_world.rst 
+   hbt.md 
 
 
 Indices and tables
