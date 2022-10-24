@@ -1,4 +1,5 @@
 [入门笔记] Github - 基于git的代码托管平台
+#####################################
 
 [参考网页] https://zhuanlan.zhihu.com/p/437280775 
 ------------------------------------------------------------------------------
@@ -122,6 +123,7 @@ git remote -v
 「README」 是 markdown 格式文本，在 README.md 中可以查看项目的发起者对项目所作的图文说明
 
 -- or create a new repository on the command line
+
 echo "# test" >> README.md
 git init
 git add README.md
@@ -138,7 +140,6 @@ git branch --set-upstream-to=origin/main main
 git remote add origin git@github.com:astroyzgu/test.git
 git branch -M main
 git push -u origin main
-
 
 collaborate (see also: git help workflows)
 fetch[拿来]    Download objects and refs from another repository
