@@ -13,10 +13,12 @@ Welcome to yzastro's documentation!
    :caption: Contents:
 
    hello_world.md 
+   online-documents.rst 
    python-sphinx.rst 
    usage-github.rst 
-   hbt.md 
-
+   shell_cmd.md 
+   tricks.rst
+   trick-to-makepipe.rst
 
 Indices and tables
 ==================

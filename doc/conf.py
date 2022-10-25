@@ -30,15 +30,12 @@ release = '0.0.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-# 'recommonmark', 
-"myst_parser",
-#'sphinx_markdown_tables', 
+extensions = ['myst_parser',
 'sphinx_math_dollar', 
 'sphinx.ext.mathjax', 
 'sphinx.ext.autodoc',
 'sphinx.ext.napoleon',
-'sphinx.ext.viewcode',]
+'sphinx.ext.viewcode']
 
 
 
