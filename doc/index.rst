@@ -6,10 +6,15 @@
 Welcome to yzastro's documentation!
 ===================================
 
+
+- pi2: https://studio.hpc.sjtu.edu.cn/,  jupyter-doc: https://docs.hpc.sjtu.edu.cn/studio/jupyter.html
+- gravity: https://gravity.sjtu.edu.cn/, gravity-doc: https://gravity-doc.github.io/
 - github: https://github.com/astroyzgu  
 
+
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    hello_world.md 
