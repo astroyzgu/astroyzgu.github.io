@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>python安装和基础 &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tricks.html">tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trick-to-makepipe.html">Make a pipeline</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>python安装和基础</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cfpy/basic_py.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python">
+<h1>python安装和基础<a class="headerlink" href="#python" title="Permalink to this heading"></a></h1>
+<section id="anaconda">
+<h2>安装anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a></p>
+</section>
+<section id="jupyter">
+<h2>在 Jupyter 中使用自定义的环境<a class="headerlink" href="#jupyter" title="Permalink to this heading"></a></h2>
+<p>新建环境（或使用已有环境）:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># module load miniconda3 # 如果在服务器上，载入已有环境</span>
+conda create -n py39 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 anaconda <span class="c1"># 创建新环境, python-3.9.7</span>
+<span class="c1"># conda remove -n py39 --all 删除py39环境</span>
+<span class="nb">source</span> activate py39 <span class="c1"># 激活py3环境</span>
+
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge
+conda config --set show_channel_urls yes
+<span class="c1"># conda config --set channel_priority strict</span>
+conda install mamba -c conda-forge <span class="c1"># 安装mamba替代conda命令</span>
+<span class="c1"># mamba install .... # mamba 用c++重写了部分解析过程</span>
+
+mamba install <span class="nv">astropy</span><span class="o">=</span><span class="m">5</span> matplotlib  <span class="c1"># astropy5 需要python&gt;=3.9</span>
+mamba install basemap healpy pymangle mpi4py cffi ipykernel sphinx
+mamba install psutil pandas scipy imageio scikit-learn opencv-python
+mamba install <span class="nv">tensorflow_gpu</span><span class="o">=</span><span class="m">2</span>.6  <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">10</span>.1
+conda upgrade --all
+<span class="c1"># 如果环境需要依赖NVIDIA CUDA Toolkit或NVIDIA cuDNN，可以使用conda进行安装：</span>
+conda install <span class="nv">tensorflow_gpu</span><span class="o">=</span><span class="m">2</span>.6
+<span class="c1"># ``conda install cudatoolkit=10.1 cudnn``</span>
+conda install ipykernel <span class="c1"># 安装并注册为 ``jupter kernel``, 可以</span>
+python -m ipykernel install --user --name py3 --display-name <span class="s2">&quot;py3-env&quot;</span>
+<span class="c1">#-------------------------------------------</span>
+
+<span class="c1"># 添加源</span>
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
+
+conda config --add channels https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/conda-forge/
+conda config --set show_channel_urls yes
+<span class="c1">#---------------</span>
+
+<span class="c1"># 配置tensorflow_gpu=v2.6的环境</span>
+conda remove -n tf2 --all <span class="c1"># 删除已有的环境</span>
+jupyter kernelspec list <span class="c1"># 查看所有已经安装的kernel</span>
+jupyter kernelspec remove tf2
+<span class="c1">#---------------</span>
+conda create -n tf2 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7 anaconda <span class="c1"># (支持2.7.*, 3.6.*和3.7.*)</span>
+module load anaconda/anaconda-mamba
+conda activate tf2
+conda install numpy, pandas, matplotlib, astropy
+conda install <span class="nv">tensorflow_gpu</span><span class="o">=</span><span class="m">2</span>.6
+python -m ipykernel install --user --name tf2  <span class="c1"># 安装并注册为 ``jupter kernel`` , 然后可以在Jupyter中选择名为tf2环境的Kernel进行计算。</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html">https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html</a></p>
+<p><a class="reference external" href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

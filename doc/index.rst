@@ -17,9 +17,10 @@ Welcome to yzastro's documentation!
    :maxdepth: 1
    :caption: Contents:
 
-   hello_world.md 
-   online-documents.rst 
    python-sphinx.rst 
+   hello_world.md 
+   cfpy/cfpy.rst
+   online-documents.rst 
    usage-github.rst 
    shell_cmd.md 
    tricks.rst
