@@ -16,9 +16,12 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="python调用c语言" href="python_call_c.html" />
+    <link rel="prev" title="python安装和基础" href="basic_py.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,9 +40,26 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python-sphinx.html">python-sphinx 记录</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#python-call-f">python call f</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">python调用fortran</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#f2py">f2py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctypes-numpy">ctypes&amp;numpy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#os">os命令</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-c">python call c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#f-call-python">f call python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python">python 装饰器</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
@@ -63,6 +83,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="cfpy.html">python c fortran 混合编程</a> &raquo;</li>
       <li>python调用fortran</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/cfpy/python_call_f.md.txt" rel="nofollow"> View page source</a>
@@ -198,7 +219,10 @@ os.system(r&quot;gfortran  C:/fortranDM/test.f90&quot;)
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basic_py.html" class="btn btn-neutral float-left" title="python安装和基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python_call_c.html" class="btn btn-neutral float-right" title="python调用c语言" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

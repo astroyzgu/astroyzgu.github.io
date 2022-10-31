@@ -16,10 +16,11 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="python调用fortran" href="python_call_f.html" />
+    <link rel="next" title="python安装和基础" href="basic_py.html" />
     <link rel="prev" title="python c fortran 混合编程" href="cfpy.html" /> 
 </head>
 
@@ -46,8 +47,14 @@
 <li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Fortran基础</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1">子程序传递数组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#so-a">动态库(.so)和静态库(.a)</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">自定义库函数文件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">参考</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="basic_py.html">python安装和基础</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
@@ -229,6 +236,50 @@ INTENT(INOUT) 或 INTENT(IN OUT)，形参既用来向子程序输入数据，也
 </pre></div>
 </div>
 </section>
+<section id="so-a">
+<h2>动态库(.so)和静态库(.a)<a class="headerlink" href="#so-a" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">xxx.so是动态函数库</span></code></p>
+<p>对于动态函数库(优先)，在运行执行文件时，仍需要从.so库文件中读取函数信息。</p>
+<p><code class="docutils literal notranslate"><span class="pre">xxx.a是静态函数库</span></code></p>
+<p>对于静态函数库在编译的时直接整合到可执行文件，程序可以独立运行的。</p>
+<section id="id2">
+<h3>Fortran程序的简单编译：<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>gfortran -o hello_world hello_world.f</p>
+</section>
+<section id="id3">
+<h3>在编译过程中调用外部函数库：<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>gfortran -o hello_world hello_world.f -lxxx -L/path/to/lib -I/path/to/head
+调用xxx库函数, -lxxx(-l是lib的意思，xxx为库名)
+库文件的位置由 -L 后的路径给出。
+头文件则从 -I 后的路径里去找。</p>
+</section>
+<section id="id4">
+<h3>在环境变量中提供动态库文件的位置<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<p>执行编译好的可执行文件hello_world</p>
+<p><code class="docutils literal notranslate"><span class="pre">./hello_world</span></code></p>
+<p>执行可能会报错错误，是因为编译是用到了libxxx.so, 运行时得再次访问。
+在环境变量（.bashrc）中提供动态库文件所在的位置。</p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/lib</span></code></p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>自定义库函数文件<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h1>
+<p>将源文件编译为xxx.o目标文件:</p>
+<p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-c</span> <span class="pre">xxx.f</span></code></p>
+<p>产生的xxx.o文件即为目标文件(目标文件指源代码经过编译程序产生的且能被cpu直接识别二进制代码)。再将目标文件编译成可执行文件：</p>
+<p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-o</span> <span class="pre">xxx</span> <span class="pre">xxx.o</span></code></p>
+<p>函数库就是将很多xxx.o 和在一起形成的。</p>
+<p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-fPIC</span> <span class="pre">-shared</span> <span class="pre">-o</span> <span class="pre">libxxx.so</span> <span class="pre">xxx.f</span></code></p>
+<p>调用刚刚生成的函数库</p>
+<p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-o</span> <span class="pre">run</span> <span class="pre">run.f</span> <span class="pre">-lxxx</span> <span class="pre">-L./</span></code></p>
+<section id="id6">
+<h2>参考<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>https://blog.csdn.net/weixin_43880667/article/details/84836145</p></li>
+<li><p>https://www.yiibai.com/fortran/fortran_intrinsic_functions.html</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -236,7 +287,7 @@ INTENT(INOUT) 或 INTENT(IN OUT)，形参既用来向子程序输入数据，也
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cfpy.html" class="btn btn-neutral float-left" title="python c fortran 混合编程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="python_call_f.html" class="btn btn-neutral float-right" title="python调用fortran" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basic_py.html" class="btn btn-neutral float-right" title="python安装和基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

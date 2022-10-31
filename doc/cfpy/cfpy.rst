@@ -8,6 +8,7 @@ quickstart
    :maxdepth: 1
 
    basic_f.md
+   basic_py.rst 
 
 
 setuptools统一 
