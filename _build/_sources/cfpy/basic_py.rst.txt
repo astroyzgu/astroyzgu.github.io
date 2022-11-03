@@ -4,14 +4,21 @@ python安装和基础
 安装anaconda
 ^^^^^^^^^^^^^^
 
-个人电脑: https://www.anaconda.com/ 
-服务器上: ``module load miniconda3``, 载入已有环境
+个人电脑: https://www.anaconda.com/, 安装anaconda
+
+服务器上: ``module load anaconda/anaconda-mamba``, 载入anaconda 
 
 搭建python环境
 ^^^^^^^^^^^^^^
 
 .. code-block:: shell
 
+   # 
+   # 在gravity login02上 
+   # 
+
+   module load anaconda/anaconda-mamba
+   
    #
    # 搭建python环境
    # 
@@ -26,9 +33,9 @@ python安装和基础
    # 安装软件
    # 
 
-   mamba install astropy matplotlib healpy ipykernel # 安装numpy cfitsio scipy
-   mamba install mpi4py cffi pandas scikit-learn ipykernel 
-   mamba install basemap healpy pymangle 
+   mamba install astropy matplotlib healpy ipykernel # 依赖性安装numpy cfitsio scipy
+   mamba install mpi4py cffi pandas scikit-learn ipykernel h5py 
+   mamba install basemap pymangle 
    mamba install psutil imageio opencv-python 
 
    #
@@ -43,7 +50,12 @@ python安装和基础
 
 .. code-block:: shell
 
-   conda remove -n py39 --all 删除py39环境
+   python -m ipykernel install --user --name py39 --display-name "py39"  # ipykernel生成虚拟环境的kernel
+   jupyter kernelspec list # 安装的kernel的内核和位置 
+   jupyter kernelspec remove py39 # 删除某一个kernel，如py39
+
+   conda env list # 列出所有环境
+   conda remove -n py39 --all # 删除py39环境
    conda config --set show_channel_urls yes # 显示告诉我们当前下载源的出处
    conda config --set channel_priority strict # 考虑最高优先级的channel 
 

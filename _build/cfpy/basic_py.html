@@ -46,6 +46,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basic_f.html">Fortran基础</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_f.html#id5">自定义库函数文件</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">python安装和基础</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#anaconda">安装anaconda</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">搭建python环境</a></li>
@@ -100,12 +101,18 @@
 <h1>python安装和基础<a class="headerlink" href="#python" title="Permalink to this heading"></a></h1>
 <section id="anaconda">
 <h2>安装anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading"></a></h2>
-<p>个人电脑: <a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a>
-服务器上: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">miniconda3</span></code>, 载入已有环境</p>
+<p>个人电脑: <a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a>, 安装anaconda</p>
+<p>服务器上: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">anaconda/anaconda-mamba</span></code>, 载入anaconda</p>
 </section>
 <section id="id1">
 <h2>搭建python环境<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># 在gravity login02上</span>
+<span class="c1">#</span>
+
+module load anaconda/anaconda-mamba
+
+<span class="c1">#</span>
 <span class="c1"># 搭建python环境</span>
 <span class="c1">#</span>
 conda create -n py39 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 anaconda <span class="c1"># 创建新环境, python-3.9.7</span>
@@ -119,9 +126,9 @@ conda install mamba -c conda-forge <span class="c1"># 安装mamba用c++重写了
 <span class="c1"># 安装软件</span>
 <span class="c1">#</span>
 
-mamba install astropy matplotlib healpy ipykernel <span class="c1"># 安装numpy cfitsio scipy</span>
-mamba install mpi4py cffi pandas scikit-learn ipykernel
-mamba install basemap healpy pymangle
+mamba install astropy matplotlib healpy ipykernel <span class="c1"># 依赖性安装numpy cfitsio scipy</span>
+mamba install mpi4py cffi pandas scikit-learn ipykernel h5py
+mamba install basemap pymangle
 mamba install psutil imageio opencv-python
 
 <span class="c1">#</span>
@@ -135,7 +142,12 @@ python -m ipykernel install --user --name py3 --display-name <span class="s2">&q
 </section>
 <section id="id2">
 <h2>其他命令<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda remove -n py39 --all 删除py39环境
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m ipykernel install --user --name py39 --display-name <span class="s2">&quot;py39&quot;</span>  <span class="c1"># ipykernel生成虚拟环境的kernel</span>
+jupyter kernelspec list <span class="c1"># 安装的kernel的内核和位置</span>
+jupyter kernelspec remove py39 <span class="c1"># 删除某一个kernel，如py39</span>
+
+conda env list <span class="c1"># 列出所有环境</span>
+conda remove -n py39 --all <span class="c1"># 删除py39环境</span>
 conda config --set show_channel_urls yes <span class="c1"># 显示告诉我们当前下载源的出处</span>
 conda config --set channel_priority strict <span class="c1"># 考虑最高优先级的channel</span>
 
