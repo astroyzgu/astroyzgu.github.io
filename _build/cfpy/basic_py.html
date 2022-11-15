@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="python调用fortran" href="python_call_f.html" />
+    <link rel="next" title="计算需要有一定的强度才能体现出多进程的优势!!!" href="basic_parallel.html" />
     <link rel="prev" title="Fortran基础" href="basic_f.html" /> 
 </head>
 
@@ -54,6 +54,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">为深度学习搭建一个环境</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html">计算需要有一定的强度才能体现出多进程的优势!!!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#for-20-51s-for-100000-times">for循环,        20.51s for 100000 times</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#apply-async-4-02s-for-12500-times-per-core">[推荐] apply_async, 4.02s for  12500 times per core （对于计算量不大的多进程，拆分任务会更好）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#process">Process [默认没有返回],</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#map-async-4-40s-for-100000-times-with-8-cores">map_async,       4.40s for 100000 times with 8 cores</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
@@ -85,9 +90,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="cfpy.html">python c fortran 混合编程</a> &raquo;</li>
-      <li>python安装和基础</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="cfpy.html">python c fortran 混合编程</a></li>
+      <li class="breadcrumb-item active">python安装和基础</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/cfpy/basic_py.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -126,7 +131,7 @@ conda install mamba -c conda-forge <span class="c1"># 安装mamba用c++重写了
 <span class="c1"># 安装软件</span>
 <span class="c1">#</span>
 
-mamba install astropy matplotlib healpy ipykernel <span class="c1"># 依赖性安装numpy cfitsio scipy</span>
+mamba install astropy matplotlib healpy ipykernel tqdm <span class="c1"># 依赖性安装numpy cfitsio scipy</span>
 mamba install mpi4py cffi pandas scikit-learn ipykernel h5py
 mamba install basemap pymangle
 mamba install psutil imageio opencv-python
@@ -150,6 +155,7 @@ conda env list <span class="c1"># 列出所有环境</span>
 conda remove -n py39 --all <span class="c1"># 删除py39环境</span>
 conda config --set show_channel_urls yes <span class="c1"># 显示告诉我们当前下载源的出处</span>
 conda config --set channel_priority strict <span class="c1"># 考虑最高优先级的channel</span>
+conda upgrade --all
 
 <span class="c1"># 其他的源</span>
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
@@ -171,8 +177,12 @@ conda config --add channels https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/con
 <section id="id3">
 <h2>为深度学习搭建一个环境<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p>新建环境（或使用已有环境）:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mamba install <span class="nv">tensorflow_gpu</span><span class="o">=</span><span class="m">2</span>.6  <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">10</span>.1
-conda upgrade --all
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda activate tf2
+conda install mamba -c conda-forge
+mamba install tensorflow-gpu  cudatoolkit tqdm imageio healpy ipykernel
+python -m ipykernel install --user --name tf2  <span class="c1"># 安装并注册为 ``jupter kernel`` , 然后可以在Jupyter中选择名为tf2环境的Kernel进行计算。</span>
+
+
 <span class="c1"># 如果环境需要依赖NVIDIA CUDA Toolkit或NVIDIA cuDNN，可以使用conda进行安装：</span>
 conda install <span class="nv">tensorflow_gpu</span><span class="o">=</span><span class="m">2</span>.6
 <span class="c1"># ``conda install cudatoolkit=10.1 cudnn``</span>
@@ -188,7 +198,6 @@ module load anaconda/anaconda-mamba
 conda activate tf2
 conda install numpy, pandas, matplotlib, astropy
 conda install <span class="nv">tensorflow_gpu</span><span class="o">=</span><span class="m">2</span>.6
-python -m ipykernel install --user --name tf2  <span class="c1"># 安装并注册为 ``jupter kernel`` , 然后可以在Jupyter中选择名为tf2环境的Kernel进行计算。</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html">https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html</a>
@@ -201,7 +210,7 @@ python -m ipykernel install --user --name tf2  <span class="c1"># 安装并注�
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="basic_f.html" class="btn btn-neutral float-left" title="Fortran基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="python_call_f.html" class="btn btn-neutral float-right" title="python调用fortran" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basic_parallel.html" class="btn btn-neutral float-right" title="计算需要有一定的强度才能体现出多进程的优势!!!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

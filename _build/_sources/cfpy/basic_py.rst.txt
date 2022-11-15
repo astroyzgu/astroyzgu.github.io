@@ -33,7 +33,7 @@ python安装和基础
    # 安装软件
    # 
 
-   mamba install astropy matplotlib healpy ipykernel # 依赖性安装numpy cfitsio scipy
+   mamba install astropy matplotlib healpy ipykernel tqdm # 依赖性安装numpy cfitsio scipy
    mamba install mpi4py cffi pandas scikit-learn ipykernel h5py 
    mamba install basemap pymangle 
    mamba install psutil imageio opencv-python 
@@ -58,6 +58,7 @@ python安装和基础
    conda remove -n py39 --all # 删除py39环境
    conda config --set show_channel_urls yes # 显示告诉我们当前下载源的出处
    conda config --set channel_priority strict # 考虑最高优先级的channel 
+   conda upgrade --all
 
    # 其他的源   
    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
@@ -82,8 +83,12 @@ python安装和基础
 
 .. code-block:: shell
 
-   mamba install tensorflow_gpu=2.6  cudatoolkit=10.1
-   conda upgrade --all
+   conda activate tf2
+   conda install mamba -c conda-forge
+   mamba install tensorflow-gpu  cudatoolkit tqdm imageio healpy ipykernel 
+   python -m ipykernel install --user --name tf2  # 安装并注册为 ``jupter kernel`` , 然后可以在Jupyter中选择名为tf2环境的Kernel进行计算。
+
+
    # 如果环境需要依赖NVIDIA CUDA Toolkit或NVIDIA cuDNN，可以使用conda进行安装：
    conda install tensorflow_gpu=2.6
    # ``conda install cudatoolkit=10.1 cudnn``
@@ -99,7 +104,6 @@ python安装和基础
    conda activate tf2
    conda install numpy, pandas, matplotlib, astropy
    conda install tensorflow_gpu=2.6
-   python -m ipykernel install --user --name tf2  # 安装并注册为 ``jupter kernel`` , 然后可以在Jupyter中选择名为tf2环境的Kernel进行计算。
 
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html
 https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/

@@ -13,6 +13,8 @@ https://coderefinery.github.io/documentation/gh_workflow/
 | ``pip install recommonmark # 支持markdown``
 | ``pip install sphinx-markdown-tables #  支持markdown table``
 | ``pip install myst_parser``
+| ``pip install sphinx-autobuild``
+| ``pip install sphinx_math_dollar``
  
 
  Document: https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html

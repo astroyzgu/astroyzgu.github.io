@@ -9,6 +9,7 @@ quickstart
 
    basic_f.md
    basic_py.rst 
+   basic_parallel.md  
 
 
 setuptools统一 
