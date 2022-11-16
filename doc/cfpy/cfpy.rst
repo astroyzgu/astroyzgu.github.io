@@ -10,7 +10,7 @@ quickstart
    basic_f.md
    basic_py.rst 
    basic_parallel.md  
-
+   basic_largearray.md
 
 setuptools统一 
 ^^^^^^^^^^^^^
