@@ -20,6 +20,8 @@ Welcome to yzastro's documentation!
    python-sphinx.rst 
    hello_world.md 
    cfpy/cfpy.rst
+   soft/soft.rst
+   astro/astro.rst
    online-documents.rst 
    usage-github.rst 
    shell_cmd.md 

@@ -167,7 +167,7 @@ c------ 方法1 先维度，再数据
 
    `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/lib`
 
-# 自定义库函数文件
+###### 自定义库函数文件
 将源文件编译为xxx.o目标文件: 
 
   `gfortran -c xxx.f` 

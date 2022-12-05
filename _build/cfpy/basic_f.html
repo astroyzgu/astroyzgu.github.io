@@ -50,16 +50,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#so-a">动态库(.so)和静态库(.a)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">自定义库函数文件</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id6">参考</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="basic_py.html">python安装和基础</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html">计算需要有一定的强度才能体现出多进程的优势!!!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#for-20-51s-for-100000-times">for循环,        20.51s for 100000 times</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#apply-async-4-02s-for-12500-times-per-core">[推荐] apply_async, 4.02s for  12500 times per core （对于计算量不大的多进程，拆分任务会更好）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#process">Process [默认没有返回],</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#map-async-4-40s-for-100000-times-with-8-cores">map_async,       4.40s for 100000 times with 8 cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html">multiprocessing多进程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_largearray.html">numpy大数据处理</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
@@ -69,6 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#python">python 装饰器</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
@@ -266,10 +260,8 @@ INTENT(INOUT) 或 INTENT(IN OUT)，形参既用来向子程序输入数据，也
 在环境变量（.bashrc）中提供动态库文件所在的位置。</p>
 <p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/lib</span></code></p>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id5">
-<h1>自定义库函数文件<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h1>
+<section id="id5">
+<h3>自定义库函数文件<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <p>将源文件编译为xxx.o目标文件:</p>
 <p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-c</span> <span class="pre">xxx.f</span></code></p>
 <p>产生的xxx.o文件即为目标文件(目标文件指源代码经过编译程序产生的且能被cpu直接识别二进制代码)。再将目标文件编译成可执行文件：</p>
@@ -278,12 +270,14 @@ INTENT(INOUT) 或 INTENT(IN OUT)，形参既用来向子程序输入数据，也
 <p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-fPIC</span> <span class="pre">-shared</span> <span class="pre">-o</span> <span class="pre">libxxx.so</span> <span class="pre">xxx.f</span></code></p>
 <p>调用刚刚生成的函数库</p>
 <p><code class="docutils literal notranslate"><span class="pre">gfortran</span> <span class="pre">-o</span> <span class="pre">run</span> <span class="pre">run.f</span> <span class="pre">-lxxx</span> <span class="pre">-L./</span></code></p>
+</section>
 <section id="id6">
-<h2>参考<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<h3>参考<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>https://blog.csdn.net/weixin_43880667/article/details/84836145</p></li>
 <li><p>https://www.yiibai.com/fortran/fortran_intrinsic_functions.html</p></li>
 </ol>
+</section>
 </section>
 </section>
 
