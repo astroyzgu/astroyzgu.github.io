@@ -50,6 +50,10 @@ python安装和基础
 
 .. code-block:: shell
 
+   conda create -n envB --clone envA # 复制环境envA为新环境envB
+   conda环境路径在/anaconda3/envs/环境1  # 把A机器整个环境1拷贝下来复制到B机器的任意地方
+   conda create -n 环境2 --clone 复制的环境1的路径 # 在B机器上复制生成新的环境
+
    python -m ipykernel install --user --name py39 --display-name "py39"  # ipykernel生成虚拟环境的kernel
    jupyter kernelspec list # 安装的kernel的内核和位置 
    jupyter kernelspec remove py39 # 删除某一个kernel，如py39

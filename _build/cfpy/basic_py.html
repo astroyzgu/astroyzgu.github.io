@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="计算需要有一定的强度才能体现出多进程的优势!!!" href="basic_parallel.html" />
+    <link rel="next" title="multiprocessing多进程" href="basic_parallel.html" />
     <link rel="prev" title="Fortran基础" href="basic_f.html" /> 
 </head>
 
@@ -46,7 +46,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basic_f.html">Fortran基础</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_f.html#id5">自定义库函数文件</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">python安装和基础</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#anaconda">安装anaconda</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">搭建python环境</a></li>
@@ -54,11 +53,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#id3">为深度学习搭建一个环境</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html">计算需要有一定的强度才能体现出多进程的优势!!!</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#for-20-51s-for-100000-times">for循环,        20.51s for 100000 times</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#apply-async-4-02s-for-12500-times-per-core">[推荐] apply_async, 4.02s for  12500 times per core （对于计算量不大的多进程，拆分任务会更好）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#process">Process [默认没有返回],</a></li>
-<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#map-async-4-40s-for-100000-times-with-8-cores">map_async,       4.40s for 100000 times with 8 cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html">multiprocessing多进程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_largearray.html">numpy大数据处理</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
@@ -68,6 +64,8 @@
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#python">python 装饰器</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
@@ -147,7 +145,11 @@ python -m ipykernel install --user --name py3 --display-name <span class="s2">&q
 </section>
 <section id="id2">
 <h2>其他命令<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m ipykernel install --user --name py39 --display-name <span class="s2">&quot;py39&quot;</span>  <span class="c1"># ipykernel生成虚拟环境的kernel</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda create -n envB --clone envA <span class="c1"># 复制环境envA为新环境envB</span>
+conda环境路径在/anaconda3/envs/环境1  <span class="c1"># 把A机器整个环境1拷贝下来复制到B机器的任意地方</span>
+conda create -n 环境2 --clone 复制的环境1的路径 <span class="c1"># 在B机器上复制生成新的环境</span>
+
+python -m ipykernel install --user --name py39 --display-name <span class="s2">&quot;py39&quot;</span>  <span class="c1"># ipykernel生成虚拟环境的kernel</span>
 jupyter kernelspec list <span class="c1"># 安装的kernel的内核和位置</span>
 jupyter kernelspec remove py39 <span class="c1"># 删除某一个kernel，如py39</span>
 
@@ -210,7 +212,7 @@ conda install <span class="nv">tensorflow_gpu</span><span class="o">=</span><spa
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="basic_f.html" class="btn btn-neutral float-left" title="Fortran基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="basic_parallel.html" class="btn btn-neutral float-right" title="计算需要有一定的强度才能体现出多进程的优势!!!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basic_parallel.html" class="btn btn-neutral float-right" title="multiprocessing多进程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

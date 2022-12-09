@@ -5,3 +5,5 @@ astro softwave
    :maxdepth: 2
 
    eazy.md
+   asfunc/asfunc.md 
+   
