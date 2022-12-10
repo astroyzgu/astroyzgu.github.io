@@ -30,8 +30,6 @@ m1 = asfunc.plot_block(ax = axs[1]).cyl()
 The following is the demostration. 
 
 
-
-
 ``` python 
     from csstmock import asfunc_old as asfunc
     import numpy as np 
@@ -85,6 +83,61 @@ The following is the demostration.
     plt.show()
 ``` 
 
+###### The demonstration of sky coverage
+
+![skycov-demo.png](skycov-demo.png)
+
+``` python 
+from csstmock import asfunc 
+import numpy as np 
+import healpy as hp 
+
+#------- start the module for visual 
+
+import matplotlib.pyplot as plt 
+from csstmock.asfunc.visual_old import visual, pix2border, add_colorbar
+fig, ax = plt.subplots(1,1,figsize = (8,4))
+m = visual(ax = ax).moll(lon_0 = 100) # use moll projection 
+m.set_parallels(shift = 0)   # parallels without ticklabel shift
+m.set_meridians(shift = -38) # meridians with ticklabel shift -30 degree
+m.set_galactic(b0 = 0, color = 'gray', lw = 1) # draw galatic plane 
+
+survey_available =   ['csstv0', 'desidr9', 'hscdr3']
+for ith, survey in enumerate(survey_available): 
+
+#--- read the embedding map of sky coverage of the survey
+    wht, nside = asfunc.skycov_healpy(survey)
+    pix = np.arange(12*nside*nside) 
+    pix = pix[wht==1.0]
+
+#--- convert to lower resolutions to speed up 
+    a, d= hp.pix2ang(nside, pix, lonlat = True) 
+    nside = 64; wht = np.zeros(12*nside*nside) + np.nan 
+    pix = hp.ang2pix(nside, a, d, lonlat = True) 
+    pix = np.unique(pix); wht[pix] = 1.0 
+
+#--- draw the sky coverage 
+    if survey == 'csstv0': m.hpviewer(wht, npt = 1,  facecolor = 'r', alpha = 0.5) #, edgecolor = 'None') 
+    if survey == 'desidr9':m.hpviewer(wht, npt = 1,  facecolor = 'b', alpha = 0.5) #, edgecolor = 'None') 
+    if survey == 'hscdr3': m.hpviewer(wht, npt = 1,  facecolor = 'g', alpha = 0.8) #, edgecolor = 'None') 
+
+#------- end the module for visual 
+
+
+
+#--- add label, title, legend or colorbar by yourself 
+ax.fill_between([0,1], [-1000,-1000], [1000,1000], color = 'r', alpha = 0.5, label = 'CSST' )
+ax.fill_between([0,1], [-1000,-1000], [1000,1000], color = 'b', alpha = 0.5, label = 'DESI' )
+ax.fill_between([0,1], [-1000,-1000], [1000,1000], color = 'g', alpha = 0.8, label = 'HSC-SSP' )
+
+ax.legend(frameon=False, bbox_to_anchor=(0.85, 0.8) ) 
+ax.set_xlabel('R.A. [deg]', fontsize = 12)
+ax.set_ylabel('Dec. [deg]', labelpad = 20, fontsize = 12)
+plt.savefig('skycov.png')
+
+plt.show()
+plt.close() 
+``` 
 
 
 
