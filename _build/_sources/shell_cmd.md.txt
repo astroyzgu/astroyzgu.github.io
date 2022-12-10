@@ -1,5 +1,7 @@
 # bash
 
+``zip -r -q -o pack.zip mark/``
+
 ### 用到的shell命令
 
 ``awk, cat, grep, sort`` 

@@ -1,9 +1,0 @@
-asfunc
-===========
-Bases: mpl_toolkits.basemap.Basemap. Draw skymap by matplotlib.Basemap
-
-Install
-^^^^^^^^^^^
-
-``python setup.py install`` 
-
