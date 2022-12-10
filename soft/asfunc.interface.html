@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>asfunc interface &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tricks.html">tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trick-to-makepipe.html">Make a pipeline</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">asfunc interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/soft/asfunc.interface.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="asfunc-interface">
+<h1>asfunc interface<a class="headerlink" href="#asfunc-interface" title="Permalink to this heading"></a></h1>
+<section id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>提供三个函数：</p>
+<ol class="arabic simple">
+<li><p>assignwht1d/assignwht2d  数值计算+返回权重给w并写入文件results.csv中</p></li>
+</ol>
+<div class="line-block">
+<div class="line">USAGE: assignwht  [权重文件]  [输入文件] [数据开始行]</div>
+<div class="line">assignwht1d  [权重文件] 1维权重，仅为位置的函数，格式为# ipix_256 wht</div>
+<div class="line-block">
+<div class="line">[输入文件] 格式为# ra dec</div>
+</div>
+<div class="line">assignwht2d  [权重文件] 2维权重，除位置之外，还为是第二个参数的函数，如zmag</div>
+<div class="line-block">
+<div class="line-block">
+<div class="line">格式为# ipix_256 w_0.00_to_16.00 …</div>
+</div>
+<div class="line">[输入文件] 格式为# ra dec zmag [或其他]</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>mollview [输入文件] [nside = 128]</p></li>
+</ol>
+<div class="line-block">
+<div class="line">USAGE: mollview   [输入文件] [数据开始行]</div>
+<div class="line-block">
+<div class="line">输入ra和dec，保持计数图像（默认nside = 128)</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>配置<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<section id="python3-7">
+<h3>python3.7环境配置<a class="headerlink" href="#python3-7" title="Permalink to this heading"></a></h3>
+<div class="line-block">
+<div class="line">创建一个新的环境： <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">py3-test</span> <span class="pre">python=3.7</span></code></div>
+<div class="line-block">
+<div class="line">py3-test为新环境的名称</div>
+</div>
+<div class="line">激活这个新的环境： <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">py3-test</span></code></div>
+<div class="line">若要退出这个环境： <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code></div>
+<div class="line">为这个环境安装相关的包：</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">matplotlib</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">basemap</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">cffi</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">tqdm</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">healpy</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pymangle</span>
+</pre></div>
+</div>
+<p>由于最新的matplotlib3.4没有这个dedent包，与basemap插件调用方式不一致，需要调整一下basemap的源码（下面这两个文件）：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/home/yzgu/.conda/envs/py3-test/lib/python3.7/site-packages/mpl_toolkits/basemap/__init__.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/home/yzgu/.conda/envs/py3-test/lib/python3.7/site-packages/mpl_toolkits/basemap/__init__.py</span></code></p></li>
+</ul>
+<p>将这两个文件中的``from matplotlib.cbook import dedent``替换为``from inspect import cleandoc as dedent``</p>
+</section>
+<section id="gravity">
+<h3>在Gravity上运行<a class="headerlink" href="#gravity" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python builder.py # 生成库文件libplugin.so(linux)和libplugin.dylib(Macos)
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$pwd # 将当前目录添加到库文件的搜索路径
+export PYTHONPATH=$PYTHONPATH:$pwd # 将当前目录添加到PYTHON库文件的搜索路径
+gfortran -o ./assignwht -L./ -lplugin assignwht.f
+gfortran -o ./mollview  -L./ -lplugin mollview.f
+</pre></div>
+</div>
+</section>
+<section id="macos">
+<h3>在macos上运行<a class="headerlink" href="#macos" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python builder.py # 生成库文件libplugin.so(linux)和libplugin.dylib(Macos)
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$pwd # 将当前目录添加到库文件的搜索路径
+export PYTHONPATH=$PYTHONPATH:$pwd # 将当前目录添加到PYTHON库文件的搜索路径
+gfortran -o ./assignwht -L./ -lplugin assignwht.f
+gfortran -o ./mollview  -L./ -lplugin mollview.f
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>细节<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<section id="fortranpython">
+<h3>传递Fortran数组给Python<a class="headerlink" href="#fortranpython" title="Permalink to this heading"></a></h3>
+<p>The reference of the communication of Fortran/C and python:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.noahbrenowitz.com/post/calling-fortran-from-python/">https://www.noahbrenowitz.com/post/calling-fortran-from-python/</a></p></li>
+<li><p><a class="reference external" href="https://cloud.tencent.com/developer/article/1618235">https://cloud.tencent.com/developer/article/1618235</a></p></li>
+<li><p><a class="reference external" href="http://www.yolinux.com/TUTORIALS/LinuxTutorialMixingFortranAndC.html">http://www.yolinux.com/TUTORIALS/LinuxTutorialMixingFortranAndC.html</a></p></li>
+</ul>
+</section>
+<section id="healpy">
+<h3>healpy画图<a class="headerlink" href="#healpy" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">ascii</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">healpy</span> <span class="k">as</span> <span class="nn">hp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># ID RA DEC redshift</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">;</span> <span class="n">nside</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>
+<span class="n">tab</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">tab</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">]</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+<span class="n">tab</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">]</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span>   <span class="mi">5</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+<span class="n">tab</span><span class="p">[</span><span class="s1">&#39;redshift&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span> <span class="mf">0.1</span><span class="p">,</span>   <span class="mf">0.3</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+<span class="n">tab</span><span class="p">[</span><span class="s1">&#39;ipix&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">hp</span><span class="o">.</span><span class="n">ang2pix</span><span class="p">(</span><span class="n">nside</span><span class="p">,</span> <span class="n">tab</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">],</span> <span class="n">nest</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">lonlat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">idx</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="s1">&#39;ipix&#39;</span><span class="p">],</span> <span class="n">return_counts</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">zmap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="mi">12</span><span class="o">*</span><span class="n">nside</span><span class="o">*</span><span class="n">nside</span> <span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">zmap</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span>
+<span class="n">hp</span><span class="o">.</span><span class="n">cartview</span><span class="p">(</span> <span class="n">zmap</span><span class="p">,</span> <span class="n">nest</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">lonra</span><span class="o">=</span><span class="p">[</span><span class="mi">139</span><span class="p">,</span> <span class="mi">161</span><span class="p">],</span> <span class="n">latra</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
