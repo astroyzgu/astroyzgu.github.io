@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "yzgu"
+AuthUserFile /Users/yzastro/github-local/astroyzgu.github.io/_build/.htpasswd
+require valid-user

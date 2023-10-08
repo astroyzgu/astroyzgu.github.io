@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>python调用c语言 &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fortran call python function" href="f_call_python.html" />
+    <link rel="prev" title="python调用fortran" href="python_call_f.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-f">python call f</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#python-call-c">python call c</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">python调用c语言</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#c-extension">c extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cython">Cython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctypes">ctypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setuptools">使用setuptools工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#f-call-python">f call python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-tricks">python tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html#simulation">simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="cfpy.html">python c fortran 混合编程</a> &raquo;</li>
+      <li>python调用c语言</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cfpy/python_call_c.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pythonc">
+<h1>python调用c语言<a class="headerlink" href="#pythonc" title="Permalink to this headline"></a></h1>
+<p><a class="reference external" href="https://blog.csdn.net/weixin_30488085/article/details/98787832">Python调用C/Fortran混合的动态链接库</a></p>
+<p><a class="reference external" href="https://blog.csdn.net/tianya_lu/article/details/124828175">在python里调用C函数的三种方式</a></p>
+<section id="c-extension">
+<h2>c extension<a class="headerlink" href="#c-extension" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;====================1.原始c程序=========================&quot;&quot;&quot;
+#include &lt;stdio.h&gt;
+int add(int a, int b)
+{
+    return a + b;
+}
+ 
+int main()
+{
+    int a=1,b=1;
+    printf(&quot;%d\n&quot;, add(a,b));
+}
+&quot;&quot;&quot;====================2.python的扩展模块=========================&quot;&quot;&quot;
+&quot;&quot;&quot;== Python.h, C函数, python代码调用的接口函数，初始化函数 ======&quot;&quot;&quot;
+// pulls in the Python API 
+#include &lt;Python.h&gt;
+ 
+// C function always has two arguments, conventionally named self and args
+// The args argument will be a pointer to a Python tuple object containing the arguments.
+// Each item of the tuple corresponds to an argument in the call’s argument list.
+static PyObject *
+demo_add(PyObject *self, PyObject *args)
+{
+    const int a, b;
+    // convert PyObject to C values
+    if (!PyArg_ParseTuple(args, &quot;ii&quot;, &amp;a, &amp;b))
+        return NULL;
+    return Py_BuildValue(&quot;i&quot;, a+b);
+}
+ 
+// module&#39;s method table
+static PyMethodDef DemoMethods[] = {
+    {&quot;add&quot;, demo_add, METH_VARARGS, &quot;Add two integers&quot;},
+    {NULL, NULL, 0, NULL} 
+};
+ 
+// module’s initialization function
+PyMODINIT_FUNC
+initdemo(void)
+{
+    (void)Py_InitModule(&quot;demo&quot;, DemoMethods);
+}
+
+
+&quot;&quot;&quot;=====3. setup.py文件=====&quot; 
+from distutils.core import setup, Extension
+ 
+module1 = Extension(&#39;demo&#39;,
+                    sources = [&#39;demomodule.c&#39;]
+                    )
+setup (name = &#39;a demo extension module&#39;,
+       version = &#39;1.0&#39;,
+       description = &#39;This is a demo package&#39;,
+       ext_modules = [module1]) 
+&quot;&quot;&quot;=====4. 利用distutils或setuptools完成gcc编译和链接=====&quot; 
+python setup.py build_ext --inplace 
+# 当前目录生成一个demo.so(python扩展模块)。
+# 是一个共享库(.so)，可以直接在python解释器中import。
+# --inplace表示将生成的扩展放到源码所在的目录
+&quot;&quot;&quot;=====5. test.py=====&quot;&quot;&quot;
+from demo import add
+print(add(1,1) )
+&quot;&quot;&quot;=====6.  执行 =====&quot;&quot;&quot;
+python test.py  
+</pre></div>
+</div>
+<p>备注: python2下有效， python3下扩展模块的写法需要改动</p>
+</section>
+<section id="cython">
+<h2>Cython<a class="headerlink" href="#cython" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;====================1.hello.py程序=========================&quot;&quot;&quot;
+#cython: language_level=3
+
+import time 
+t0 = time.time()
+sum = 0
+for ii in range(10000000): sum = sum + ii 
+t1 = time.time()
+print(&quot;Hello World! sum is %s&quot;% sum)
+print(&quot;Loop 10000000 times Using %s s&quot;% (t1 -t0) )
+&quot;&quot;&quot;====================2.cython编译=========================&quot;&quot;&quot;
+# @macos 
+cython --embed -o hello.c hello.py 
+gcc -Os  -o hello hello.c -lpython3.7m -lm -I /opt/anaconda2/envs/py37/include/python3.7m/ -L /opt/anaconda2/envs/py37/lib/
+export LD_LIBRARY_PATH=/opt/anaconda2/envs/py37/lib/:$LD_LIBRARY_PATH 
+./hello 
+&quot;&quot;&quot;====================3.执行程序=========================&quot;&quot;&quot;
+python hello.py # 直接执行～0.78 s
+./hello         # cpython编译后执行～0.83 s
+</pre></div>
+</div>
+<p>没有直接用cython语句写的pyx文件作为例子</p>
+</section>
+<section id="ctypes">
+<h2>ctypes<a class="headerlink" href="#ctypes" title="Permalink to this headline"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;====================1.c程序=========================&quot;&quot;&quot;
+    #include &lt;stdio.h&gt; 
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+ 
+    int main()
+    {
+    int a=1,b=1;
+    printf(&quot;%d\n&quot;, add(a,b));
+    } 
+&quot;&quot;&quot;===============2.编译c程序，生成动态链接库=========================&quot;&quot;&quot;
+gcc -shared -o libadd.so libadd.c # 编译成动态链接库 
+# BTW：执行gcc libadd.c; a.out, 也可以直接运行c 
+&quot;&quot;&quot;=============3.通过ctyps和numpy完成在python中调用============&quot;&quot;&quot;
+from ctypes import * 
+myclib = CDLL(&#39;libadd.so&#39;)
+add = myclib.add
+print( add(1,1) )
+
+</pre></div>
+</div>
+</section>
+<section id="setuptools">
+<h2>使用setuptools工具<a class="headerlink" href="#setuptools" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Cython.Build</span> <span class="kn">import</span> <span class="n">cythonize</span>
+<span class="kn">from</span> <span class="nn">codecs</span> <span class="kn">import</span> <span class="nb">open</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="n">ext_for</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;src.f1&#39;</span><span class="p">,</span>
+                  <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;src/f1.f&#39;</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">ext_cpp</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;src.hello&#39;</span><span class="p">,</span>
+                  <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;src/hello.cpp&#39;</span><span class="p">],</span>
+                  <span class="n">language</span><span class="o">=</span><span class="s1">&#39;c++&#39;</span> <span class="p">)</span>
+
+
+<span class="n">here</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+
+<span class="c1"># Get the long description from the README file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="s1">&#39;README.rst&#39;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">long_description</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;csstmock&#39;</span><span class="p">,</span> <span class="c1"># 包名</span>
+    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.0.0&#39;</span><span class="p">,</span> <span class="c1"># 版本号</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Construct mock and mask for CSST. &#39;</span><span class="p">,</span> <span class="c1"># 描述</span>
+    <span class="n">long_description</span><span class="o">=</span><span class="n">long_description</span><span class="p">,</span> <span class="c1"># 长段描述，即README.rst </span>
+    <span class="n">url</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>          <span class="c1"># 项目主页   </span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;SJTU group&#39;</span><span class="p">,</span> <span class="c1"># 作者名</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;guyizhou@sjtu.edu.cn&#39;</span><span class="p">,</span> <span class="c1"># 作者邮箱</span>
+    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span> <span class="c1"># 分类</span>
+        <span class="s1">&#39;Development Status :: 4 - Beta&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Intended Audience :: Science/Research&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;Programming Language :: Python :: 3.7&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Programming Language :: Python :: 3.9&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Programming Language :: Fortran&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Programming Language :: C++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Topic :: Scientific/Engineering :: Astronomy&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;Topic :: Scientific/Engineering :: Visualization&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">keywords</span><span class="o">=</span><span class="s1">&#39;CSST, mock, mask&#39;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span> <span class="n">find_namespace_packages</span><span class="p">(</span><span class="s1">&#39;csstmock&#39;</span><span class="p">),</span>
+    <span class="c1"># find_packages()自动搜寻，但是只会打包内含__init__.py的包。</span>
+    <span class="c1"># find_namespace_packages()没有这个限制,  若想指定文件夹，可以在后面加参数。</span>
+    <span class="c1"># packages=find_namespace_packages(&#39;src&#39;) </span>
+    <span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span><span class="n">ext_cpp</span><span class="p">],</span>
+    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span> <span class="s1">&#39;astropy&gt;=5.0&#39;</span><span class="p">],</span> <span class="c1"># 自动安装依赖 </span>
+    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;GPLv2&quot;</span><span class="p">,</span>  <span class="c1"># 协议</span>
+    <span class="n">python_requires</span><span class="o">=</span><span class="s1">&#39;&gt;=3.7&#39;</span><span class="p">,</span> <span class="c1"># 限制python版本</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python_call_f.html" class="btn btn-neutral float-left" title="python调用fortran" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="f_call_python.html" class="btn btn-neutral float-right" title="Fortran call python function" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

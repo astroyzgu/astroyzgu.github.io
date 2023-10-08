@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>numpy大数据处理 &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="python-sphinx 记录" href="python-sphinx.html" />
+    <link rel="prev" title="cpp+openmp" href="basic_parallel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basic_f.html">Fortran基础</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_py.html">python安装和基础</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html">cpp+openmp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_parallel.html#multiprocessing">multiprocessing多进程</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">numpy大数据处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">数组堆叠</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage-github.html">git入门</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-f">python call f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-c">python call c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#f-call-python">f call python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-tricks">python tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tricks.html">tricks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="cfpy.html">python c fortran 混合编程</a> &raquo;</li>
+      <li>numpy大数据处理</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cfpy/basic_largearray.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="numpy">
+<h1>numpy大数据处理<a class="headerlink" href="#numpy" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2>数组堆叠<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>推荐使用append + vstack</p></li>
+<li><p>效率最高是预申请一个empty数组</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">time</span> 
+
+<span class="c1"># append添加是将容器看作整体来进行添加</span>
+<span class="c1"># extend是将容器打碎后添加（加入的只是元素）</span>
+
+<span class="n">lst1</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">lst2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data_split</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="p">]</span>
+<span class="n">data_split</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]])</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">lst1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_split</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span> 
+<span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">lst2</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data_split</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst1 by append (作为2份整体):&#39;</span><span class="p">,</span> <span class="n">lst1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lst2 by extend (打碎成了5份):&#39;</span><span class="p">,</span> <span class="n">lst2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;extend:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;append:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------------------------&#39;</span><span class="p">)</span>
+
+<span class="c1"># 直接申请一个大的矩阵 (~2s)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">455113000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">data_split</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ngal_max</span> <span class="o">=</span> <span class="mi">2147483647</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ngal_max</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">ngal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">data_split_</span> <span class="ow">in</span> <span class="n">data_split</span><span class="p">:</span>
+    <span class="n">ngal_</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="n">data_split_</span><span class="o">.</span><span class="n">shape</span> 
+    <span class="n">data</span><span class="p">[</span><span class="n">ngal</span><span class="p">:</span><span class="n">ngal</span><span class="o">+</span><span class="n">ngal_</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">data_split_</span>
+    <span class="n">ngal</span> <span class="o">=</span> <span class="n">ngal</span> <span class="o">+</span> <span class="n">ngal_</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="n">ngal</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ngal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">&#39;Using empty takes </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span> <span class="n">t1</span><span class="p">)</span> <span class="p">)</span> 
+<span class="k">del</span> <span class="n">data</span> 
+
+<span class="c1"># extend + vstack 很耗时间(~105s, vstack耗时15s)</span>
+<span class="n">data_lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">data_split_</span> <span class="ow">in</span> <span class="n">data_split</span><span class="p">:</span>
+    <span class="n">data_lst</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">data_split_</span><span class="p">)</span> 
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;loop takes </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span> <span class="n">t1</span><span class="p">)</span> <span class="p">)</span> 
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">data_lst</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">&#39;Using extend takes </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span> <span class="n">t1</span><span class="p">)</span> <span class="p">)</span> 
+<span class="k">del</span> <span class="n">data</span>
+<span class="k">del</span> <span class="n">data_lst</span>
+
+<span class="c1"># append + vstack 挺快的 (~2s，主要在vstack上耗时)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">data_lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">data_split_</span> <span class="ow">in</span> <span class="n">data_split</span><span class="p">:</span>
+    <span class="n">data_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_split_</span><span class="p">)</span> 
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;loop takes </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span> <span class="n">t1</span><span class="p">)</span> <span class="p">)</span> 
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">data_split</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s1">&#39;Using append takes </span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">t2</span><span class="o">-</span> <span class="n">t1</span><span class="p">)</span> <span class="p">)</span> 
+<span class="k">del</span> <span class="n">data</span>
+<span class="k">del</span> <span class="n">data_lst</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basic_parallel.html" class="btn btn-neutral float-left" title="cpp+openmp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python-sphinx.html" class="btn btn-neutral float-right" title="python-sphinx 记录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

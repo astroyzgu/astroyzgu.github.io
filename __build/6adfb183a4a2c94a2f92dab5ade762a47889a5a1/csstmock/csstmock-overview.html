@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOCK for CSST Slitless Spectroscopic Survey &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pipeline" href="csstmock-pipeline.html" />
+    <link rel="prev" title="Classification" href="../justspec/1dspec-analysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MOCK for CSST Slitless Spectroscopic Survey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#csstmock">CSSTMOCK</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-pipeline.html">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-pipeline-mask.html">mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-utils.html">csstmock.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-makemock.html">csstmock.makemock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-tutorials.html">tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#desi">DESI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="seedcat-v1.desi.html">seedcat-v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mockcat-v1.desi.html">mock catalog of DESIDR9sv3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d-hst-candels">3D-HST/CANDELS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cosmos2020">COSMOS2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html#simulation">simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MOCK for CSST Slitless Spectroscopic Survey</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/csstmock/csstmock-overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mock-for-csst-slitless-spectroscopic-survey">
+<h1>MOCK for CSST Slitless Spectroscopic Survey<a class="headerlink" href="#mock-for-csst-slitless-spectroscopic-survey" title="Permalink to this headline"></a></h1>
+<section id="csstmock">
+<h2>CSSTMOCK<a class="headerlink" href="#csstmock" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="csstmock-pipeline.html">pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csstmock-pipeline-mask.html">mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csstmock-utils.html">csstmock.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csstmock-makemock.html">csstmock.makemock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csstmock-tutorials.html">tutorials</a></li>
+</ul>
+</div>
+</section>
+<section id="desi">
+<h2>DESI<a class="headerlink" href="#desi" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="seedcat-v1.desi.html">seedcat-v1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="seedcat-v1.desi.html#geometry-supplyments">geometry supplyments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seedcat-v1.desi.html#weight-supplyments">weight supplyments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mockcat-v1.desi.html">mock catalog of DESIDR9sv3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mockcat-v1.desi.html#catalogs-for-lf-and-clf">Catalogs for LF and CLF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mockcat-v1.desi.html#detials">Detials</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mockcat-v1.desi.html#mock-catalog">mock catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mockcat-v1.desi.html#group-catalog-based-on-the-mock-catalog">group catalog based on the mock catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mockcat-v1.desi.html#matched-with-desi-ngc-observation">matched with DESI NGC observation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="d-hst-candels">
+<h2>3D-HST/CANDELS<a class="headerlink" href="#d-hst-candels" title="Permalink to this headline"></a></h2>
+</section>
+<section id="cosmos2020">
+<h2>COSMOS2020<a class="headerlink" href="#cosmos2020" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../justspec/1dspec-analysis.html" class="btn btn-neutral float-left" title="Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="csstmock-pipeline.html" class="btn btn-neutral float-right" title="pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mangle &amp; pymangle &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="angular selection function (asfunc)" href="asfunc/asfunc.html" />
+    <link rel="prev" title="eazy-py" href="eazy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="soft.html">astro softwave</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eazy.html">eazy-py</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mangle &amp; pymangle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-mangle">INSTALL mangle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#see-also-mangle-directory-install">see also &lt;mangle_directory&gt;/INSTALL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-circ-2-1-cos-2-180-003827546723148500027">test.circ 2π(1-cos(2/180*π)) = 003827546723148500027</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alpha-delta-radius">alpha    delta    radius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-ply-0038275467231485000272np-pi-1-np-cos-r-np-pi-180">test.ply 003827546723148500027是立体角2<em>np.pi</em>(1-np.cos(r*np.pi/180))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-pymangle">INSTALL pymangle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asfunc/asfunc.html">angular selection function (asfunc)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asfunc/dataio.html">dataio module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tricks.html">tricks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="soft.html">astro softwave</a> &raquo;</li>
+      <li>mangle &amp; pymangle</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/soft/mangle.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mangle-pymangle">
+<h1>mangle &amp; pymangle<a class="headerlink" href="#mangle-pymangle" title="Permalink to this headline"></a></h1>
+<p>https://space.mit.edu/~molly/mangle/
+https://jila.colorado.edu/~ajsh/mangle/
+https://github.com/esheldon/pymangle</p>
+<section id="install-mangle">
+<h2>INSTALL mangle<a class="headerlink" href="#install-mangle" title="Permalink to this headline"></a></h2>
+<p>‘’’ shell</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="see-also-mangle-directory-install">
+<h1>see also &lt;mangle_directory&gt;/INSTALL<a class="headerlink" href="#see-also-mangle-directory-install" title="Permalink to this headline"></a></h1>
+<p>cd &lt;mangle_directory&gt;/src
+make
+PATH=$PATH:&lt;mangle_directory&gt;/src</p>
+<p>poly2poly -ic -op desimainBRIGHT-tile.circ desimainBRIGHT-tile.ply
+snap desimainBRIGHT-tile.ply desimainBRIGHT-tile.ply
+pixelize desimainBRIGHT-tile.ply desimainBRIGHT-tile.ply
+balkanize desimainBRIGHT-tile.ply desimainBRIGHT-tile.ply
+‘’’</p>
+<p>‘’’ python</p>
+<section id="test-circ-2-1-cos-2-180-003827546723148500027">
+<h2>test.circ 2π(1-cos(2/180*π)) = 003827546723148500027<a class="headerlink" href="#test-circ-2-1-cos-2-180-003827546723148500027" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="alpha-delta-radius">
+<h1>alpha    delta    radius<a class="headerlink" href="#alpha-delta-radius" title="Permalink to this headline"></a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<p>241.050  43.450    2.0
+245.880  43.450    2.0
+236.100  43.450    2.0</p>
+<section id="test-ply-0038275467231485000272np-pi-1-np-cos-r-np-pi-180">
+<h2>test.ply 003827546723148500027是立体角2<em>np.pi</em>(1-np.cos(r*np.pi/180))<a class="headerlink" href="#test-ply-0038275467231485000272np-pi-1-np-cos-r-np-pi-180" title="Permalink to this headline"></a></h2>
+<p>3 polygons
+real 10
+snapped
+polygon 1 ( 1 caps, 1 weight, 0 pixel, 0.003827546723148500027 str):
+-0.3514053318692527934 -0.6352587655642761402 0.6877213051139337459 0.0006091729809042699937
+polygon 2 ( 1 caps, 1 weight, 0 pixel, 0.003827546723148500027 str):
+-0.2966689292485420619 -0.662591090274319332 0.6877213051139337459 0.0006091729809042699937
+polygon 3 ( 1 caps, 1 weight, 0 pixel, 0.003827546723148500027 str):
+-0.4049088925048238373 -0.602568000530151502 0.6877213051139337459 0.0006091729809042699937
+‘’’</p>
+</section>
+<section id="install-pymangle">
+<h2>INSTALL pymangle<a class="headerlink" href="#install-pymangle" title="Permalink to this headline"></a></h2>
+<p>‘’’
+pip install pymangle
+‘’’</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="eazy.html" class="btn btn-neutral float-left" title="eazy-py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asfunc/asfunc.html" class="btn btn-neutral float-right" title="angular selection function (asfunc)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
