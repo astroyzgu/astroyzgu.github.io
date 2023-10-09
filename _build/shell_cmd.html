@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bash &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7026087e"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="online documents" href="online-documents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online-documents.html">online documents</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shell">用到的shell命令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tail-head">tail &amp; head</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paste">paste</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#download-upload">download/upload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compresion-decompression">compresion/decompression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-script">shell script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">文本处理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">判断字符串中是否包含某串字符</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">bash</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/shell_cmd.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="bash">
+<h1>bash<a class="headerlink" href="#bash" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">-q</span> <span class="pre">-o</span> <span class="pre">pack.zip</span> <span class="pre">mark/</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">#linux查询文件及文件夹大小</span></code></p>
+<section id="shell">
+<h2>用到的shell命令<a class="headerlink" href="#shell" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">awk,</span> <span class="pre">cat,</span> <span class="pre">grep,</span> <span class="pre">sort</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">-nk</span> <span class="pre">1</span> <span class="pre">filename</span></code> 参考：http://man.linuxde.net/sort</p>
+<p><code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'244d'</span> <span class="pre">filename</span>&#160; <span class="pre">#</span> <span class="pre">Remove</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">244</span> <span class="pre">lines</span> <span class="pre">(-i,</span> <span class="pre">Edit</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">diectly)</span></code></p>
+<section id="tail-head">
+<h3>tail &amp; head<a class="headerlink" href="#tail-head" title="Link to this heading"></a></h3>
+<p>tail(head) - output the last(beginning) part of files</p>
+<p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-n</span>&#160; <span class="pre">4</span> <span class="pre">COSMOS.txt</span> <span class="pre">#</span> <span class="pre">print</span> <span class="pre">last</span> <span class="pre">4</span> <span class="pre">lines</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-n</span> <span class="pre">+4</span> <span class="pre">COSMOS.txt</span> <span class="pre">#</span> <span class="pre">output</span> <span class="pre">starting</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">Kth</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">end</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#从第二行开始，对第二列排序 </span>
+<span class="n">tail</span> <span class="o">-</span><span class="n">n</span> <span class="o">+</span><span class="mi">2</span> <span class="n">data</span><span class="o">.</span><span class="n">tbl</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">nk</span> <span class="mi">2</span>  
+
+<span class="c1">#从第二行开始，对第二列排序并只打印第一行</span>
+<span class="n">tail</span> <span class="o">-</span><span class="n">n</span> <span class="o">+</span><span class="mi">2</span> <span class="n">data</span><span class="o">.</span><span class="n">tbl</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">nk</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;{print $1}&#39;</span>  
+
+<span class="c1"># 比较data.tbl 的满足条件的第一行和data2.tbl 中的第一的不同</span>
+<span class="n">tail</span> <span class="o">-</span><span class="n">n</span> <span class="o">+</span><span class="mi">2</span> <span class="n">data</span><span class="o">.</span><span class="n">tbl</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-</span><span class="n">nk</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">awk</span> <span class="s1">&#39;$2 &gt; 0.75 {print $1}&#39;</span> <span class="o">&gt;</span> <span class="n">data1</span><span class="o">.</span><span class="n">tbl</span>
+<span class="n">tail</span> <span class="o">-</span><span class="n">n</span> <span class="o">+</span><span class="mi">2</span> <span class="n">data2</span><span class="o">.</span><span class="n">tbl</span><span class="o">|</span><span class="n">awk</span> <span class="s1">&#39;{print $1} &#39;</span> <span class="o">&gt;</span> <span class="n">data3</span><span class="o">.</span><span class="n">tbl</span> 
+<span class="c1"># diff - http://www.lampweb.org/linux/3/17.html</span>
+<span class="n">diff</span> <span class="n">data1</span><span class="o">.</span><span class="n">tbl</span> <span class="n">data2</span><span class="o">.</span><span class="n">tbl</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">W30</span> <span class="o">|</span><span class="n">awk</span> <span class="s1">&#39;$1 != $2 &#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="paste">
+<h3>paste<a class="headerlink" href="#paste" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  paste -d -s file1 file2
+  选项含义如下：
+  -d 指定不同于空格或t a b键的域分隔符。例如用@分隔域，使用-d @。
+  -s 将每个文件合并成行而不是按行粘贴。（行列转置会用到）
+</pre></div>
+</div>
+<p>uniq</p>
+</section>
+</section>
+<section id="download-upload">
+<h2>download/upload<a class="headerlink" href="#download-upload" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>服务器上传或下载
+rsync –progress -avz  username&#64;192.160.0.1:/data/reduction  .</p></li>
+<li><p>wget指定目录下所有文件
+wget -c -r -np -k -L -p -A ‘*.fits’ http://data/location</p></li>
+</ul>
+</section>
+<section id="compresion-decompression">
+<h2>compresion/decompression<a class="headerlink" href="#compresion-decompression" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">bzip2</span> <span class="o">-</span><span class="n">d</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+   <span class="n">tar</span> <span class="o">-</span><span class="n">xf</span> <span class="o">*.</span><span class="n">tar</span>
+</pre></div>
+</div>
+</section>
+<section id="shell-script">
+<h2>shell script<a class="headerlink" href="#shell-script" title="Link to this heading"></a></h2>
+</section>
+<section id="id1">
+<h2>文本处理<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>字符串的赋值，替换和打印<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sciname=&#39;../image/smacs0723-f356w_test_sci.fits&#39;
+whtname=${sciname/sci/wht}
+echo &#39;sciname:  &#39; $sciname
+echo &#39;whtname:  &#39; $whtname
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>判断字符串中是否包含某串字符<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if echo $whtname | grep sci; then 
+   echo &#39;contain sci&#39;
+else 
+   echo &#39;not contain sci&#39;
+fi
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="online-documents.html" class="btn btn-neutral float-left" title="online documents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>seedcat-v1 &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mock catalog of DESIDR9sv3" href="mockcat-v1.desi.html" />
+    <link rel="prev" title="csstmock.makemock" href="csstmock-makemock.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="online-readme.html">online-readme</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="online-readme.html#csstmock">CSSTMOCK</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="online-readme.html#desi">DESI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">seedcat-v1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geometry-supplyments">geometry supplyments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#weight-supplyments">weight supplyments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mockcat-v1.desi.html">mock catalog of DESIDR9sv3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="online-readme.html#d-hst-candels">3D-HST/CANDELS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online-readme.html#cosmos2020">COSMOS2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="online-readme.html">online-readme</a></li>
+      <li class="breadcrumb-item active">seedcat-v1</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/online-readme/seedcat-v1.desi.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="seedcat-v1">
+<h1>seedcat-v1<a class="headerlink" href="#seedcat-v1" title="Link to this heading"></a></h1>
+<p>Number: 138315649 galaxies(~18000 deg^2) totally including 2.7% specz(~3700deg^2).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Gravity</span> <span class="n">location</span><span class="p">:</span> <span class="n">DESIDR9_galaxy_comb</span><span class="o">.</span><span class="n">npy</span> 
+
+<span class="n">data</span> <span class="nb">format</span><span class="p">:</span>
+
+<span class="n">column</span> <span class="mi">0</span><span class="p">:</span> <span class="n">igal</span>          <span class="o">-</span>  <span class="n">galaxy</span> <span class="nb">id</span>           
+<span class="n">column</span> <span class="mi">1</span><span class="p">:</span> <span class="n">ra</span>
+<span class="n">column</span> <span class="mi">2</span><span class="p">:</span> <span class="n">dec</span>
+<span class="n">column</span> <span class="mi">3</span><span class="p">:</span> <span class="n">z</span>             <span class="o">-</span> <span class="n">photometric</span> <span class="n">redshift</span><span class="o">.</span> <span class="n">spectroscopic</span> <span class="n">redshift</span> <span class="k">if</span> <span class="n">availabe</span>  
+<span class="n">column</span> <span class="mi">4</span><span class="p">:</span> <span class="n">magabs_z</span>      <span class="o">-</span> <span class="n">z</span><span class="o">-</span><span class="n">band</span> <span class="n">absolute</span> <span class="n">magnitude</span>  <span class="p">(</span><span class="k">with</span> <span class="n">k</span><span class="o">-</span><span class="n">correction_</span><span class="p">{</span><span class="mf">0.5</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">z</span><span class="p">})</span>
+<span class="n">column</span> <span class="mi">5</span><span class="p">:</span> <span class="n">loglum_z</span>      <span class="o">-</span> <span class="n">z</span><span class="o">-</span><span class="n">band</span> <span class="n">luminosity</span> <span class="ow">in</span> <span class="n">log10</span> <span class="n">scale</span><span class="p">,</span> <span class="n">log10</span><span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="n">Lsun</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">h</span><span class="p">),</span> <span class="k">with</span> <span class="n">k</span><span class="o">-</span><span class="n">correction_</span><span class="p">{</span><span class="mf">0.5</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">z</span><span class="p">},</span> <span class="n">Mr_</span><span class="p">{</span><span class="n">sun</span><span class="p">}</span><span class="o">=</span><span class="mf">4.83</span><span class="p">)</span>
+<span class="n">column</span> <span class="mi">6</span><span class="p">:</span> <span class="n">magabs_r</span>      <span class="o">-</span> <span class="n">r</span><span class="o">-</span><span class="n">band</span> <span class="n">absolute</span> <span class="n">magnitude</span>  <span class="p">(</span><span class="k">with</span> <span class="n">k</span><span class="o">-</span><span class="n">correction_</span><span class="p">{</span><span class="mf">0.5</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">r</span><span class="p">})</span>
+<span class="n">column</span> <span class="mi">7</span><span class="p">:</span> <span class="n">loglum_r</span>      <span class="o">-</span> <span class="n">r</span><span class="o">-</span><span class="n">band</span> <span class="n">luminosity</span> <span class="ow">in</span> <span class="n">log10</span> <span class="n">scale</span><span class="p">,</span> <span class="n">log10</span><span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="n">Lsun</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">h</span><span class="p">),</span> <span class="k">with</span> <span class="n">k</span><span class="o">-</span><span class="n">correction_</span><span class="p">{</span><span class="mf">0.5</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">r</span><span class="p">},</span> <span class="n">Mr_</span><span class="p">{</span><span class="n">sun</span><span class="p">}</span><span class="o">=</span><span class="mf">5.39</span><span class="p">)</span>
+<span class="n">column</span> <span class="mi">8</span><span class="p">:</span> <span class="n">zerr</span>          <span class="o">-</span> <span class="n">redshift</span> <span class="n">error</span>  <span class="p">(</span><span class="n">spec</span><span class="o">-</span><span class="n">z</span> <span class="mf">0.0001</span><span class="p">;</span> <span class="n">no</span> <span class="n">redshift</span> <span class="o">-</span><span class="mi">99</span><span class="p">;</span> <span class="n">photo</span><span class="o">-</span><span class="n">z</span> <span class="n">other</span> <span class="n">value</span><span class="o">.</span><span class="p">)</span>
+<span class="n">column</span> <span class="mi">9</span><span class="p">:</span> <span class="n">lmass</span>         <span class="o">-</span> <span class="n">stellar</span> <span class="n">mass</span> <span class="ow">in</span> <span class="n">log10</span> <span class="n">scale</span><span class="p">,</span> <span class="n">log10</span><span class="p">(</span><span class="n">M</span><span class="o">*/</span><span class="n">Msun</span><span class="p">),</span> <span class="n">by</span> <span class="n">by</span> <span class="n">kcorrect4</span><span class="mf">.2</span>
+<span class="n">column</span> <span class="mi">10</span><span class="p">:</span> <span class="n">kcorr_z</span>      <span class="o">-</span> <span class="n">z</span><span class="o">-</span><span class="n">band</span> <span class="n">K</span><span class="o">-</span><span class="n">correction</span> <span class="n">to</span> <span class="n">z</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">by</span> <span class="n">kcorrect4</span><span class="mf">.2</span> 
+<span class="n">column</span> <span class="mi">11</span><span class="p">:</span> <span class="n">magapp_z</span>     <span class="o">-</span> <span class="n">z</span><span class="o">-</span><span class="n">band</span> <span class="n">apparent</span> <span class="n">magnitude</span>
+<span class="n">column</span> <span class="mi">12</span><span class="p">:</span> <span class="n">kcorr_r</span>      <span class="o">-</span> <span class="n">r</span><span class="o">-</span><span class="n">band</span> <span class="n">K</span><span class="o">-</span><span class="n">correction</span> <span class="n">to</span> <span class="n">z</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">by</span> <span class="n">kcorrect4</span><span class="mf">.2</span>
+<span class="n">column</span> <span class="mi">13</span><span class="p">:</span> <span class="n">magapp_r</span>     <span class="o">-</span> <span class="n">r</span><span class="o">-</span><span class="n">band</span> <span class="n">apparent</span> <span class="n">magnitude</span> <span class="p">(</span><span class="n">col7</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span><span class="o">*</span><span class="n">col13</span> <span class="o">+</span> <span class="mf">4.83</span> <span class="o">+</span> <span class="mi">5</span><span class="n">log</span><span class="p">(</span><span class="n">h</span><span class="p">),</span> <span class="n">h</span> <span class="o">=</span> <span class="mf">0.683</span> <span class="p">)</span>
+<span class="n">column</span> <span class="mi">14</span><span class="p">:</span> <span class="n">select</span>       <span class="o">-</span> <span class="n">used</span> <span class="n">to</span> <span class="n">select</span> <span class="n">sample</span> 
+
+                          <span class="k">if</span> <span class="n">select</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">objects</span> <span class="ow">in</span> <span class="n">NGC</span><span class="s1">&#39;s two tails</span>
+                          <span class="k">if</span> <span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>  <span class="n">the</span> <span class="n">magnitude</span><span class="o">-</span><span class="n">limit</span> <span class="n">sample</span> <span class="p">(</span><span class="n">magapp_z</span> <span class="o">&lt;</span> <span class="mi">21</span><span class="p">)</span> <span class="ow">in</span> <span class="n">NGC</span> <span class="ow">and</span> <span class="n">SGC</span><span class="o">.</span> 
+                          <span class="k">if</span> <span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">,</span>  <span class="n">the</span> <span class="n">sample</span> <span class="k">with</span> <span class="n">successful</span> <span class="n">redshift</span> <span class="p">(</span><span class="n">spec</span><span class="o">-</span><span class="n">z</span> <span class="ow">and</span> <span class="n">phot</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">.</span> 
+                            <span class="o">*</span> <span class="n">All</span> <span class="n">objects</span> <span class="k">with</span> <span class="n">spec</span><span class="o">-</span><span class="n">z</span> <span class="kn">from</span> <span class="nn">archive</span> <span class="ow">or</span> <span class="n">DESI</span> <span class="n">would</span> <span class="n">be</span> <span class="n">included</span><span class="o">.</span> 
+                            <span class="o">*</span> <span class="n">The</span> <span class="n">objects</span> <span class="k">with</span> <span class="n">phot</span><span class="o">-</span><span class="n">z</span> <span class="n">require</span> <span class="n">the</span> <span class="mi">5</span><span class="o">-</span><span class="n">band</span> <span class="n">detection</span> <span class="k">with</span> <span class="n">low</span> <span class="n">contamination</span><span class="p">,</span>  
+                                <span class="n">FLUX_</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">w1</span><span class="p">,</span><span class="n">w2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>  
+                                <span class="n">FRACFLUX_</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">z</span><span class="p">]</span>   <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span> 
+                                <span class="n">FRAC_IN_</span><span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span>  <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">,</span> 
+                                <span class="n">FRACMASKED_</span><span class="p">[</span><span class="n">g</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">z</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="o">.</span>
+                          <span class="k">if</span> <span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">objects</span> <span class="k">with</span> <span class="n">spec</span> <span class="n">redshift</span> <span class="p">[</span><span class="n">DESI</span> <span class="ow">and</span> <span class="n">archives</span><span class="p">]</span><span class="o">.</span> 
+                          <span class="k">if</span> <span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">objects</span> <span class="k">with</span> <span class="n">DESI</span> <span class="n">spec</span> <span class="n">redshift</span><span class="o">.</span> 
+
+                        <span class="o">-</span> <span class="n">zonly</span> <span class="n">sample</span><span class="p">;</span>  <span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+                        <span class="o">-</span> <span class="n">main</span>  <span class="n">sample</span><span class="p">;</span> <span class="p">(</span><span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">zerr</span> <span class="o">&lt;=</span> <span class="mf">0.0001</span><span class="p">)</span>
+                        <span class="o">-</span> <span class="n">spec</span>  <span class="n">sample</span><span class="p">;</span> <span class="p">(</span><span class="n">select</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">zerr</span> <span class="o">&lt;=</span> <span class="mf">0.0001</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="n">dat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;DESIDR9_galaxy_comb.npy&#39;</span><span class="p">)</span> 
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">14</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>      <span class="c1"># zonly sample</span>
+<span class="n">indx_spec</span> <span class="o">=</span> <span class="p">(</span><span class="n">dat</span><span class="p">[:,</span> <span class="mi">8</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.0001</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">8</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">indx_phot</span> <span class="o">=</span> <span class="p">(</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">14</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">indx_spec</span><span class="o">|</span><span class="n">indx_phot</span><span class="p">,</span> <span class="p">:]</span> <span class="c1"># main  sample</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">indx_spec</span><span class="o">|</span><span class="p">(</span><span class="n">dat</span><span class="p">[:,</span><span class="mi">14</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">),</span> <span class="p">:]</span> <span class="c1"># spec  sample</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="n">band_weight</span><span class="o">.</span><span class="n">npy</span> <span class="p">(</span><span class="mi">138315649</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  
+<span class="n">col1</span><span class="p">:</span> <span class="n">galaxy</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">seed</span> <span class="n">catalog</span>
+<span class="n">col2</span><span class="p">:</span> <span class="n">z</span><span class="o">-</span><span class="n">band</span> <span class="n">weight</span> <span class="p">(</span><span class="n">cover</span> <span class="mf">9253.21</span> <span class="n">NGC</span> <span class="ow">and</span> <span class="mf">8016.51</span> <span class="n">SGC</span><span class="p">)</span>
+<span class="n">col3</span><span class="p">:</span> <span class="n">r</span><span class="o">-</span><span class="n">band</span> <span class="n">weight</span> <span class="p">(</span><span class="n">cover</span> <span class="mf">9251.32</span> <span class="n">NGC</span> <span class="ow">and</span> <span class="mf">7994.90</span> <span class="n">SGC</span><span class="p">)</span>
+<span class="n">Note</span><span class="p">:</span> <span class="n">this</span> <span class="n">version</span> <span class="n">carefully</span> <span class="n">consider</span> <span class="n">the</span> <span class="n">border</span> <span class="n">of</span> <span class="n">survey</span> <span class="ow">and</span> <span class="n">region</span> <span class="n">which</span> <span class="n">has</span> <span class="n">bad</span> <span class="n">photometrics</span><span class="o">.</span> <span class="n">Weight</span> <span class="ow">is</span> <span class="nb">set</span> <span class="k">as</span> <span class="mi">0</span> <span class="n">when</span> <span class="n">galxy</span> <span class="n">located</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">border</span> <span class="n">of</span> <span class="n">survey</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">region</span> <span class="n">which</span> <span class="n">its</span> <span class="mi">5</span><span class="o">-</span><span class="n">band</span> <span class="n">success</span> <span class="n">rate</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="o">.</span>
+</pre></div>
+</div>
+<section id="geometry-supplyments">
+<h2>geometry supplyments<a class="headerlink" href="#geometry-supplyments" title="Link to this heading"></a></h2>
+<p><strong>geometry supplyments(see geo.ipynb)</strong></p>
+<ul class="simple">
+<li><p><strong>by galaxy id (by_igal)</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>coverage (sqdeg) <br> nside = 128, 256</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">igal_sv3_r1.45.npy</span></code></p></td>
+<td><p>(189.5,   159.4)</p></td>
+<td><p>igal - galaxies located in the sv3 region within r &lt; 1.45 degree (132.1 sqdeg)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">igal_ngc.npy</span></code></p></td>
+<td><p>(9679.4, 9610.2)</p></td>
+<td><p>igal - galaxies located in NGC without two tails</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">igal_sgc.npy</span></code></p></td>
+<td><p>(8674.1, 8584.1)</p></td>
+<td><p>igal - galaxies located in SGC</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">igal_iron.npy</span></code></p></td>
+<td><p>(12735.6,12299.2)</p></td>
+<td><p>igal - galaxies located in the region of spec observation of iron release (r &lt; 1.628 deg)</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>by sector id, nside = 128 (by_isec)</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>coverage (deg^2) <br> nside = 128</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_sv3_r1.45.npy</span></code></p></td>
+<td><p>189.5</p></td>
+<td><p>sector id  - galaxies located in the sv3 region within r &lt; 1.45 degree (132.1 sqdeg)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_ngc.npy</span></code></p></td>
+<td><p>9679.4</p></td>
+<td><p>sector id  - galaxies located in NGC without two tails</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_sgc.npy</span></code></p></td>
+<td><p>8674.1</p></td>
+<td><p>sector id  - galaxies located in SGC</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_iron.npy</span></code></p></td>
+<td><p>12735.6</p></td>
+<td><p>sector id  - galaxies located in the region of spec observation of iron release (r &lt; 1.628 deg)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_border_ngc.npy</span></code></p></td>
+<td><p>425.3</p></td>
+<td><p>sector id, which is the border of NGC without two tails</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_border_sgc.npy</span></code></p></td>
+<td><p>629.7</p></td>
+<td><p>sector id, which is the border of SGC</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ipix_abnormal.npy</span></code></p></td>
+<td><p></p></td>
+<td><p>sector id, which have the low success rate of redshift, <span class="math notranslate nohighlight">\(P_{\rm succ} &lt; 0.7\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>safe galaxy sample (safe)</strong> <span class="math notranslate nohighlight">\((P_{\rm succ} &gt;= 0.7)\&amp;(f_{\rm edge} = 0)\)</span>, see below.</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>coverage (sqdeg)</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ipix_safe1.npy</p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\((P_{\rm succ} &gt;= 0.7)\&amp;(f_{\rm edge} = 0)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>igal_safe1.npy</p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\((P_{\rm succ} &gt;= 0.7)\&amp;(f_{\rm edge} = 0)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataio</span>
+</pre></div>
+</div>
+</section>
+<section id="weight-supplyments">
+<h2>weight supplyments<a class="headerlink" href="#weight-supplyments" title="Link to this heading"></a></h2>
+<p><strong>Key properties (see prop.ipynb)</strong></p>
+<ul class="simple">
+<li><p>Redshift success rate: <span class="math notranslate nohighlight">\(P_{\rm succ} = \rm main/zonly\)</span></p></li>
+<li><p>Spectroscopic completeness: <span class="math notranslate nohighlight">\(P_{\rm comp} = \rm spec/main \)</span></p></li>
+<li><p>Surface number density: <span class="math notranslate nohighlight">\(\rm \Sigma = ngal/Area\)</span> (<span class="math notranslate nohighlight">\(\rm deg^-2\)</span>)</p></li>
+</ul>
+<ul class="simple">
+<li><p>general porperies as a function of magnitude cut</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>general porperies</p></th>
+<th class="head"><p>shape</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prop_seed.magcutz.npy</span></code></p></td>
+<td><p>(26,3)</p></td>
+<td><p><strong>as a function of magnitude cut</strong> <br> col1: the cut of z-band magnitude <span class="math notranslate nohighlight">\(\rm cut_z\)</span>, 16, 16.2, 16.4, …, 21 <br> col2: success rate of redshift, <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>; <br> col3: completeness of spectroscopic redshift, <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>;</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">prop_ngc.magcutz.npy</span></code></p></td>
+<td><p>(26,3)</p></td>
+<td><p><strong>as a function of magnitude cut</strong> <br> col1: the cut of z-band magnitude <span class="math notranslate nohighlight">\(\rm cut_z\)</span>, 16, 16.2, 16.4, …, 21 <br> col2: success rate of redshift, <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>; <br> col3: completeness of spectroscopic redshift, <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>;</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prop_sgc.magcutz.npy</span></code></p></td>
+<td><p>(26,3)</p></td>
+<td><p><strong>as a function of magnitude cut</strong> <br> col1: the cut of z-band magnitude <span class="math notranslate nohighlight">\(\rm cut_z\)</span>, 16, 16.2, 16.4, …, 21 <br> col2: success rate of redshift, <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>; <br> col3: completeness of spectroscopic redshift, <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>;</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">prop_iron.magcutz.npy</span></code></p></td>
+<td><p>(26,3)</p></td>
+<td><p><strong>as a function of magnitude cut</strong> <br> col1: the cut of z-band magnitude <span class="math notranslate nohighlight">\(\rm cut_z\)</span>, 16, 16.2, 16.4, …, 21 <br> col2: success rate of redshift, <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>; <br> col3: completeness of spectroscopic redshift, <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm cut_z\)</span>;</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>fracmap.fits</p></th>
+<th class="head"><p>general porperies</p></th>
+<th class="head"><p>shape</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HDU0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>HDU1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">prop_suvery.magz.npy</span></code></p></td>
+<td><p>(-1,4)</p></td>
+<td><p><strong>as a function of magnitude z</strong> <br> col1: z-band magnitude <span class="math notranslate nohighlight">\(\rm mag_z\)</span> <br> col2: surface number density, <span class="math notranslate nohighlight">\(\Sigma\)</span> (<span class="math notranslate nohighlight">\(\rm deg^-2\)</span>), as a function of <span class="math notranslate nohighlight">\(\rm mag_z\)</span>; <br> col3: success rate of redshift, <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm mag_z\)</span>; <br> col4: completeness of spectroscopic redshift, <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span>, as a function of <span class="math notranslate nohighlight">\(\rm mag_z\)</span>;</p></td>
+</tr>
+<tr class="row-even"><td><p>HDU2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">prop_ipixel.hp128.npy</span></code></p></td>
+<td><p>(-1,4)</p></td>
+<td><p><strong>dividing into healpy subregions</strong> <br> col1: sector id, <span class="math notranslate nohighlight">\(\theta_i\)</span>, (nside = 128); <br> col2: <span class="math notranslate nohighlight">\(\Sigma\)</span> <br> col3: <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span> <br> col4: <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>HDU3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">prop_ipixel.magz.hp128.npy</span></code></p></td>
+<td><p>(-1,-1,3)</p></td>
+<td><p>dim1, <span class="math notranslate nohighlight">\(\theta_i\)</span> <br> dim2, <span class="math notranslate nohighlight">\(\rm mag_z\)</span> <br> dim3, properites. col1: <span class="math notranslate nohighlight">\(\Sigma\)</span>; col2: <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>; col3: <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>prop_ipixel.mangle.npy</p></td>
+<td><p>(-1,4)</p></td>
+<td><p><strong>dividing into mangle subregions</strong> <br> col1: sector id, <span class="math notranslate nohighlight">\(\theta_i\)</span>, (nside = 128); <br> col2: <span class="math notranslate nohighlight">\(\Sigma\)</span> <br> col3: <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span> <br> col4: <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>prop_ipixel.magz.mangle.npy</p></td>
+<td><p>(-1,-1,3)</p></td>
+<td><p>dim1, <span class="math notranslate nohighlight">\(\theta_i\)</span> <br> dim2, <span class="math notranslate nohighlight">\(\rm mag_z\)</span> <br> dim3, properites. col1: <span class="math notranslate nohighlight">\(\Sigma\)</span>; col2: <span class="math notranslate nohighlight">\(P_{\rm succ}\)</span>; col3: <span class="math notranslate nohighlight">\(P_{\rm comp}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csstmock</span> <span class="n">utils</span> <span class="kn">import</span> <span class="nn">fracndim</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">fracndim</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bin_list</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">mask</span><span class="p">)</span>
+<span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">   parameter:</span>
+<span class="sd">   ----------</span>
+<span class="sd">   data: array-like, list</span>
+<span class="sd">         input data to split into subsample</span>
+<span class="sd">   bin_list: </span>
+<span class="sd">	 the list of bins  to split into subsample</span>
+<span class="sd">   mask: array-like, bool </span>
+<span class="sd">         if true, tract as numerator.</span>
+<span class="sd">   return: </span>
+<span class="sd">   ----------</span>
+<span class="sd">   frac: array-like </span>
+<span class="sd">       the data of fraction (shape depends on the bin_list)</span>
+<span class="sd">   fracerr: </span>
+<span class="sd">   bin_list: array-like</span>
+<span class="sd">       the list of bins </span>
+<span class="sd">   &#39;&#39;&#39;</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="csstmock-makemock.html" class="btn btn-neutral float-left" title="csstmock.makemock" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mockcat-v1.desi.html" class="btn btn-neutral float-right" title="mock catalog of DESIDR9sv3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortran call python function &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="装饰器 @classmethod和@staticmethod" href="python_decorator.html" />
+    <link rel="prev" title="python调用c语言" href="python_call_c.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-f">python call f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-c">python call c</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#f-call-python">f call python</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Fortran call python function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#python">python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fortran">Fortran部分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">参考</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-tricks">python tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="cfpy.html">python c fortran 混合编程</a></li>
+      <li class="breadcrumb-item active">Fortran call python function</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cfpy/f_call_python.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="fortran-call-python-function">
+<h1>Fortran call python function<a class="headerlink" href="#fortran-call-python-function" title="Link to this heading"></a></h1>
+<p>代码主要分为两步:</p>
+<ol class="arabic simple">
+<li><p><a href="#python部分">python部分</a>
+CFFI, 将python程序转为C类型的打包接口， 基本可以直接和任何C代码交互。通过numpy和cffi指定数组的地址，类型和大小来实现共享内存（因此，数据的接口都是数组，常数的接口也是一个元素的数组）。</p></li>
+<li><p><a href="#Fortran部分">Fortran部分</a>  : 利用Fortran与C语言类型互通的模块iso_c_binding, 在fortran用调用生成好的C接口。</p></li>
+</ol>
+<p><span id="python部分"></span></p>
+<section id="python">
+<h2>python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#======1. 准备要调用的python程序, myfunc.py====================================</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="k">def</span> <span class="nf">sharedata32</span><span class="p">():</span>   
+    <span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;f4&#39;</span><span class="p">)</span>  
+    <span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;i4&#39;</span><span class="p">)</span> 
+    <span class="n">const1</span> <span class="o">=</span> <span class="mf">2.3</span>
+    <span class="n">const2</span> <span class="o">=</span> <span class="mi">4</span> 
+    <span class="n">str1</span>   <span class="o">=</span> <span class="s1">&#39;share data&#39;</span>
+    <span class="n">str2</span>   <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="o">*</span><span class="mi">25</span>
+    <span class="k">return</span> <span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">const1</span><span class="p">,</span> <span class="n">const2</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span>
+ 
+<span class="k">def</span> <span class="nf">scatter2d</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+<span class="c1">#======2.利用ffi包装成C类型的打包接口，mymodule.py==================</span>
+<span class="kn">from</span> <span class="nn">my_plugin</span> <span class="kn">import</span> <span class="n">ffi</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">myfunc</span> 
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">dtype</span> 
+<span class="n">ctype2dtype</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;uint8_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">),</span> <span class="s1">&#39;int&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="s1">&#39;long&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">),</span> <span class="s1">&#39;double&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">),</span> <span class="s1">&#39;int32_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="s1">&#39;float&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">),</span> <span class="s1">&#39;int8_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int8&#39;</span><span class="p">),</span> <span class="s1">&#39;int16_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int16&#39;</span><span class="p">),</span> <span class="s1">&#39;uint32_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;uint32&#39;</span><span class="p">),</span> <span class="s1">&#39;int64_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">),</span> <span class="s1">&#39;uint64_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;uint64&#39;</span><span class="p">),</span> <span class="s1">&#39;uint16_t&#39;</span><span class="p">:</span> <span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;uint16&#39;</span><span class="p">)}</span>
+
+<span class="k">def</span> <span class="nf">asstring</span><span class="p">(</span><span class="n">ffi</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">256</span><span class="p">):</span> 
+    <span class="n">string_bytes</span> <span class="o">=</span> <span class="n">ffi</span><span class="o">.</span><span class="n">string</span><span class="p">(</span> <span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">length</span><span class="p">])</span>
+    <span class="n">string_</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span> <span class="n">string_bytes</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> 
+    <span class="n">string_</span> <span class="o">=</span> <span class="n">string_</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">string_</span> 
+
+<span class="k">def</span> <span class="nf">asarray</span><span class="p">(</span><span class="n">ffi</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="c1"># Get the canonical C type of the elements of ptr as a string.</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">ffi</span><span class="o">.</span><span class="n">getctype</span><span class="p">(</span><span class="n">ffi</span><span class="o">.</span><span class="n">typeof</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">T</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ctype2dtype</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot create an array for element type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">T</span><span class="p">)</span> 
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">ffi</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">length</span> <span class="o">*</span> <span class="n">ffi</span><span class="o">.</span><span class="n">sizeof</span><span class="p">(</span><span class="n">T</span><span class="p">)),</span> <span class="n">ctype2dtype</span><span class="p">[</span><span class="n">T</span><span class="p">])</span>\
+          <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="nd">@ffi</span><span class="o">.</span><span class="n">def_extern</span><span class="p">()</span> 
+<span class="k">def</span> <span class="nf">sharedata32</span><span class="p">(</span><span class="n">snap</span><span class="p">,</span> <span class="n">arr1</span><span class="p">,</span> <span class="n">narr1</span> <span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">arr2</span><span class="p">,</span> <span class="n">const1</span><span class="p">,</span> <span class="n">const2</span><span class="p">,</span> <span class="n">str1</span><span class="p">,</span> <span class="n">str2</span> <span class="o">=</span> <span class="n">myfunc</span><span class="o">.</span><span class="n">sharedata32</span><span class="p">()</span> 
+    <span class="n">snap</span>    <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">ffi</span><span class="p">,</span> <span class="n">snap</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">narr1</span>   <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">ffi</span><span class="p">,</span> <span class="n">narr1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">arr1</span>    <span class="o">=</span> <span class="n">asarray</span><span class="p">(</span><span class="n">ffi</span><span class="p">,</span> <span class="n">arr1</span><span class="p">,</span> <span class="n">narr1</span> <span class="p">)</span>
+    <span class="n">narr1</span><span class="p">[:]</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">arr1</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="n">x</span>
+<span class="c1">#======3. 为C类型的接口定义头文件, plugin.h ========================</span>
+<span class="n">extern</span>  <span class="n">void</span> <span class="n">sharedata32</span><span class="p">(</span> <span class="n">long</span> <span class="o">*</span><span class="p">,</span> <span class="n">double</span> <span class="o">*</span><span class="p">,</span> <span class="n">long</span> <span class="o">*</span><span class="p">);</span> 
+
+<span class="c1">#======4. build.py, 将python程序转为C类型的打包接口================= </span>
+<span class="kn">import</span> <span class="nn">cffi</span>  
+<span class="n">ffibuilder</span> <span class="o">=</span> <span class="n">cffi</span><span class="o">.</span><span class="n">FFI</span><span class="p">()</span> <span class="c1"># 声明了外部函数接口(FFI)对象</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mymodule.py&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+     <span class="n">content</span> <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">module</span> <span class="o">=</span> <span class="n">content</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;plugin.h&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+     <span class="n">header</span>  <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">ffibuilder</span><span class="o">.</span><span class="n">embedding_api</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+<span class="n">ffibuilder</span><span class="o">.</span><span class="n">set_source</span><span class="p">(</span><span class="s2">&quot;my_plugin&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    #include &quot;plugin.h&quot;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">ffibuilder</span><span class="o">.</span><span class="n">embedding_init_code</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+<span class="n">ffibuilder</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">target</span><span class="o">=</span> <span class="s2">&quot;libplugin.dylib&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ffibuilder</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">target</span><span class="o">=</span> <span class="s2">&quot;libplugin.so&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#======5. 生成动态链接库 =================</span>
+<span class="n">python</span> <span class="n">build</span><span class="o">.</span><span class="n">py</span>
+<span class="c1"># libplugin.dylib for macos  </span>
+<span class="c1"># libplugin.so for linux </span>
+<span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=</span><span class="err">$</span><span class="n">PYTHONPATH</span><span class="p">:</span><span class="err">$</span><span class="n">pwd</span>
+<span class="n">export</span> <span class="n">LD_LIBRARY_PATH</span><span class="o">=</span><span class="err">$</span><span class="n">LD_LIBRARY_PATH</span><span class="p">:</span><span class="err">$</span><span class="n">pwd</span>  <span class="c1"># 将库文件的路径添加进来</span>
+</pre></div>
+</div>
+<p><span id="Fortran部分"></span></p>
+</section>
+<section id="fortran">
+<h2>Fortran部分<a class="headerlink" href="#fortran" title="Link to this heading"></a></h2>
+<div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="cp">#===== 1. 在fortran中调用生成好的C接口, xxx.f ======================</span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">loaddata</span><span class="p">(</span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Nout</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">! 和C语言类型互通的模块iso_c_binding</span>
+
+<span class="w">        </span><span class="k">implicit none </span>
+
+<span class="k">        interface  </span>
+<span class="k">         subroutine </span><span class="n">sharedata32</span><span class="p">(</span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Nout</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="w">             </span><span class="k">use </span><span class="nb">iso_c_binding    </span>
+<span class="nb">             </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">snap</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+<span class="w">             </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">Nout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">             </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">x_out</span><span class="p">(</span><span class="n">Nout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">         </span><span class="k">end subroutine </span><span class="n">sharedata32</span>
+<span class="w">        </span><span class="k">end interface</span>
+
+<span class="k">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">Nout</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x_out</span><span class="p">(</span><span class="n">Nout</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">	</span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snap</span><span class="w">  </span>
+<span class="w">        </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Nout</span>
+<span class="w">        </span><span class="k">call </span><span class="n">sharedata32</span><span class="p">(</span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="n">snap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">Nout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return </span>
+<span class="k">	end subroutine </span><span class="n">loaddata</span>
+<span class="cp">#======= 2.编写主程序main.f</span>
+<span class="w">	</span><span class="k">PROGRAM </span><span class="n">main</span>
+<span class="w">        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">! 和C语言类型互通的模块iso_c_binding</span>
+<span class="w">        </span><span class="k">implicit none</span>
+<span class="k"> </span>
+
+<span class="k">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Nin</span><span class="p">,</span><span class="w"> </span><span class="n">Noutmax</span><span class="p">,</span><span class="w"> </span><span class="n">snap</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x_in</span><span class="p">(:),</span><span class="w"> </span><span class="n">x_out</span><span class="p">(:)</span>
+<span class="w">        </span><span class="n">Nin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>
+
+<span class="n">c</span><span class="o">---</span><span class="w">    </span><span class="n">readin</span><span class="w"> </span><span class="n">subhalo</span><span class="w"> </span><span class="n">information</span><span class="w"> </span>
+
+<span class="w">        </span><span class="n">snap</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Noutmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">x_out</span><span class="p">(</span><span class="n">Noutmax</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">  </span>
+<span class="w">        </span><span class="k">call </span><span class="n">loaddata</span><span class="p">(</span><span class="w"> </span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Noutmax</span><span class="w"> </span><span class="p">)</span><span class="w">  </span>
+<span class="w">        </span><span class="c">!call sharedata32( snap, x_out, Noutmax )  </span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">x_out</span><span class="w"> </span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">snap</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">Noutmax</span>
+
+<span class="w">        </span><span class="k">END</span>
+
+<span class="cp">#===== 2. 编译，链接到动态链接库libplugin.so =================</span>
+<span class="n">gfortran</span><span class="w"> </span><span class="o">-</span><span class="n">ffixed</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">length</span><span class="o">-</span><span class="mi">132</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">main</span><span class="w"> </span><span class="o">-</span><span class="n">L</span><span class="p">.</span><span class="o">/</span><span class="w"> </span><span class="o">-</span><span class="n">lplugin</span><span class="w"> </span><span class="n">main</span><span class="p">.</span><span class="n">f</span><span class="w"> </span><span class="n">xxx</span><span class="p">.</span><span class="n">f</span>
+<span class="cp">#===== 3. 执行 ============</span>
+<span class="n">install_name_tool</span><span class="w"> </span><span class="o">-</span><span class="n">add_rpath</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda2</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py37</span><span class="o">/</span><span class="n">lib</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">main</span><span class="w"> </span><span class="c">! for macos  </span>
+<span class="p">.</span><span class="o">/</span><span class="n">main</span><span class="w"> </span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>参考<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/nbren12/call_py_fort.git">Call python from Fortran</a></p>
+<p><a class="reference external" href="https://cffi.readthedocs.io/en/latest/embedding.html">cffi documents</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python_call_c.html" class="btn btn-neutral float-left" title="python调用c语言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python_decorator.html" class="btn btn-neutral float-right" title="装饰器 @classmethod和@staticmethod" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
