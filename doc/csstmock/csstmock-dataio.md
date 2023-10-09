@@ -30,18 +30,6 @@ echo "# >>> env csstmock >>>" >> ~/.bash_profile
 </details>
 
 
-<details><summary> <b> subhalo/group of jiutian (to be updated) </b> </summary>
-<p> 
-
-```
-	call subhalo_filenum_jiutian(snapnum, filenum)
-	call subhalo_jiutian(snapnum, ifile) 
-	call group_filenum_jiutian(snapnum, filenum)
-	call group_jiutian(  snapnum, ifile) 
-```
-
-</p>
-</details>
 
 
 <details><summary> <b> isin_survey (to be updated) </b> </summary>
@@ -50,21 +38,27 @@ echo "# >>> env csstmock >>>" >> ~/.bash_profile
 * subroutine description
 
 ``` Fortran
-	subroutine isin_survey(ra, dec, w, survey, Ngalmax, Ngal)
+	subroutine isin_survey(ra, dec, n, survey, veto)
         !> Description 
         !> -----------
-        !> isin_survey
+        !> is in survey, or not?  
         !> 
         !> Syntax
         !> -----------
-        !> call fullsky_z2_filenum_jiutian(127, filenum)
+        !> call isin_survey(ra, dec, n, 'lsdr9-ngc', veto)
         !>  
         !> Argument(s)
         !> -----------
-        !> snapnum(in):  integer(4), the given snapshot number [127-65]
+        !> ra(in):  real(4), RA
+	!> 
+        !> dec(in): real(4), DEC
+	!> 
+        !> n(in):  integer(8), the number of input coordinates 
         !>   
-        !> filenum(out): integer(4), the number of divided files
-        !> 
+        !> survey(in): name of the embedded survey 
+        !>       []
+	!> veto(out): real(4)
+	!>        if 1, in survey. if 0, not in survey. 
 ```
 
 </p>
@@ -147,7 +141,7 @@ c------------------------------------------------------------------------------
         !> 
         !> Syntax
         !> -----------
-        !> call fullsky_z2_jiutian(127, larr, darr, nsub)
+        !> call fullsky_z2_jiutian(127, 0, larr, darr, nsub)
         !> 
         !> Argument(s)
         !> -----------
@@ -170,3 +164,87 @@ c------------------------------------------------------------------------------
 </p>
 </details> 
 
+
+<details><summary> <b> subhalo/group of jiutian (to be updated) </b> </summary>
+<p> 
+
+
+```
+	call subhalo_filenum_jiutian(snapnum, filenum)
+	call subhalo_jiutian(snapnum, ifile, larr, darr, nsub) 
+	call group_filenum_jiutian(snapnum, filenum)
+	call group_jiutian(  snapnum, ifile, larr, darr, nsub) 
+```
+
+* subroutine description
+```
+c------------------------------------------------------------------------------
+        subroutine subhalo_filenum_jiutian(snapnum, filenum)
+        subroutine group_filenum_jiutian(snapnum, filenum)
+c------------------------------------------------------------------------------
+
+        Usage is similar with fullsky_z2 lightcone of jiutian. 
+
+c------------------------------------------------------------------------------
+	subroutine subhalo_jiutian(snapnum, ifile, larr, darr, nsub) 
+c------------------------------------------------------------------------------
+        !> Description 
+        !> -----------
+        !> read the subhalo catalogs of jiutian simulation
+        !> 
+        !> Syntax
+        !> -----------
+        !> call subhalo_jiutian(127, 0, larr, darr, nsub)
+        !> 
+        !> Argument(s)
+        !> -----------
+        !> snapnum(in): integer(4), the given snapshot number [127-65]
+        !>
+	!> ifile(in): integer(4), the ith divided file, starting from 0.  
+	!> 
+        !> larr(out): integer(8), long type data
+        !>      (1-5) 'trackID', 'hosthaloID', 'rank', 'snapNum','group_nr'
+        !>
+        !> darr(out): real(4), float type data
+        !>      ( 1-7 ) 'posx', 'posy', 'posz', 'velx', 'vely', 'velz', 'v_lfs', 
+        !>      ( 8-14) 'shMbound', 'd_comoving', 'ra', 'dec', 'vmax', 'PeakMass', 'PeakVmax',
+        !>      (15-18) 'shBoundM200Crit', 'redshift_true', 'redshift_obs', 'shMbound_at_ac',
+        !>      (19-20) 'group_mass', 'group_m_mean200'
+        !> 
+        !> nmax(inout): integer(8), max number of subhalos
+        !> 
+
+c------------------------------------------------------------------------------
+	subroutine group_jiutian(  snapnum, ifile, larr, darr, nsub) 
+c------------------------------------------------------------------------------
+        !> Description 
+        !> -----------
+        !> read the subfind group catalog of jiutian simulation
+        !> 
+        !> Syntax
+        !> -----------
+        !> call group_jiutian(127, 0, larr, darr, nsub)
+        !> 
+        !> Argument(s)
+        !> -----------
+        !> snapnum(in): integer(4), the given snapshot number [127-65]
+        !> 
+	!> ifile(in): integer(4), the ith divided file, starting from 0.  
+	!> 
+        !> larr(out): integer(8), long type data
+        !>      (1-5) 'trackID', 'hosthaloID', 'rank', 'snapNum','group_nr'
+        !>
+        !> darr(out): real(4), float type data
+        !>      ( 1-7 ) 'posx', 'posy', 'posz', 'velx', 'vely', 'velz', 'v_lfs', 
+        !>      ( 8-14) 'shMbound', 'd_comoving', 'ra', 'dec', 'vmax', 'PeakMass', 'PeakVmax',
+        !>      (15-18) 'shBoundM200Crit', 'redshift_true', 'redshift_obs', 'shMbound_at_ac',
+        !>      (19-20) 'group_mass', 'group_m_mean200'
+        !> 
+        !> nmax(inout): integer(8), max number of subhalos
+        !> 
+
+``` 
+
+
+</p>
+</details>
