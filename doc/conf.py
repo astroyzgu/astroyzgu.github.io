@@ -12,8 +12,13 @@
 #
 import os
 import sys
+#sys.path.insert(0, os.path.abspath('..'))
 #sys.path.insert(0, os.path.abspath('../path/to/yourcode/'))
-sys.path.insert(0, os.path.abspath('../usefultools'))
+sys.path.insert(0, os.path.abspath('../src')) 
+#sys.path.append(os.path.abspath('..'))
+
+from sphinx.application import Sphinx
+from sphinx.util.docutils import SphinxDirective
 
 # -- Project information -----------------------------------------------------
 
@@ -32,9 +37,9 @@ release = '0.0.0'
 # ones.
 extensions = [
 'myst_parser',
+'sphinx.ext.autodoc',
 'sphinx_math_dollar', 
 'sphinx.ext.mathjax', 
-'sphinx.ext.autodoc',
 'sphinx.ext.napoleon',
 'sphinx.ext.viewcode']
 
