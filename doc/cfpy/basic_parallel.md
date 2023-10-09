@@ -1,3 +1,16 @@
+## cpp+openmp 
+```
+brew install llvm 
+brew install libomp
+brew install gcc
+export OMP_NUM_THREADS=2 # 设定进程数 
+c++   test_4c.cpp -fopenmp -o test_4c
+ifort test_4f.f   -fopenmp -o test_4f
+```
+
+./main
+
+
 ## multiprocessing多进程  
 
 计算需要有一定的强度才能体现出多进程的优势!!!

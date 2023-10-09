@@ -2,6 +2,8 @@
 
 ``zip -r -q -o pack.zip mark/``
 
+``du -h --max-depth=1 #linux查询文件及文件夹大小`` 
+
 ### 用到的shell命令
 
 ``awk, cat, grep, sort`` 
@@ -21,22 +23,32 @@ tail(head) - output the last(beginning) part of files
 
 
 
+
+
+```
+#从第二行开始，对第二列排序 
+tail -n +2 data.tbl | sort -nk 2  
+
+#从第二行开始，对第二列排序并只打印第一行
+tail -n +2 data.tbl | sort -nk 2 | awk '{print $1}'  
+
+# 比较data.tbl 的满足条件的第一行和data2.tbl 中的第一的不同
+tail -n +2 data.tbl | sort -nk 2 | awk '$2 > 0.75 {print $1}' > data1.tbl
+tail -n +2 data2.tbl|awk '{print $1} ' > data3.tbl 
+# diff - http://www.lampweb.org/linux/3/17.html
+diff data1.tbl data2.tbl -y -W30 |awk '$1 != $2 '
+``` 
+
+#### paste
+
 ```
   paste -d -s file1 file2
   选项含义如下：
   -d 指定不同于空格或t a b键的域分隔符。例如用@分隔域，使用-d @。
   -s 将每个文件合并成行而不是按行粘贴。（行列转置会用到）
 ```
+
 uniq
-diff - http://www.lampweb.org/linux/3/17.html
-
-tail -n +2 data.tbl | sort -nk 2  #从第二行开始，对第二列排序 
-tail -n +2 data.tbl | sort -nk 2 | awk '{print $1}'  #从第二行开始，对第二列排序并只打印第一行
-
-比较data.tbl 的满足条件的第一行和data2.tbl 中的第一的不同
-tail -n +2 data.tbl | sort -nk 2 | awk '$2 > 0.75 {print $1}' > data1.tbl
-tail -n +2 data2.tbl|awk '{print $1} ' > data3.tbl 
-diff data1.tbl data2.tbl -y -W30 |awk '$1 != $2 '
 
 ### download/upload ######################################################### 
 - 服务器上传或下载
@@ -45,20 +57,30 @@ diff data1.tbl data2.tbl -y -W30 |awk '$1 != $2 '
   wget -c -r -np -k -L -p -A '*.fits' http://data/location
 
 ### compresion/decompression ################################################
--  *.bz2                                                                      
+
+```
    bzip2 -d *.tar.bz2
    tar -xf *.tar
+```
 
 ### shell script ############################################################
-# 字符串的赋值，替换和打印
+
+### 文本处理 
+#### 字符串的赋值，替换和打印
+
+```
 sciname='../image/smacs0723-f356w_test_sci.fits'
 whtname=${sciname/sci/wht}
 echo 'sciname:  ' $sciname
 echo 'whtname:  ' $whtname
+``` 
 
-# 判断字符串中是否包含某串字符
+#### 判断字符串中是否包含某串字符
+
+```
 if echo $whtname | grep sci; then 
    echo 'contain sci'
 else 
    echo 'not contain sci'
 fi
+``` 

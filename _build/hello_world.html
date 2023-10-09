@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>hello world &mdash; yzastro 0.0.0 documentation</title>
@@ -11,12 +11,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7026087e"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -24,7 +23,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="python c fortran 混合编程" href="cfpy/cfpy.html" />
-    <link rel="prev" title="python-sphinx 记录" href="python-sphinx.html" /> 
+    <link rel="prev" title="mock catalog of DESIDR9sv3" href="online-readme/mockcat-v1.desi.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,11 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> yzastro
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            yzastro
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -44,18 +47,15 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online-readme/online-readme.html">online-readme</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cfpy/cfpy.html">python c fortran 混合编程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="soft/soft.html">astro softwave</a></li>
 <li class="toctree-l1"><a class="reference internal" href="astro/astro.html">天文物理基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="online-documents.html">online documents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell_cmd.html">bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tricks.html">tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trick-to-makepipe.html">Make a pipeline</a></li>
 </ul>
 
         </div>
@@ -71,7 +71,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">hello world</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/hello_world.md.txt" rel="nofollow"> View page source</a>
@@ -83,12 +83,12 @@
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="hello-world">
-<h1>hello world<a class="headerlink" href="#hello-world" title="Permalink to this heading"></a></h1>
+<h1>hello world<a class="headerlink" href="#hello-world" title="Link to this heading"></a></h1>
 <p>This is a test <span class="math notranslate nohighlight">\(\int\  sin(x) \,dx\)</span>!</p>
 <div class="math notranslate nohighlight">
 \[\int\  sin(x) \,dx\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-df98665e-2c55-4e42-9b56-7cc33ae8955a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-df98665e-2c55-4e42-9b56-7cc33ae8955a" title="Permalink to this equation"></a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-4ca78f80-fec6-48b0-a4cb-3105f72c3e45">
+<span class="eqno">(1)<a class="headerlink" href="#equation-4ca78f80-fec6-48b0-a4cb-3105f72c3e45" title="Permalink to this equation"></a></span>\[\begin{eqnarray}
    y    &amp; = &amp; ax^2 + bx + c \\
    f(x) &amp; = &amp; x^2 + 2xy + y^2
 \end{eqnarray}\]</div>
@@ -97,7 +97,7 @@
    y    &amp; = &amp; ax^2 + bx + c \\
    f(x) &amp; = &amp; x^2 + 2xy + y^2
 \end{split}\]</div>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
 <th class="head"><p>value</p></th>
@@ -117,7 +117,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="python-sphinx.html" class="btn btn-neutral float-left" title="python-sphinx 记录" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="online-readme/mockcat-v1.desi.html" class="btn btn-neutral float-left" title="mock catalog of DESIDR9sv3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="cfpy/cfpy.html" class="btn btn-neutral float-right" title="python c fortran 混合编程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

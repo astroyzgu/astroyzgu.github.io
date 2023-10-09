@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eazy-py &mdash; yzastro 0.0.0 documentation</title>
@@ -11,16 +11,15 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="angular selection function (asfunc)" href="asfunc/asfunc.html" />
+    <link rel="next" title="mangle &amp; pymangle" href="mangle.html" />
     <link rel="prev" title="astro softwave" href="soft.html" /> 
 </head>
 
@@ -29,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> yzastro
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -41,7 +44,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="soft.html">astro softwave</a><ul class="current">
@@ -51,17 +56,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">画图</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mangle.html">mangle &amp; pymangle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asfunc/asfunc.html">angular selection function (asfunc)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asfunc/dataio.html">dataio module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tricks.html">tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../trick-to-makepipe.html">Make a pipeline</a></li>
 </ul>
 
         </div>
@@ -77,7 +79,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="soft.html">astro softwave</a></li>
       <li class="breadcrumb-item active">eazy-py</li>
       <li class="wy-breadcrumbs-aside">
@@ -90,27 +92,27 @@
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="eazy-py">
-<h1>eazy-py<a class="headerlink" href="#eazy-py" title="Permalink to this heading"></a></h1>
+<h1>eazy-py<a class="headerlink" href="#eazy-py" title="Link to this heading"></a></h1>
 <p>eazy-py doc: https://eazy-py.readthedocs.io/en/latest/</p>
 <section id="id1">
-<h2>安装<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<h2>安装<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 从https://github.com/gbrammer/下载并解压eazy-py-master.zip</span>
 <span class="c1"># 从https://github.com/gbrammer/下载并解压eazy-photoz-master.zip</span>
 <span class="c1"># 从https://github.com/gbrammer/下载并解压threedhst-py-master.zip</span>
-<span class="nb">cd</span> eazy-py-master
-python setup.py install 
-rm -rf eazy-photoz 
-mv ../eazy-photoz-master ./eazy-photoz <span class="c1"># template and filter are stored here.</span>
-<span class="nb">cd</span> eazy-photoz
+<span class="nb">cd</span><span class="w"> </span>eazy-py-master
+python<span class="w"> </span>setup.py<span class="w"> </span>install<span class="w"> </span>
+rm<span class="w"> </span>-rf<span class="w"> </span>eazy-photoz<span class="w"> </span>
+mv<span class="w"> </span>../eazy-photoz-master<span class="w"> </span>./eazy-photoz<span class="w"> </span><span class="c1"># template and filter are stored here.</span>
+<span class="nb">cd</span><span class="w"> </span>eazy-photoz
 make
 <span class="c1"># 在bash.rc(或bash_profile)中添加: export PATH=&quot;/Users/njnu-astro/soft/eazy-py-master/eazy-photoz/src:$PATH&quot;</span>
 <span class="c1"># 在bash.rc(或bash_profile)中添加: export PYTHONPATH=&quot;/Users/njnu-astro/soft/threedhst-master:$PYTHONPATH&quot;</span>
-<span class="nb">source</span> ~/.bash.rc <span class="c1"># (或source ~/.bash_profile) </span>
+<span class="nb">source</span><span class="w"> </span>~/.bash.rc<span class="w"> </span><span class="c1"># (或source ~/.bash_profile) </span>
 </pre></div>
 </div>
 </section>
 <section id="id2">
-<h2>拟合<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>拟合<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># quickstart 1:  how to run eazy to get z_p (photometric redshift with peak possibility).  </span>
 <span class="n">cd</span> <span class="n">eazy</span><span class="o">-</span><span class="n">py</span><span class="o">-</span><span class="n">master</span>
 <span class="n">mkdir</span> <span class="n">quickstart</span> 
@@ -130,7 +132,7 @@ make
 </div>
 </section>
 <section id="id3">
-<h2>画图<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<h2>画图<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># quickstart 2: 利用threedhst-master中提供的接口，读取结果和画图</span>
 <span class="n">cd</span> <span class="n">eazy</span><span class="o">-</span><span class="n">py</span><span class="o">-</span><span class="n">master</span><span class="o">/</span><span class="n">quickstart</span> 
 
@@ -213,7 +215,7 @@ make
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="soft.html" class="btn btn-neutral float-left" title="astro softwave" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="asfunc/asfunc.html" class="btn btn-neutral float-right" title="angular selection function (asfunc)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mangle.html" class="btn btn-neutral float-right" title="mangle &amp; pymangle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

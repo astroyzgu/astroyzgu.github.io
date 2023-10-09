@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>multiprocessing多进程 &mdash; yzastro 0.0.0 documentation</title>
+  <title>cpp+openmp &mdash; yzastro 0.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="numpy大数据处理" href="basic_largearray.html" />
-    <link rel="prev" title="python安装和基础" href="basic_py.html" /> 
+    <link rel="prev" title="python astro" href="plot2d_py.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> yzastro
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -41,36 +44,37 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basic_f.html">Fortran基础</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basic_py.html">python安装和基础</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">multiprocessing多进程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot2d_py.html">python astro</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">cpp+openmp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiprocessing">multiprocessing多进程</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#iocode">用于多进程IO或计算的code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">共享内存的计算</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="basic_largearray.html">numpy大数据处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-sphinx.html">python-sphinx 记录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage-github.html">git入门</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-f">python call f</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-c">python call c</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cfpy.html#f-call-python">f call python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python">python 装饰器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-tricks">python tricks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage-github.html">[入门笔记] Github - 基于git的代码托管平台</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id1">字符串的赋值，替换和打印</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html#id2">判断字符串中是否包含某串字符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tricks.html">tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../trick-to-makepipe.html">Make a pipeline</a></li>
 </ul>
 
         </div>
@@ -86,9 +90,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="cfpy.html">python c fortran 混合编程</a></li>
-      <li class="breadcrumb-item active">multiprocessing多进程</li>
+      <li class="breadcrumb-item active">cpp+openmp</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/cfpy/basic_parallel.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -98,10 +102,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="multiprocessing">
-<h1>multiprocessing多进程<a class="headerlink" href="#multiprocessing" title="Permalink to this heading"></a></h1>
+  <section id="cpp-openmp">
+<h1>cpp+openmp<a class="headerlink" href="#cpp-openmp" title="Link to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">llvm</span> 
+<span class="n">brew</span> <span class="n">install</span> <span class="n">libomp</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">gcc</span>
+<span class="n">export</span> <span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">2</span> <span class="c1"># 设定进程数 </span>
+<span class="n">c</span><span class="o">++</span>   <span class="n">test_4c</span><span class="o">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">fopenmp</span> <span class="o">-</span><span class="n">o</span> <span class="n">test_4c</span>
+<span class="n">ifort</span> <span class="n">test_4f</span><span class="o">.</span><span class="n">f</span>   <span class="o">-</span><span class="n">fopenmp</span> <span class="o">-</span><span class="n">o</span> <span class="n">test_4f</span>
+</pre></div>
+</div>
+<p>./main</p>
+</section>
+<section id="multiprocessing">
+<h1>multiprocessing多进程<a class="headerlink" href="#multiprocessing" title="Link to this heading"></a></h1>
 <p>计算需要有一定的强度才能体现出多进程的优势!!!</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>备注</p></th>
 <th class="head"><p>执行</p></th>
@@ -128,14 +144,14 @@
 </tbody>
 </table>
 <section id="iocode">
-<h2>用于多进程IO或计算的code<a class="headerlink" href="#iocode" title="Permalink to this heading"></a></h2>
+<h2>用于多进程IO或计算的code<a class="headerlink" href="#iocode" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span> 
 <span class="kn">import</span> <span class="nn">time</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">    计算需要有一定的强度才能体现出多进程的优势</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span> <span class="n">summ</span> <span class="o">=</span>  <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">ii</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
@@ -151,7 +167,7 @@
     <span class="n">arr_split</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span> <span class="n">arr</span><span class="p">,</span>  <span class="n">size</span><span class="p">)</span> 
 
     <span class="n">t_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>    
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    设置了4个CPU但是并没有跑满 </span>
 <span class="sd">    result  = pool.map_async(f, arr)  </span>
 
@@ -198,8 +214,8 @@
 </div>
 </section>
 <section id="id1">
-<h2>共享内存的计算<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
-<table class="colwidths-auto docutils align-default">
+<h2>共享内存的计算<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>备注</p></th>
 <th class="head"><p>执行</p></th>
@@ -237,7 +253,7 @@
 
 
 <span class="k">def</span> <span class="nf">mp2np</span><span class="p">(</span><span class="n">mp_array</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Given a multiprocessing.Array, returns an ndarray pointing to</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Given a multiprocessing.Array, returns an ndarray pointing to</span>
 <span class="sd">    the same data.&#39;&#39;&#39;</span>
     <span class="c1"># support SynchronizedArray:</span>
     <span class="n">_ctypes_to_numpy</span> <span class="o">=</span> <span class="p">{</span>
@@ -262,7 +278,7 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">np2mp</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="n">lock</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Generate an 1D multiprocessing.Array containing the data from</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Generate an 1D multiprocessing.Array containing the data from</span>
 <span class="sd">    the passed ndarray.  The data will be *copied* into shared</span>
 <span class="sd">    memory.&#39;&#39;&#39;</span>
     <span class="n">_ctypes_to_numpy</span> <span class="o">=</span> <span class="p">{</span>
@@ -380,7 +396,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="basic_py.html" class="btn btn-neutral float-left" title="python安装和基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot2d_py.html" class="btn btn-neutral float-left" title="python astro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="basic_largearray.html" class="btn btn-neutral float-right" title="numpy大数据处理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

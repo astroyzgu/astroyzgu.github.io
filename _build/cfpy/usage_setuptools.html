@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>setuptools &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7026087e"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="python调用fortran" href="python_call_f.html" />
+    <link rel="prev" title="git入门" href="usage-github.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cfpy.html">python c fortran 混合编程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#quickstart">quickstart</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cfpy.html#setuptools">setuptools统一</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">setuptools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#makefile">Makefile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fortran-part">fortran part</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fortran">Fortran存档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#c">c程序存档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python">python存档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#old">old</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-part">python part</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-f">python call f</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-call-c">python call c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#f-call-python">f call python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfpy.html#python-tricks">python tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="cfpy.html">python c fortran 混合编程</a></li>
+      <li class="breadcrumb-item active">setuptools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cfpy/usage_setuptools.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="setuptools">
+<h1>setuptools<a class="headerlink" href="#setuptools" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">BIND(C</span> <span class="pre">[,</span> <span class="pre">NAME=scalar-default-char-constant-expr])</span></code></p>
+<p>The bind(c) means that the function is C-function, so a compiler must formalize its call in the C language. The optional NAME= specifier allows you to use a different external name than the one the standard prescribes.</p>
+<div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="k">subroutine </span><span class="n">hello_world</span><span class="p">()</span><span class="w"> </span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;c_hello_world&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use </span><span class="nb">iso_c_binding</span>
+<span class="nb">        </span><span class="k">implicit none</span>
+<span class="k">	write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;c hello_world&#39;</span>
+<span class="w">	</span><span class="k">END subroutine</span><span class="w"> </span>
+</pre></div>
+</div>
+<section id="makefile">
+<h2>Makefile<a class="headerlink" href="#makefile" title="Link to this heading"></a></h2>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">test</span> <span class="n">build</span>
+
+<span class="nv">CC</span><span class="o">=</span>gcc<span class="w"> </span>
+<span class="nv">CFLAG</span><span class="o">=</span><span class="w"> </span>-g<span class="w"> </span>-Wall<span class="w"> </span>-O
+<span class="nv">F2PY</span><span class="o">=</span>f2py
+<span class="nv">F2PYFLAG</span><span class="o">=</span><span class="w"> </span>-c<span class="w"> </span>-m<span class="w"> </span>
+
+<span class="nv">PWD_DIR</span><span class="o">=</span><span class="k">$(</span>PWD<span class="k">)</span><span class="c1">#这里是执行shell的pwd命令获取路劲作为PWD_DIR参数</span>
+<span class="nv">SRC_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/src
+<span class="nv">OBJ_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/obj
+<span class="nv">MAIN_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/main
+<span class="nv">LIB_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/lib
+<span class="nv">INC_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/inc
+
+<span class="c"># c [ctypes + mypkg/__init__.py ] </span>
+<span class="nv">CLIB1_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/mypkg/src/clib1/<span class="w"> </span>
+
+<span class="c"># fortran [f2py] </span>
+<span class="nv">FLIB1_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/mypkg/src/flib1/
+
+<span class="c"># [f+c+python] </span>
+<span class="nv">CFPY_DIR</span><span class="o">=</span><span class="k">$(</span>PWD_DIR<span class="k">)</span>/mypkg/src/cfpy/
+
+<span class="nf">test</span><span class="o">:</span><span class="w"> </span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s1">&#39;testing clib1&#39;</span>
+<span class="w">	</span>python<span class="w"> </span>test/test_clib1.py<span class="w"> </span>
+<span class="w">	</span>@echo<span class="w"> </span><span class="s1">&#39;testing fsub1 (f2py)&#39;</span>
+<span class="w">	</span>python<span class="w"> </span>test/test_flib1.py<span class="w"> </span>
+
+<span class="nf">build</span><span class="o">:</span>
+<span class="w">	</span>@mkdir<span class="w"> </span>-p<span class="w"> </span>bin
+
+
+<span class="nf">clean</span><span class="o">:</span>
+<span class="w">	</span>rm<span class="w"> </span>-rf<span class="w"> </span>*.out<span class="w"> </span>*.bin<span class="w"> </span>*.exe<span class="w"> </span>*.o<span class="w"> </span>*.a<span class="w"> </span>*.so<span class="w"> </span>build
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.distutils.core</span> <span class="kn">import</span> <span class="n">Extension</span><span class="p">,</span> <span class="n">setup</span>
+<span class="n">ext1</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;scalar&#39;</span><span class="p">,</span>
+                 <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;scalar.f&#39;</span><span class="p">])</span>
+<span class="n">ext2</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;fib2&#39;</span><span class="p">,</span>
+                 <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fib2.pyf&#39;</span><span class="p">,</span><span class="s1">&#39;fib1.f&#39;</span><span class="p">])</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;f2py_example&#39;</span><span class="p">,</span> <span class="n">ext_modules</span> <span class="o">=</span> <span class="p">[</span><span class="n">ext1</span><span class="p">,</span><span class="n">ext2</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="fortran-part">
+<h2>fortran part<a class="headerlink" href="#fortran-part" title="Link to this heading"></a></h2>
+<p><strong>sub1.f</strong> 基础调用
+<strong>sub2.f</strong> 利用ctypes调用</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="n">python</span> <span class="n">build</span><span class="o">.</span><span class="n">py</span> <span class="c1">#==&gt; libplugin.so</span>
+	<span class="n">gfortran</span> <span class="o">-</span><span class="n">o</span> <span class="o">./</span><span class="n">run</span> <span class="o">-</span><span class="n">L</span><span class="o">./</span> <span class="o">-</span><span class="n">lplugin</span> <span class="n">main2</span><span class="o">.</span><span class="n">f</span> <span class="n">xxx</span><span class="o">.</span><span class="n">f</span>
+	<span class="n">gfortran</span> <span class="o">-</span><span class="n">shared</span> <span class="o">-</span><span class="n">o</span> <span class="n">flib2</span><span class="o">.</span><span class="n">so</span> <span class="o">-</span><span class="n">L</span><span class="o">./</span> <span class="o">-</span><span class="n">lplugin</span> <span class="n">main2</span><span class="o">.</span><span class="n">f</span> <span class="n">xxx</span><span class="o">.</span><span class="n">f</span>
+
+	<span class="n">gcc</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">fPIC</span> <span class="n">clib1</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">clib1</span><span class="o">.</span><span class="n">o</span>
+	<span class="n">gfortran</span> <span class="o">-</span><span class="n">shared</span> <span class="n">fmod1</span><span class="o">.</span><span class="n">f</span> <span class="n">clib1</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">o</span> <span class="n">cflib</span><span class="o">.</span><span class="n">so</span>
+	<span class="n">python</span> <span class="n">test_sub2</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+<section id="fortran">
+<h2>Fortran存档<a class="headerlink" href="#fortran" title="Link to this heading"></a></h2>
+<p><strong>sub1.f</strong> 基础调用</p>
+<div class="highlight-FORTRAN90 notranslate"><div class="highlight"><pre><span></span>c------- 最简单的调用
+        subroutine hello_world()
+        write(*,*) &#39;hello world&#39;
+        end subroutine hello_world
+
+c------- 有输入和返回的函数
+        subroutine euclidian_norm(a,c,n)
+        integer :: n
+        real(8),dimension(n),intent(in) :: a
+        !f2py optional, depend(a) :: n=len(a)
+        real(8),intent(out) :: c
+        real(8) :: sommec
+        integer :: i
+        sommec = 0
+        do i=1,n
+          sommec=sommec+a( i )*a( i )
+        end do
+        c = sqrt (sommec)
+        end subroutine euclidian_norm
+
+c------- 含有omp的调用
+        subroutine hello_omp()
+        use omp_lib
+        integer :: i
+        !$OMP PARALLEL PRIVATE(I)
+        !$OMP DO 
+        do i = 1, 4
+          call sleep(1)
+        end do
+        !$OMP END DO
+        !$OMP END PARALLEL
+        write(*,*)&#39;hello_omp&#39;
+        end subroutine hello_omp
+
+c------- 输入和返回numpy数组
+        subroutine push(positions, velocities, dt, n, new_positions)
+        integer, intent(in) :: n
+        real(8), intent(in) :: dt
+        real(8), dimension(n,3), intent(in) :: velocities
+        real(8), dimension(n,3) :: positions
+        real(8), dimension(n,3), intent(out) :: new_positions
+        do i = 1, n
+          positions(i,:) = positions(i,:) + dt*velocities(i,:)
+        end do
+        new_positions = positions 
+        end subroutine push
+</pre></div>
+</div>
+<p><strong>sub2.f</strong> 利用ctypes调用</p>
+<div class="highlight-FORTRAN notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">-------</span><span class="w"> </span><span class="n">fortran转为c语言接口</span><span class="err">（最后通过</span><span class="n">ctypes调用</span><span class="err">）</span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="k">bind</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;subname_in_py&#39;</span><span class="p">)</span><span class="w">  </span>
+<span class="w">        </span><span class="k">use </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">!fortran自带的, 必须加载!</span>
+<span class="w">	</span><span class="k">implicit none </span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span><span class="w">  </span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w">  </span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">i</span><span class="w"> </span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">N</span><span class="w"> </span>
+<span class="w">        </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">  </span>
+<span class="w">        </span><span class="n">i</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span>
+<span class="w">        </span><span class="k">end subroutine </span><span class="n">sub</span><span class="w"> </span>
+
+<span class="n">c</span><span class="o">-------</span><span class="w"> </span><span class="n">fortran转为c语言接口</span><span class="err">（最后通过</span><span class="n">ctypes调用</span><span class="err">）</span>
+<span class="w">	</span><span class="k">subroutine </span><span class="n">hello_world</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">xf</span><span class="p">,</span><span class="w"> </span><span class="n">xd</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;c_hello_world&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use </span><span class="nb">iso_c_binding</span>
+<span class="nb">	</span><span class="k">implicit none </span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_int</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">value</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">N</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_float</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">xf</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">xd</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="w">	</span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;hello world&#39;</span>
+<span class="w">	</span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;integer(c_int), i&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span>
+<span class="w">	</span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;integer(c_int), N&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w"> </span>
+<span class="w">	</span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;real(c_float),  xf(N)&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">xf</span>
+<span class="w">	</span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;real(c_double), xd(N)&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">xd</span>
+<span class="w">	</span><span class="k">end subroutine </span><span class="n">hello_world</span>
+
+<span class="n">c</span><span class="o">-------</span><span class="w"> </span><span class="err">调用</span><span class="n">c语言接口</span><span class="err">（最后通过</span><span class="n">ctypes调用</span><span class="err">）</span>
+<span class="w">	</span><span class="k">subroutine </span><span class="n">push</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;f_push_particles&quot;</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">use </span><span class="nb">iso_c_binding</span>
+<span class="nb">	</span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span>
+<span class="w">	</span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">positions</span>
+<span class="w">	</span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">velocities</span>
+<span class="w">	</span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dt</span>
+
+<span class="w">	</span><span class="k">interface</span>
+<span class="k">	   subroutine </span><span class="n">c_push_particles</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;push_particles&quot;</span><span class="p">)</span>
+<span class="w">	   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span>
+<span class="w">	   </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">positions</span>
+<span class="w">	   </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">velocities</span>
+<span class="w">	   </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dt</span>
+<span class="w">	   </span><span class="k">end subroutine </span><span class="n">c_push_particles</span>
+<span class="w">	</span><span class="k">end interface</span>
+<span class="k">	</span>
+<span class="k">	call </span><span class="n">c_push_particles</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+
+<span class="w">	</span><span class="k">end subroutine </span><span class="n">push</span>
+
+<span class="n">c</span><span class="o">-------</span><span class="w"> </span><span class="n">python通过cffi转换c语言接口</span><span class="err">，最后通过</span><span class="n">ctypes调用</span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">loaddata</span><span class="p">(</span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Nout</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">! 和C语言类型互通的模块iso_c_binding</span>
+<span class="w">        </span><span class="k">implicit none </span>
+<span class="k">        interface  </span>
+<span class="k">         subroutine </span><span class="n">c_sharedata32</span><span class="p">(</span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Nout</span><span class="p">)</span><span class="w"> </span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">   </span><span class="k">bind</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sharedata32&#39;</span><span class="p">)</span>
+<span class="w">             </span><span class="k">use </span><span class="nb">iso_c_binding    </span>
+<span class="nb">             </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">snap</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+<span class="w">             </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">Nout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">             </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">x_out</span><span class="p">(</span><span class="n">Nout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">         </span><span class="k">end subroutine </span><span class="n">c_sharedata32</span>
+<span class="w">        </span><span class="k">end interface</span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">snap</span><span class="p">,</span><span class="w"> </span><span class="n">Nout</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x_out</span><span class="p">(</span><span class="n">Nout</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">	</span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snap</span><span class="w">  </span>
+<span class="w">        </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Nout</span>
+<span class="w">        </span><span class="k">call </span><span class="n">c_sharedata32</span><span class="p">(</span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">x_out</span><span class="p">,</span><span class="w"> </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="n">snap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snap0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">Nout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Nout0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+<span class="w">	</span><span class="k">end subroutine </span><span class="n">loaddata</span>
+</pre></div>
+</div>
+</section>
+<section id="c">
+<h2>c程序存档<a class="headerlink" href="#c" title="Link to this heading"></a></h2>
+<p><strong>sub2.f</strong> 配套</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;&quot;&quot;==================== %%file csub2.c =========================&quot;&quot;&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//extern &quot;C&quot; double multiply(double, double)</span>
+
+<span class="c1">// Python、Java支持调用C接口，</span>
+<span class="c1">// 不支持调用C++接口，因此对于C++语言实现的接口，必须转换为C语言实现。</span>
+<span class="c1">// 为了不修改原始C++代码，在C++接口上层用C语言进行一次封装</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">push_particles</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">       </span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="python">
+<h2>python存档<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="kn">from</span> <span class="nn">numpy.ctypeslib</span> <span class="kn">import</span> <span class="n">load_library</span><span class="p">,</span> <span class="n">ndpointer</span>
+
+
+<span class="n">cflib</span>     <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cdll</span><span class="o">.</span><span class="n">LoadLibrary</span><span class="p">(</span><span class="s2">&quot;cflib.so&quot;</span><span class="p">)</span>
+
+<span class="c1">#</span>
+<span class="c1">#--- 传入numpy数据ctypes.data_as </span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">c_hello_world</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">xf</span><span class="p">,</span> <span class="n">xd</span><span class="p">):</span>  
+    <span class="n">xf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xf</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+    <span class="n">xd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xd</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+    <span class="n">cflib</span><span class="o">.</span><span class="n">c_hello_world</span><span class="o">.</span><span class="n">argtype</span> <span class="o">=</span> <span class="p">[</span>
+              <span class="n">c_int</span><span class="p">,</span> 
+              <span class="n">POINTER</span><span class="p">(</span><span class="n">c_float</span><span class="p">),</span> 
+              <span class="n">POINTER</span><span class="p">(</span><span class="n">c_double</span><span class="p">),</span> 
+              <span class="n">c_int</span><span class="p">]</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xf</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">xf</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">xd</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> 
+    <span class="n">xf_ptr</span> <span class="o">=</span> <span class="n">xf</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span><span class="n">POINTER</span><span class="p">(</span><span class="n">c_float</span><span class="p">))</span> 
+    <span class="n">xd_ptr</span> <span class="o">=</span> <span class="n">xd</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span><span class="n">POINTER</span><span class="p">(</span><span class="n">c_double</span><span class="p">))</span>  
+    <span class="n">cflib</span><span class="o">.</span><span class="n">c_hello_world</span><span class="p">(</span><span class="n">c_int</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">xf_ptr</span><span class="p">,</span> <span class="n">xd_ptr</span><span class="p">,</span> <span class="n">c_int</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">subname_in_py</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+    <span class="n">cflib</span><span class="o">.</span><span class="n">subname_in_py</span><span class="o">.</span><span class="n">argtype</span> <span class="o">=</span> <span class="p">[</span> 
+             <span class="n">POINTER</span><span class="p">(</span><span class="n">c_double</span><span class="p">),</span> 
+              <span class="n">POINTER</span><span class="p">(</span><span class="n">c_long</span><span class="p">),</span> 
+              <span class="n">c_long</span><span class="p">]</span>  
+    <span class="n">x_ptr</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span><span class="n">POINTER</span><span class="p">(</span><span class="n">c_double</span><span class="p">))</span> 
+    <span class="n">i_ptr</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span><span class="n">POINTER</span><span class="p">(</span><span class="n">c_long</span><span class="p">))</span> 
+    <span class="n">cflib</span><span class="o">.</span><span class="n">subname_in_py</span><span class="p">(</span> <span class="n">x_ptr</span><span class="p">,</span> <span class="n">i_ptr</span><span class="p">,</span> <span class="n">c_long</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="old">
+<h2>old<a class="headerlink" href="#old" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;==================== %%file fmod.f90 =========================&quot;&quot;&quot;
+
+module fmod
+    use iso_c_binding
+    implicit none
+
+contains
+
+    function multiply(a, b) result(res)
+        real(8) :: a, b, res   !! &quot;8&quot; just for test
+        interface
+            real(c_double) function c_multiply(a, b) bind(C,name=&quot;multiply&quot;)
+                import
+                real(c_double), value :: a,b
+            end
+        end interface
+
+        res = c_multiply(a, b)
+    end
+
+    subroutine push_particles(positions, velocities, dt, n) 
+        integer, intent(in) :: n        
+        real(8), dimension(n),  intent(inplace)  :: positions 
+        real(8), dimension(n),  intent(in) :: velocities
+        real(8), intent(in) :: dt
+        interface
+            subroutine c_push_particles(positions, velocities, dt, n) bind(C,name=&quot;push_particles&quot;)
+                import
+                integer, intent(in) :: n        
+                real(8), dimension(n),  intent(inplace)  :: positions 
+                real(8), dimension(n),  intent(in) :: velocities
+                real(8), intent(in) :: dt
+            end c_push_particles 
+        end interface
+
+ 	call c_push_particles(positions, velocities, dt, n) 
+
+    end subroutine push_particles
+
+
+end module
+
+
+
+&quot;&quot;&quot;==================== %%file cfuncts.pyf =========================&quot;&quot;&quot;
+python module cfuncts 
+    interface
+        subroutine push_particles(positions, velocities, dt, n) 
+            intent(c):: push_particles
+            intent(c)
+            integer, optional, depend(velocities) :: n = len(velocities)
+            real(8), dimension(n),  intent(inplace)  :: positions 
+            real(8), dimension(n),  intent(in) :: velocities
+            real(8), intent(in) :: dt
+        end subroutine push_particles
+    end interface
+end python module cfuncts
+
+
+gcc -c -fPIC clib.c -o clib.o
+f2py -c fmod.f90 clib.o -m py_fmod
+
+python main2.py 
+&quot;&quot;&quot;==================== %%file prog2.py  =========================&quot;&quot;&quot;
+import numpy as np
+import py_fmod
+
+n = 10
+dt = 0.1
+x = np.arange(n, dtype=&quot;d&quot;)
+v = np.ones(n, dtype=&quot;d&quot;)
+py_fmod.push_particles(x, v, dt)
+print(x)
+</pre></div>
+</div>
+<p><strong>sub2.f</strong> for calling python program</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="w">        </span><span class="k">subroutine </span><span class="n">loaddata1</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">! 和C语言类型互通的模块iso_c_binding</span>
+<span class="w">        </span><span class="k">implicit none </span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N1</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="n">N2</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">data1</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="n">N2</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">data2</span>
+<span class="w">	</span><span class="k">do </span><span class="n">i1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N1</span>
+<span class="w">	   </span><span class="k">do </span><span class="n">i2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N2</span>
+<span class="w">	      </span><span class="n">data2</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i2</span>
+<span class="w">	   </span><span class="k">enddo</span>
+<span class="k">	enddo</span>
+<span class="k">	write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;sub2 loaddata1&#39;</span>
+<span class="w">        </span><span class="k">end subroutine </span><span class="n">loaddata1</span>
+
+<span class="w">        </span><span class="k">subroutine </span><span class="n">loaddata2</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">! 和C语言类型互通的模块iso_c_binding</span>
+<span class="w">        </span><span class="k">implicit none </span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">N1</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="n">N2</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">data1</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="n">N2</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">data2</span>
+<span class="w">	</span><span class="k">do </span><span class="n">i1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N1</span>
+<span class="w">	   </span><span class="k">do </span><span class="n">i2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N2</span>
+<span class="w">	      </span><span class="n">data2</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i2</span>
+<span class="w">	   </span><span class="k">enddo</span>
+<span class="k">	enddo</span>
+<span class="k">	write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;sub2 loaddata2&#39;</span>
+<span class="w">        </span><span class="k">end subroutine </span><span class="n">loaddata2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<span class="k">def</span> <span class="nf">sharedata</span><span class="p">():</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>start.f</strong> as main program</p>
+</section>
+<section id="python-part">
+<h2>python part<a class="headerlink" href="#python-part" title="Link to this heading"></a></h2>
+<p><strong>call</strong> subroutines from sub1.f through main.py</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>compiler/intel-2018
+module<span class="w"> </span>load<span class="w"> </span>anaconda
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3
+
+f2py<span class="w"> </span>-c<span class="w"> </span>-m<span class="w"> </span>myflib<span class="w"> </span>sub1.f<span class="w"> </span>--f90flags<span class="o">=</span><span class="s1">&#39;-fopenmp&#39;</span><span class="w"> </span>-lgomp
+python<span class="w"> </span>main1.py<span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#---------------------- main.py ----------------------------#</span>
+<span class="n">mport</span> <span class="n">myflib</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+ 
+<span class="c1">#------------------------------------------------------------</span>
+<span class="n">myflib</span><span class="o">.</span><span class="n">hello_world</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;正在执行主程序, 子程序hello_world(sub1.f)正常&#39;</span><span class="p">)</span>
+ 
+<span class="c1">#------------------------------------------------------------</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">myflib</span><span class="o">.</span><span class="n">euclidian_norm</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;正在执行主程序, 子程序euclidian_norm(sub1.f)正常&#39;</span><span class="p">)</span>
+ 
+ 
+<span class="c1">#------------------------------------------------------------</span>
+<span class="n">myflib</span><span class="o">.</span><span class="n">hello_omp</span><span class="p">()</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;正在执行主程序, 子程序hello_omp(sub1.f)正常&#39;</span><span class="p">)</span>
+ 
+<span class="n">positions</span>  <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">velocities</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">new_positions</span> <span class="o">=</span> <span class="n">myflib</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">velocities</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_positions</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;END&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage-github.html" class="btn btn-neutral float-left" title="git入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python_call_f.html" class="btn btn-neutral float-right" title="python调用fortran" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

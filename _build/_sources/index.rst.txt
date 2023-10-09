@@ -17,16 +17,15 @@ Welcome to yzastro's documentation!
    :maxdepth: 1
    :caption: Contents:
 
-   python-sphinx.rst 
+   justspec/justspec-overview.rst 
+   csstmock/csstmock-overview.rst 
+   online-readme/online-readme.rst 
    hello_world.md 
    cfpy/cfpy.rst
    soft/soft.rst
    astro/astro.rst
    online-documents.rst 
-   usage-github.rst 
    shell_cmd.md 
-   tricks.rst
-   trick-to-makepipe.rst
 
 Indices and tables
 ==================
