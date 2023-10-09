@@ -1,8 +1,8 @@
 MOCK for CSST Slitless Spectroscopic Survey
-======================
+=============================================
 
 CSSTMOCK (Under construction)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -14,19 +14,3 @@ CSSTMOCK (Under construction)
    csstmock-utils.md
    csstmock-makemock.md
    csstmock-tutorials.md 
-
-
-DESI
-^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 3
-
-   seedcat-v1.desi.md
-   mockcat-v1.desi.md
-
-3D-HST/CANDELS
-^^^^^^^^^^^^^^
-
-COSMOS2020
-^^^^^^^^^^^^^^
