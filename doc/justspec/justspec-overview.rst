@@ -1,9 +1,16 @@
 JUST Spectroscopic pipeline 
 ============================
 
+
+sdssspec: https://www.sdss4.org/dr17/spectro/pipeline/
+	  https://pydl.readthedocs.io/en/latest/pydlspec2d.html 
+          https://sites.uci.edu/spec2d/cookbook/
+
 desispec: https://github.com/desihub/desispec 
 
-lamost: http://www.lamost.org/lmusers/
+lamost: http://www.lamost.org/public/dr/algotrithms/data-reduction?locale=en
+	http://www.lamost.org/lmusers/
+	http://dr5.lamost.org/v1/
 
 DEEP2 & spec2d: https://deep.ps.uci.edu 
 
