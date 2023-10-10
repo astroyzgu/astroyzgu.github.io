@@ -32,7 +32,7 @@ echo "# >>> env csstmock >>>" >> ~/.bash_profile
 
 
 
-<details><summary> <b> isin_survey (to be updated) </b> </summary>
+<details><summary> <b> isin_survey </b> </summary>
 <p> 
 
 * subroutine description
