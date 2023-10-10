@@ -56,7 +56,7 @@ echo "# >>> env csstmock >>>" >> ~/.bash_profile
         !> n(in):  integer(8), the number of input coordinates 
         !>   
         !> survey(in): name of the embedded survey 
-        !>       []
+        !>       ['lsdr9-ngc', 'lsdr9', 'csstv0', 'hscdr3']
 	!> veto(out): real(4)
 	!>        if 1, in survey. if 0, not in survey. 
 ```
