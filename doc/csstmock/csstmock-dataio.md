@@ -4,27 +4,27 @@
 
 ##### Fortran interface
 
-<details><summary> <b> Library installation </b> </summary>
+<details><summary> <b> Library Installation </b> </summary>
 <p>
 
 ```
+# if running on Gravity:
+
+#--- to install python package: 
+module load anaconda 
+module load compiler/intel-2018 # load ifort
+conda activate python3          # activate defualt python3 env
+make build 
+
+#--- to install Fortran Interface: 
 cd libcsstmock
+./compile_on_gravity.sh 
 
-# if running on Gravity: 
-module load anaconda
-module load compiler/intel-2018
-
-python build.py # 生成静态链接库 
-ifort -fPIC -shared -o libcsstmock.so io_dummy.f io_jiutian.f io_jiutian_lightcone.f libcsstplugin.a # 合并为动态链接库
-
-echo "# <<< env csstmock <<<" >> ~/.bash_profile  
-echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> ~/.bash_profile  
-echo "export LIBRARY_PATH=$LIBRARY_PATH:$(pwd)" >> ~/.bash_profile  
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)" >> ~/.bash_profile  
-echo "export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)" >> ~/.bash_profile  
-echo "# >>> env csstmock >>>" >> ~/.bash_profile  
+#--- add PATH to ~/.bash_profile and source 
 
 ```
+
+
 
 </p>
 </details>
