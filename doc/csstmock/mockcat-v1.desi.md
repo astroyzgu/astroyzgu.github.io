@@ -85,9 +85,9 @@ Filename: mockDESIDR9_9tian_\<ztype\>_galaxy.fits
 Data format: 
 
 (0) imock   ----  id of mock galaxy catalog, start from 0.
-(1) agal    ----  RA
-(2) dgal    ----  DEC
-(3) zgal    ----  redshift; if Photo, dz = 0.01 + 0.15*z is applied.
+(1) ra      ----  RA
+(2) dec     ----  DEC
+(3) z       ----  redshift; if Photo, dz = 0.01 + 0.15*z is applied.
 (4) iseed   ----  id of matched seed catalog, start from 0.  
 (5) lmass   ----  assigned properties, the following is same as seed catalog
 (6) appz    ----     ...
@@ -119,8 +119,8 @@ Application of foreground mask:
 Data format:
 
 (0) iseed/imock 
-(1) RA
-(2) DEC
+(1) ra
+(2) dec
 (3) mask --- 1: be masked; 0: not be masked
 
         (1)          (2)      (3)
