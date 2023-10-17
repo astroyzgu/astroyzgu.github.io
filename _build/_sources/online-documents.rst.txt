@@ -24,6 +24,8 @@ package
 - https://github.com/gbrammer/eazy-py An updated version of the EAZY code (Brammer et al. 2008) 
 - nbodykit: https://nbodykit.readthedocs.io/en/latest/
 
+
+
 CSST-simulation:
 
  - https://csst-tb.bao.ac.cn/code/fangyuedong/csst-simulation
@@ -50,7 +52,9 @@ Mock galaxy:
  - Correlation Function
 
 	https://github.com/cheng-zhao/FCFC#introduction
-- spec
+- spec/SED 
+
+ - Bayesian: https://bayesed.readthedocs.io/en/v2.0/index.html
 
  - 天文光谱处理软件pPXF的认识和使用: https://www.bilibili.com/video/BV1ke4y1n7JH/
  - 天文光谱处理软件Starlight的认识和使用: https://www.bilibili.com/video/BV1vd4y1i7iZ/?spm_id_from=333.788.recommend_more_video.-1
