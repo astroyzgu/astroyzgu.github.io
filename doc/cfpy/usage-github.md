@@ -119,10 +119,30 @@ git checkout <branch>  # 切换到<branch>这个分支
   - source (选择源) -> Deploy from a branch (从一个分支部署)
   - Branch (选择分支) -> gh-pages (预览网页的分支) 
 
+## github和gitlab不同仓库的切换
 
+###### use ssh -T to switch 
+```
+ssh -T git@git.gravity.sjtu.edu.cn # switch to gitlab on gravity 
+ssh -T git@github.com # switch to github
+```
 
+###### before this, SSH key need to be set.  
+```
+ssh-keygen -t rsa -C 'username@email.address.com'
 
+# Generating public/private rsa key pair -->
+# id_rsa_guyizhousjtu, id_rsa_guyizhousjtu.pub  
 
+# Paste your public SSH key (the content of ~/.ssh/id_rsa_guyizhousjtu.pub) into the website. 
 
+Typically starts with "ssh-rsa ..." 
 
+# At the same time, edit the ssh configure file (~/.ssh/config), add ...
 
+Host git.gravity.sjtu.edu.cn
+    HostName git.gravity.sjtu.edu.cn
+    Port 33
+    IdentityFile ~/.ssh/id_rsa_guyizhousjtu
+
+```
