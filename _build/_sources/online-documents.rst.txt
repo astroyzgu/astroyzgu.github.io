@@ -51,7 +51,7 @@ Mock galaxy:
 
  - Correlation Function
 
-	https://github.com/cheng-zhao/FCFC#introduction
+	https://github.com/cheng-zhao/FCFC#introductionx
 - spec/SED 
 
  - Bayesian: https://bayesed.readthedocs.io/en/v2.0/index.html
