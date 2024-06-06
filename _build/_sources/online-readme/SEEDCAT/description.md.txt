@@ -10,13 +10,12 @@ We have made significant enhancements to the LSDR9-based catalog, which has a ma
 
 ## Catalogs
 
-**Gravity location:** /home/cossim/DESI/yzgu/seedcat/produce/lsdr9_prop{}.produce.fits (~??GB)
+**Gravity location:** /home/cossim/DESI/yzgu/seedcat/produce/*.fits 
 
-* lsdr9_prop{[zlevel](#zlevel)}.produce.fits -- Main Catalog of galaxy properties
+* lsdr9_prop{[zlevel](#zlevel)}.produce.fits (~21G)-- Main Catalog of galaxy properties
  
-* lsdr9_link{[zlevel](#zlevel)}.produce.fits -- link to DESI ID and some geometry selections
-* **Note:** use [zlevel](#zlevel) == 5 for the latest data of spectroscopic redshifts 
-<!-- * **For the least redshifts, using lsdr9_prop5.fits and lsdr9_link5.fits.**  -->
+* lsdr9_link{[zlevel](#zlevel)}.produce.fits (~11G)-- link to DESI ID and some geometry selections
+* **Note:** use [zlevel](#zlevel) == 5 for the latest data of spectroscopic redshifts
 
 ### Data format of lsdr9_prop{zlevel}.fits: 
 
@@ -92,8 +91,6 @@ The description of  **usebits**:
    
       
 
-
-
 ### USAGE
 
 ``` python 
@@ -104,7 +101,7 @@ reject_star = t1['tgttype']!='STAR'   # select galaxy, qso; reject star
 useflag     = t1['usebits']==0 # to avoid the very unreliable redshifts and feroground masks
 magr_cut    = t1['mag_r']<19.5
 isin_desi   = t2['isin_desi'] ==1 # apply the region cut
-indx_seed   =(t2['iseed'] >=0) # sources in the old version of seed catalog 
+indx_seed   =(t2['iseed'] >=0)  # sources in the old version of seed catalog 
 
 # select sample
 t1 = t1[reject_star&useflag&magr_cut&useflag&isin_desi&indx_seed] 
@@ -127,6 +124,8 @@ t1 = t1[reject_star&useflag&magr_cut&useflag&isin_desi&indx_seed]
 All sources that are resolved (or extended), characterized by MORPHTYPE being either REX, DEV, EXP, or SER, are incorporated into the final catalog.
 For point sources, identified by MORPHTYPE as PSF, it presents a challenge to differentiate between unresolved galaxies, stars, or distint quasars. 
 Conservatively, the final catalog only includes those PSF sources that possess spectra, which have been classified into GALAXY, QSO, or STAR by Redrock.
+
+* In one word, the catalog is constructed by **PSF(spec only)+REX+DEV+EXP+SER**
 
 <!-- ```
               |   EXT-morph (REX, DEV, EXP, or SER)      |    PSF-morph with spec-z (PSF)    |    ALL
@@ -189,6 +188,7 @@ south_sgc     |        73,808,229 (12,407,742   18,981)  |  70,602,469  (  50,00
 ## Known issues: 
 ```
     1. 'mstar' is got from 'KCORRECTv4.0', need to update to CIGALE's results, unit: log10(Mstar*h/Msun)
+    2.  Random sample are needed. 
 ```
 
 
