@@ -61,8 +61,8 @@ Condition:
 6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
 7. remove STAR
   * if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
-  * if EXT w/o spec but w/i gaia,  reject star (star: gaia - r < 0.6); 
-  * if EXT w/o spec and w/o gaia,  reject star (star: z − W1 < 0.8 × (r − z) − 0.6)
+  * if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+  * if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6
   * if PSF w/o spec, reject them all. 
 
 </p>
@@ -83,8 +83,8 @@ Condition:
 6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
 7. remove STAR
   * if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
-  * if EXT w/o spec but w/i gaia,  reject star (star: gaia - r < 0.6); 
-  * <del> if EXT w/o spec and w/o gaia,  reject star (star: z − W1 < 0.8 × (r − z) − 0.6)</del>
+  * if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+  * <del> if EXT w/o spec and w/o gaia, reject using z − W1 < 0.8 × (r − z) − 0.6</del>
   * if PSF w/o spec, reject them all. 
 
 </p>
@@ -122,7 +122,7 @@ Note: In this version, we only use the archive spec-z collected by Zhou et al. 2
 </p>
 </details> 
 
-Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs.
+Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs. Contact me.  
 
 <p> </p>
 <p> </p>
