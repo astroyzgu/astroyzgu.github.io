@@ -1,0 +1,15 @@
+_galaxy
+=============
+
+========= =========
+column    colname
+========= =========
+column 1: ra
+column 2: dec
+column 3: redshift
+column 4: luminosity
+column 5: absolute magnitude
+column 6: redshift error
+column 7: log halo mass
+column 8: log stellar mass
+========= ========= 

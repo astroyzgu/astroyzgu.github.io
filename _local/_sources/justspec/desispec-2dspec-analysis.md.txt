@@ -1,0 +1,25 @@
+# Classification 
+
+##### Redrock 
+
+   [Redrock](https://github.com/desihub/redrock) (refer to Section 4.12 of [Guy et al. 2023](https://doi.org/10.3847/1538-3881/acb212)) consists in comparing the measured spectra with a series of templates, performing for each of them a redshift scan followed by a refined fit for the best solutions. It includes three sets of PCA templates for galaxies (desisim), quasars (idlspec2d), and stars (idlspec2d). 
+
+| PCA templates   | Candidate redshit  |                   |
+|-----------------|--------------------|-------------------|
+|  Galaxy (10)    | 0.005 < z < 1.7    |                   | 
+|  Stellar (5)    | −0.002 < z < 0.002 |                   | 
+|    QSO  (4)     | 0.05 < z < 6.0     |                   | 
+
+The template with the lowest $χ^2(z)$ one is selected as the best. 
+
+$χ^2(z) = χ^2_{\rm template}(z) + χ^2_{\rm [OII] λλ3726, 3729}(z)$ 
+
+Redrock performs well on galaxies and stars. But, it misses ∼10%–15% of true quasars, in particular redder low redshift quasars that are not well represented by the training sample used to create the original SDSS QSO PCA templates (see Alexander et al. 2022). To recover these, the spectroscopic pipeline run some additional diagnosis (QuasarNET and $\rm Mg II λλ2796, 2803$ line fit) to make the final QSO selection (Chaussidon et al. 2022). 
+
+# redshift fitting (Softwave: redrock idlspec2d)
+
+
+   
+    
+
+

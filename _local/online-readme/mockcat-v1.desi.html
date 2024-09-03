@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mock catalog of DESIDR9sv3 &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="hello world" href="../hello_world.html" />
+    <link rel="prev" title="seedcat-v1" href="seedcat-v1.desi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="online-readme.html">online-readme</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="online-readme.html#csstmock">CSSTMOCK</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="online-readme.html#desi">DESI</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="SEEDCAT/index.html">SEEDCAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seedcat-v1.desi.html">seedcat-v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seedcat-v1.desi.html#group">group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seedcat-v1.desi.html#galaxy-fits">galaxy.fits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="seedcat-v1.desi.html#group-fits">group.fits</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">mock catalog of DESIDR9sv3</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#catalogs-for-lf-and-clf">Catalogs for LF and CLF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mock-catalog">mock catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group-catalog-based-on-the-mock-catalog">group catalog based on the mock catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#matched-with-desi-ngc-observation">matched with DESI NGC observation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="online-readme.html#d-hst-candels">3D-HST/CANDELS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online-readme.html#cosmos2020">COSMOS2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="online-readme.html">online-readme</a></li>
+      <li class="breadcrumb-item active">mock catalog of DESIDR9sv3</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/online-readme/mockcat-v1.desi.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mock-catalog-of-desidr9sv3">
+<h1>mock catalog of DESIDR9sv3<a class="headerlink" href="#mock-catalog-of-desidr9sv3" title="Permalink to this heading"></a></h1>
+<p>#—— Mock galaxy catalog:
+Mock galaxy catalog is based on the Jiutian N-body simulation. Basic information is that Jiutian-1Gpc,  Planck-2018 cosmology, particle mass = 3.723E-08 Msun/h. It can be downloaded use the following link:</p>
+<p>https://gax.sjtu.edu.cn/data/CSST/data/mockDESIDR9sv3_9tian.gz</p>
+<p>Data format:</p>
+<p>(1) halo ID
+(2) subhalo ID (0=central)
+(3) subhalo trackID
+(4) ra
+(5) dec
+(6) r (real space comoving distance, Mpc/h)
+(7) z_cos
+(8) z_obs (with RSD)
+(9) snapshot number of the simulation
+(10) host halo mass (log Msun/h)
+(11) apparent magnitude in z-band (use this to make the test, here you can apply the average k-correction)
+(12) subhalo maximum mass
+(13) luminosity with K-correction.</p>
+<p>#—— SV3 version group catalog:</p>
+<p>Photometric   redshift version: mockDESIDR9sv3_9tianPhoto_NGC_reduction1.fits # 66793215 galaxies (dz = 0.01 + 0.15*z)
+Spectroscopic redshift version: mockDESIDR9sv3_9tianSpec_NGC_reduction1.fits  # 66797588 galaxies (dz = a very small value)</p>
+<p>Data format:
+(1) imock   —-  id of mock galaxy catalog, start from 0.<br />
+(2) zgal    —-  redshift; if Photo, a scatter with dz = 0.01 + 0.15*z is applied.
+(3) igrp    —-  group id
+(4) rank    —-  0 == central; 1 == satellite.<br />
+(5) mgrp    —-  the logarithm of group mass</p>
+<p>The Msun and average k-correction of z-band (see Yang et al. 2021):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Msun = 4.5; kcorr@z=0.5 = 0.73*z**2 - 0.54*z - 0.33 
+</pre></div>
+</div>
+<p>#—— Mock galaxy catalog:</p>
+<p>It can be downloaded use the following link:</p>
+<p>https://gax.sjtu.edu.cn/data/CSST/data/mockDESIDR9sv3_9tian.gz</p>
+<p>data format:</p>
+<p>(1) halo ID
+(2) subhalo ID (0=central)
+(3) subhalo trackID
+(4) ra
+(5) dec
+(6) r (real space comoving distance, Mpc/h)
+(7) z_cos
+(8) z_obs (with RSD)
+(9) snapshot number of the simulation
+(10) host halo mass (log Msun/h)
+(11) apparent magnitude in z-band (use this to make the test, here you can apply the average k-correction)
+(12) subhalo maximum mass
+(13) luminosity with K-correction.</p>
+<section id="catalogs-for-lf-and-clf">
+<h2>Catalogs for LF and CLF<a class="headerlink" href="#catalogs-for-lf-and-clf" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- Catalog Generator (mag &lt; 21, 0 &lt; zgal &lt; 1)</span>
+<span class="c1"># &gt;&gt; /home/yzgu/data/desi/mock/mockDESIdr9sv3/data/</span>
+<span class="o">*</span> <span class="n">group</span> <span class="n">catalog</span> <span class="p">(</span><span class="n">NGC</span><span class="p">)</span> <span class="n">of</span> <span class="n">mockDESI</span>    <span class="o">-&gt;</span>  <span class="n">mockgrpfDESIDR9sv3_ngc_zband21_for_CLF</span><span class="o">.</span><span class="n">npy</span> <span class="p">(</span><span class="mi">71443728</span><span class="p">,</span> <span class="n">Δz</span> <span class="o">=</span> <span class="mf">0.01</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="mf">0.015</span><span class="p">)</span> 
+<span class="o">*</span> <span class="n">mockDESI</span> <span class="n">catalog</span> <span class="p">(</span><span class="n">NGC</span><span class="p">)</span> <span class="n">of</span> <span class="mi">9</span><span class="n">tian</span>    <span class="o">-&gt;</span>  <span class="n">mockhbt</span><span class="o">+</span><span class="n">DESIDR9sv3_ngc_zband21_for_CLF</span><span class="o">.</span><span class="n">npy</span> <span class="p">(</span><span class="mi">72619785</span><span class="p">,</span> <span class="n">same</span> <span class="k">with</span> <span class="n">wangyr</span><span class="p">)</span>
+<span class="c1"># &gt;&gt; </span>
+<span class="o">*</span> <span class="n">group</span> <span class="n">catalog</span> <span class="p">(</span><span class="n">NGC</span><span class="p">)</span> <span class="n">of</span> <span class="n">DESI</span> <span class="n">dr9</span>    <span class="o">-&gt;</span>      <span class="n">DESIDR9v2_ngc_zband21_for_CLF</span><span class="o">.</span><span class="n">npy</span>   <span class="p">(</span> <span class="mi">66229628</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">group</span> <span class="n">catalog</span> <span class="p">(</span><span class="n">sv3</span><span class="p">)</span> <span class="n">of</span> <span class="n">DESI</span> <span class="n">dr9</span>    <span class="o">-&gt;</span>      <span class="n">DESIDR9v2_sv3_zband21_for_CLF</span><span class="o">.</span><span class="n">npy</span>   <span class="p">(</span><span class="n">r</span><span class="o">&lt;</span><span class="mf">1.45</span><span class="n">deg</span><span class="p">,</span> <span class="mi">933635</span><span class="p">)</span>
+<span class="c1">#</span>
+<span class="c1">#-- Data fromat of *_for_CLF.npy:</span>
+<span class="c1">#</span>
+<span class="c1">#     0, 1, 2,    3,   4,     5,     6,    7,    8,    9,   10</span>
+<span class="c1">#   igal, a, d, zgal, mag, kcorr, compl, igrp, rank, zgrp, mgrp</span>
+<span class="c1">#----------------------------------------------------------------</span>
+<span class="c1">#  0) galaxy id</span>
+<span class="c1">#  1) ra</span>
+<span class="c1">#  2) dec </span>
+<span class="c1">#  3) redshift  of galaxy </span>
+<span class="c1">#  4) apparent magnitude </span>
+<span class="c1">#  5) k-correction </span>
+<span class="c1">#  6) compleness (0-1)</span>
+<span class="c1">#  7) group id </span>
+<span class="c1">#  8) rank == 0, central; </span>
+<span class="c1">#  9) redshift  of central galaxy in the group</span>
+<span class="c1"># 10) halo mass of group</span>
+
+</pre></div>
+</div>
+<section id="detials">
+<h3>Detials<a class="headerlink" href="#detials" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="n">topdir</span> <span class="o">=</span> <span class="s1">&#39;/home/xhyang/work/MOCK9tian/MGRS/data/group/&#39;</span>
+<span class="n">savdir</span> <span class="o">=</span> <span class="s1">&#39;../raw/&#39;</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">topdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian_NGC_galaxyID&#39;</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian_NGC_galaxyID.npy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">topdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian_NGC_1&#39;</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian_NGC_1.npy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">topdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian_NGC_group&#39;</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian_NGC_group.npy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">topdir</span><span class="o">+</span> <span class="s1">&#39;../mockDESIDR9sv3_9tian0_z0.0_1.0&#39;</span><span class="p">)</span>
+<span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savdir</span><span class="o">+</span> <span class="s1">&#39;mockDESIDR9sv3_9tian0_z0.0_1.0.npy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mock-catalog">
+<h2>mock catalog<a class="headerlink" href="#mock-catalog" title="Permalink to this heading"></a></h2>
+<p>location: /home/xhyang/work/MOCK9tian/MGRS/data/</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mockDESIDR9sv3_9tian0_z0</span><span class="mf">.0_1.0</span><span class="p">:</span> 
+<span class="mi">0</span>  <span class="n">ihal</span>    <span class="o">-</span>  <span class="n">haloID</span> <span class="kn">from</span> <span class="nn">jiutian</span> <span class="n">simulation</span>
+<span class="mi">1</span>  <span class="n">rank</span>    <span class="o">-</span>  <span class="n">rank</span>   <span class="kn">from</span> <span class="nn">jiutian</span> <span class="n">simulation</span><span class="p">,</span> <span class="n">ranked</span> <span class="n">by</span> <span class="n">subhalo</span> <span class="n">mass</span> <span class="p">(</span><span class="mi">0</span><span class="o">=</span><span class="n">central</span><span class="p">)</span>
+<span class="mi">2</span>  <span class="n">isub</span>    <span class="o">-</span>  <span class="n">trackID</span> <span class="kn">from</span> <span class="nn">simulation</span>
+<span class="mi">3</span>  <span class="n">a</span>       <span class="o">-</span>  <span class="n">ra</span>
+<span class="mi">4</span>  <span class="n">d</span>       <span class="o">-</span>  <span class="n">dec</span>
+<span class="mi">5</span>  <span class="n">r</span>       <span class="o">-</span>  <span class="n">comoving</span> <span class="n">distance</span>
+<span class="mi">6</span>  <span class="n">zcos</span>    <span class="o">-</span>  <span class="n">cosmology</span> <span class="n">redshift</span> 
+<span class="mi">7</span>  <span class="n">zgal</span>    <span class="o">-</span>  <span class="n">z_obs</span> <span class="p">(</span><span class="k">with</span> <span class="n">RSD</span><span class="p">)</span>
+<span class="mi">8</span>  <span class="n">snap</span>    <span class="o">-</span>  <span class="n">snapshot</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">simulation</span>
+<span class="mi">9</span>  <span class="n">mhal</span>    <span class="o">-</span>  <span class="n">host</span> <span class="n">halo</span> <span class="n">mass</span> <span class="p">(</span><span class="n">log</span> <span class="n">Msun</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">fof</span><span class="p">)</span>
+<span class="mi">10</span> <span class="n">mag</span>     <span class="o">-</span>  <span class="n">apparent</span> <span class="n">magnitude</span> <span class="ow">in</span> <span class="n">z</span><span class="o">-</span><span class="n">band</span> 
+<span class="mi">11</span> <span class="n">msubmax</span> <span class="o">-</span>  <span class="n">subhalo</span> <span class="n">maximum</span> <span class="n">mass</span>
+<span class="mi">12</span> <span class="n">loglum</span>  <span class="o">-</span>  <span class="n">luminosity</span> <span class="n">without</span> <span class="n">K</span><span class="o">-</span><span class="n">correction</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>hid</p></th>
+<th class="head"><p>rank</p></th>
+<th class="head"><p>sid</p></th>
+<th class="head"><p>ra</p></th>
+<th class="head"><p>dec</p></th>
+<th class="head"><p>r</p></th>
+<th class="head"><p>zcos</p></th>
+<th class="head"><p>zobs</p></th>
+<th class="head"><p>snap</p></th>
+<th class="head"><p>mag</p></th>
+<th class="head"><p>lmh</p></th>
+<th class="head"><p>msmax</p></th>
+<th class="head"><p>luminosity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-1</p></td>
+<td><p>0</p></td>
+<td><p>1333017857</p></td>
+<td><p>56.6081734</p></td>
+<td><p>-12.4620619</p></td>
+<td><p>13.181</p></td>
+<td><p>0.00440</p></td>
+<td><p>0.00211</p></td>
+<td><p>127.00000</p></td>
+<td><p>-1.00000</p></td>
+<td><p>15.51061</p></td>
+<td><p>9.87192</p></td>
+<td><p>7.82492</p></td>
+</tr>
+<tr class="row-odd"><td><p>84777</p></td>
+<td><p>1</p></td>
+<td><p>3501299</p></td>
+<td><p>226.6045532</p></td>
+<td><p>-3.8050163</p></td>
+<td><p>13.580</p></td>
+<td><p>0.00453</p></td>
+<td><p>0.00314</p></td>
+<td><p>127.00000</p></td>
+<td><p>13.66319</p></td>
+<td><p>9.50953</p></td>
+<td><p>12.70732</p></td>
+<td><p>10.25187</p></td>
+</tr>
+<tr class="row-even"><td><p>89496</p></td>
+<td><p>2</p></td>
+<td><p>5453742</p></td>
+<td><p>219.0343323</p></td>
+<td><p>-12.0410833</p></td>
+<td><p>11.995</p></td>
+<td><p>0.00400</p></td>
+<td><p>0.00459</p></td>
+<td><p>127.00000</p></td>
+<td><p>13.36263</p></td>
+<td><p>9.55280</p></td>
+<td><p>12.03627</p></td>
+<td><p>10.12768</p></td>
+</tr>
+<tr class="row-odd"><td><p>84777</p></td>
+<td><p>7</p></td>
+<td><p>11953855</p></td>
+<td><p>219.7634277</p></td>
+<td><p>-5.5686326</p></td>
+<td><p>13.572</p></td>
+<td><p>0.00453</p></td>
+<td><p>0.00613</p></td>
+<td><p>127.00000</p></td>
+<td><p>13.66319</p></td>
+<td><p>10.52010</p></td>
+<td><p>11.54998</p></td>
+<td><p>9.84899</p></td>
+</tr>
+<tr class="row-even"><td><p>84777</p></td>
+<td><p>69</p></td>
+<td><p>11953917</p></td>
+<td><p>221.8530273</p></td>
+<td><p>-6.4959536</p></td>
+<td><p>13.609</p></td>
+<td><p>0.00454</p></td>
+<td><p>0.00442</p></td>
+<td><p>127.00000</p></td>
+<td><p>13.66319</p></td>
+<td><p>13.47777</p></td>
+<td><p>10.96005</p></td>
+<td><p>8.66726</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="group-catalog-based-on-the-mock-catalog">
+<h2>group catalog based on the mock catalog<a class="headerlink" href="#group-catalog-based-on-the-mock-catalog" title="Permalink to this heading"></a></h2>
+<p>mock group catalog (location: /home/xhyang/work/MOCK9tian/MGRS/data/group)</p>
+<p>group catalog format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># &gt;&gt;&gt; wc mockDESIDR9sv3_9tian_NGC_*</span>
+<span class="c1">#          0 mockDESIDR9sv3_9tian_NGC_BCG    ???</span>
+<span class="c1">#       8780 mockDESIDR9sv3_9tian_NGC_C1     ???</span>
+<span class="c1">#   47579670 mockDESIDR9sv3_9tian_NGC_prop   ??? (igrp, rich, ..., unknown)</span>
+<span class="c1">#   50657568 mockDESIDR9sv3_9tian_NGC_group  ???  (7 columns; 50657568)</span>
+<span class="c1">#   71443728 mockDESIDR9sv3_9tian_NGC_galaxyID *  (2 columns; 71443728)</span>
+<span class="c1">#   71443728 mockDESIDR9sv3_9tian_NGC_link   ??? (4 columns) </span>
+<span class="c1">#   71443728 mockDESIDR9sv3_9tian_NGC_weight ??? (2 columns) </span>
+<span class="c1">#   71443728 imockDESIDR9sv3_9tian_NGC_1</span>
+<span class="c1">#   71443728 imockDESIDR9sv3_9tian_NGC_2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>|--- galaxy files: (71443728 galaxies )
+                 *_weight|     *_galaxyID   |             i*_1  |                i*_2|
+ ???                ???  | igal     zgal    |  igal   igrp rank |       ???       ???|
+   1   33.2547950744629  |   2   0.01147    |     2   6470  1   |         1     13156|
+  56   147.181640625000  |   4   0.00216    |     4  17515  2   |         1    143635|
+  56   2.46862006187439  |   5   0.01695    |     5   3365  2   |         1    170044|
+   4   81.4249649047852  |   6   0.00969    |     6 403545  1   |         1    189379|
+  56   138.534973144531  |   7   0.00130    |     7   3365  2   |         1    189455|
+note:  
+*_galaxyID: galaxy id, redshift 
+*_1 (4 columns): galaxy id, group id, rank, auxiliary ID (not used)
+*_2 (2 columns): group  id, member galaxy id in the galaxy catalog
+rank: rank == 1, central (brightest); rank == 2, satallite; 
+igal: galaxy id in seed mock catalog (mockDESIDR9sv3_9tian0_z0.0_1.0.npy), start from 1, 
+igrp: group  id in group catalog (*_group), start from 1
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|---</span> <span class="n">group</span> <span class="n">file</span><span class="p">:</span> <span class="p">(</span><span class="mi">50657568</span> <span class="n">groups</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">wc</span> <span class="n">mockDESIDR9sv3_9tian_NGC_group</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">50657568</span>   <span class="mi">354602976</span>  <span class="mi">3292741920</span> <span class="n">mockDESIDR9sv3_9tian_NGC_group</span>
+                                                        <span class="o">*</span><span class="n">_group</span> <span class="o">|</span>
+    <span class="n">igrp</span> <span class="n">richness</span> <span class="n">alpha</span>     <span class="n">delta</span>      <span class="n">zgrp</span>      <span class="n">mgrp</span>      <span class="n">lgrp</span> <span class="o">|</span>
+       <span class="mi">1</span> <span class="mi">5206</span>  <span class="mf">251.2349</span>   <span class="mf">55.9615</span>    <span class="mf">0.0556</span>   <span class="mf">15.1421</span>  <span class="mf">717.7900</span> <span class="o">|</span>
+       <span class="mi">2</span> <span class="mi">3574</span>  <span class="mf">272.9934</span>   <span class="mf">54.1780</span>    <span class="mf">0.0478</span>   <span class="mf">14.9677</span>  <span class="mf">568.0316</span> <span class="o">|</span>
+       <span class="mi">3</span> <span class="mi">3166</span>  <span class="mf">247.3300</span>   <span class="mf">16.3576</span>    <span class="mf">0.0427</span>   <span class="mf">14.8307</span>  <span class="mf">396.5148</span> <span class="o">|</span>
+       <span class="mi">4</span> <span class="mi">3031</span>  <span class="mf">136.6318</span>    <span class="mf">3.0663</span>    <span class="mf">0.0446</span>   <span class="mf">14.8296</span>  <span class="mf">396.9393</span> <span class="o">|</span>
+       <span class="mi">5</span> <span class="mi">3013</span>  <span class="mf">196.8399</span>   <span class="o">-</span><span class="mf">9.2735</span>    <span class="mf">0.0880</span>   <span class="mf">15.2049</span>  <span class="mf">833.1750</span> <span class="o">|</span>
+     <span class="o">...</span>  <span class="o">...</span>       <span class="o">...</span>       <span class="o">...</span>       <span class="o">...</span>       <span class="o">...</span>       <span class="o">...</span> <span class="o">|</span> 
+<span class="mi">50657567</span>    <span class="mi">1</span>  <span class="mf">124.5703</span>   <span class="mf">44.5025</span>    <span class="mf">0.4868</span>   <span class="mf">11.8998</span>    <span class="mf">1.3523</span> <span class="o">|</span>
+<span class="mi">50657568</span>    <span class="mi">1</span>  <span class="mf">121.9167</span>   <span class="mf">69.2110</span>    <span class="mf">0.8988</span>   <span class="mf">12.9068</span>    <span class="mf">6.9020</span> <span class="o">|</span>
+<span class="n">note</span><span class="p">:</span> 
+<span class="o">*</span><span class="n">_group</span><span class="p">:</span> <span class="n">group</span> <span class="nb">id</span><span class="p">,</span> <span class="n">richness</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">redshift</span><span class="p">,</span> <span class="n">log</span> <span class="n">M_h</span><span class="o">/</span><span class="p">(</span><span class="n">M_sun</span><span class="o">/</span><span class="n">h</span><span class="p">),</span> <span class="n">L_group</span> <span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="mi">10</span><span class="n">Lsun</span><span class="o">/</span><span class="n">h</span><span class="o">/</span><span class="n">h</span><span class="p">)</span>
+   <span class="n">igrp</span><span class="p">:</span> <span class="n">group</span> <span class="nb">id</span><span class="p">,</span> <span class="n">start</span> <span class="kn">from</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">&gt;&gt;&gt;</span> <span class="n">mockDESIDR9_9tian_NGC_prop</span>
+   <span class="n">igrp</span>   <span class="n">rich</span>                                                                 <span class="n">mgrp</span>
+      <span class="mi">1</span>   <span class="mi">5206</span>  <span class="mi">1194293</span>  <span class="mf">2827.631</span>     <span class="mf">1.681</span>   <span class="mf">717.790</span>     <span class="mf">0.183</span>     <span class="mf">0.000</span>    <span class="mf">15.142</span>     <span class="mf">2.759</span>   <span class="mf">957.194</span>
+   <span class="o">-</span><span class="mf">28.1049</span>   <span class="o">-</span><span class="mf">82.6447</span>   <span class="mf">129.3534</span>   <span class="mf">156.0701</span>    <span class="mf">0.0527</span>    <span class="mf">0.1379</span>  <span class="o">-</span><span class="mf">16.4293</span>   <span class="mf">11.5408</span>    <span class="mf">1.0000</span>    <span class="mf">4.3845</span>    <span class="mf">0.9770</span>    <span class="mf">0.0108</span>  <span class="mf">122.1677</span>   <span class="mf">10.6630</span>   <span class="o">-</span><span class="mf">0.3772</span>   <span class="mf">19.2312</span>
+   <span class="o">-</span><span class="mf">29.6423</span>   <span class="o">-</span><span class="mf">87.2357</span>   <span class="mf">136.4079</span>   <span class="mf">164.6229</span>    <span class="mf">0.0556</span>    <span class="mf">1.5416</span>  <span class="o">-</span><span class="mf">19.7628</span>   <span class="mf">13.3432</span>    <span class="mf">1.0000</span>    <span class="mf">4.3849</span>    <span class="mf">0.9767</span>    <span class="mf">0.0108</span>   <span class="mf">85.2156</span>   <span class="mf">11.8181</span>   <span class="o">-</span><span class="mf">0.3786</span>   <span class="mf">16.0262</span>
+   <span class="o">-</span><span class="mf">29.6199</span>   <span class="o">-</span><span class="mf">82.3887</span>   <span class="mf">129.4770</span>   <span class="mf">156.2995</span>    <span class="mf">0.0528</span>   <span class="mf">10.5450</span>  <span class="o">-</span><span class="mf">22.7576</span>   <span class="mf">15.0471</span>    <span class="mf">1.0000</span>    <span class="mf">4.3673</span>    <span class="mf">0.9762</span>    <span class="mf">0.0108</span>    <span class="mf">0.0000</span>   <span class="mf">14.5043</span>   <span class="o">-</span><span class="mf">0.3773</span>   <span class="mf">12.9465</span>
+   <span class="o">-</span><span class="mf">26.3851</span>   <span class="o">-</span><span class="mf">79.9086</span>   <span class="mf">123.7641</span>   <span class="mf">149.6633</span>    <span class="mf">0.0505</span>    <span class="mf">6.3539</span>  <span class="o">-</span><span class="mf">22.2076</span>   <span class="mf">15.0471</span>    <span class="mf">1.0000</span>    <span class="mf">4.3935</span>    <span class="mf">0.9737</span>    <span class="mf">0.0108</span>    <span class="mf">1.0000</span>   <span class="mf">14.4572</span>   <span class="o">-</span><span class="mf">0.3762</span>   <span class="mf">13.3987</span>
+</pre></div>
+</div>
+</section>
+<section id="matched-with-desi-ngc-observation">
+<h2>matched with DESI NGC observation<a class="headerlink" href="#matched-with-desi-ngc-observation" title="Permalink to this heading"></a></h2>
+<p>mockDESIDR9sv3_9tian_obs: mock galaxy matched with DESI (NGC) observation.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="seedcat-v1.desi.html" class="btn btn-neutral float-left" title="seedcat-v1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../hello_world.html" class="btn btn-neutral float-right" title="hello world" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

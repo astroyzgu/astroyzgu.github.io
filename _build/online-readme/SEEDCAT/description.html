@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The lsdr9-based catalog (for internal communication) &mdash; yzastro 0.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+  <title>The lsdr9-based catalog &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=7026087e"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="online documents" href="../../online-documents.html" />
+    <link rel="next" title="asfunc" href="../asfunc/index.html" />
     <link rel="prev" title="SEEDCAT" href="index.html" /> 
 </head>
 
@@ -34,7 +37,7 @@
           
           
           <a href="../../index.html" class="icon icon-home">
-            yzastro
+            csstmock
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -49,14 +52,20 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../online-readme.html">online-readme</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../online-readme.html#desi">DESI</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">SEEDCAT</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">The lsdr9-based catalog (for internal communication)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The lsdr9-based catalog</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../asfunc/index.html">asfunc</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../online-documents.html">online documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">csstmock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">Change Log</a></li>
 </ul>
 
         </div>
@@ -65,7 +74,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">yzastro</a>
+          <a href="../../index.html">csstmock</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -75,7 +84,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../online-readme.html">online-readme</a></li>
           <li class="breadcrumb-item"><a href="index.html">SEEDCAT</a></li>
-      <li class="breadcrumb-item active">The lsdr9-based catalog (for internal communication)</li>
+      <li class="breadcrumb-item active">The lsdr9-based catalog</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/online-readme/SEEDCAT/description.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -85,28 +94,133 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog-for-internal-communication">
-<h1>The lsdr9-based catalog (for internal communication)<a class="headerlink" href="#the-lsdr9-based-catalog-for-internal-communication" title="Link to this heading"></a></h1>
-<section id="overall-description">
-<h2>Overall description<a class="headerlink" href="#overall-description" title="Link to this heading"></a></h2>
-<p>We have made significant enhancements to the LSDR9-based catalog, which has a magnitude limit of 21.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog">
+<h1>The lsdr9-based catalog<a class="headerlink" href="#the-lsdr9-based-catalog" title="Permalink to this heading"></a></h1>
+<section id="the-summary-catalog">
+<h2>The summary catalog<a class="headerlink" href="#the-summary-catalog" title="Permalink to this heading"></a></h2>
+<p>We have reconstructed the summary catalog based on <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">DESI Legacy Imaging Surveys (dr9)</a>, which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO).</p>
+<p>The primary selection is that:</p>
 <ol class="arabic simple">
-<li><p>We have expanded the source catalog from ~140M to ~170M (<a class="reference internal" href="#selection-from-legacy-survey-dr9"><span class="xref myst">See more deteils</span></a>).</p></li>
-<li><p>The number of galaxies with spectroscopic redshifts has doubled, increasing from 10M to 20M. If you need spectroscopic data only, please see <a class="reference internal" href="#the-collections-of-desi-spectroscopic-data"><span class="xref myst">here</span></a>.</p></li>
-<li><p>We have introduced a new column, ‘tgttype’, which is used to filter out potential stars;</p></li>
-<li><p>[Coming soon!] We have refined our approach to determining stellar masses, transitioning from the method based on k-correction to the one provided by CIGALE.</p></li>
+<li><p>NOBS_{X} &gt; 0, X = {g, r, z}, the object should be observed in each optical band;</p></li>
+<li><p>MORPHTYPE !=  ‘DUP’, use the <a class="reference external" href="https://www.legacysurvey.org/dr9/description/#morphological-classification">five morphological types</a> procedured by the fitting of <a class="reference external" href="https://github.com/dstndstn/tractor">the Tractor</a>;  MORPHTYPE == REX, DEV, EXP, SER, or PSF.</p></li>
+<li><p>apparent magnitude limits are mag_z &lt;= 21 or mag_r &lt;= 21;</p></li>
+<li><p>unique sources (Sources are resolved as distinct by only counting BASS and MzLS sources if they are both at Declination &gt; 32.375° and north of the Galactic Plane, or, otherwise counting DECam sources.)</p></li>
 </ol>
-</section>
-<section id="catalogs">
-<h2>Catalogs<a class="headerlink" href="#catalogs" title="Link to this heading"></a></h2>
-<p><strong>Gravity location:</strong> /home/cossim/DESI/yzgu/seedcat/produce/*.fits</p>
+<details><summary><b> The footprint of the sweep catalog (r<21|z<21>) </b> </summary>
+<p>
+<p><img alt="footpring" src="../../_images/footprint-dr9.png" /></p>
+</p>
+</details> 
+<p> </p>
+<p>The total number of the objects with r &lt; 21 or z &lt; 21 is 331,569,898. In the actual process, the summary catalog is archived into six parts based on morphology and position, as shown in the Table.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>folder name</p></th>
+<th class="head"><p>number of record</p></th>
+<th class="head"><p>id in the cutout catalogs</p></th>
+<th class="head"><p>sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ext_northngc</p></td>
+<td><p>40360233</p></td>
+<td><p>0 - 40360232</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ext_southngc</p></td>
+<td><p>49149992</p></td>
+<td><p>40360233 - 89510224</p></td>
+<td><p>163318454</p></td>
+</tr>
+<tr class="row-even"><td><p>ext_southsgc</p></td>
+<td><p>73808229</p></td>
+<td><p>89510225 -163318453</p></td>
+<td><p>↑</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>psf_northngc</p></td>
+<td><p>44493809</p></td>
+<td><p>163318454 -207812262</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>psf_southngc</p></td>
+<td><p>53155166</p></td>
+<td><p>207812263 -260967428</p></td>
+<td><p>168251444</p></td>
+</tr>
+<tr class="row-even"><td><p>psf_southsgc</p></td>
+<td><p>70602469</p></td>
+<td><p>260967429 -331569897</p></td>
+<td><p>↑</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
-<li><p>lsdr9_prop{<a class="reference internal" href="#zlevel"><span class="xref myst">zlevel</span></a>}.produce.fits (~21G)– Main Catalog of galaxy properties</p></li>
-<li><p>lsdr9_link{<a class="reference internal" href="#zlevel"><span class="xref myst">zlevel</span></a>}.produce.fits (~11G)– link to DESI ID and some geometry selections</p></li>
-<li><p><strong>Note:</strong> use <a class="reference internal" href="#zlevel"><span class="xref myst">zlevel</span></a> == 5 for the latest data of spectroscopic redshifts</p></li>
+<li><p>ext means that the morphological type is ‘REX’, ‘EXP’, ‘DEV’, or ‘SER’.</p></li>
+<li><p>psf means that the morphological type is ‘PSF’.</p></li>
+<li><p>north_ngc (b &gt; 0 &amp; dec &gt; 32.375) use the filters of BASS_G, BASS_R, MZLS_Z, WISE_W1 and WISE_W2.</p></li>
+<li><p>south_ngc and south_sgc use the filters of DECAM_G, DECAM_R, and DECAM_Z, WISE_W1 and WISE_W2.</p></li>
 </ul>
-<section id="data-format-of-lsdr9-prop-zlevel-fits">
-<h3>Data format of lsdr9_prop{zlevel}.fits:<a class="headerlink" href="#data-format-of-lsdr9-prop-zlevel-fits" title="Link to this heading"></a></h3>
+</section>
+<section id="the-cutout-catlogs-from-the-summary-catalog">
+<h2>The cutout catlogs from the summary catalog<a class="headerlink" href="#the-cutout-catlogs-from-the-summary-catalog" title="Permalink to this heading"></a></h2>
+<p><strong>All of the following tables can be consolidated from this sweep catalog with 331,569,898 objects.</strong></p>
+<p>The latest catalog updated to the jura version:</p>
+<details><summary><b> the cutout catalog 'safe1z21z6' (reject stars strictly) </b> </summary>
+<p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe1z21z6.fits (.csv)</p>
+<p>Condition:</p>
+<ol class="arabic simple">
+<li><p>appz &lt; 21</p></li>
+<li><p>lmstar_cigale &gt; 6</p></li>
+<li><p>z &gt; 0</p></li>
+<li><p>foregroud mask</p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+<li><p>remove STAR</p></li>
+</ol>
+<ul class="simple">
+<li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star (star: gaia - r &lt; 0.6);</p></li>
+<li><p>if EXT w/o spec and w/o gaia,  reject star (star: z − W1 &lt; 0.8 × (r − z) − 0.6)</p></li>
+<li><p>if PSF w/o spec, reject them all.</p></li>
+</ul>
+</p>
+</details> 
+<details><summary><b> the cutout catalog 'safe2z21z6'  </b> </summary>
+<p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe2z21z6.fits (.csv)</p>
+<p>Condition:</p>
+<ol class="arabic simple">
+<li><p>appz &lt; 21</p></li>
+<li><p>lmstar_cigale &gt; 6</p></li>
+<li><p>z &gt; 0</p></li>
+<li><p>foregroud mask</p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+<li><p>remove STAR</p></li>
+</ol>
+<ul class="simple">
+<li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star (star: gaia - r &lt; 0.6);</p></li>
+<li><p><del> if EXT w/o spec and w/o gaia,  reject star (star: z − W1 &lt; 0.8 × (r − z) − 0.6)</del></p></li>
+<li><p>if PSF w/o spec, reject them all.</p></li>
+</ul>
+</p>
+</details> 
+<p> </p>
+<p>Note: In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in jura.</p>
+<section id="the-data-format-of-the-cutout-catlogs">
+<h3>The Data format of the cutout catlogs<a class="headerlink" href="#the-data-format-of-the-cutout-catlogs" title="Permalink to this heading"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>colname</p></th>
@@ -127,326 +241,65 @@
 <td><p>f8</p></td>
 <td><p>Declination at equinox J2000.</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘MORPHTYPE’</p></td>
-<td><p>S3</p></td>
-<td><p>Morphological types: “PSF”, “REX”, “DEV”, “EXP”, and “SER”, which are procedured by the fitting of The Tractor.</p></td>
-</tr>
-<tr class="row-even"><td><p>‘z’</p></td>
+<tr class="row-odd"><td><p>‘z’</p></td>
 <td><p>f8</p></td>
 <td><p>Redshift (PHOTZ or SPECZ).</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘zerr’</p></td>
+<tr class="row-even"><td><p>‘zerr’</p></td>
 <td><p>f8</p></td>
 <td><p>Error of redshift. 0.0001 is settled for ‘non DESI-SPECZ’</p></td>
 </tr>
-<tr class="row-even"><td><p>‘zsrc’</p></td>
+<tr class="row-odd"><td><p>‘zsrc’</p></td>
 <td><p>i4</p></td>
-<td><p>Source of redshift: 0==’PHOTZ’, 1 or 2 =’non DESI-SPECZ’, 3,4,5=’DESI-SPECZ’</p></td>
+<td><p>Source of redshift. 0: ‘PHOTZ’;1,2:’non DESI-SPECZ’;&gt;=3:’DESI-SPECZ’</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘tgttype’</p></td>
-<td><p>S7</p></td>
-<td><p>Target type: ‘GALAXY’, ‘QSO’, or ‘STAR’; judgments depend on spectra or colors.</p></td>
-</tr>
-<tr class="row-even"><td><p>‘mstar’</p></td>
+<tr class="row-even"><td><p>‘lmstar_kcorr’</p></td>
 <td><p>f8</p></td>
-<td><p>Stellar mass from K-correction (unit: Msun/h).</p></td>
+<td><p>Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>‘mag_X’</p></td>
+<tr class="row-odd"><td><p>‘lmstar_cigale’</p></td>
+<td><p>f8</p></td>
+<td><p>Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>‘lsfr_cigale’</p></td>
+<td><p>f8</p></td>
+<td><p>Instantaneous star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot/\rm year\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘ldust_cigale’</p></td>
+<td><p>f8</p></td>
+<td><p>Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(h^{-2} L_\odot\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>‘mag_X’</p></td>
 <td><p>f8</p></td>
 <td><p>Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X).</p></td>
 </tr>
-<tr class="row-even"><td><p>‘kcorr_X_0.5’</p></td>
+<tr class="row-odd"><td><p>‘kcorr_X_0.5’</p></td>
 <td><p>f8</p></td>
 <td><p>kcorrect to z = 0.5, X = {g,r,z,w1,w2}.</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘usebits’</p></td>
-<td><p>i8</p></td>
-<td><p>set usebits == 0 to reject abnormal targets and masked sources.</p></td>
+<tr class="row-even"><td><p>‘MORPHTYPE’</p></td>
+<td><p>S3</p></td>
+<td><p>Morphological types: “PSF”, “REX”, “DEV”, “EXP”, and “SER”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘regionid’</p></td>
+<td><p>i4</p></td>
+<td><p>0, two tails; 1&amp;2: ngc; 3&amp;4: sgc;</p></td>
+</tr>
+<tr class="row-even"><td><p>‘tgttype’</p></td>
+<td><p>i4</p></td>
+<td><p>0, star; 1, galaxy; 2, QSO; -1, unclassified.</p></td>
 </tr>
 </tbody>
 </table>
-<p>The description of  <strong>usebits</strong>:</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
-<th class="head"><p>bit number</p></th>
-<th class="head"><p>Description (=0)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>‘qualitycut’</p></td>
-<td><p>0</p></td>
-<td><p>to select FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z}</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘maskbits’</p></td>
-<td><p>1</p></td>
-<td><p>to reject bits of MASKBIT 1,5,6,7,8,9,11,12,13</p></td>
-</tr>
-<tr class="row-even"><td><p>‘bizarrecolor’</p></td>
-<td><p>2</p></td>
-<td><p>to select (−1 &lt; g − r &lt; 4)&amp;(−1 &lt; r − z &lt; 4)</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘redshift’</p></td>
-<td><p>3</p></td>
-<td><p>to select (FLUX_X &gt; 0, for all X = {g, r, z, w1, w2}) or (SPEC-Z it is)</p></td>
-</tr>
-<tr class="row-even"><td><p>‘foreground’</p></td>
-<td><p>4</p></td>
-<td><p>Not masked by bright star, median star, Globular Clusters, Planetary Nebulae, and local large galaxies.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="data-format-of-lsdr9-link-zlevel-fits">
-<h3>Data format of lsdr9_link{zlevel}.fits:<a class="headerlink" href="#data-format-of-lsdr9-link-zlevel-fits" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>colname</p></th>
-<th class="head"><p>dtype</p></th>
-<th class="head"><p>comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>igal</p></td>
-<td><p>int</p></td>
-<td><p>Unique ID [0-…]</p></td>
-</tr>
-<tr class="row-odd"><td><p>release</p></td>
-<td><p>int</p></td>
-<td><p>the record of processing run; A unique identifier is release,brickid,objid.</p></td>
-</tr>
-<tr class="row-even"><td><p>brickid</p></td>
-<td><p>int</p></td>
-<td><p>brick ID [1,662174], encoding the brick sky position;</p></td>
-</tr>
-<tr class="row-odd"><td><p>objid</p></td>
-<td><p>int</p></td>
-<td><p>catalog object number within this brick;</p></td>
-</tr>
-<tr class="row-even"><td><p>targetid</p></td>
-<td><p>int64</p></td>
-<td><p>Unique ID of spectroscopic targets; if not DESI targets, -99.</p></td>
-</tr>
-<tr class="row-odd"><td><p>regionid</p></td>
-<td><p>int</p></td>
-<td><p>1, north_ngc; 2, south_ngc; 3, two tails; 4, south_sgc;</p></td>
-</tr>
-<tr class="row-even"><td><p>isin_desi</p></td>
-<td><p>int</p></td>
-<td><p>1, located in the DESI spectroscopic survey; 0, not in.</p></td>
-</tr>
-<tr class="row-odd"><td><p>iseed</p></td>
-<td><p>int</p></td>
-<td><p>the id in the old version of seedcat [0,138315648]. If not, -99.</p></td>
-</tr>
-<tr class="row-even"><td><p>iseed_psf</p></td>
-<td><p>int</p></td>
-<td><p>the PSF-type supplyments of the seed catalog, starting with 138315649.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="zlevel">
-<h3>zlevel<a class="headerlink" href="#zlevel" title="Link to this heading"></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>PRODNAME</p></th>
-<th class="head"><p>zlevel</p></th>
-<th class="head"><p>spec-z fraction</p></th>
-<th class="head"><p>comments</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>PRLSdr9</p></td>
-<td><p>0</p></td>
-<td><p>0.00%</p></td>
-<td><p>pure photo-z from PRLSdr9</p></td>
-</tr>
-<tr class="row-odd"><td><p>sweepfile</p></td>
-<td><p>1</p></td>
-<td><p>1.66%</p></td>
-<td><p>spec-z collected by Zhou et al. 2021</p></td>
-</tr>
-<tr class="row-even"><td><p>4LRGC</p></td>
-<td><p>2</p></td>
-<td><p>1.71%</p></td>
-<td><p>spec-z from low redshift group catalogs collected by lim et al. 2017</p></td>
-</tr>
-<tr class="row-odd"><td><p>fuji</p></td>
-<td><p>3</p></td>
-<td><p>2.03%</p></td>
-<td><p>spec-z from formal desi spectroscopic data release, fuji (1%, EDR,  2M)</p></td>
-</tr>
-<tr class="row-even"><td><p>iron</p></td>
-<td><p>4</p></td>
-<td><p>7.27%</p></td>
-<td><p>spec-z from formal desi spectroscopic data release, iron (1/3, Y1, 10M)</p></td>
-</tr>
-<tr class="row-odd"><td><p>iron20240409</p></td>
-<td><p>5</p></td>
-<td><p>12.19%</p></td>
-<td><p>spez-z from daily data reducation of desi up to 20240409 (2/3, Y3, 20M)</p></td>
-</tr>
-</tbody>
-</table>
-<details><summary><b> spec-z fraction of galaxy sample in the entire catalog </b> </summary>
+<details><summary><b> Illustration of regionid </b> </summary>
 <p>
-<p><img alt="z0" src="../../_images/lsdr9-z0.compl.png" />
-<img alt="z1" src="../../_images/lsdr9-z1.compl.png" />
-<img alt="z2" src="../../_images/lsdr9-z2.compl.png" />
-<img alt="z3" src="../../_images/lsdr9-z3.compl.png" />
-<img alt="z4" src="../../_images/lsdr9-z4.compl.png" />
-<img alt="z5" src="../../_images/lsdr9-z5.compl.png" /></p>
+<p><img alt="regionid01234" src="../../_images/regionid01234.png" /></p>
 </p>
 </details> 
+<p>Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs.</p>
+<p> </p>
+<p> </p>
 </section>
-<section id="usage">
-<h3>USAGE<a class="headerlink" href="#usage" title="Link to this heading"></a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
-<span class="n">t1</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;lsdr9_prop5.fits&#39;</span><span class="p">)</span> 
-<span class="n">t2</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;lsdr9_link5.fits&#39;</span><span class="p">)</span> 
-<span class="n">reject_star</span> <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;tgttype&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;STAR&#39;</span>   <span class="c1"># select galaxy, qso; reject star </span>
-<span class="n">useflag</span>     <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;usebits&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span> <span class="c1"># to avoid the very unreliable redshifts and feroground masks</span>
-<span class="n">magr_cut</span>    <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;mag_r&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mf">19.5</span>
-<span class="n">isin_desi</span>   <span class="o">=</span> <span class="n">t2</span><span class="p">[</span><span class="s1">&#39;isin_desi&#39;</span><span class="p">]</span> <span class="o">==</span><span class="mi">1</span> <span class="c1"># apply the region cut</span>
-<span class="n">indx_seed</span>   <span class="o">=</span><span class="p">(</span><span class="n">t2</span><span class="p">[</span><span class="s1">&#39;iseed&#39;</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># sources in the old version of seed catalog </span>
-
-<span class="c1"># select sample</span>
-<span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="n">reject_star</span><span class="o">&amp;</span><span class="n">useflag</span><span class="o">&amp;</span><span class="n">magr_cut</span><span class="o">&amp;</span><span class="n">useflag</span><span class="o">&amp;</span><span class="n">isin_desi</span><span class="o">&amp;</span><span class="n">indx_seed</span><span class="p">]</span> 
-
-<span class="c1"># ... make some plots</span>
-
-</pre></div>
-</div>
-<details><summary><b> example plot </b> </summary>
-<p>
-<p><img alt="BGS-spectroscopic-completeness" src="../../_images/lsdr9-z5.compl.r19.5.produce.png" /></p>
-</p>
-</details> 
-</section>
-</section>
-<section id="the-construction-of-the-source-catalog">
-<h2>The construction of the source catalog<a class="headerlink" href="#the-construction-of-the-source-catalog" title="Link to this heading"></a></h2>
-<p>All sources that are resolved (or extended), characterized by MORPHTYPE being either REX, DEV, EXP, or SER, are incorporated into the final catalog.
-For point sources, identified by MORPHTYPE as PSF, it presents a challenge to differentiate between unresolved galaxies, stars, or distint quasars.
-Conservatively, the final catalog only includes those PSF sources that possess spectra, which have been classified into GALAXY, QSO, or STAR by Redrock.</p>
-<ul class="simple">
-<li><p>In one word, the catalog is constructed by <strong>PSF(spec only)+REX+DEV+EXP+SER</strong></p></li>
-</ul>
-<!-- ```
-              |   EXT-morph (REX, DEV, EXP, or SER)      |    PSF-morph with spec-z (PSF)    |    ALL
-north_ngc     |        40,360,233 ( 5,354,511   36,181)  |  44,493,809  (  39,667   245,208) |    84,854,042
-south_ngc     |        49,149,992 ( 7,801,986   27,138)  |  53,155,166  (  64,443   503,568) |   102,305,158
-south_sgc     |        73,808,229 (12,407,742   18,981)  |  70,602,469  (  50,008   380,406) |   144,410,698
-    total     |       163,318,454                        | 168,251,444  ( 154,118 1,129,182) |   331,569,898
-
-* EXT-morph means that the morphological type is 'REX', 'EXP', 'DEV', or 'SER'. 
-* PSF-morph means that the morphological type is 'PSF'.  
-``` -->
-<section id="the-selection-from-legacy-survey-dr9">
-<h3>The selection from legacy survey dr9<a class="headerlink" href="#the-selection-from-legacy-survey-dr9" title="Link to this heading"></a></h3>
-<p>The primary selection is that:</p>
-<ol class="arabic simple">
-<li><p>NOBS_{X} &gt; 0, X = {g, r, z}, the object should be observed in each optical band;</p></li>
-<li><p>MORPHTYPE !=  ‘DUP’, use the <a class="reference external" href="https://www.legacysurvey.org/dr9/description/#morphological-classification">five morphological types</a> procedured by the fitting of <a class="reference external" href="https://github.com/dstndstn/tractor">the Tractor</a>;  MORPHTYPE == REX, DEV, EXP, SER, or PSF.</p></li>
-<li><p>apparent magnitude limits are mag_z &lt;= 21 or mag_r &lt;= 21;</p></li>
-<li><p>unique sources (Sources are resolved as distinct by only counting BASS and MzLS sources if they are both at Declination &gt; 32.375° and north of the Galactic Plane, or, otherwise counting DECam sources.)</p></li>
-</ol>
-<p>When compared to the dataset in Yirong’s work, the following improvements are notable:</p>
-<ul class="simple">
-<li><p>We have expanded the catalog from having a magnitude limit of mag_z &lt;= 21 to include objects where either mag_z &lt;= 21 or mag_r &lt;= 21;</p></li>
-<li><p>we have incorporated the targets with MORPHTYPE == ‘PSF’ into the catalog;</p></li>
-<li><p>we have introduced a new column, ‘tgttype’, which is used to filter out potential stars;</p></li>
-<li><p>we have extended the catalog to include areas near the galactic plane where |b| &lt;= 25.</p></li>
-</ul>
-</section>
-<section id="the-collections-of-desi-spectroscopic-data">
-<h3>The collections of DESI spectroscopic data<a class="headerlink" href="#the-collections-of-desi-spectroscopic-data" title="Link to this heading"></a></h3>
-<p><strong>Gravity location:</strong> /home/cossim/DESI/yzgu/rawdata/release/DESItgt_specz_{SPECPROD}.fits</p>
-<p>Overall view of the collection of DESI spectral data:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SPECPROD     | sci targets (  GALAXY      QSO     STAR) | comments 
-fuji         |     1712004 ( 1125635    90241   496128) | Early data (released)
-iron         |    20415123 (14179871  1645842  4589410) | Year1 data (dr1)
-iron20240409 |    44276250 (29704052  2757831 11814367) | Year3 data (latest)
-</pre></div>
-</div>
-<p>Selection criteria of the unique targets:</p>
-<ol class="arabic simple">
-<li><p>OBJTYPE == ‘TGT’, fiber positioners should point to the sci targets (star, galaxy, or qso).</p></li>
-<li><p>ZWARN == 0, no redshift warning from REDROCK</p></li>
-<li><p>maximum DELTACHI2, when one unique target has more than one observation.</p></li>
-</ol>
-<!-- ### Details 
-
-```
-                       EXT-morph     photstar specstar       PSF-morph   specgala  specqso      ALL
-north_ngc     |        40,360,233 ( 5,354,511   36,181)  |  44,493,809  (  39,667   245,208) |    84,854,042
-south_ngc     |        49,149,992 ( 7,801,986   27,138)  |  53,155,166  (  64,443   503,568) |   102,305,158
-south_sgc     |        73,808,229 (12,407,742   18,981)  |  70,602,469  (  50,008   380,406) |   144,410,698
-    total     |       163,318,454                        | 168,251,444  ( 154,118 1,129,182) |   331,569,898
-
-* EXT-morph means that the morphological type is 'REX', 'EXP', 'DEV', or 'SER'. 
-* PSF-morph means that the morphological type is 'PSF'.  
-```  -->
-</section>
-</section>
-<section id="known-issues">
-<h2>Known issues:<a class="headerlink" href="#known-issues" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="mf">1.</span> <span class="s1">&#39;mstar&#39;</span> <span class="ow">is</span> <span class="n">got</span> <span class="kn">from</span> <span class="s1">&#39;KCORRECTv4.0&#39;</span><span class="p">,</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="n">to</span> <span class="n">CIGALE</span><span class="s1">&#39;s results, unit: log10(Mstar*h/Msun)</span>
-    <span class="mf">2.</span>  <span class="n">Random</span> <span class="n">sample</span> <span class="n">are</span> <span class="n">needed</span><span class="o">.</span> 
-</pre></div>
-</div>
-<!-- ```
-                       EXT-morph              PSF-morph           ALL
-north_ngc     |        40,360,233             44,493,809   |    84,854,042
-south_ngc     |        49,149,992             53,155,166   |   102,305,158
-south_sgc     |        73,808,229             70,602,469   |   144,410,698
-    total     |       163,318,454            168,251,444   |   331,569,898
-```  -->
-<!-- 
-### Data format of lsdr_shape.fits () 
-
-
-### Data format of lsdr9_healpix.fits (163,665,614, on going) : 
-```
-    igal      float   {igal}.1, north_ngc; {igal}.2, south_ngc; {igal}.3, two tails; {igal}.4, south_sgc;   
-   compl_z21  float   {igal}.1, north_ngc; {igal}.2, south_ngc; {igal}.3, two tails; {igal}.4, south_sgc;   
-``` 
-
-
-
-
-
-    lsdr9_id.fits # galaxy ids and some geometry selections
-    lsdr9.z5.fits # updating catalogs of galaxy properties related to redshits 
-
-
-Cutout to the seed catalog:  
-
-    EXT morph + PSF morph with spec-z  = Total number
-    138315649 +                     0  =  138,315,649 (old seed catalog)
-
-
-seedcat-origin(138): origin seed catalog we used 
-seedcat-extend(138): 'PSF' morphology is involved, and deeper
-
-----------------------------------------------------------------
-                    spectroscopic redshift fraction 
-----------------------------------------------------------------
-              seedcat-origin   seedcat-extendz21
-north_ngc         31,450,384          84,116,567
-south_ngc         41,237,608         102,072,629
-south_sgc         65,627,657         144,023,595
-    total        138,315,649         330,212,791
-
-
-
-The the comparsion of total number can be seen as follow. 
-
-    EXT morph + PSF morph with spec-z  = Total number
-    162408108 +               1257506  =  163,665,614 (current version)
-    138315649 +                     0  =  138,315,649 (old version of seed catalog)
- -->
 </section>
 </section>
 
@@ -455,7 +308,7 @@ The the comparsion of total number can be seen as follow.
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="SEEDCAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../online-documents.html" class="btn btn-neutral float-right" title="online documents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../asfunc/index.html" class="btn btn-neutral float-right" title="asfunc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

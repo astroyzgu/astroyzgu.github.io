@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>csstmock.asfunc.fiber &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../online-documents.html">online documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">csstmock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../asfunc.html">csstmock.asfunc</a></li>
+      <li class="breadcrumb-item active">csstmock.asfunc.fiber</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for csstmock.asfunc.fiber</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<div class="viewcode-block" id="coneangle2fov"><a class="viewcode-back" href="../../../csstmock.asfunc.html#csstmock.asfunc.fiber.coneangle2fov">[docs]</a><span class="k">def</span> <span class="nf">coneangle2fov</span><span class="p">(</span><span class="n">fov</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span><span class="n">fov</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span></div>
+<div class="viewcode-block" id="fov2coneangle"><a class="viewcode-back" href="../../../csstmock.asfunc.html#csstmock.asfunc.fiber.fov2coneangle">[docs]</a><span class="k">def</span> <span class="nf">fov2coneangle</span><span class="p">(</span><span class="n">coneangle</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">coneangle</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span></div>
+
+<div class="viewcode-block" id="hexagon_fiberpos"><a class="viewcode-back" href="../../../csstmock.asfunc.html#csstmock.asfunc.fiber.hexagon_fiberpos">[docs]</a><span class="k">def</span> <span class="nf">hexagon_fiberpos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">multiplex</span><span class="p">,</span> <span class="n">plate_radius</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Given field of view (fov) and number of fibers (multiplex), generate a rough set of hexagon fiber postions. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fov : float</span>
+<span class="sd">        field of view </span>
+<span class="sd">    multiplex: int </span>
+<span class="sd">        number of fibers </span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    plate_radius, patrol_radius: float </span>
+<span class="sd">        the radius of plate, and the patrol radius of each fiber </span>
+<span class="sd">    ra, dec: ndarray</span>
+<span class="sd">        the positons of fibers on the sphere. </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">plate_radius</span><span class="p">:</span> 
+        <span class="n">plate_radius</span> <span class="o">=</span> <span class="n">x</span> 
+    <span class="k">else</span><span class="p">:</span>    
+        <span class="n">plate_radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="n">n_per_row</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">multiplex</span><span class="p">))</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">multiplex</span><span class="p">))</span><span class="o">*</span><span class="mf">1.0</span><span class="p">)</span> 
+    <span class="n">xfiber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">n_per_row</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">ii</span><span class="o">%</span><span class="mi">2</span>          <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">n_per_row</span> <span class="p">])</span>
+    <span class="n">yfiber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">n_per_row</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="n">ii</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">n_per_row</span> <span class="p">])</span>
+    <span class="n">rfiber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xfiber</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">yfiber</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> 
+    <span class="n">rplate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">rfiber</span><span class="p">)[</span><span class="n">multiplex</span><span class="p">];</span> 
+    <span class="n">indx</span>   <span class="o">=</span> <span class="n">rfiber</span> <span class="o">&lt;=</span> <span class="n">rplate</span><span class="p">;</span> 
+    <span class="n">patrol_radius</span> <span class="o">=</span> <span class="n">plate_radius</span><span class="o">/</span><span class="n">rplate</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">plate_radius</span><span class="o">/</span><span class="n">rplate</span><span class="p">)</span>
+    <span class="n">rfiber</span> <span class="o">=</span> <span class="n">rfiber</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span>
+    <span class="n">xfiber</span> <span class="o">=</span> <span class="n">xfiber</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span>
+    <span class="n">yfiber</span> <span class="o">=</span> <span class="n">yfiber</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span>
+    <span class="n">nfiber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">indx</span><span class="p">)</span>
+
+    <span class="c1"># fine-tune </span>
+    <span class="n">diff</span>   <span class="o">=</span> <span class="n">nfiber</span> <span class="o">-</span> <span class="n">multiplex</span>
+    <span class="n">angle</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">yfiber</span><span class="p">,</span> <span class="n">xfiber</span><span class="p">),</span> <span class="mi">4</span> <span class="p">)</span> 
+    <span class="n">uniq_rfiber</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">rfiber</span><span class="p">,</span> <span class="n">return_counts</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">return_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">count</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> 
+        <span class="k">if</span>  <span class="n">count</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">%</span><span class="n">diff</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+            <span class="n">angle_interval</span>  <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">/</span><span class="n">diff</span><span class="p">)</span> 
+            <span class="n">rfiber_to_remove</span> <span class="o">=</span> <span class="n">uniq_rfiber</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">ii</span><span class="p">]]</span>
+            <span class="n">angle_to_remove</span>  <span class="o">=</span> <span class="n">angle</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="n">ii</span><span class="p">]]</span>
+            <span class="n">angle_to_remove</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">([</span><span class="n">angle_to_remove</span><span class="o">+</span><span class="n">kk</span><span class="o">*</span><span class="n">angle_interval</span> <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">diff</span><span class="p">)],</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="n">mask1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">angle_to_remove</span><span class="p">)</span>
+    <span class="n">mask2</span> <span class="o">=</span> <span class="n">rfiber</span> <span class="o">==</span> <span class="n">rfiber_to_remove</span>
+    <span class="n">indx</span>  <span class="o">=</span> <span class="n">mask1</span><span class="o">&amp;</span><span class="n">mask2</span>
+    <span class="n">xfiber</span><span class="o">=</span> <span class="n">xfiber</span><span class="p">[</span><span class="o">~</span><span class="n">indx</span><span class="p">]</span><span class="o">*</span><span class="n">patrol_radius</span>
+    <span class="n">yfiber</span><span class="o">=</span> <span class="n">yfiber</span><span class="p">[</span><span class="o">~</span><span class="n">indx</span><span class="p">]</span><span class="o">*</span><span class="n">patrol_radius</span>
+    <span class="k">return</span> <span class="n">plate_radius</span><span class="p">,</span> <span class="n">patrol_radius</span><span class="p">,</span> <span class="n">xfiber</span><span class="p">,</span> <span class="n">yfiber</span></div>
+
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">join</span><span class="p">,</span> <span class="n">join_skycoord</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">KDTree</span>
+<div class="viewcode-block" id="quickfa"><a class="viewcode-back" href="../../../csstmock.asfunc.html#csstmock.asfunc.fiber.quickfa">[docs]</a><span class="k">def</span> <span class="nf">quickfa</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">,</span> <span class="n">xyzfib</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">1.48</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="n">xyz</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    quick fiber assignment</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xyzgal: ndarray</span>
+<span class="sd">        the vectors of targeting galaxies</span>
+<span class="sd">    xyzfib: ndarray </span>
+<span class="sd">        the vectors of fibers,.</span>
+<span class="sd">    r: float </span>
+<span class="sd">        search radius (or patrol radius) in degree</span>
+<span class="sd">    xyz: if xyz is True:  coordinates means x,y,z.</span>
+<span class="sd">         if xyz is False: coordinates means r,u,v.</span>
+<span class="sd">    return: iround, ifiber </span>
+<span class="sd">    iround &gt;= 1, round id be assigned. nround == 2 means that the galaxy is assigned in 2nd round. </span>
+<span class="sd">    iround =  0, not assigned. </span>
+<span class="sd">    iround = -1, galaxies which fiber is impossible to point to.</span>
+<span class="sd">    </span>
+<span class="sd">    ifiber &gt;= 0, fiber id at that round be assigned. </span>
+<span class="sd">    ifiber = -1, galaxies which are not assigned. </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">xyz</span><span class="p">:</span> 
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">xyzgal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">for</span> <span class="n">iround_</span><span class="p">,</span> <span class="n">xyzfib_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xyzfib</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+            <span class="n">xyzfib</span><span class="p">[</span><span class="n">iround_</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span><span class="o">.</span><span class="n">T</span> 
+
+    <span class="n">rgal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xyzgal</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">xyzgal</span> <span class="o">=</span> <span class="n">xyzgal</span><span class="o">/</span><span class="n">rgal</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">iround_</span><span class="p">,</span> <span class="n">xyzfib_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xyzfib</span><span class="p">):</span>
+        <span class="n">rfib_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xyzfib_</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">xyzfib</span><span class="p">[</span><span class="n">iround_</span><span class="p">]</span> <span class="o">=</span> <span class="n">xyzfib_</span><span class="o">/</span><span class="n">rfib_</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># print(&#39;round:&#39;, iround_+1, &#39;fiber:&#39;, np.shape(xyzfib[iround_])) </span>
+
+    
+    <span class="n">ngal</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># 总的星系数量</span>
+    <span class="n">nround</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xyzfib</span><span class="p">);</span> <span class="c1"># 总的轮次</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span> 
+    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;igal&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ngal</span><span class="p">)</span> <span class="c1"># 给输入星系编号</span>
+    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">1</span>             <span class="c1"># 在哪一轮观测到？</span>
+    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ifiber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">1</span>             <span class="c1"># 安排了哪一个光纤? </span>
+    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ngal_of_fib&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="c1"># 安排了光纤，它搜索范围内星系的数目</span>
+    
+    <span class="n">rsearch</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># &gt;&gt;&gt; 换为直线距离</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    找到不在光纤搜索范围内的星系。 </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">index_avail</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">iround_</span><span class="p">,</span> <span class="n">xyzfib_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xyzfib</span><span class="p">):</span>
+        <span class="n">kd_fib_</span>        <span class="o">=</span> <span class="n">KDTree</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">);</span>
+        <span class="n">nfib_per_gal_</span>  <span class="o">=</span> <span class="n">kd_fib_</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">xyzgal</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">rsearch</span><span class="p">,</span>  <span class="n">return_length</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">index_avail</span><span class="p">[</span> <span class="n">nfib_per_gal_</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> 
+    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">][</span><span class="n">index_avail</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">~</span><span class="n">index_avail</span><span class="p">)</span> <span class="o">==</span> <span class="n">ngal</span><span class="p">:</span> 
+        <span class="n">iround</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> 
+        <span class="n">ifiber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ifiber&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="n">iround</span><span class="p">,</span> <span class="n">ifiber</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    按轮次分配光纤给能够指向的星系 </span>
+<span class="sd">    轮次：iround_+1；该轮光纤的搜索中心：xyzfib_；</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#print(&#39;#--- start &#39;) </span>
+    <span class="k">for</span> <span class="n">iround__</span><span class="p">,</span> <span class="n">xyzfib__</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xyzfib</span><span class="p">):</span> 
+        <span class="n">nfib__</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">xyzfib__</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="c1"># 在这轮中光纤的数目            </span>
+        <span class="n">ifib__</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nfib__</span><span class="p">);</span>    <span class="c1"># 给这轮中的光纤编号</span>
+        <span class="c1">#print(&#39;#--- New round&#39;) </span>
+        <span class="k">for</span> <span class="n">istep</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># 选出还没有使用的光纤</span>
+            <span class="n">index_fib_</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">nfib__</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">istep</span> <span class="o">!=</span><span class="mi">0</span><span class="p">:</span> 
+                <span class="n">fibid_used_</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ifiber&#39;</span><span class="p">][(</span><span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ifiber&#39;</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">iround__</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> 
+                <span class="n">index_fib_</span><span class="p">[</span><span class="n">fibid_used_</span><span class="p">]</span>  <span class="o">=</span>  <span class="kc">False</span>
+            <span class="n">ifib_</span>        <span class="o">=</span> <span class="n">ifib__</span><span class="p">[</span><span class="n">index_fib_</span><span class="p">]</span> 
+            <span class="n">xyzfib_</span>      <span class="o">=</span> <span class="n">xyzfib__</span><span class="p">[</span><span class="n">index_fib_</span><span class="p">]</span> 
+
+            <span class="c1"># 选出还没有安排光纤的星系</span>
+            <span class="n">indx_</span>   <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span> 
+            <span class="n">igal_</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;igal&#39;</span><span class="p">][</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="p">;</span>
+            <span class="n">xyzgal_</span> <span class="o">=</span> <span class="n">xyzgal</span><span class="p">[</span><span class="n">indx_</span><span class="p">]</span>
+            
+            <span class="c1">#print(&#39;round:&#39;, iround__+1, &#39;fiber:&#39;, np.shape(xyzfib_)) </span>
+            <span class="c1">#print(&#39;  igal:&#39;, igal_[:10])</span>
+            <span class="c1">#print(&#39;  ifib:&#39;, ifib_[:10])</span>
+            <span class="c1">#print(t1)</span>
+
+            <span class="c1"># 查看每一个光纤搜索半径内星系的数目ngal_per_fib</span>
+            <span class="n">kd_gal</span>        <span class="o">=</span> <span class="n">KDTree</span><span class="p">(</span><span class="n">xyzgal_</span><span class="p">);</span>
+            <span class="n">ngal_per_fib_</span> <span class="o">=</span> <span class="n">kd_gal</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">rsearch</span><span class="p">,</span> <span class="n">return_length</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+            <span class="n">igal_per_fib_</span> <span class="o">=</span> <span class="n">kd_gal</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">xyzfib_</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">rsearch</span><span class="p">,</span> <span class="n">return_sorted</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="c1">#--- 完全随机给每一个光纤确定一个星系</span>
+            <span class="c1">#--- bug: 如果星系同时在两个光纤的搜索半价内， 在同一轮观测中有可能两个光纤都指向了这个星系。</span>
+            <span class="c1">#--- fix: 加入第二轮 istep == 1 （调整环节） </span>
+            <span class="k">for</span> <span class="n">fibid</span><span class="p">,</span> <span class="n">galid</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">igal_per_fib_</span><span class="p">):</span> 
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">galid</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">continue</span>
+                <span class="n">galid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">galid</span><span class="p">)</span>
+                <span class="n">galid_final</span> <span class="o">=</span>  <span class="n">igal_</span><span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">galid</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span> 
+                <span class="k">if</span> <span class="n">ngal_per_fib_</span><span class="p">[</span><span class="n">fibid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ngal_of_fib&#39;</span><span class="p">][</span><span class="n">galid_final</span><span class="p">]:</span> 
+                    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ifiber&#39;</span><span class="p">][</span><span class="n">galid_final</span><span class="p">]</span> <span class="o">=</span> <span class="n">ifib_</span><span class="p">[</span><span class="n">fibid</span><span class="p">]</span>
+                    <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ngal_of_fib&#39;</span><span class="p">][</span><span class="n">galid_final</span><span class="p">]</span> <span class="o">=</span> <span class="n">ngal_per_fib_</span><span class="p">[</span><span class="n">fibid</span><span class="p">]</span>
+                <span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">][</span><span class="n">galid_final</span><span class="p">]</span> <span class="o">=</span> <span class="n">iround__</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">iround</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="s1">&#39;iround&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">ifiber</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="s1">&#39;ifiber&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">iround</span><span class="p">,</span> <span class="n">ifiber</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

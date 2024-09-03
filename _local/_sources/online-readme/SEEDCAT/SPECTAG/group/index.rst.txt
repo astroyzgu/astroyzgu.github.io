@@ -1,0 +1,26 @@
+group
+==============
+
+Group catalogs are split into two independent footprint region, NGC or SGC. 
+
+Each ``{FOOTPRINT}`` (NGC or SGC) generates multiple files: 
+
+  *  :doc:`{FOOTPRINT}_galaxy <_galaxy>`: summary of galaxy catalog
+  *  :doc:`{FOOTPRINT}_group <_group>`: summary of group catalog
+  *  :doc:`{FOOTPRINT}_1 <_1>`: membership galaxy
+  *  :doc:`{FOOTPRINT}_2 <_2>`: membership group
+
+{FOOTPRINT}_galaxy
+^^^^^^^^^^^^^^^^^^
+
+:Summary: group catalog 
+:Naming Convention: ``{FOOTPRINT}_galaxy.txt``,  where ``{FOOTPRINT}`` is the footprint region NGC or SGC. 
+:File Type: ASCII
+
+
+{FOOTPRINT}_group
+^^^^^^^^^^^^^^^^^^
+
+:Summary: group catalog 
+:Naming Convention: ``{FOOTPRINT}_group.txt``,  where ``{FOOTPRINT}`` is the footprint region NGC or SGC. 
+:File Type: ASCII

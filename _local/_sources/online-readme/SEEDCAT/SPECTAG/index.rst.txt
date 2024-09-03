@@ -1,0 +1,14 @@
+SPECTAG
+=============
+
+
+Files in the top-level production directory:
+
+  * :doc:`seedcat.fits` input catalog feeding to the group finder
+
+Subdirectories:
+
+.. toctree::
+   :maxdepth: 1
+
+   group/index

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>csstmock.asfunc package &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="csstmock.dataio package" href="csstmock.dataio.html" />
+    <link rel="prev" title="csstmock package" href="csstmock.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online-documents.html">online documents</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">csstmock</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="csstmock.html">csstmock package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="csstmock.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">csstmock.asfunc package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.dataio.html">csstmock.dataio package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.ext.html">csstmock.ext package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.justspec.html">csstmock.justspec package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.utils.html">csstmock.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock.html#module-csstmock.core">csstmock.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock.html#module-csstmock">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">csstmock</a></li>
+          <li class="breadcrumb-item"><a href="csstmock.html">csstmock package</a></li>
+      <li class="breadcrumb-item active">csstmock.asfunc package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/csstmock.asfunc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="csstmock-asfunc-package">
+<h1>csstmock.asfunc package<a class="headerlink" href="#csstmock-asfunc-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-csstmock.asfunc.LSScats">
+<span id="csstmock-asfunc-lsscats-module"></span><h2>csstmock.asfunc.LSScats module<a class="headerlink" href="#module-csstmock.asfunc.LSScats" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.LSScats.angular_fof_group">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.LSScats.</span></span><span class="sig-name descname"><span class="pre">angular_fof_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/LSScats.html#angular_fof_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.LSScats.angular_fof_group" title="Permalink to this definition"></a></dt>
+<dd><p>This function identifies groups of close pairs of galaxies based on their angular positions.</p>
+<p>Parameters:
+ra (numpy.ndarray): 1D array of right ascension coordinates of galaxies.
+dec (numpy.ndarray): 1D array of declination coordinates of galaxies.
+angle (float): The maximum angular distance [in degree] between two galaxies to consider them as a close pair.</p>
+<p>Returns:
+list: A list of numpy arrays, where each array contains the indices of galaxies in the same group.</p>
+<p>The function first converts the angular separation to a Euclidean distance, then converts the spherical coordinates (ra, dec) to Cartesian coordinates (x, y, z).
+It then calls the <cite>friends_of_friends</cite> function to identify the groups of galaxies.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.LSScats.close_pair_weight">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.LSScats.</span></span><span class="sig-name descname"><span class="pre">close_pair_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grpcat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isspec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/LSScats.html#close_pair_weight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.LSScats.close_pair_weight" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates the weight for each galaxy in a group based on whether it has a spectroscopic redshift.</p>
+<p>Parameters:
+grpcat (list): A list of numpy arrays, where each array contains the indices of galaxies in the same group.
+is_spec (numpy.ndarray): 1D boolean array indicating whether each galaxy has a spectroscopic redshift.</p>
+<p>Returns:
+numpy.ndarray: 1D array of weights for each galaxy.</p>
+<p>The function first initializes the weight array with -1.0. Then for each group, it calculates the weight as the fraction of galaxies in the group that have a spectroscopic redshift.
+The weight for galaxies without a spectroscopic redshift is set to 0.0 if they are in a group with at least one galaxy with a spectroscopic redshift, and -1.0 otherwise.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.LSScats.fixtabfmt_mask">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.LSScats.</span></span><span class="sig-name descname"><span class="pre">fixtabfmt_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tab</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/LSScats.html#fixtabfmt_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.LSScats.fixtabfmt_mask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.LSScats.fixtabfmt_tile">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.LSScats.</span></span><span class="sig-name descname"><span class="pre">fixtabfmt_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tab</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/LSScats.html#fixtabfmt_tile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.LSScats.fixtabfmt_tile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.LSScats.friends_of_friends">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.LSScats.</span></span><span class="sig-name descname"><span class="pre">friends_of_friends</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/LSScats.html#friends_of_friends"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.LSScats.friends_of_friends" title="Permalink to this definition"></a></dt>
+<dd><p>This function implements the Friends-of-Friends (FoF) algorithm, which is commonly used in astronomy to identify clusters of galaxies.</p>
+<p>Parameters:
+data (numpy.ndarray): A 2D array where each row represents a galaxy and the columns are the coordinates.
+link_length (float): The maximum distance between two galaxies to consider them as linked.</p>
+<p>Returns:
+list: A list of numpy arrays, where each array contains the indices of galaxies in the same group.</p>
+<p>The function first creates a KDTree from the data for efficient spatial queries.
+Then it finds all galaxies within the <cite>link_length</cite> of each galaxy.
+The function identifies isolated galaxies (galaxies with no other galaxies within <cite>link_length</cite>) first to speed up the process.
+Then it identifies linked galaxies to build the group catalog. For each galaxy that is not isolated, it finds all galaxies that are linked to it (directly or indirectly), and assigns them the same group ID.
+Finally, the function returns a list of groups, where each group is represented as a list of indices of galaxies in that group.</p>
+</dd></dl>
+
+</section>
+<section id="module-csstmock.asfunc.fiber">
+<span id="csstmock-asfunc-fiber-module"></span><h2>csstmock.asfunc.fiber module<a class="headerlink" href="#module-csstmock.asfunc.fiber" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.fiber.coneangle2fov">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.fiber.</span></span><span class="sig-name descname"><span class="pre">coneangle2fov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fov</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/fiber.html#coneangle2fov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.fiber.coneangle2fov" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.fiber.fov2coneangle">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.fiber.</span></span><span class="sig-name descname"><span class="pre">fov2coneangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coneangle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/fiber.html#fov2coneangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.fiber.fov2coneangle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.fiber.hexagon_fiberpos">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.fiber.</span></span><span class="sig-name descname"><span class="pre">hexagon_fiberpos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiplex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plate_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/fiber.html#hexagon_fiberpos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.fiber.hexagon_fiberpos" title="Permalink to this definition"></a></dt>
+<dd><p>Given field of view (fov) and number of fibers (multiplex), generate a rough set of hexagon fiber postions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fov</strong> (<em>float</em>) – field of view</p></li>
+<li><p><strong>multiplex</strong> (<em>int</em>) – number of fibers</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>plate_radius, patrol_radius</strong> (<em>float</em>) – the radius of plate, and the patrol radius of each fiber</p></li>
+<li><p><strong>ra, dec</strong> (<em>ndarray</em>) – the positons of fibers on the sphere.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.fiber.quickfa">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.fiber.</span></span><span class="sig-name descname"><span class="pre">quickfa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyzgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyzfib</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.024666666666666667</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/fiber.html#quickfa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.fiber.quickfa" title="Permalink to this definition"></a></dt>
+<dd><p>quick fiber assignment
+:param xyzgal: the vectors of targeting galaxies
+:type xyzgal: ndarray
+:param xyzfib: the vectors of fibers,.
+:type xyzfib: ndarray
+:param r: search radius (or patrol radius) in degree
+:type r: float
+:param xyz: if xyz is False: coordinates means r,u,v.
+:type xyz: if xyz is True:  coordinates means x,y,z.
+:param return:
+:type return: iround, ifiber
+:param iround &gt;= 1:
+:param round id be assigned. nround == 2 means that the galaxy is assigned in 2nd round.:
+:param iround =  0:
+:param not assigned.:
+:param iround = -1:
+:param galaxies which fiber is impossible to point to.:
+:param ifiber &gt;= 0:
+:param fiber id at that round be assigned.:
+:param ifiber = -1:
+:param galaxies which are not assigned.:</p>
+</dd></dl>
+
+</section>
+<section id="module-csstmock.asfunc.mask">
+<span id="csstmock-asfunc-mask-module"></span><h2>csstmock.asfunc.mask module<a class="headerlink" href="#module-csstmock.asfunc.mask" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.digitize">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">digitize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#digitize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.digitize" title="Permalink to this definition"></a></dt>
+<dd><p>digitize the data into the given bins.</p>
+<p>Parameters:
+- X (array): The input data with shape (n_samples, n_features).
+- edges (list): The bin edges for each feature.
+- ipix (array, optional): The pixel indices for the data. Default is None.</p>
+<p>Returns:
+- slice (tuple): The tuple of indices for each bin.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.ellipse_counting">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">ellipse_counting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#ellipse_counting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.ellipse_counting" title="Permalink to this definition"></a></dt>
+<dd><p>Count the number of points within an ellipse centered at (u, v) in the (ra, dec) coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – Angular coordinates of input targets on the sphere</p></li>
+<li><p><strong>dec</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – Angular coordinates of input targets on the sphere</p></li>
+<li><p><strong>u</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – Angular coordinates of central point of ellipse on the sphere</p></li>
+<li><p><strong>v</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – Angular coordinates of central point of ellipse on the sphere</p></li>
+<li><p><strong>a</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – The length of Semi-major axis of ellipse [degree]</p></li>
+<li><p><strong>pa</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – Position angle [degree]. PA == 0 is North (ΔDEC&gt;0), PA = 90 is WEST (ΔRA &gt; 0).</p></li>
+<li><p><strong>ba</strong> (<em>float</em><em>, </em><em>scalars</em><em> or </em><em>array-like</em>) – b/a [0,1]. if ba == 1, the shape is circle, namely the cap on the sphere.</p></li>
+<li><p><strong>w</strong> (<em>array-like</em><em>, </em><em>optional</em>) – </p></li>
+<li><p><strong>None.</strong> (<em>Weights</em><em> of </em><em>the points. Default is</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>indx</strong> – Number of points within the ellipse for each center (u, v).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.ellipse_masking">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">ellipse_masking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ba</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#ellipse_masking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.ellipse_masking" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Returns a boolean array of the same shape as ra that is True where the position</p>
+</div></blockquote>
+<p>(ra, dec) is in the ellipse shape.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>ra, dec:  float, scalars or array-like</dt><dd><p>Angular coordinates of input targets on the sphere</p>
+</dd>
+<dt>u, v: float, scalars or array-like</dt><dd><p>Angular coordinates of central point of ellipse on the sphere</p>
+</dd>
+<dt>a: float, scalars or array-like</dt><dd><p>The length of Semi-major axis of ellipse [degree]</p>
+</dd>
+<dt>pa:  float, scalars or array-like</dt><dd><p>Position angle [degree]. PA == 0 is North (ΔDEC&gt;0), PA = 90 is WEST (ΔRA &gt; 0).</p>
+</dd>
+<dt>ba:  float, scalars or array-like</dt><dd><p>b/a [0,1]. if ba == 1, the shape is circle, namely the cap on the sphere.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>vetomap: ndarray</dt><dd><p>An array with size = 12*nside*nside. 1.0 means w/i survey; 0.0 means w/o survey.</p>
+</dd>
+<dt>nside: int</dt><dd><p>nside of the healpy pixelization</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.ellipse_plot">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">ellipse_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ba</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lonlat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#ellipse_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.ellipse_plot" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.fracmapdd">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">fracmapdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#fracmapdd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.fracmapdd" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the fraction map of the given data set.</p>
+<p>Parameters:
+- X (array): The feature matrix with the shape (n_samples, n_features).
+- y (array): The target values with the shape (n_samples,).
+- bins (int or list): The number of bins or the bin edges for the histogram.
+- ipix (array, optional): The pixel indices for the data points. Default is None.</p>
+<p>Returns:
+- fracdd (array): The nD array of the fraction map.
+- frac1d (list): The list of 1D arrays of the fraction map.
+- edges (list): The list of bin edges for each dimension of the histogram.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.sphrand_healpy">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">sphrand_healpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nrand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nside</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#sphrand_healpy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.sphrand_healpy" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Draw a random sample with uniform distribution on the given region of a sphere defined by healpix.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nrand</strong> (<em>int</em>) – the number of the random points to return</p></li>
+<li><p><strong>nside</strong> (<em>int</em>) – nside of the healpy pixelization</p></li>
+<li><p><strong>pix</strong> (<em>ndarray</em><em>, </em><em>int</em>) – pixel number(s)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>ra, dec</strong> (<em>ndarray</em>) – the random sample on the sphere within the given region defined by healpix.
+arrays have shape equal to nrand.</p></li>
+<li><p><strong>skycov</strong> (<em>float</em>) – sky coverage [deg^2].</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.mask.sphrand_uniform">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.mask.</span></span><span class="sig-name descname"><span class="pre">sphrand_uniform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nrand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ramin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ramax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decmax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/mask.html#sphrand_uniform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.mask.sphrand_uniform" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Draw a random sample with uniform distribution on a sphere</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nrand</strong> (<em>int</em>) – the number of the random points to return</p></li>
+<li><p><strong>ramin</strong> (<em>float</em>) – Right Ascension between ramin and ramax [degrees]</p></li>
+<li><p><strong>ramax</strong> (<em>float</em>) – Right Ascension between ramin and ramax [degrees]</p></li>
+<li><p><strong>decmin</strong> (<em>float</em>) – Declination between decmin and decmax [degrees]</p></li>
+<li><p><strong>decmax</strong> (<em>float</em>) – Declination between decmin and decmax [degrees]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>ra, dec</strong> (<em>ndarray</em>) – the random sample on the sphere within the given limits.
+arrays have shape equal to nrand.</p></li>
+<li><p><strong>skycov</strong> (<em>float</em>) – sky coverage [deg^2].</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-csstmock.asfunc.skycov_healpy">
+<span id="csstmock-asfunc-skycov-healpy-module"></span><h2>csstmock.asfunc.skycov_healpy module<a class="headerlink" href="#module-csstmock.asfunc.skycov_healpy" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.skycov_healpy.assignwht_healpy">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.skycov_healpy.</span></span><span class="sig-name descname"><span class="pre">assignwht_healpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/skycov_healpy.html#assignwht_healpy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.skycov_healpy.assignwht_healpy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.skycov_healpy.skycov_avail">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.skycov_healpy.</span></span><span class="sig-name descname"><span class="pre">skycov_avail</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/skycov_healpy.html#skycov_avail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.skycov_healpy.skycov_avail" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.skycov_healpy.skycov_healpy">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.skycov_healpy.</span></span><span class="sig-name descname"><span class="pre">skycov_healpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">surveyname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc/skycov_healpy.html#skycov_healpy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.skycov_healpy.skycov_healpy" title="Permalink to this definition"></a></dt>
+<dd><p>Return the vetomap and nside of preset healpy pixelization of some given surveys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>surveyname</strong> (<em>str</em>) – name of preset survey, ‘desidr9’, ‘hscdr3’, ‘csstv0’
+- surveyname ==  ‘desidr9’:   18350.26 deg^2, nside = 256, (pixarea = 5.246e-02 deg^2/pixel)
+- surveyname ==  ‘lsdr9-ngc’: , nside = 256, (pixarea = 5.246e-02 deg^2/pixel)
+- surveyname ==  ‘hscdr3’:   967.39 deg^2, nside = 512, (pixarea = 1.311e-02 deg^2/pixel)
+- surveyname ==  ‘csstv0’:  16787.94 deg^2, nside = 512  (pixarea = 1.311e-02 deg^2/pixel)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>vetomap</strong> (<em>ndarray</em>) – An array with size = 12*nside*nside. 1.0 means w/i survey; 0.0 means w/o survey.</p></li>
+<li><p><strong>nside</strong> (<em>int</em>) – nside of the healpy pixelization</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="csstmock-asfunc-visual-old-module">
+<h2>csstmock.asfunc.visual_old module<a class="headerlink" href="#csstmock-asfunc-visual-old-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-csstmock.asfunc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-csstmock.asfunc" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="csstmock.asfunc.BinMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.</span></span><span class="sig-name descname"><span class="pre">BinMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#BinMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.BinMap" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.asfunc.BinMap.assure2d">
+<span class="sig-name descname"><span class="pre">assure2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#BinMap.assure2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.BinMap.assure2d" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to ensure that the input array is 2-dimensional.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>val: array-like</dt><dd><p>Input array.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>val_2d: array-like</dt><dd><p>2-dimensional version of the input array.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.asfunc.BinMap.autobins">
+<span class="sig-name descname"><span class="pre">autobins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#BinMap.autobins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.BinMap.autobins" title="Permalink to this definition"></a></dt>
+<dd><p>Automatically determine the bin edges based on the input data.</p>
+<section id="id1">
+<h3>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>X: array-like, optional</dt><dd><p>Input X variables.</p>
+</dd>
+<dt>C: array-like, optional</dt><dd><p>Input C variables.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>bins: list</dt><dd><p>List of bin edges for X and C variables.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.asfunc.BinMap.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#BinMap.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.BinMap.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Fit the bin map using the input data.</p>
+<section id="id3">
+<h3>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>X: array-like</dt><dd><p>Input X variables.</p>
+</dd>
+<dt>y: array-like</dt><dd><p>Target variable.</p>
+</dd>
+<dt>C: array-like, optional</dt><dd><p>Input C variables.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.asfunc.BinMap.interpdd">
+<span class="sig-name descname"><span class="pre">interpdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cubic'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#BinMap.interpdd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.BinMap.interpdd" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.asfunc.BinMap.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#BinMap.predict_proba"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.BinMap.predict_proba" title="Permalink to this definition"></a></dt>
+<dd><p>Predict the probabilities based on the input data.</p>
+<section id="id4">
+<h3>Parameters:<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>X: array-like</dt><dd><p>Input X variables.</p>
+</dd>
+<dt>C: array-like, optional</dt><dd><p>Input C variables.</p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h3>Returns:<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>proba: array-like</dt><dd><p>Predicted probabilities.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.cartview">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.</span></span><span class="sig-name descname"><span class="pre">cartview</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vmap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#cartview"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.cartview" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.fracmap">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.</span></span><span class="sig-name descname"><span class="pre">fracmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nside</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#fracmap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.fracmap" title="Permalink to this definition"></a></dt>
+<dd><section id="parameter">
+<h3>parameter:<a class="headerlink" href="#parameter" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>nside: int</dt><dd><p>nside of healpix, all sky is divided into 12*n^2 regions with equal area  (n=1,2,3, …).</p>
+</dd>
+<dt>a: array-like</dt><dd><p>Right Ascension</p>
+</dd>
+<dt>d: array-like</dt><dd><p>Declination</p>
+</dd>
+<dt>mask: array-like, bool</dt><dd><p>if true, tract as numerator.</p>
+</dd>
+<dt>z: array-like</dt><dd><p>thrid quantity (e.g., magnitude), if wanting a map of fraction as a function z.</p>
+</dd>
+<dt>zbins: array-like</dt><dd><p>The bin of thrid quantity (e.g., magnitude).</p>
+</dd>
+</dl>
+</section>
+<section id="return">
+<h3>return:<a class="headerlink" href="#return" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>wmap:</dt><dd><p>the map of fraction (1D or 2D if thrid quantity is available)</p>
+</dd>
+<dt>pix: array-like</dt><dd><p>the region id of healpix</p>
+</dd>
+<dt>w: array-like</dt><dd><p>the weighted value of input galaxies</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.fracmap1d_plot">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.</span></span><span class="sig-name descname"><span class="pre">fracmap1d_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indx_spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#fracmap1d_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.fracmap1d_plot" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.asfunc.pix2border">
+<span class="sig-prename descclassname"><span class="pre">csstmock.asfunc.</span></span><span class="sig-name descname"><span class="pre">pix2border</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nside</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/asfunc.html#pix2border"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.asfunc.pix2border" title="Permalink to this definition"></a></dt>
+<dd><p>Roughly estimate the boundary of a set of pixels.</p>
+<section id="paramter">
+<h3>paramter:<a class="headerlink" href="#paramter" title="Permalink to this heading"></a></h3>
+<p>nside: int, nside of healpy, 1,2,4,8,16, …, 2^
+pixid: array_like, the set of pixels
+nest: bool
+return:
+———
+pixid_edge: array_like, the set of pixels on the envelope (edge)</p>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="csstmock.html" class="btn btn-neutral float-left" title="csstmock package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="csstmock.dataio.html" class="btn btn-neutral float-right" title="csstmock.dataio package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

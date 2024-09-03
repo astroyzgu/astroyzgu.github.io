@@ -1,0 +1,24 @@
+## Runnung jobs 
+
+### slurm  
+```
+#!/bin/bash
+#SBATCH --job-name=kSZ-tSZ-GPU
+#SBATCH --partition=dgx2
+#SBATCH --ntasks-per-node=1
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:6
+#SBATCH --time=12:00:00
+#SBATCH --mail-user=yuyuwang@sjtu.edu.cn
+#SBATCH --mail-type=ALL
+#SBATCH -D /lustre/home/acct-phyyxh/phyyxh-yuyuw/run/velocity_reconstruction
+#SBATCH -e /lustre/home/acct-phyyxh/phyyxh-yuyuw/run/report/%x-%A.err
+#SBATCH -o /lustre/home/acct-phyyxh/phyyxh-yuyuw/run/report/%x-%A.out
+
+module purge
+module load miniconda3
+source activate condampi4py
+#python DL_test.py
+python DL_test_vNrom.py 1 1
+``` 
+

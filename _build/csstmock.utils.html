@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>csstmock.utils package &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="csstmock.justspec package" href="csstmock.justspec.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online-documents.html">online documents</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">csstmock</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="csstmock.html">csstmock package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="csstmock.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="csstmock.asfunc.html">csstmock.asfunc package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.dataio.html">csstmock.dataio package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.ext.html">csstmock.ext package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="csstmock.justspec.html">csstmock.justspec package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">csstmock.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock.html#module-csstmock.core">csstmock.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock.html#module-csstmock">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">csstmock</a></li>
+          <li class="breadcrumb-item"><a href="csstmock.html">csstmock package</a></li>
+      <li class="breadcrumb-item active">csstmock.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/csstmock.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="csstmock-utils-package">
+<h1>csstmock.utils package<a class="headerlink" href="#csstmock-utils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="csstmock-utils-cftools-module">
+<h2>csstmock.utils.cftools module<a class="headerlink" href="#csstmock-utils-cftools-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-csstmock.utils.fiberassign">
+<span id="csstmock-utils-fiberassign-module"></span><h2>csstmock.utils.fiberassign module<a class="headerlink" href="#module-csstmock.utils.fiberassign" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.fiberassign.quickfa">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.fiberassign.</span></span><span class="sig-name descname"><span class="pre">quickfa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyztgt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyzfib</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.024666666666666667</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/fiberassign.html#quickfa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.fiberassign.quickfa" title="Permalink to this definition"></a></dt>
+<dd><p>quick fiberassign
+parameter:
+xyztgt: array-like</p>
+<blockquote>
+<div><p>coordinates of galaxy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>xyzfib: array-like</dt><dd><p>coordinates of  fiber</p>
+</dd>
+</dl>
+<p>r: search radius in degee
+xyz: if xyz is True:  coordinates means x,y,z.</p>
+<blockquote>
+<div><p>if xyz is False: coordinates means r,u,v.</p>
+</div></blockquote>
+<p>return: iround, ifiber</p>
+<p>iround &gt;= 0, round id be assigned. nround == 1 means that the galaxy is assigned in 2nd round.
+iround = -1, not assigned.
+iround = -2, galaxies which fiber is impossible to point to.</p>
+<p>ifiber &gt;= 0, fiber id at that round be assigned.
+ifiber = -1, galaxies which are not assigned.
+ifiber = -2, galaxies which are not assigned.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.fiberassign.quickfa1pass">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.fiberassign.</span></span><span class="sig-name descname"><span class="pre">quickfa1pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra_tgt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_tgt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ra_fib</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_fib</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rsearch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_tgt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subpriority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finetune</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/fiberassign.html#quickfa1pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.fiberassign.quickfa1pass" title="Permalink to this definition"></a></dt>
+<dd><p>quick fiberassign
+parameter
+===========
+ra_tgt, dec_tgt: array-like</p>
+<blockquote>
+<div><p>coordinates of targets</p>
+</div></blockquote>
+<dl class="simple">
+<dt>ra_fib, dec_fib: list of array-like</dt><dd><p>coordinates of pointing centers of robotic fibers.</p>
+</dd>
+<dt>rsearch: float</dt><dd><p>search radius in degee</p>
+</dd>
+<dt>subpriority: array-like</dt><dd><p>subpriority of each targets</p>
+</dd>
+<dt>mask_tgt: array-like</dt><dd><p>False (or 0), waiting to be assigned; True (or 1), masked;</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ifiber</strong> – ifiber &gt;= 0, fiber id at that round be assigned.
+ifiber = -1, galaxies which are not assigned.
+ifiber = -2, galaxies which are not reachable.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>array-like</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="csstmock-utils-mcompl-module">
+<h2>csstmock.utils.mcompl module<a class="headerlink" href="#csstmock-utils-mcompl-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="csstmock-utils-mockimg-module">
+<h2>csstmock.utils.mockimg module<a class="headerlink" href="#csstmock-utils-mockimg-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="csstmock-utils-pipe-module">
+<h2>csstmock.utils.pipe module<a class="headerlink" href="#csstmock-utils-pipe-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="csstmock-utils-random-module">
+<h2>csstmock.utils.random module<a class="headerlink" href="#csstmock-utils-random-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-csstmock.utils.starmask">
+<span id="csstmock-utils-starmask-module"></span><h2>csstmock.utils.starmask module<a class="headerlink" href="#module-csstmock.utils.starmask" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csstmock.utils.starmask.</span></span><span class="sig-name descname"><span class="pre">starmask</span></span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.crosscorr">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">crosscorr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gala</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.crosscorr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.crosscorr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.mv2dxyz">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mv2dxyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_vec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.mv2dxyz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.mv2dxyz" title="Permalink to this definition"></a></dt>
+<dd><p>move points following the rotation from 1 point (from_vec) to another (to_vec)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.run">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gala</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.ruv2xyz">
+<span class="sig-name descname"><span class="pre">ruv2xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.ruv2xyz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.ruv2xyz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.sphrand">
+<span class="sig-name descname"><span class="pre">sphrand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[-180,</span> <span class="pre">180,</span> <span class="pre">-90,</span> <span class="pre">90]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.sphrand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.sphrand" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.uniform_sph">
+<span class="sig-name descname"><span class="pre">uniform_sph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DEClim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.uniform_sph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.uniform_sph" title="Permalink to this definition"></a></dt>
+<dd><p>Draw a uniform sample on a sphere</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>RAlim</strong> (<em>tuple</em>) – select Right Ascension between RAlim[0] and RAlim[1]
+units are degrees</p></li>
+<li><p><strong>DEClim</strong> (<em>tuple</em>) – select Declination between DEClim[0] and DEClim[1]</p></li>
+<li><p><strong>size</strong> (<em>int</em><em> (</em><em>optional</em><em>)</em>) – the size of the random arrays to return (default = 1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RA, DEC</strong> – the random sample on the sphere within the given limits.
+arrays have shape equal to size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.starmask.starmask.xyz2ruv">
+<span class="sig-name descname"><span class="pre">xyz2ruv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/starmask.html#starmask.xyz2ruv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.starmask.starmask.xyz2ruv" title="Permalink to this definition"></a></dt>
+<dd><p>球坐标-&gt; 笛卡尔坐标
+u0 = 0, ==&gt; u = [-180, 180]; u0 = 180, ==&gt; u = [0, 360]
+v0 = 0, ==&gt; v = [-90, 90];   v0 = 90, ==&gt; v = [0, 180]</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="csstmock-utils-tpcf-module">
+<h2>csstmock.utils.tpcf module<a class="headerlink" href="#csstmock-utils-tpcf-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-csstmock.utils.utilsdev">
+<span id="csstmock-utils-utilsdev-module"></span><h2>csstmock.utils.utilsdev module<a class="headerlink" href="#module-csstmock.utils.utilsdev" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.auto_firstidcol">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">auto_firstidcol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#auto_firstidcol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.auto_firstidcol" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.file2table">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">file2table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usecols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#file2table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.file2table" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.fracndim">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">fracndim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#fracndim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.fracndim" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.fracndim1">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">fracndim1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#fracndim1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.fracndim1" title="Permalink to this definition"></a></dt>
+<dd><p>outershape: 循环层数和每层的次数</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.fracndim2">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">fracndim2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#fracndim2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.fracndim2" title="Permalink to this definition"></a></dt>
+<dd><p>outershape: 循环层数和每层的次数</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.groupbysum">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">groupbysum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groupbyid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#groupbysum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.groupbysum" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates the sum of weights for each unique group ID.</p>
+<p>Parameters:
+groupbyid (numpy array): A numpy array containing group IDs.
+weights   (numpy array): A numpy array containing weights corresponding to each group ID.</p>
+<p>Returns:
+uniq_id  (numpy array): A numpy array of unique group IDs.
+sumofwht (numpy array): A numpy array of the sum of weights for each unique group ID.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.histogram_bootstrap">
+<span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">histogram_bootstrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#histogram_bootstrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.histogram_bootstrap" title="Permalink to this definition"></a></dt>
+<dd><p>This function is a wrapper for numpy’s histogram function, adding a bootstrap parameter for bootstrap resampling.</p>
+<p>Parameters:
+a (array_like): Input data, will be converted into a one-dimensional array.
+bins (int, optional): The number of bins for the histogram, default is 10.
+bootstrap (int, optional): The number of bootstrap resamples. If None, no bootstrap resampling is performed. Default is None.
+range (tuple, optional): The range of the histogram. Default is None.
+density (bool, optional): If True, the returned histogram is normalized by dividing by the bin width and the number of observations, so that the integral under the histogram is 1. Default is None.
+weights (array_like, optional): The weights for each value in the input data. Default is None.</p>
+<p>Returns:
+hist (ndarray): The values of the histogram.</p>
+<blockquote>
+<div><p>If bootstrap is not None, returns a 2D array where each row is a bootstrap resample of the histogram.</p>
+</div></blockquote>
+<p>edges (ndarray): The bin edges of the histogram.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">lftools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Om0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Update:  calzmax2 - zmax[np.inan(zmax)] = 0</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.app2abs">
+<span class="sig-name descname"><span class="pre">app2abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kcorr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Msun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.app2abs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.app2abs" title="Permalink to this definition"></a></dt>
+<dd><p>Convet apparent magnitude to absolute magnitude to a given redshift.
+mag_abs = mag_app - 5*np.log10(DL[Mpc]) - 25 - kcorr
+mag_abs - 5*log10(h) = mag_app - 5*np.log10(DL[Mpc/h]) - 25 - kcorr - 5*log10(h)</p>
+<p>mag_abs - Msun = -2.5*log10( L/Lsun )
+mag_abs - 5*log10(h) - Msun = -2.5*log10( L/Lsun ) - 5*log10(h)</p>
+<blockquote>
+<div><p>= -2.5*log10( L*h*h/Lsun )</p>
+</div></blockquote>
+<p>log10( L/(Lsun/h^2) ) = -0.4(mag_abs - 5*log10(h) - Msun)</p>
+<section id="parameter">
+<h3>Parameter:<a class="headerlink" href="#parameter" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>mag_app: array_like</dt><dd><p>apparent magnitude of galaxies</p>
+</dd>
+<dt>z: array_like</dt><dd><p>redshift of galaxies</p>
+</dd>
+</dl>
+<p>kcorr: array_like, or constant
+Msun: array_like, or None</p>
+<blockquote>
+<div><p>if Msun is None (defaults), return magnitude
+if Msun is settled, e.g., 4.83, return luminosity</p>
+</div></blockquote>
+<dl class="simple">
+<dt>use_h: bool</dt><dd><p>if use_h is True (defults), the results of absolute magnitude (or luminosity) is Mabs - 5*log10(h) (or L[Lsun/h^2])
+if use_h is False, the results of absolute magnitude (or luminosity) is Mabs (or L[Lsun])</p>
+</dd>
+</dl>
+</section>
+<section id="results">
+<h3>Results:<a class="headerlink" href="#results" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>magnitude/log10(luminosity): array_like</dt><dd><p>use Msun and use_h to control the output</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.app2abs1">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">app2abs1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kcorr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Msun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.315</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">67.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.app2abs1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.app2abs1" title="Permalink to this definition"></a></dt>
+<dd><p>Convet apparent magnitude to absolute magnitude to a given redshift.
+mag_abs = mag_app - 5*np.log10(DL[Mpc]) - 25 - kcorr
+mag_abs - 5*log10(h) = mag_app - 5*np.log10(DL[Mpc/h]) - 25 - kcorr - 5*log10(h)</p>
+<p>mag_abs - Msun = -2.5*log10( L/Lsun )
+mag_abs - 5*log10(h) - Msun = -2.5*log10( L/Lsun ) - 5*log10(h)</p>
+<blockquote>
+<div><p>= -2.5*log10( L*h*h/Lsun )</p>
+</div></blockquote>
+<p>log10( L/(Lsun/h^2) ) = -0.4(mag_abs - 5*log10(h) - Msun)</p>
+<section id="id1">
+<h3>Parameter:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>mag_app: array_like</dt><dd><p>apparent magnitude of galaxies</p>
+</dd>
+<dt>z: array_like</dt><dd><p>redshift of galaxies</p>
+</dd>
+</dl>
+<p>kcorr: array_like, or constant
+Msun: array_like, or None</p>
+<blockquote>
+<div><p>if Msun is None (defaults), return magnitude
+if Msun is settled, e.g., 4.83, return luminosity</p>
+</div></blockquote>
+<dl class="simple">
+<dt>use_h: bool</dt><dd><p>if use_h is True (defults), the results of absolute magnitude (or luminosity) is Mabs - 5*log10(h) (or L[Lsun/h^2])
+if use_h is False, the results of absolute magnitude (or luminosity) is Mabs (or L[Lsun])</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Results:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>magnitude/log10(luminosity): array_like</dt><dd><p>use Msun and use_h to control the output</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.bootstrap">
+<span class="sig-name descname"><span class="pre">bootstrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglum_bin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.bootstrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.bootstrap" title="Permalink to this definition"></a></dt>
+<dd><p>bootstrap1 is used to calculate the luminosity function and the uncertainty,
+which do the boostrap by random sampling of galaxies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.bootstrap1">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrap1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglum_bin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.bootstrap1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.bootstrap1" title="Permalink to this definition"></a></dt>
+<dd><p>bootstrap1 is used to calculate the luminosity function and the uncertainty,
+which do the boostrap by random sampling of galaxies.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.bootstrap2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrap2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">igrp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.bootstrap2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.bootstrap2" title="Permalink to this definition"></a></dt>
+<dd><p>bootstrap2 is used to calculate the conditional luminosity function and the uncertainty,
+which do the boostrap by random sampling of groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.bootstrap3">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrap3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">igrp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.bootstrap3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.bootstrap3" title="Permalink to this definition"></a></dt>
+<dd><p>bootstrap2 is used to calculate the conditional luminosity function and the uncertainty,
+which do the boostrap by random sampling of groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.bootstrap_ngal">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bootstrap_ngal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ngal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">igrp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.bootstrap_ngal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.bootstrap_ngal" title="Permalink to this definition"></a></dt>
+<dd><p>#—- 对ngal个星系进行随机抽样， 或者对星系团以及其中的星系进行随机抽样
+#—- 返回：numgal_rand, 星系在每一次抽样中出现的次数</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.build_ngrid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_ngrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.build_ngrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.build_ngrid" title="Permalink to this definition"></a></dt>
+<dd><p>mag_app = -2.5log10(L) + 5log10(DL1)
+mag_cut = -2.5log10(L) + 5log10(DL2)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.build_ngrid1">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_ngrid1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.315</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">67.4</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.build_ngrid1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.build_ngrid1" title="Permalink to this definition"></a></dt>
+<dd><p>Input group redshift and group id, return the number as a function of redshift.
+Use zref as redshift bin to count.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.build_ngrid2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_ngrid2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.build_ngrid2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.build_ngrid2" title="Permalink to this definition"></a></dt>
+<dd><p>Input group redshift and group id, return the number as a function of redshift.
+Use input redshift to calculate the cumulative counts.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.build_zgrid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_zgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zlo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.315</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">67.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.build_zgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.build_zgrid" title="Permalink to this definition"></a></dt>
+<dd><p>Build the gird of redshift according to the precision.
+Generate the corrsponding distance and volume as a reference.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.build_zmaxgrid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_zmaxgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kcorr_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.315</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">67.4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.build_zmaxgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.build_zmaxgrid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.callf">
+<span class="sig-name descname"><span class="pre">callf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zlo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wht</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglum_bin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([6.,</span> <span class="pre">6.1,</span> <span class="pre">6.2,</span> <span class="pre">6.3,</span> <span class="pre">6.4,</span> <span class="pre">6.5,</span> <span class="pre">6.6,</span> <span class="pre">6.7,</span> <span class="pre">6.8,</span> <span class="pre">6.9,</span> <span class="pre">7.,</span> <span class="pre">7.1,</span> <span class="pre">7.2,</span> <span class="pre">7.3,</span> <span class="pre">7.4,</span> <span class="pre">7.5,</span> <span class="pre">7.6,</span> <span class="pre">7.7,</span> <span class="pre">7.8,</span> <span class="pre">7.9,</span> <span class="pre">8.,</span> <span class="pre">8.1,</span> <span class="pre">8.2,</span> <span class="pre">8.3,</span> <span class="pre">8.4,</span> <span class="pre">8.5,</span> <span class="pre">8.6,</span> <span class="pre">8.7,</span> <span class="pre">8.8,</span> <span class="pre">8.9,</span> <span class="pre">9.,</span> <span class="pre">9.1,</span> <span class="pre">9.2,</span> <span class="pre">9.3,</span> <span class="pre">9.4,</span> <span class="pre">9.5,</span> <span class="pre">9.6,</span> <span class="pre">9.7,</span> <span class="pre">9.8,</span> <span class="pre">9.9,</span> <span class="pre">10.,</span> <span class="pre">10.1,</span> <span class="pre">10.2,</span> <span class="pre">10.3,</span> <span class="pre">10.4,</span> <span class="pre">10.5,</span> <span class="pre">10.6,</span> <span class="pre">10.7,</span> <span class="pre">10.8,</span> <span class="pre">10.9,</span> <span class="pre">11.,</span> <span class="pre">11.1,</span> <span class="pre">11.2,</span> <span class="pre">11.3,</span> <span class="pre">11.4,</span> <span class="pre">11.5,</span> <span class="pre">11.6,</span> <span class="pre">11.7,</span> <span class="pre">11.8,</span> <span class="pre">11.9,</span> <span class="pre">12.,</span> <span class="pre">12.1,</span> <span class="pre">12.2,</span> <span class="pre">12.3,</span> <span class="pre">12.4,</span> <span class="pre">12.5,</span> <span class="pre">12.6,</span> <span class="pre">12.7,</span> <span class="pre">12.8,</span> <span class="pre">12.9,</span> <span class="pre">13.])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skycov</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">41252.96</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.callf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.callf" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.calzmax">
+<span class="sig-name descname"><span class="pre">calzmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_cut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kcorr_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.calzmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.calzmax" title="Permalink to this definition"></a></dt>
+<dd><p>mag_abs = mag_app - 5*np.log10(DL(z)[Mpc]) - 25 - kcorr(z)
+mag_abs = mag_cut - 5*np.log10(DL(zmax)[Mpc]) - 25 - kcorr(zmax)</p>
+<p>==&gt; mag_cut - mag_app =  func(zmax) - func(z),   func(z) = kcorr(z) + 5*np.log10(DL(z)[Mpc])</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.calzmax0">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calzmax0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.calzmax0"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.calzmax0" title="Permalink to this definition"></a></dt>
+<dd><p>mag_app = -2.5log10(L) + 5log10(DL1)
+mag_cut = -2.5log10(L) + 5log10(DL2)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.calzmax1">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calzmax1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_cut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kcorr_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.315</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">67.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.calzmax1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.calzmax1" title="Permalink to this definition"></a></dt>
+<dd><p>mag_app = -2.5log10(L) + 5log10(DL1)
+mag_cut = -2.5log10(L) + 5log10(DL2)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.calzmax2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calzmax2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zgal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_cut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kcorr_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmaxgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.315</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">67.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.calzmax2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.calzmax2" title="Permalink to this definition"></a></dt>
+<dd><p>mag_abs = mag_app - 5*np.log10(DL(z)[Mpc]) - 25 - kcorr(z)
+mag_abs = mag_cut - 5*np.log10(DL(zmax)[Mpc]) - 25 - kcorr(zmax)</p>
+<p>==&gt; mag_cut - mag_app =  func(zmax) - func(z),   func(z) = kcorr(z) + 5*np.log10(DL(z)[Mpc])</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.check">
+<span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.check" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skycov</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">igrp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zgrp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.initialize" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.lftools.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zlo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglum_bin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([8.,</span> <span class="pre">8.1,</span> <span class="pre">8.2,</span> <span class="pre">8.3,</span> <span class="pre">8.4,</span> <span class="pre">8.5,</span> <span class="pre">8.6,</span> <span class="pre">8.7,</span> <span class="pre">8.8,</span> <span class="pre">8.9,</span> <span class="pre">9.,</span> <span class="pre">9.1,</span> <span class="pre">9.2,</span> <span class="pre">9.3,</span> <span class="pre">9.4,</span> <span class="pre">9.5,</span> <span class="pre">9.6,</span> <span class="pre">9.7,</span> <span class="pre">9.8,</span> <span class="pre">9.9,</span> <span class="pre">10.,</span> <span class="pre">10.1,</span> <span class="pre">10.2,</span> <span class="pre">10.3,</span> <span class="pre">10.4,</span> <span class="pre">10.5,</span> <span class="pre">10.6,</span> <span class="pre">10.7,</span> <span class="pre">10.8,</span> <span class="pre">10.9,</span> <span class="pre">11.,</span> <span class="pre">11.1,</span> <span class="pre">11.2,</span> <span class="pre">11.3,</span> <span class="pre">11.4,</span> <span class="pre">11.5,</span> <span class="pre">11.6,</span> <span class="pre">11.7,</span> <span class="pre">11.8,</span> <span class="pre">11.9,</span> <span class="pre">12.,</span> <span class="pre">12.1,</span> <span class="pre">12.2,</span> <span class="pre">12.3,</span> <span class="pre">12.4,</span> <span class="pre">12.5,</span> <span class="pre">12.6,</span> <span class="pre">12.7,</span> <span class="pre">12.8,</span> <span class="pre">12.9,</span> <span class="pre">13.])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#lftools.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.lftools.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">mockimg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'desi'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./__cache__/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enlarge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>build mock image</p>
+<section id="id3">
+<h3>parameter<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>a1:
+d1:
+stps:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.autowcs">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">autowcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixscale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enlarge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.01</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.autowcs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.autowcs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.download_from_desidr9">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download_from_desidr9</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.download_from_desidr9"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.download_from_desidr9" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.downloads">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">downloads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./__cache__/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'desi'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixscale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.262</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fits'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'grz'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.downloads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.downloads" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.easy_bkg">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">easy_bkg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.easy_bkg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.easy_bkg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.fillin">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.fillin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.fillin" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.isinBOX">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isinBOX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.isinBOX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.isinBOX" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>box</strong> (<em>array_like</em>) – box_xmin, box_ymin, box_xmax, box_ymax</p></li>
+<li><p><strong>old_rec</strong> (<em>array_like</em><em>, </em><em>shape =</em><em> [</em><em>4</em><em>, </em><em>:</em><em>]</em>) – old rectangle, xmin, ymin, xmax, ymax</p></li>
+<li><p><strong>return</strong> – </p></li>
+<li><p><strong>indx</strong> (<em>array_like</em><em>, </em><em>bool</em>) – x == -1, no corner in the box;
+x ==  0, all corners fully in the box
+x ==  1, left  bottom corner in the box
+x ==  2, right bottom corner in the box
+x ==  3, right upper  corner in the box
+x ==  4, left  upper  corner in the box</p></li>
+<li><p><strong>new_rec</strong> (<em>array_like</em><em>, </em><em>shape =</em><em> [</em><em>4</em><em>, </em><em>:</em><em>]</em>) – new rectangle of joint region, xmin, ymin, xmax, ymax</p></li>
+<li><p><strong>#-------------------------------------------------------</strong> – </p></li>
+<li><p><strong>+------------</strong><strong>(</strong><strong>jxmax</strong> (<em>#</em>) – </p></li>
+<li><p><strong>jymax</strong><strong>)</strong> – </p></li>
+<li><p><strong>|</strong> (<em>#</em><em>                          |</em>) – </p></li>
+<li><p><strong>+---------</strong><strong>|</strong><strong>--</strong><strong>(</strong><strong>ixmax</strong> (<em>#</em>) – </p></li>
+<li><p><strong>ixmin</strong> (<em>iymax</em><em>)   </em><em>|   </em><em>xmin = max</em><em>(</em>) – </p></li>
+<li><p><strong>)</strong> (<em>jymax</em>) – </p></li>
+<li><p><strong>iymin</strong> (<em>#</em><em>                |         </em><em>|        </em><em>|         </em><em>|   </em><em>ymin = max</em><em>(</em>) – </p></li>
+<li><p><strong>)</strong> – </p></li>
+<li><p><strong>(</strong><strong>jxmin</strong> (<em>#            height</em>) – </p></li>
+<li><p><strong>jymin</strong><strong>)</strong><strong>------------+</strong> – </p></li>
+<li><p><strong>ixmax</strong> (<em>#</em><em>                |                  </em><em>|             </em><em>xmax = min</em><em>(</em>) – </p></li>
+<li><p><strong>)</strong> – </p></li>
+<li><p><strong>(</strong><strong>ixmin</strong> (<em>#</em>) – </p></li>
+<li><p><strong>iymax</strong> (<em>iymin</em><em>)</em><em>---- width -----+             ymax = min</em><em>(</em>) – </p></li>
+<li><p><strong>)</strong> – </p></li>
+<li><p><strong>#</strong> – </p></li>
+<li><p><strong>ymin</strong><strong>)</strong> (<em>#       if</em><em> (</em><em>xmax &lt; xmin</em><em>)</em><em>|</em><em>(</em><em>ymax &lt;</em>) – </p></li>
+<li><p><strong>ymin</strong><strong>)</strong> – </p></li>
+<li><p><strong>#-------------------------------------------------------</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.readimg_worker">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readimg_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ihdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.readimg_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.readimg_worker" title="Permalink to this definition"></a></dt>
+<dd><p>write for mutliprocessing
+read image array from a file (jpg or fits).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.readimgs">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readimgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ihdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aslist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.readimgs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.readimgs" title="Permalink to this definition"></a></dt>
+<dd><p>load all the images and convert them into a tensor (indx, xpix, ypix, 1).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.rgb">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'desi'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.rgb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.rgb" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.ruv2xyz">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ruv2xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.ruv2xyz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.ruv2xyz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.save_as_fits">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_as_fits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outputname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.save_as_fits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.save_as_fits" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.save_as_jpeg">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_as_jpeg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.save_as_jpeg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.save_as_jpeg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.wcs2hdu">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wcs2hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.wcs2hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.wcs2hdu" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.wcs2reg">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wcs2reg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">npt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_world</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.wcs2reg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.wcs2reg" title="Permalink to this definition"></a></dt>
+<dd><p>Input: w, wcs object of astropy.wcs
+npt = 1 # Number of elements for each side of the pixel.
+:returns: The profile in the celestial coordinate system (ra, dec).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.mockimg.xyz2ruv">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xyz2ruv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#mockimg.xyz2ruv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.mockimg.xyz2ruv" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">rgbimg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>The requirements for the images are to</dt><dd><ol class="arabic simple">
+<li><p>present an homogeneous background,</p></li>
+<li><p>distinguish bright to faint objects</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.easy_bkg">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">easy_bkg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.easy_bkg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.easy_bkg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.forward">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stretch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.forward" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.from_cube">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cube</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.from_cube"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.from_cube" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.from_fits">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_fits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filenames</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.from_fits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.from_fits" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.inverse">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stretch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.inverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.inverse" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.readimg_worker">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readimg_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ihdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.readimg_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.readimg_worker" title="Permalink to this definition"></a></dt>
+<dd><p>write for mutliprocessing
+read image array from a file (jpg or fits).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.readimgs">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readimgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ihdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aslist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.readimgs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.readimgs" title="Permalink to this definition"></a></dt>
+<dd><p>load all the images and convert them into a tensor (indx, xpix, ypix, 1).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.rgbimg.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#rgbimg.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.rgbimg.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.sex">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">csstmock.utils.utilsdev.</span></span><span class="sig-name descname"><span class="pre">sex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#sex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.sex" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.sex.return_Rectangles">
+<span class="sig-name descname"><span class="pre">return_Rectangles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#sex.return_Rectangles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.sex.return_Rectangles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.sex.return_mainobj">
+<span class="sig-name descname"><span class="pre">return_mainobj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#sex.return_mainobj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.sex.return_mainobj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="csstmock.utils.utilsdev.sex.return_stamps">
+<span class="sig-name descname"><span class="pre">return_stamps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/csstmock/utils/utilsdev.html#sex.return_stamps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#csstmock.utils.utilsdev.sex.return_stamps" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="csstmock.justspec.html" class="btn btn-neutral float-left" title="csstmock.justspec package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+JUST Spectroscopic pipeline 
+============================
+
+
+
+
+
+CCD Data Reduction Guide: https://www.astropy.org/ccd-reduction-and-photometry-guide/v/dev/notebooks/00-00-Preface.html  
+
+sdssspec: https://www.sdss4.org/dr17/spectro/pipeline/
+	  https://pydl.readthedocs.io/en/latest/pydlspec2d.html 
+          https://sites.uci.edu/spec2d/cookbook/
+
+desispec: https://github.com/desihub/desispec 
+
+lamost: http://www.lamost.org/public/dr/algotrithms/data-reduction?locale=en
+	http://www.lamost.org/lmusers/
+	http://dr5.lamost.org/v1/
+
+DEEP2 & spec2d: https://deep.ps.uci.edu 
+
+1) 2D extraction : going from 2D CCD images to 1D spectra ¶
+
+2) 1D spectral analysis : sky subtraction, calibration, redshift fitting and identification ¶
+
+
+To do list
+^^^^^^^^^^^^^^^
+
+ - pre-processing
+ 
+.. toctree::
+   :maxdepth: 1
+
+   1dspec-analysis.md 
+
+Done list 
+^^^^^^^^^^^^^^^
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   desispec-howtorun.md 
+
+Reference 
+^^^^^^^^^^^^^^^
+
+ - https://desi.lbl.gov/trac/wiki/Pipeline 
+ - https://github.com/desihub/desispei 
+
+Issues  
+^^^^^^^^^^^^^^^
+
+

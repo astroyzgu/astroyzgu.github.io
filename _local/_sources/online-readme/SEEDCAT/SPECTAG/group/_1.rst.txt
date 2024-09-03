@@ -1,0 +1,10 @@
+_1
+===========
+
+member galaxy files:
+
+1. The galaxies are listed in ``XXX_?GC_1`` with format:
+     1. galaxy id;
+     2. group id;
+     3. brightest galaxy = 1; other galaxies in groups = 2 - z-band
+     4. auxiliary ID, not used.

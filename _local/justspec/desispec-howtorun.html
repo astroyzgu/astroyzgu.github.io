@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>howtorun desispec &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MOCK for CSST Slitless Spectroscopic Survey" href="../csstmock/csstmock-overview.html" />
+    <link rel="prev" title="JUST Spectroscopic pipeline" href="justspec-overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="justspec-overview.html">JUST Spectroscopic pipeline</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="justspec-overview.html#to-do-list">To do list</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="justspec-overview.html#done-list">Done list</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">howtorun desispec</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#download-data">DOWNLOAD DATA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-desispec">INSTALL DESISPEC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#runing">RUNING</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="justspec-overview.html#reference">Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="justspec-overview.html#issues">Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../csstmock/csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+      <li class="breadcrumb-item active">howtorun desispec</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/justspec/desispec-howtorun.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="howtorun-desispec">
+<h1>howtorun desispec<a class="headerlink" href="#howtorun-desispec" title="Permalink to this heading"></a></h1>
+<section id="download-data">
+<h2>DOWNLOAD DATA<a class="headerlink" href="#download-data" title="Permalink to this heading"></a></h2>
+<p>For more detailed information and explanations, you can refer to the webpage: https://desidatamodel.readthedocs.io/en/latest/DESI_ROOT/index.html</p>
+<details><summary> <b> synchronous data@gravity </b> </summary>
+<p> 
+<p>spectro/desi_spectro_calib/ ($DESI_SPECTRO_CALIB)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    mkdir -p spectro/desi_spectro_calib/
+    cp -r /global/cfs/cdirs/desi/spectro/desi_spectro_calib/trunk spectro/desi_spectro_calib/
+</pre></div>
+</div>
+<p>spectro/templates/ ($BASIS)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    mkdir -p spectro/templates/basis_templates/basis_templates_svn/tags/
+    rsync -avLP -r –-exclude &#39;.svn&#39; guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/spectro/templates/basis_templates/basis_templates_svn/tags/v3.1  templates/basis_templates/basis_templates_svn/tags/
+</pre></div>
+</div>
+<p>spectro/data1 (real data of night 20210610):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rsync -avLP -r guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/public/edr/spectro/data/20210610 data1/
+</pre></div>
+</div>
+<p>spectro/data2 (simulation data):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rsync -avLP -r guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/spectro/sim/pipetest/*  data2/
+</pre></div>
+</div>
+<p>target/skybrick/v3 ($SKYBRICKS_DIR)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rsync -avLP -r guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/public/edr/target/skybricks/v3 target/skybricks/
+</pre></div>
+</div>
+<p>spectro/redux:  SPECPROD=fuji,guadalupe,iron (unnecessary file for running pipeline)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Download from NERSC.
+https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/index.html
+</pre></div>
+</div>
+</p>
+</details> 
+</section>
+<section id="install-desispec">
+<h2>INSTALL DESISPEC<a class="headerlink" href="#install-desispec" title="Permalink to this heading"></a></h2>
+<details><summary> <b> build python environment for DESISPEC </b> </summary>
+<p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#----- build python environment </span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>desispec-test<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>desispec-test<span class="w"> </span>
+<span class="c1"># conda install mamba -c conda-forge</span>
+conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>
+conda<span class="w"> </span>install<span class="w"> </span>scipy<span class="w"> </span>
+conda<span class="w"> </span>install<span class="w"> </span>conda-build<span class="w"> </span><span class="c1"># to use: conda develop /path/to/python/extral/package</span>
+conda<span class="w"> </span>install<span class="w"> </span>fitsio<span class="w"> </span>
+conda<span class="w"> </span>install<span class="w"> </span>speclite<span class="w"> </span>
+conda<span class="w"> </span>install<span class="w"> </span>pyproject<span class="w"> </span>
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> download associated packages and necessary data </b> </summary>
+<p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#----- setup a prefix path to install  </span>
+<span class="nv">DESIHUB_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/astro_soft/desihub/<span class="w"> </span><span class="c1"># this is a example, choose any path you like </span>
+<span class="nv">DESIHUB_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/soft/<span class="w"> </span><span class="c1"># this is a example, choose any path you like </span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>
+
+
+<span class="c1">#----- Download associated packages from DESIHUB</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span><span class="w"> </span>
+
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/desiutil.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/desidatamodel.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/desimodel.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/desitarget.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/desisim.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/specter.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/specex.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/desispec.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/redmonster.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/redrock.git&quot;</span>
+git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://github.com/desihub/gpu_specter.git&quot;</span>
+
+<span class="c1">#---- download the data from NERSC for the DESI packages (desiutil desimodel desitarget) </span>
+rsync<span class="w"> </span>-avLP<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/common/software/desi/perlmutter/desiconda/20230111-2.1.0/code/desiutil/main/data<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/desiutil/data
+rsync<span class="w"> </span>-avLP<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/common/software/desi/perlmutter/desiconda/20230111-2.1.0/code/desimodel/main/data<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/desimodel/data
+rsync<span class="w"> </span>-avLP<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/common/software/desi/perlmutter/desiconda/20230111-2.1.0/code/desitarget/main/data<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/desitarget/data
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> install desispec </b> </summary>
+<p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>develop<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/lib/python3.9/site-packages<span class="w"> </span><span class="c1"># 为conda环境添加PYTHON库的搜索路径 </span>
+
+<span class="c1">#----- install packages </span>
+<span class="k">for</span><span class="w"> </span>pkg<span class="w"> </span><span class="k">in</span><span class="w"> </span>desiutil<span class="w"> </span>desimodel<span class="w"> </span>desitarget<span class="w"> </span>desisim<span class="w"> </span>specter<span class="w"> </span>redmonster<span class="w"> </span>redrock<span class="w"> </span>gpu_specter<span class="w"> </span>desispec<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/<span class="si">${</span><span class="nv">pkg</span><span class="si">}</span>
+<span class="w">    </span>python<span class="w"> </span>setup.py<span class="w"> </span>clean
+<span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>.<span class="w">  </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>
+<span class="w">    </span><span class="c1"># or: python setup.py install --prefix=${DESIHUB_ROOT}</span>
+<span class="k">done</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>gcc
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>gcc
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/specex
+python<span class="w"> </span>setup.py<span class="w"> </span>clean
+<span class="nv">SPECEX_PREFIX</span><span class="o">=</span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span><span class="w">  </span>
+make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span>install
+pip<span class="w"> </span>install<span class="w"> </span>.<span class="w">  </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>
+
+<span class="c1">#----- add associated data for desiutil, desimodel, and desitarget</span>
+<span class="nv">DESI_PACKAGE_DATA</span><span class="o">=</span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/DESI_PACKAGE_DATA
+<span class="k">for</span><span class="w"> </span>pkg<span class="w"> </span><span class="k">in</span><span class="w"> </span>desiutil<span class="w"> </span>desimodel<span class="w"> </span>desitarget<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">DESI_PACKAGE_DATA</span><span class="si">}</span>/<span class="si">${</span><span class="nv">pkg</span><span class="si">}</span>/data<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/lib/python3.9/site-packages/<span class="si">${</span><span class="nv">pkg</span><span class="si">}</span>/data<span class="w"> </span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</p>
+</details>
+</section>
+<section id="runing">
+<h2>RUNING<a class="headerlink" href="#runing" title="Permalink to this heading"></a></h2>
+<details><summary> <b> modify code to debug </b> </summary>
+<p> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/soft/lib/python3.9/site-packages/desispec/pipeline/db.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">142</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>all_tasks
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>spectro<span class="w"> </span><span class="k">in</span><span class="w"> </span>np.unique<span class="o">(</span><span class="w"> </span>fmdata<span class="o">[</span><span class="s2">&quot;SPECTROID&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">)</span><span class="w"> </span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/miniconda3/envs/justspec-dev/lib/python3.9/site-packages/astropy/table/table.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">2055</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__getitem__
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>self.columns<span class="o">[</span>item<span class="o">]</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/miniconda3/envs/justspec-dev/lib/python3.9/site-packages/astropy/table/table.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">264</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__getitem__
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>OrderedDict.__getitem__<span class="o">(</span>self,<span class="w"> </span>item<span class="o">)</span>
+KeyError:<span class="w"> </span><span class="s1">&#39;SPECTROID&#39;</span>
+
+<span class="c1"># Error report when running &quot;desi_pipe create --root ...&quot;</span>
+<span class="c1"># SPECTROID</span>
+<span class="c1">#--&gt; py/desispec/pipeline/db.py </span>
+<span class="c1"># fmdata = io.read_fibermap(fibermap)</span>
+<span class="c1"># header = fmdata.meta</span>
+<span class="c1"># 添加几行以应对格式和列名有不同的数据 --&gt;</span>
+<span class="c1">#         </span>
+<span class="c1">#        if (&#39;SPECTROID&#39; not in fmdata.columns)&amp;(&#39;PETAL_LOC&#39; in fmdata.columns):</span>
+<span class="c1">#            fmdata[&quot;SPECTROID&quot;]=fmdata[&quot;PETAL_LOC&quot;]</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error report when running &quot;desi_pipe chain --tasktypes preproc&quot; </span>
+<span class="c1"># task &quot;preproc&quot; failed. </span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/soft/lib/python3.9/site-packages/desispec/scripts/preproc.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">270</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>preproc_file
+<span class="w">    </span><span class="nv">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>io.read_raw<span class="o">(</span>infile,<span class="w"> </span>camera,
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/soft/lib/python3.9/site-packages/desispec/io/raw.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">265</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>read_raw
+<span class="w">    </span>fibermap<span class="o">[</span><span class="s1">&#39;FIBERSTATUS&#39;</span><span class="o">][</span>np.in1d<span class="o">(</span>fibers,cfinder.badfibers<span class="o">([</span><span class="s2">&quot;BROKENFIBERS&quot;</span><span class="o">]))]</span><span class="w"> </span><span class="p">|</span><span class="o">=</span><span class="w"> </span>maskbits.fibermask.BROKENFIBER
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/miniconda3/envs/justspec-dev/lib/python3.9/site-packages/astropy/table/table.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">2055</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__getitem__
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>self.columns<span class="o">[</span>item<span class="o">]</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/Users/yzastro/miniconda3/envs/justspec-dev/lib/python3.9/site-packages/astropy/table/table.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">264</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>__getitem__
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>OrderedDict.__getitem__<span class="o">(</span>self,<span class="w"> </span>item<span class="o">)</span>
+KeyError:<span class="w"> </span><span class="s1">&#39;FIBERSTATUS&#39;</span>
+
+<span class="c1"># check the log file, we find that &quot;desi_preproc ...&quot; failed.  modify input fibermap</span>
+desi_preproc<span class="w"> </span>--infile<span class="w"> </span>/Users/yzastro/data/DESI_ROOT/spectro/data2/20191001/00003577/desi-00003577.fits.fz<span class="w"> </span>--cameras<span class="w"> </span>z0<span class="w"> </span>--outfile<span class="w"> </span>/Users/yzastro/data/DESI_ROOT/spectro/redux/test2/preproc/20191001/00003577/preproc-z0-00003577.fits.gz
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>desi_preproc<span class="w"> </span>--infile<span class="w"> </span>/Users/yzastro/data/DESI_ROOT/spectro/data2/20191001/00003571/desi-00003571.fits.fz<span class="w"> </span>--cameras<span class="w"> </span>z5<span class="w"> </span>--outfile<span class="w"> </span>/Users/yzastro/data/DESI_ROOT/spectro/redux/test2/preproc/20191001/00003571/preproc-z5-00003571.fits.gz<span class="w"> </span>
+<span class="c1"># </span>
+
+desi_compute_psf<span class="w"> </span>--input-image<span class="w"> </span>/Users/yzastro/data/DESI_ROOT/spectro/redux/test2/preproc/20191001/00003571/preproc-z9-00003571.fits.gz<span class="w"> </span>--output-psf<span class="w"> </span>/Users/yzastro/data/DESI_ROOT/spectro/redux/test2/exposures/20191001/00003571/psf-z9-00003571.fits<span class="w"> </span>--extra<span class="w"> </span>--trace-deg-wave<span class="w"> </span><span class="m">7</span><span class="w"> </span>--trace-deg-x<span class="w"> </span><span class="m">7</span><span class="w"> </span>--trace-prior-deg<span class="w"> </span><span class="m">4</span>
+
+
+<span class="c1"># SPECTROID</span>
+<span class="c1">#--&gt; py/desispec/pipeline/db.py </span>
+<span class="c1"># fmdata = io.read_fibermap(fibermap)</span>
+<span class="c1"># header = fmdata.meta</span>
+<span class="c1"># 添加几行以应对格式和列名有不同的数据 --&gt;</span>
+<span class="c1">#         </span>
+<span class="c1">#        if (&#39;SPECTROID&#39; not in fmdata.columns)&amp;(&#39;PETAL_LOC&#39; in fmdata.columns):</span>
+<span class="c1">#            fmdata[&quot;SPECTROID&quot;]=fmdata[&quot;PETAL_LOC&quot;]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/yzastro/soft/bin/desi_pipe_exec&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">15</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">pipe_exec</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/yzastro/soft/lib/python3.9/site-packages/desispec/scripts/pipe_exec.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">139</span><span class="p">,</span> <span class="ow">in</span> <span class="n">main</span>
+    <span class="n">ready</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">failed</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">run_task_list</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">tasktype</span><span class="p">,</span> <span class="n">tasklist</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/yzastro/soft/lib/python3.9/site-packages/desispec/pipeline/run.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">424</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run_task_list</span>
+    <span class="n">tt</span> <span class="o">=</span> <span class="n">task_type</span><span class="p">(</span><span class="n">worktasks</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error report (LAPACK) when running &quot;desi_pipe&quot; </span>
+conda<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>
+conda<span class="w"> </span>install<span class="w"> </span>scipy<span class="w">  </span>
+conda<span class="w"> </span>install<span class="w"> </span>numba
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error report when running &quot;desi_pipe create --root ...&quot;</span>
+<span class="c1"># SPECTROID</span>
+<span class="c1">#--&gt; py/desispec/pipeline/db.py </span>
+<span class="c1"># fmdata = io.read_fibermap(fibermap)</span>
+<span class="c1"># header = fmdata.meta</span>
+<span class="c1"># 添加几行以应对格式和列名有不同的数据 --&gt;</span>
+<span class="c1">#         </span>
+<span class="c1">#        if (&#39;SPECTROID&#39; not in fmdata.columns)&amp;(&#39;PETAL_LOC&#39; in fmdata.columns):</span>
+<span class="c1">#            fmdata[&quot;SPECTROID&quot;]=fmdata[&quot;PETAL_LOC&quot;]</span>
+<span class="c1">#        if (&#39;TARGET_RA&#39; not in fmdata.columns)&amp;(&#39;RA_TARGET&#39; in fmdata.columns):</span>
+<span class="c1">#            fmdata[&quot;TARGET_RA&quot;]=fmdata[&quot;RA_TARGET&quot;]</span>
+<span class="c1">#        if (&#39;TARGET_DEC&#39; not in fmdata.columns)&amp;(&#39;DEC_TARGET&#39; in fmdata.columns):</span>
+<span class="c1">#            fmdata[&quot;TARGET_DEC&quot;]=fmdata[&quot;DEC_TARGET&quot;]</span>
+<span class="c1"># </span>
+<span class="c1">#--&gt; py/desispec/io/fibermap.py </span>
+<span class="c1">#</span>
+<span class="c1"># 添加几行以应对格式和列名有不同的数据 --&gt;</span>
+<span class="c1">#    if (&#39;SPECTROID&#39; not in fibermap.columns)&amp;(&#39;PETAL_LOC&#39; in fibermap.columns):</span>
+<span class="c1">#        fibermap[&quot;SPECTROID&quot;]=fibermap[&quot;PETAL_LOC&quot;]</span>
+<span class="c1"># def empty_fibermap(): </span>
+<span class="c1"># uncommend line 250: assert set(fibermap.colnames) == set([x[0] for x in columns])</span>
+<span class="c1"># 然后重新安装reinstall: </span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/desispec
+pip<span class="w"> </span>install<span class="w"> </span>.<span class="w">  </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span><span class="w"> </span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error report when running &quot;desi_proc -n 20210610 -e 00093262&quot;</span>
+<span class="c1"># FileNotFoundError: [Errno 2] No such file or directory: &#39;/Users/yzastro/data/DESI_ROOT/spectro/redux/svdc/exposures/20210610/00093262/frame-b0-00093262-no-badcolumn-mask.fits.gz&#39; -&gt; &#39;/Users/yzastro/data/DESI_ROOT/spectro/redux/svdc/exposures/20210610/00093262/frame-b0-00093262.fits.gz&#39;</span>
+</pre></div>
+</div>
+<p><img alt="alt text" src="../_images/image-4.png" /></p>
+</p>
+</details>
+<details><summary> <b> RUN DESISPEC () </b> </summary>
+<p> 
+<p>https://desi.lbl.gov/trac/wiki/Pipeline/RunningSpectroPipeline</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DESIHUB_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/soft/<span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_ROOT</span><span class="o">=</span><span class="s1">&#39;/Users/yzastro/data/DESI_ROOT&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_DATA</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/data
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_REDUX</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/redux
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_CALIB</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/desi_spectro_calib/trunk
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_BASIS</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/templates/basis_templates/v3.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">SKYBRICKS_DIR</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/target/skybricks/v3<span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SPECPROD</span><span class="o">=</span><span class="s1">&#39;test1&#39;</span>
+
+desi_pipe<span class="w"> </span>create<span class="w"> </span>--root<span class="w">  </span><span class="nv">$DESI_ROOT</span><span class="w"> </span><span class="se">\</span>
+--data<span class="w">  </span><span class="nv">$DESI_SPECTRO_DATA</span><span class="w"> </span><span class="se">\</span>
+--redux<span class="w"> </span><span class="nv">$DESI_SPECTRO_REDUX</span><span class="w"> </span><span class="se">\</span>
+--prod<span class="w">  </span><span class="nv">$SPECPROD</span><span class="w"> </span><span class="se">\</span>
+--basis<span class="w"> </span><span class="nv">$DESI_SPECTRO_BASIS</span><span class="w"> </span><span class="se">\</span>
+--calib<span class="w"> </span><span class="nv">$DESI_SPECTRO_CALIB</span><span class="w"> </span><span class="se">\</span>
+--db-sqlite<span class="w"> </span>--force
+
+<span class="nb">source</span><span class="w"> </span><span class="nv">$DESI_SPECTRO_REDUX</span>/<span class="nv">$SPECPROD</span>/setup.sh
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> RUN DESISPEC </b> </summary>
+<p> 
+<p>https://desi.lbl.gov/trac/wiki/Pipeline/RunningSpectroPipeline</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DESIHUB_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/soft/<span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_ROOT</span><span class="o">=</span><span class="s1">&#39;/Users/yzastro/data/DESI_ROOT&#39;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_DATA</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/data2
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_REDUX</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/redux
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_CALIB</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/desi_spectro_calib/trunk
+<span class="nb">export</span><span class="w"> </span><span class="nv">DESI_SPECTRO_BASIS</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/spectro/templates/basis_templates/v3.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">SKYBRICKS_DIR</span><span class="o">=</span><span class="nv">$DESI_ROOT</span>/target/skybricks/v3<span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SPECPROD</span><span class="o">=</span><span class="s1">&#39;test2&#39;</span>
+
+desi_pipe<span class="w"> </span>create<span class="w"> </span>--root<span class="w">  </span><span class="nv">$DESI_ROOT</span><span class="w"> </span><span class="se">\</span>
+--data<span class="w">  </span><span class="nv">$DESI_SPECTRO_DATA</span><span class="w"> </span><span class="se">\</span>
+--redux<span class="w"> </span><span class="nv">$DESI_SPECTRO_REDUX</span><span class="w"> </span><span class="se">\</span>
+--prod<span class="w">  </span><span class="nv">$SPECPROD</span><span class="w"> </span><span class="se">\</span>
+--basis<span class="w"> </span><span class="nv">$DESI_SPECTRO_BASIS</span><span class="w"> </span><span class="se">\</span>
+--calib<span class="w"> </span><span class="nv">$DESI_SPECTRO_CALIB</span><span class="w"> </span><span class="se">\</span>
+--db-sqlite<span class="w"> </span>--force
+
+<span class="nb">source</span><span class="w"> </span><span class="nv">$DESI_SPECTRO_REDUX</span>/<span class="nv">$SPECPROD</span>/setup.sh
+
+<span class="c1"># open one terminal for monitoering </span>
+<span class="c1"># --&gt; desi_pipe top --once </span>
+
+<span class="c1"># open another terminal for running </span>
+desi_pipe<span class="w"> </span>chain<span class="w"> </span>--tasktypes<span class="w"> </span>preproc<span class="w"> </span>
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> desi_pipe top --once </b> </summary>
+<p> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">py</span><span class="o">/</span><span class="n">desispec</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">pipe</span><span class="o">.</span><span class="n">py</span> <span class="o">---&gt;</span> <span class="n">PipeUI</span><span class="o">.</span><span class="n">top</span> <span class="p">(</span><span class="n">line</span> <span class="mi">878</span><span class="p">)</span>
+
+        <span class="n">dbpath</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">get_pipe_database</span><span class="p">()</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">load_db</span><span class="p">(</span><span class="n">dbpath</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">db_postgres_user</span><span class="p">)</span>
+        <span class="n">tasktypes</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">default_task_chain</span>
+
+<span class="n">py</span><span class="o">/</span><span class="n">desispec</span><span class="o">/</span><span class="n">pipeline</span><span class="o">/</span><span class="n">control</span><span class="o">.</span><span class="n">py</span> <span class="o">---&gt;</span>  <span class="n">create</span> <span class="p">(</span><span class="n">line</span> <span class="mi">56</span><span class="p">)</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="n">pipedb</span><span class="o">.</span><span class="n">DataBaseSqlite</span><span class="p">(</span><span class="n">dbpath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DESI_SPECTRO_DB&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dbpath</span>
+        <span class="o">---&gt;</span> <span class="n">py</span><span class="o">/</span><span class="n">desispec</span><span class="o">/</span><span class="n">pipeline</span><span class="o">/</span><span class="n">db</span><span class="o">.</span><span class="n">py</span> <span class="n">DataBaseSqlite</span> <span class="p">(</span><span class="n">line</span> <span class="mi">971</span><span class="p">)</span>
+
+<span class="n">key</span> <span class="n">function</span><span class="p">:</span> 
+        <span class="o">---&gt;</span> <span class="n">py</span><span class="o">/</span><span class="n">desispec</span><span class="o">/</span><span class="n">pipeline</span><span class="o">/</span><span class="n">db</span><span class="o">.</span><span class="n">py</span> <span class="n">all_tasks</span> <span class="p">(</span><span class="n">line</span> <span class="mi">78</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="    " src="../_images/image-5.png" /></p>
+</p>
+</details>
+<details><summary> <b> time desi_pipe go # to run all 3 exp
+ </b> </summary>
+<p>
+<p><img alt="alt text" src="../_images/image-1.png" /></p>
+</p>
+</details>
+<details><summary> <b> desi_pipe tasks --nights 20210610
+ </b> </summary>
+<p>
+<p><img alt="alt text" src="../_images/image-1.png" /></p>
+</p>
+</details>
+<details><summary> <b> time desi_pipe chain --nights 20210610 --tasktypes preproc 
+ </b> </summary>
+<p>
+<p>desi_pipe chain –nights 20210610 –tasktypes psf</p>
+</p>
+</details>
+<details><summary> <b> desi_pipe status --nights 20210610   --tasktypes psf
+ </b> </summary>
+<p>
+<p><img alt="alt text" src="../_images/image-3.png" /></p>
+</p>
+</details>
+<p>fibermap -&gt; preproc -&gt; frame -&gt; sframe+cframe -&gt; spectra -&gt; coadd</p>
+<details><summary> <b> flowchart
+ </b> </summary>
+<p>
+<p>fibermap -&gt; preproc -&gt; frame -&gt; sframe+cframe -&gt; spectra -&gt; coadd</p>
+<p>https://github.com/desihub/desispec/pull/2176</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>desi_assemble_fibermap<span class="w"> </span>-n<span class="w"> </span><span class="m">20210610</span><span class="w"> </span>-e<span class="w"> </span><span class="m">00093262</span><span class="w"> </span>-o<span class="w"> </span>fibermap-00093262.fits<span class="w"> </span>--overwrite
+desi_pipe<span class="w"> </span>tasks<span class="w"> </span>--nights<span class="w"> </span><span class="m">20210610</span>
+
+
+desi_pipe<span class="w"> </span>top<span class="w"> </span>--once
+
+desi_proc<span class="w"> </span>-n<span class="w"> </span><span class="m">20210610</span><span class="w"> </span>-e<span class="w"> </span><span class="m">00093262</span>
+
+desi_pipe<span class="w"> </span>update<span class="w"> </span>--nights,<span class="w"> </span><span class="nv">nside</span><span class="o">=</span><span class="m">64</span>,<span class="w"> </span><span class="nv">expid</span><span class="o">=</span>None<span class="o">)</span>:
+desi_pipe<span class="w"> </span>go<span class="w"> </span>--nersc<span class="w"> </span>cori-knl<span class="w"> </span>--resume
+
+desi_pipe<span class="w"> </span>go<span class="w"> </span>--nights<span class="w"> </span><span class="m">2021061</span><span class="w">  </span>--nersc<span class="w"> </span>cori-knl<span class="w"> </span>--resume
+desi_pipe<span class="w"> </span>update<span class="w"> </span>--nights<span class="w"> </span><span class="m">2021061</span><span class="w"> </span>--nside<span class="w">  </span><span class="m">128</span><span class="w">  </span>--expid<span class="w">  </span><span class="m">93262</span>
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> SETUP DESISPEC </b> </summary>
+<p> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#---- BASIS</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/global/cfs/cdirs/desi/spectro/templates/basis_templates/basis_templates_svn/tags/v3.1<span class="w">  </span>/pscratch/sd/g/guyizhou/
+<span class="c1">#---- DESI_SPECTRO_CALIB</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/global/cfs/cdirs/desi/spectro/desi_spectro_calib/trunk<span class="w"> </span>/pscratch/sd/g/guyizhou/
+<span class="c1">#---- SKYBRICKS_DIR </span>
+scp<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/public/edr/target/skybricks/v3<span class="w"> </span>.<span class="w"> </span>
+
+<span class="c1">#----- install desispec and relative packages from DESIHUB</span>
+!/bin/bash
+<span class="nv">DESIHUB_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/soft/<span class="w"> </span><span class="c1"># prefix path </span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>
+<span class="c1"># 为conda环境添加PYTHON库的搜索路径</span>
+conda<span class="w"> </span>develop<span class="w"> </span><span class="si">${</span><span class="nv">DESIHUB_ROOT</span><span class="si">}</span>/lib/python3.9/site-packages
+<span class="c1"># cd ${pref}</span>
+
+<span class="c1"># export PYTHONPATH=$PYTHONPATH:${pref}</span>
+rm<span class="w"> </span>-rf<span class="w"> </span>desidatamodel/<span class="w"> </span>desisim/<span class="w"> </span>desitarget/
+rm<span class="w"> </span>-rf<span class="w"> </span>desimodel/<span class="w"> </span>desispec/<span class="w"> </span>desiutil
+rm<span class="w"> </span>-rf<span class="w"> </span>specex/<span class="w"> </span>specter/<span class="w"> </span>redmonster/<span class="w"> </span>redrock/<span class="w"> </span>
+rm<span class="w"> </span>-rf<span class="w"> </span>lib<span class="w"> </span>bin<span class="w"> </span>
+
+<span class="c1"># This should be your actual install location...</span>
+<span class="c1"># cd ${pref}/specex</span>
+<span class="c1"># make clean</span>
+<span class="c1"># SPECEX_PREFIX=${pref} make -j 4 install</span>
+<span class="c1"># cd ${pref}</span>
+rm<span class="w"> </span>-rf<span class="w"> </span>desiutil<span class="w"> </span>desimodel<span class="w"> </span>desitarget<span class="w"> </span>desisim<span class="w"> </span>specter<span class="w"> </span>specex<span class="w"> </span>desispec<span class="w"> </span>redmonster<span class="w"> </span>redrock
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> DOWNLOAD DATA to test </b> </summary>
+<p> 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1">#---- raw DATA on NERSC</span>
+<span class="c1">#</span>
+<span class="c1"># night = 20210610</span>
+<span class="c1"># expid = 00093262</span>
+cp<span class="w"> </span>/global/cfs/cdirs/desi/public/edr/spectro/data/20210610/00093262<span class="w"> </span>/pscratch/sd/g/guyizhou/
+
+
+<span class="c1">#</span>
+<span class="c1">#---- DATA for building fibermap, calibrate, fitting  on NERSC</span>
+<span class="c1">#</span>
+<span class="c1">#---- BASIS</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/global/cfs/cdirs/desi/spectro/templates/basis_templates/basis_templates_svn/tags/v3.1<span class="w">  </span>/pscratch/sd/g/guyizhou/
+<span class="c1">#---- DESI_SPECTRO_CALIB</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/global/cfs/cdirs/desi/spectro/desi_spectro_calib/trunk<span class="w"> </span>/pscratch/sd/g/guyizhou/
+<span class="c1">#---- SKYBRICKS_DIR </span>
+scp<span class="w"> </span>-avLP<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/public/edr/target/skybricks/v3<span class="w"> </span>.
+<span class="c1">#---- download raw/simulate data for test</span>
+rsync<span class="w"> </span>-avLP<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/public/edr/spectro/data/20210610<span class="w"> </span>data1/<span class="w"> </span>
+rsync<span class="w"> </span>-avLP<span class="w"> </span>-r<span class="w"> </span>guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/spectro/sim/pipetest/*<span class="w"> </span>data2/
+</pre></div>
+</div>
+</p>
+</details>
+<p>export CC=/opt/homebrew/opt/llvm/bin/clang
+export CXX=/opt/homebrew/opt/llvm/bin/clang++
+export LDFLAGS=”-L/opt/homebrew/Cellar/llvm/17.0.6_1/lib”
+export CPPFLAGS=”-I/opt/homebrew/Cellar/llvm/17.0.6_1/include”</p>
+<p>if(APPLE)
+if(CMAKE_C_COMPILER_ID MATCHES “Clang”)
+set(OpenMP_C “${CMAKE_C_COMPILER}” CACHE STRING “” FORCE)
+set(OpenMP_C_FLAGS “-fopenmp=libomp -Wno-unused-command-line-argument” CACHE STRING “” FORCE)
+set(OpenMP_C_LIB_NAMES “libomp” “libgomp” “libiomp5” CACHE STRING “” FORCE)
+set(OpenMP_libomp_LIBRARY ${OpenMP_C_LIB_NAMES} CACHE STRING “” FORCE)
+set(OpenMP_libgomp_LIBRARY ${OpenMP_C_LIB_NAMES} CACHE STRING “” FORCE)
+set(OpenMP_libiomp5_LIBRARY <span class="math notranslate nohighlight">\({OpenMP_C_LIB_NAMES} CACHE STRING &quot;&quot; FORCE)
+endif()
+if(CMAKE_CXX_COMPILER_ID MATCHES &quot;Clang&quot;)
+  set(OpenMP_CXX &quot;\)</span>{CMAKE_CXX_COMPILER}” CACHE STRING “” FORCE)
+set(OpenMP_CXX_FLAGS “-fopenmp=libomp -Wno-unused-command-line-argument” CACHE STRING “” FORCE)
+set(OpenMP_CXX_LIB_NAMES “libomp” “libgomp” “libiomp5” CACHE STRING “” FORCE)
+set(OpenMP_libomp_LIBRARY ${OpenMP_CXX_LIB_NAMES} CACHE STRING “” FORCE)
+set(OpenMP_libgomp_LIBRARY ${OpenMP_CXX_LIB_NAMES} CACHE STRING “” FORCE)
+set(OpenMP_libiomp5_LIBRARY ${OpenMP_CXX_LIB_NAMES} CACHE STRING “” FORCE)
+endif()
+endif()</p>
+<p>export CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
+rm -rf CMakeCache.txt CMakeFiles
+cmake CMakeLists.txt -DBLAS_LIBRARIES=”/opt/homebrew/opt/openblas/lib” -DLAPACK_LIBRARIES=”/opt/homebrew/opt/lapack/lib”
+cmake –build . –config Release – -j8</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="justspec-overview.html" class="btn btn-neutral float-left" title="JUST Spectroscopic pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../csstmock/csstmock-overview.html" class="btn btn-neutral float-right" title="MOCK for CSST Slitless Spectroscopic Survey" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

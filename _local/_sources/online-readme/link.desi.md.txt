@@ -1,0 +1,8 @@
+# DESI LINK
+
+Publication Board: https://desi.lbl.gov/trac/wiki/PubBoard
+
+Spectro Pipeline: https://desi.lbl.gov/trac/wiki/Pipeline
+
+The internal DESI Spectroscopic Data Releases: 
+https://desi.lbl.gov/trac/wiki/Pipeline/Releases

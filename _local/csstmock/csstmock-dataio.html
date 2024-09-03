@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>data i/o &mdash; yzastro 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pipeline" href="csstmock-pipeline.html" />
+    <link rel="prev" title="JIUTIAN simulation" href="csstmock-jiutian.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            yzastro
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../justspec/justspec-overview.html">JUST Spectroscopic pipeline</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="csstmock-overview.html#csstmock-under-construction">CSSTMOCK (Under construction)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="csstmock-jiutian.html">JIUTIAN simulation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">data i/o</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jiutian-simulation">JIUTIAN simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-pipeline.html">pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-pipeline-mask.html">mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-utils.html">csstmock.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-makemock.html">csstmock.makemock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csstmock-tutorials.html">tutorials</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello_world.html">hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cfpy/cfpy.html">python c fortran 混合编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../soft/soft.html">astro softwave</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../astro/astro.html">天文物理基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../online-documents.html">online documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell_cmd.html">bash</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">yzastro</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="csstmock-overview.html">MOCK for CSST Slitless Spectroscopic Survey</a></li>
+      <li class="breadcrumb-item active">data i/o</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/csstmock/csstmock-dataio.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="data-i-o">
+<h1>data i/o<a class="headerlink" href="#data-i-o" title="Permalink to this heading"></a></h1>
+<section id="jiutian-simulation">
+<h2>JIUTIAN simulation<a class="headerlink" href="#jiutian-simulation" title="Permalink to this heading"></a></h2>
+<section id="fortran-interface">
+<h3>Fortran interface<a class="headerlink" href="#fortran-interface" title="Permalink to this heading"></a></h3>
+<details><summary> <b> Library Installation </b> </summary>
+<p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on Gravity:</span>
+
+<span class="c1">#--- to install python package: </span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">anaconda</span> 
+<span class="n">module</span> <span class="n">load</span> <span class="n">compiler</span><span class="o">/</span><span class="n">intel</span><span class="o">-</span><span class="mi">2018</span> <span class="c1"># load ifort</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">python3</span>          <span class="c1"># activate defualt python3 env</span>
+<span class="n">make</span> <span class="n">build</span> 
+
+<span class="c1">#--- to install Fortran Interface: </span>
+<span class="n">cd</span> <span class="n">libcsstmock</span>
+<span class="o">./</span><span class="n">compile_on_gravity</span><span class="o">.</span><span class="n">sh</span> 
+
+<span class="c1">#--- add PATH to ~/.bash_profile and source </span>
+
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> isin_survey </b> </summary>
+<p> 
+<ul class="simple">
+<li><p>example</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="n">ifort</span>  <span class="o">-</span><span class="n">o</span> <span class="n">test3</span> <span class="n">test3</span><span class="o">.</span><span class="n">f</span>  <span class="o">-</span><span class="n">lcsstmock</span>
+	<span class="o">./</span><span class="n">test3</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>! ========== test3.f, is in the survey, or not. ================
+        program test3
+        use, intrinsic :: iso_c_binding
+        implicit none
+ 
+        integer(8) :: ngal
+        character*256 :: survey
+        real(4), allocatable :: x(:), y(:)
+        real(4), allocatable :: w(:)
+ 
+        ngal    = 6;
+        survey  = &#39;lsdr9&#39;
+        allocate( x(ngal), y(ngal), w(ngal) )
+ 
+        x = [0.0, 30.0, 240.0, 120.0, 90.0, 0.0] ! ra的fortran数组
+        y = [0.0, 50.0,  44.0,  60.0,  5.0, 0.0] ! dec的fortran数组
+        call isin_survey(x,y,ngal,survey,w)
+        write(*, &#39;(6f12.6)&#39;) w
+ 
+        end program test3
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>subroutine description</p></li>
+</ul>
+<div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="k">subroutine </span><span class="n">isin_survey</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="w"> </span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">survey</span><span class="p">,</span><span class="w"> </span><span class="n">veto</span><span class="p">)</span>
+<span class="w">        </span><span class="c">!&gt; Description </span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; is in survey, or not?  </span>
+<span class="w">        </span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; Syntax</span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; call isin_survey(ra, dec, n, &#39;lsdr9-ngc&#39;, veto)</span>
+<span class="w">        </span><span class="c">!&gt;  </span>
+<span class="w">        </span><span class="c">!&gt; Argument(s)</span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; ra(in):  real(4), RA</span>
+<span class="w">	</span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; dec(in): real(4), DEC</span>
+<span class="w">	</span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; n(in):  integer(8), the number of input coordinates </span>
+<span class="w">        </span><span class="c">!&gt;   </span>
+<span class="w">        </span><span class="c">!&gt; survey(in): name of the embedded survey </span>
+<span class="w">        </span><span class="c">!&gt;       [&#39;lsdr9-ngc&#39;, &#39;lsdr9&#39;, &#39;csstv0&#39;, &#39;hscdr3&#39;]</span>
+<span class="w">	</span><span class="c">!&gt; veto(out): real(4)</span>
+<span class="w">	</span><span class="c">!&gt;        if 1, in survey. if 0, not in survey. </span>
+</pre></div>
+</div>
+</p>
+</details>
+<details><summary> <b> fullsky_z2 lightcone of jiutian </b> </summary>
+<p>
+<ul class="simple">
+<li><p>example</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="n">ifort</span>  <span class="o">-</span><span class="n">o</span> <span class="n">test4</span> <span class="n">test4</span><span class="o">.</span><span class="n">f</span>  <span class="o">-</span><span class="n">lcsstmock</span>
+	<span class="o">./</span><span class="n">test4</span>
+</pre></div>
+</div>
+<div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="c">! ========== test4.f, to read the fullsky_z2 lightcone ================</span>
+<span class="w">        </span><span class="k">PROGRAM </span><span class="n">test4</span><span class="w"> </span>
+<span class="w">        </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">iso_c_binding</span><span class="w"> </span><span class="c">! 和C语言类型互通的模块iso_c_binding</span>
+<span class="w">        </span><span class="k">implicit none</span>
+<span class="k">        </span><span class="kt">integer</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">snapnum</span><span class="p">,</span><span class="w"> </span><span class="n">ifile</span><span class="p">,</span><span class="w"> </span><span class="n">filenum</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">nmax</span><span class="p">,</span><span class="w"> </span><span class="n">nsub</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="kt">c_long</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">larr</span><span class="p">(:,:)</span>
+<span class="w">        </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_float</span><span class="p">),</span><span class="w">   </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">darr</span><span class="p">(:,:)</span>
+<span class="w">        </span><span class="n">nmax</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">500000000</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">larr</span><span class="p">(</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">nmax</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">darr</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">nmax</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">do </span><span class="n">snapnum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+
+<span class="c">!&gt;&gt;&gt;    to know how many files at the given snapshot number. </span>
+<span class="w">            </span><span class="k">call </span><span class="n">fullsky_z2_filenum_jiutian</span><span class="p">(</span><span class="n">snapnum</span><span class="p">,</span><span class="w"> </span><span class="n">filenum</span><span class="p">)</span>
+
+<span class="w">            </span><span class="k">do </span><span class="n">ifile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">filenum</span>
+<span class="w">               </span><span class="n">nsub</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">nmax</span>
+<span class="c">!&gt;&gt;&gt;    to read the brach file one by one. </span>
+<span class="w">               </span><span class="k">call </span><span class="n">fullsky_z2_jiutian</span><span class="p">(</span><span class="n">snapnum</span><span class="p">,</span><span class="w"> </span><span class="n">ifile</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">                                 </span><span class="n">larr</span><span class="p">,</span><span class="w"> </span><span class="n">darr</span><span class="p">,</span><span class="w"> </span><span class="n">nsub</span><span class="p">)</span>
+
+<span class="w">               </span><span class="c">!&gt;&gt;&gt; operation herein &lt;&lt;&lt;!</span>
+<span class="w">               </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">snapnum</span><span class="p">,</span><span class="w"> </span><span class="n">ifile</span><span class="p">,</span><span class="w"> </span><span class="n">filenum</span><span class="p">,</span><span class="w"> </span><span class="n">nsub</span>
+
+<span class="w">            </span><span class="k">end do</span>
+<span class="k">        end do</span>
+<span class="k">        END</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>subroutine description</p></li>
+</ul>
+<div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">------------------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">fullsky_z2_filenum_jiutian</span><span class="p">(</span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">             </span><span class="n">snapnum</span><span class="p">,</span><span class="w"> </span><span class="n">filenum</span><span class="p">)</span>
+<span class="n">c</span><span class="o">------------------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">!&gt; Description </span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; the file number of fullsky_z2 lightcone at the given snapshot </span>
+<span class="w">        </span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; Syntax</span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; call fullsky_z2_filenum_jiutian(127, filenum)</span>
+<span class="w">        </span><span class="c">!&gt;  </span>
+<span class="w">        </span><span class="c">!&gt; Argument(s)</span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; snapnum(in):  integer(4), the given snapshot number [127-65]</span>
+<span class="w">        </span><span class="c">!&gt;   </span>
+<span class="w">        </span><span class="c">!&gt; filenum(out): integer(4), the number of divided files</span>
+<span class="w">        </span><span class="c">!&gt; </span>
+
+<span class="n">c</span><span class="o">------------------------------------------------------------------------------</span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">fullsky_z2_jiutian</span><span class="p">(</span>
+<span class="w">     </span><span class="p">&amp;</span><span class="w">             </span><span class="n">snapnum</span><span class="p">,</span><span class="w"> </span><span class="n">ifile</span><span class="p">,</span><span class="w"> </span><span class="n">larr</span><span class="p">,</span><span class="w"> </span><span class="n">darr</span><span class="p">,</span><span class="w"> </span><span class="n">nmax</span><span class="p">)</span>
+<span class="n">c</span><span class="o">------------------------------------------------------------------------------</span>
+<span class="w">        </span><span class="c">!&gt; Description </span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; read the fullsky_z2 lightcone of jiutian simulation</span>
+<span class="w">        </span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; Syntax</span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; call fullsky_z2_jiutian(127, 0, larr, darr, nsub)</span>
+<span class="w">        </span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; Argument(s)</span>
+<span class="w">        </span><span class="c">!&gt; -----------</span>
+<span class="w">        </span><span class="c">!&gt; snapnum(in): integer(4), the given snapshot number [127-65]</span>
+<span class="w">        </span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; larr(out): integer(8), long type data</span>
+<span class="w">        </span><span class="c">!&gt;      (1-5) &#39;trackID&#39;, &#39;hosthaloID&#39;, &#39;rank&#39;, &#39;snapNum&#39;,&#39;group_nr&#39;</span>
+<span class="w">        </span><span class="c">!&gt;</span>
+<span class="w">        </span><span class="c">!&gt; darr(out): real(4), float type data</span>
+<span class="w">        </span><span class="c">!&gt;      ( 1-7 ) &#39;posx&#39;, &#39;posy&#39;, &#39;posz&#39;, &#39;velx&#39;, &#39;vely&#39;, &#39;velz&#39;, &#39;v_lfs&#39;, </span>
+<span class="w">        </span><span class="c">!&gt;      ( 8-14) &#39;shMbound&#39;, &#39;d_comoving&#39;, &#39;ra&#39;, &#39;dec&#39;, &#39;vmax&#39;, &#39;PeakMass&#39;, &#39;PeakVmax&#39;,</span>
+<span class="w">        </span><span class="c">!&gt;      (15-18) &#39;shBoundM200Crit&#39;, &#39;redshift_true&#39;, &#39;redshift_obs&#39;, &#39;shMbound_at_ac&#39;,</span>
+<span class="w">        </span><span class="c">!&gt;      (19-20) &#39;group_mass&#39;, &#39;group_m_mean200&#39;</span>
+<span class="w">        </span><span class="c">!&gt; </span>
+<span class="w">        </span><span class="c">!&gt; nmax(inout): integer(8), max number of subhalos</span>
+<span class="w">        </span><span class="c">!&gt; </span>
+</pre></div>
+</div>
+</p>
+</details> 
+<details><summary> <b> subhalo/group of jiutian (to be updated) </b> </summary>
+<p> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="n">call</span> <span class="n">subhalo_filenum_jiutian</span><span class="p">(</span><span class="n">snapnum</span><span class="p">,</span> <span class="n">filenum</span><span class="p">)</span>
+	<span class="n">call</span> <span class="n">subhalo_jiutian</span><span class="p">(</span><span class="n">snapnum</span><span class="p">,</span> <span class="n">ifile</span><span class="p">,</span> <span class="n">larr</span><span class="p">,</span> <span class="n">darr</span><span class="p">,</span> <span class="n">nsub</span><span class="p">)</span> 
+	<span class="n">call</span> <span class="n">group_filenum_jiutian</span><span class="p">(</span><span class="n">snapnum</span><span class="p">,</span> <span class="n">filenum</span><span class="p">)</span>
+	<span class="n">call</span> <span class="n">group_jiutian</span><span class="p">(</span>  <span class="n">snapnum</span><span class="p">,</span> <span class="n">ifile</span><span class="p">,</span> <span class="n">larr</span><span class="p">,</span> <span class="n">darr</span><span class="p">,</span> <span class="n">nsub</span><span class="p">)</span> 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>subroutine description</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>c------------------------------------------------------------------------------
+        subroutine subhalo_filenum_jiutian(snapnum, filenum)
+        subroutine group_filenum_jiutian(snapnum, filenum)
+c------------------------------------------------------------------------------
+
+        Usage is similar with fullsky_z2 lightcone of jiutian. 
+
+c------------------------------------------------------------------------------
+	subroutine subhalo_jiutian(snapnum, ifile, larr, darr, nsub) 
+c------------------------------------------------------------------------------
+        !&gt; Description 
+        !&gt; -----------
+        !&gt; read the subhalo catalogs of jiutian simulation
+        !&gt; 
+        !&gt; Syntax
+        !&gt; -----------
+        !&gt; call subhalo_jiutian(127, 0, larr, darr, nsub)
+        !&gt; 
+        !&gt; Argument(s)
+        !&gt; -----------
+        !&gt; snapnum(in): integer(4), the given snapshot number [127-65]
+        !&gt;
+	!&gt; ifile(in): integer(4), the ith divided file, starting from 0.  
+	!&gt; 
+        !&gt; larr(out): integer(8), long type data
+        !&gt;      (1-5) &#39;trackID&#39;, &#39;hosthaloID&#39;, &#39;rank&#39;, &#39;snapNum&#39;,&#39;group_nr&#39;
+        !&gt;
+        !&gt; darr(out): real(4), float type data
+        !&gt;      ( 1-7 ) &#39;posx&#39;, &#39;posy&#39;, &#39;posz&#39;, &#39;velx&#39;, &#39;vely&#39;, &#39;velz&#39;, &#39;v_lfs&#39;, 
+        !&gt;      ( 8-14) &#39;shMbound&#39;, &#39;d_comoving&#39;, &#39;ra&#39;, &#39;dec&#39;, &#39;vmax&#39;, &#39;PeakMass&#39;, &#39;PeakVmax&#39;,
+        !&gt;      (15-18) &#39;shBoundM200Crit&#39;, &#39;redshift_true&#39;, &#39;redshift_obs&#39;, &#39;shMbound_at_ac&#39;,
+        !&gt;      (19-20) &#39;group_mass&#39;, &#39;group_m_mean200&#39;
+        !&gt; 
+        !&gt; nmax(inout): integer(8), max number of subhalos
+        !&gt; 
+
+c------------------------------------------------------------------------------
+	subroutine group_jiutian(  snapnum, ifile, larr, darr, nsub) 
+c------------------------------------------------------------------------------
+        !&gt; Description 
+        !&gt; -----------
+        !&gt; read the subfind group catalog of jiutian simulation
+        !&gt; 
+        !&gt; Syntax
+        !&gt; -----------
+        !&gt; call group_jiutian(127, 0, larr, darr, nsub)
+        !&gt; 
+        !&gt; Argument(s)
+        !&gt; -----------
+        !&gt; snapnum(in): integer(4), the given snapshot number [127-65]
+        !&gt; 
+	!&gt; ifile(in): integer(4), the ith divided file, starting from 0.  
+	!&gt; 
+        !&gt; larr(out): integer(8), long type data
+        !&gt;      (1-5) &#39;trackID&#39;, &#39;hosthaloID&#39;, &#39;rank&#39;, &#39;snapNum&#39;,&#39;group_nr&#39;
+        !&gt;
+        !&gt; darr(out): real(4), float type data
+        !&gt;      ( 1-7 ) &#39;posx&#39;, &#39;posy&#39;, &#39;posz&#39;, &#39;velx&#39;, &#39;vely&#39;, &#39;velz&#39;, &#39;v_lfs&#39;, 
+        !&gt;      ( 8-14) &#39;shMbound&#39;, &#39;d_comoving&#39;, &#39;ra&#39;, &#39;dec&#39;, &#39;vmax&#39;, &#39;PeakMass&#39;, &#39;PeakVmax&#39;,
+        !&gt;      (15-18) &#39;shBoundM200Crit&#39;, &#39;redshift_true&#39;, &#39;redshift_obs&#39;, &#39;shMbound_at_ac&#39;,
+        !&gt;      (19-20) &#39;group_mass&#39;, &#39;group_m_mean200&#39;
+        !&gt; 
+        !&gt; nmax(inout): integer(8), max number of subhalos
+        !&gt; 
+
+</pre></div>
+</div>
+</p>
+</details>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="csstmock-jiutian.html" class="btn btn-neutral float-left" title="JIUTIAN simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="csstmock-pipeline.html" class="btn btn-neutral float-right" title="pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

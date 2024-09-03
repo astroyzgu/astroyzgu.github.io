@@ -1,0 +1,8 @@
+_2
+===========
+
+member galaxy files:
+
+2. The group members are listed in ``XXX_?GC_2`` with format:
+     1. group id;
+     2. member galaxy id in the galaxy catalog

@@ -1,0 +1,28 @@
+SEEDCAT
+=============
+
+
+Number: 138315649 galaxies(~18000 deg^2) totally including 2.7% specz(~3700deg^2).
+
+This directory contains the productions of group finder. 
+Each different run is contained in different ``SPECTAG`` subdirectory.
+The productions are grouped by ``SPECTAG`` names.
+
+======================================================= =========
+SPECTAG                                                 COMMENTS 
+======================================================= =========
+dr9                                                     the photometric catalog + 1.0% spec-z
+fuji                                                    spec-z updated to fuji,  available 
+iron                                                    spec-z updated to iron,  only available for DESI members
+iron_dailyYYYYMMDD                                      spec-z updated to iron and daily YYYYMMDD,  only available for DESI members
+iron_daily20230430 :download:`chick <./test.txt>`        :download:`this is test for downloading <./test.txt>`
+======================================================= =========
+
+Subdirectories:
+
+.. toctree::
+   :maxdepth: 1
+
+   SPECTAG/index
+
+
