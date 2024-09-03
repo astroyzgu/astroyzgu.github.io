@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lss catalog &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../online-documents.html">online documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">csstmock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">lss catalog</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/online-readme/DESISEEDCAT/compl.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lss-catalog">
+<h1>lss catalog<a class="headerlink" href="#lss-catalog" title="Permalink to this heading"></a></h1>
+<section id="spectroscopic-redshift-rate-r">
+<h2>spectroscopic redshift rate (<span class="math notranslate nohighlight">\(R\)</span>)<a class="headerlink" href="#spectroscopic-redshift-rate-r" title="Permalink to this heading"></a></h2>
+</section>
+<section id="r-theta-x">
+<h2><span class="math notranslate nohighlight">\(R(\theta, x)\)</span><a class="headerlink" href="#r-theta-x" title="Permalink to this heading"></a></h2>
+<p><span class="math notranslate nohighlight">\(\theta_i\)</span> - galaxy angular position, dependent on survey progress, if been surveyed.</p>
+<p><span class="math notranslate nohighlight">\(x_i\)</span> - galaxy properties, dependent on survey strategy, how been surveyed.</p>
+<p><span class="math notranslate nohighlight">\(\theta\)</span> = [ntile_dark, ntile_bright, contimation… ]</p>
+<p><span class="math notranslate nohighlight">\(x\)</span> = [mag, color]</p>
+<p>光谱红移比例主要取决于三大方面，星系巡天的实际执行情况，目标选择策略和目标本身的红移测量难度。显然，天区整体的光谱红移比例取决于当前区域被光谱观测的次数，也就是星系巡天的实际执行情况。假如这个天区没有光谱巡天观测，则光谱红移比例为0。而如果天区有历史的存档数据，且随着被多次的光谱巡天覆盖， 则整体光谱红移的比例会显著升高。 此外，天区内具体获取光谱红移的优先级取决星系巡天的选源策略。 星系巡天的选源策略由科学目标决定， 一般与星系的测光数据（星等和颜色等）关联。 此外，由于巡天本身的探测极限， 在相同条件下暗弱的源较难获取高质量的光谱，进行可靠的红移测量的的难度也会增加。 因此，一般光谱红移的比例会与视星等直接关联。 随星等越暗，光谱红移的成功率越低。</p>
+<p>在具体操作中，巡天策略的实际执行情况被量化为目标被实际巡天覆盖的次数。 因为DESI的巡天分为DARK和BRIGHT两大类，执行情况的参数为被BRIGHT巡天覆盖的次数ntile_bright和被DARK巡天覆盖次数ntile_dark。 在巡天策略方面， DESI的目标选取与一系列测光数据都有关联。 在这里我们仅考虑5个星等和4个颜色与光谱红移比例具有潜在的相关性。</p>
+<!-- 为了对比，我们在这里展示z波段视星等关联。  -->
+<section id="the-supplementary-catalog-building">
+<h3>The supplementary catalog (building)<a class="headerlink" href="#the-supplementary-catalog-building" title="Permalink to this heading"></a></h3>
+<section id="the-photometric-infomation-based-on-the-desi-legacy-survey-dr9">
+<h4>The photometric infomation based on the DESI legacy survey dr9<a class="headerlink" href="#the-photometric-infomation-based-on-the-desi-legacy-survey-dr9" title="Permalink to this heading"></a></h4>
+<!-- The photometric infomation based on the DESI legacy survey dr9  -->
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>fixed with photomatric data</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#data-format-of-lsdr9_info.fits"><span class="xref myst">lsdr9-info.fits</span></a></p></td>
+<td><p>from the sweeps catalog</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_id.fits"><span class="xref myst">lsdr9-id.fits</span></a></p></td>
+<td><p>Unique ID of the photometric ojects</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_target.fits"><span class="xref myst">lsdr9_target.fits</span></a></p></td>
+<td><p>Unique ID of the potential spectroscropic targets</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_seedold.fits"><span class="xref myst">lsdr9_seedold.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_info.fits"><span class="xref myst">lsdr9_mask.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_info.fits"><span class="xref myst">lsdr9-frac.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tgttype.phot.fits"><span class="xref myst">lsdr9_tgttype.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tgttype.phot.fits"><span class="xref myst">lsdr9_kcorr.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tgttype.phot.fits"><span class="xref myst">lsdr9_cigale.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tile.fits"><span class="xref myst">lsdr9_tile.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_npsec.fits"><span class="xref myst">lsdr9_nspec.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>updated with redshift</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tgttype.%7Bzsrc%7Dfits"><span class="xref myst">lsdr9_tgttype.{zsrc}.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tgttype.%7Bzsrc%7Dfits"><span class="xref myst">lsdr9-kcorr.{zsrc},fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Data-format-of-lsdr9_tgttype.%7Bzsrc%7Dfits"><span class="xref myst">lsdr9-cigale.{zsrc}.fits</span></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="the-spectroscopic-infomation-based-on-the-desi-legacy-survey-dr9">
+<h3>The spectroscopic infomation based on the DESI legacy survey dr9<a class="headerlink" href="#the-spectroscopic-infomation-based-on-the-desi-legacy-survey-dr9" title="Permalink to this heading"></a></h3>
+<section id="redshift-source-zsrc">
+<h4>redshift source (zsrc)<a class="headerlink" href="#redshift-source-zsrc" title="Permalink to this heading"></a></h4>
+<p>zsrc is a quantity that marks the source of redshift. 0 indicates photometric redshift, while values greater than or equal to 1 indicate spectroscopic redshift.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Abbreviation</p></th>
+<th class="head"><p>zsrc</p></th>
+<th class="head"><p>spec-z fraction</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PRLSdr9</p></td>
+<td><p>0</p></td>
+<td><p>0.00%</p></td>
+<td><p>pure photo-z from PRLSdr9</p></td>
+</tr>
+<tr class="row-odd"><td><p>sweepfile</p></td>
+<td><p>1</p></td>
+<td><p>1.66%</p></td>
+<td><p>spec-z collected by Zhou et al. 2021</p></td>
+</tr>
+<tr class="row-even"><td><p>4LRGC</p></td>
+<td><p>2</p></td>
+<td><p>1.71%</p></td>
+<td><p>spec-z from low redshift group catalogs collected by lim et al. 2017</p></td>
+</tr>
+<tr class="row-odd"><td><p>fuji</p></td>
+<td><p>3</p></td>
+<td><p>2.03%</p></td>
+<td><p>spec-z from formal desi spectroscopic data release, fuji (1%, EDR,  2M)</p></td>
+</tr>
+<tr class="row-even"><td><p>iron</p></td>
+<td><p>4</p></td>
+<td><p>7.27%</p></td>
+<td><p>spec-z from formal desi spectroscopic data release, iron (1/3, Y1, 10M)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y3daily</p></td>
+<td><p>5</p></td>
+<td><p>12.19%</p></td>
+<td><p>spez-z from daily  data reducation of desi up to 20240409 (2/3, Y3, 20M)</p></td>
+</tr>
+<tr class="row-even"><td><p>jura</p></td>
+<td><p>6</p></td>
+<td><p>–</p></td>
+<td><p>spec-z from formal desi spectroscopic data release, jura (2/3, Y3, 20M)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="seds">
+<h2>SEDs<a class="headerlink" href="#seds" title="Permalink to this heading"></a></h2>
+<section id="k-correct">
+<h3>k-correct<a class="headerlink" href="#k-correct" title="Permalink to this heading"></a></h3>
+<p>IDL code: http://kcorrect.org/</p>
+<section id="data-format-of-lsdr9-kcorr-zsrc-fits">
+<h4>Data format of lsdr9_kcorr.{zsrc}.fits:<a class="headerlink" href="#data-format-of-lsdr9-kcorr-zsrc-fits" title="Permalink to this heading"></a></h4>
+<p>lsdr9-mk{zsrc}.fits</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘redshift’</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘kcorrect_x’</p></td>
+<td><p></p></td>
+<td><p>kcorrect to z = 0.5, X = {g,r,z,w1,w2}.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘stellarmass’</p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>chi2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="cigale">
+<h3>cigale<a class="headerlink" href="#cigale" title="Permalink to this heading"></a></h3>
+<p>lsdr9-mk{zsrc}.fits</p>
+<section id="data-format-of-lsdr9-cigale-zsrc-fits">
+<h4>Data format of lsdr9_cigale.{zsrc}.fits:<a class="headerlink" href="#data-format-of-lsdr9-cigale-zsrc-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…], == igal</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘best.universe.redshift’</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘best.stellar.m_star’</p></td>
+<td><p></p></td>
+<td><p>Total mass of stars, unit <span class="math notranslate nohighlight">\(M_\odot\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘best.sfh.sfr’</p></td>
+<td><p></p></td>
+<td><p>Instantaneous star formation rate</p></td>
+</tr>
+<tr class="row-even"><td><p>‘best.dust.luminosity’</p></td>
+<td><p></p></td>
+<td><p>Estimated dust luminosity using an energy balance</p></td>
+</tr>
+</tbody>
+</table>
+<details><summary><b> SED fitting using CIGALE </b> </summary>
+<p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key Parameters</p></th>
+<th class="head"><p>Configures</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SFH</p></td>
+<td><p>exponentially declining</p></td>
+</tr>
+<tr class="row-odd"><td><p>e-folding time</p></td>
+<td><p>10^8 - 10^10 yr (10 steps)</p></td>
+</tr>
+<tr class="row-even"><td><p>age</p></td>
+<td><p>5*10^7 - 10^10 yr (12 steps)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPS models</p></td>
+<td><p>BC03</p></td>
+</tr>
+<tr class="row-even"><td><p>IMF</p></td>
+<td><p>Chabrier (2003)</p></td>
+</tr>
+<tr class="row-odd"><td><p>metallicity</p></td>
+<td><p>0.02</p></td>
+</tr>
+<tr class="row-even"><td><p>dust attenuation law</p></td>
+<td><p>Calzetti et al. (2000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>E_BVs_young</p></td>
+<td><p>0.01-1.2 (13 steps)</p></td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>  
+<!-- ```
+                       EXT-morph              PSF-morph           ALL
+north_ngc     |        40,360,233             44,493,809   |    84,854,042
+south_ngc     |        49,149,992             53,155,166   |   102,305,158
+south_sgc     |        73,808,229             70,602,469   |   144,410,698
+    total     |       163,318,454            168,251,444   |   331,569,898
+```  -->
+</section>
+<section id="data-format-of-lsdr9-info-fits">
+<h4>Data format of lsdr9_info.fits<a class="headerlink" href="#data-format-of-lsdr9-info-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a></p></td>
+</tr>
+<tr class="row-even"><td><p>MASKBITS</p></td>
+<td><p></p></td>
+<td><p>refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘Z_PHOT_MEDIAN’</p></td>
+<td><p></p></td>
+<td><p>refer to <a class="reference external" href="https://www.legacysurvey.org/dr10/files/#photo-z-sweeps-9-1-photo-z-sweep-brickmin-brickmax-pz-fits">the photo-z sweeps catalog</a> of v9.0</p></td>
+</tr>
+<tr class="row-even"><td><p>‘Z_PHOT_STD’</p></td>
+<td><p></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘Z_SPEC’</p></td>
+<td><p></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>‘frac_mask’</p></td>
+<td><p></p></td>
+<td><p>True if (FRACFLUX_X &lt; 0.5)&amp;(FRACIN_X &gt; 0.3)&amp;(FRACMESKED_X &lt; 0.4), X = G, R, Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘nobs_mask’</p></td>
+<td><p></p></td>
+<td><p>= NOBS_G * 1 + NOBS_R * 10 + NOBS_Z * 100</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="data-format-of-lsdr9-tgttype-fits">
+<h3>Data format of lsdr9_tgttype.fits<a class="headerlink" href="#data-format-of-lsdr9-tgttype-fits" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘igal’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ggaiar</p></td>
+<td><p>f</p></td>
+<td><p>GAIA_PHOT_G_MEAN_MAG - 22.5 - 2.5 * log10(FLUX_R)</p></td>
+</tr>
+<tr class="row-even"><td><p>rz</p></td>
+<td><p>f</p></td>
+<td><p>- 2.5 * log10(FLUX_R/MW_TRANSMISSION_R) + 2.5 * log10(FLUX_Z/MW_TRANSMISSION_Z)</p></td>
+</tr>
+<tr class="row-odd"><td><p>rw1</p></td>
+<td><p>f</p></td>
+<td><p>- 2.5 * log10(FLUX_Z/MW_TRANSMISSION_Z) + 2.5 * log10(FLUX_W1/MW_TRANSMISSION_W1)</p></td>
+</tr>
+<tr class="row-even"><td><p>‘tgttype0’</p></td>
+<td><p>i4</p></td>
+<td><p>0, if PSF; 1, if EXT.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘tgttype1’</p></td>
+<td><p>i4</p></td>
+<td><p>0, star; 1, galaxy if Gaia - r &gt; 0.6; (Hahn et al. 2023)</p></td>
+</tr>
+<tr class="row-even"><td><p>‘tgttype2’</p></td>
+<td><p>i4</p></td>
+<td><p>0, star; 1, galaxy if z − W1 &gt; 0.8 × (r − z) − 0.6 (Zhou et al. 2023)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘tgttype3’</p></td>
+<td><p>i4</p></td>
+<td><p>== -1; Updated with spectype: 0, star; 1, galaxy; 2, QSO; (Redrock fitting results.)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-format-of-lsdr9-korr-fits">
+<h3>Data format of lsdr9_korr.fits<a class="headerlink" href="#data-format-of-lsdr9-korr-fits" title="Permalink to this heading"></a></h3>
+</section>
+<section id="data-format-of-lsdr9-cigale-fits">
+<h3>Data format of lsdr9_cigale.fits<a class="headerlink" href="#data-format-of-lsdr9-cigale-fits" title="Permalink to this heading"></a></h3>
+</section>
+<section id="data-format-of-lsdr9-tgttype-spec-fits">
+<h3>Data format of lsdr9_tgttype.spec.fits<a class="headerlink" href="#data-format-of-lsdr9-tgttype-spec-fits" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments (non-DESI)</p></th>
+<th class="head"><p>comments (DESI)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>tgttype3</p></td>
+<td><p>i4</p></td>
+<td><p>== 1</p></td>
+<td><p>-1, fill; 0, star; 1, galaxy; 2, QSO</p></td>
+</tr>
+<tr class="row-even"><td><p>‘TARGETID’</p></td>
+<td><p></p></td>
+<td><p>== -99</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘OBJTYPE’</p></td>
+<td><p></p></td>
+<td><p>== TGT</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘Z’</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ZERR’,</p></td>
+<td><p></p></td>
+<td><p>== 0.0001</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘ZWARN’</p></td>
+<td><p></p></td>
+<td><p>== 0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘SPECTYPE’</p></td>
+<td><p></p></td>
+<td><p>== ‘GALAXY’</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘DELTACHI2’</p></td>
+<td><p></p></td>
+<td><p>== 1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘ZCAT_NSPEC’</p></td>
+<td><p></p></td>
+<td><p>== 1</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<section id="data-format-of-lsdr9-id-fits">
+<h4>Data format of lsdr9_id.fits<a class="headerlink" href="#data-format-of-lsdr9-id-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>RELEASE</p></td>
+<td><p>int</p></td>
+<td><p>the record of processing run; A unique identifier is release,brickid,objid.</p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKID</p></td>
+<td><p>int</p></td>
+<td><p>brick ID [1,662174], encoding the brick sky position;</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBJID</p></td>
+<td><p>int</p></td>
+<td><p>catalog object number within this brick;</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-format-of-lsdr9-target-fits">
+<h4>Data format of lsdr9_target.fits<a class="headerlink" href="#data-format-of-lsdr9-target-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>TARGETID</p></td>
+<td><p>int64</p></td>
+<td><p>Unique ID of spectroscopic targets; if not DESI targets, -99.</p></td>
+</tr>
+<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p><a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p><a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p><a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p><a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-format-of-lsdr9-tile-fits">
+<h4>Data format of lsdr9_tile.fits<a class="headerlink" href="#data-format-of-lsdr9-tile-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ntile_*_fuji</p></td>
+<td><p>int</p></td>
+<td><p>* = sv3, bright, dark, backup, other; &gt;=1, located in fuji footprint; 0, not in.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ntile_*_iron</p></td>
+<td><p>int</p></td>
+<td><p>&gt;=1, located in iron footprint; 0, not in.</p></td>
+</tr>
+<tr class="row-even"><td><p>ntile_*_jura</p></td>
+<td><p>int</p></td>
+<td><p>&gt;=1, located in jura footprint; 0, not in.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ntile_*_full</p></td>
+<td><p>int</p></td>
+<td><p>&gt;=1, located in planned footprint of DESI; 0, not in.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>lsdr9_nspec.fits</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>nspec_fuji</p></td>
+<td><p>int</p></td>
+<td><p>The number of spectra observed.</p></td>
+</tr>
+<tr class="row-even"><td><p>nspec_iron</p></td>
+<td><p>int</p></td>
+<td><p>The number of spectra observed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nspec_jura</p></td>
+<td><p>int</p></td>
+<td><p>The number of spectra observed.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>lsdr9_seedold.fits</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>iseed</p></td>
+<td><p>int</p></td>
+<td><p>the id in the old version of seedcat [0,138315648]. If not, -99.</p></td>
+</tr>
+<tr class="row-even"><td><p>iseed_psf</p></td>
+<td><p>int</p></td>
+<td><p>the PSF-type supplyments of the seed catalog, starting with 138315649.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-format-of-lsdr9-mask-fits">
+<h4>Data format of lsdr9_mask.fits<a class="headerlink" href="#data-format-of-lsdr9-mask-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>masked</p></td>
+<td><p></p></td>
+<td><p>0, not masked; &gt;0, masked.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-format-of-lsdr9-frac-fits">
+<h4>Data format of lsdr9_frac.fits<a class="headerlink" href="#data-format-of-lsdr9-frac-fits" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>igal</p></td>
+<td><p>int</p></td>
+<td><p>Unique ID [0-…]</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRACFLUX_X</p></td>
+<td><p></p></td>
+<td><p>X = G, R, Z</p></td>
+</tr>
+<tr class="row-even"><td><p>FRACIN_X</p></td>
+<td><p></p></td>
+<td><p>X = G, R, Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>FRACMASKED_X</p></td>
+<td><p></p></td>
+<td><p>X = G, R, Z</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-format-of-lsdr9-usebits-fits">
+<h4>Data format of lsdr9_usebits.fits<a class="headerlink" href="#data-format-of-lsdr9-usebits-fits" title="Permalink to this heading"></a></h4>
+<p>The description of  <strong>usebits</strong>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Name</p></th>
+<th class="head"><p>bit number</p></th>
+<th class="head"><p>Description (=0)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘qualitycut’</p></td>
+<td><p>0</p></td>
+<td><p>to select FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z}</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘maskbits’</p></td>
+<td><p>1</p></td>
+<td><p>to reject bits of MASKBIT 1,5,6,7,8,9,11,12,13</p></td>
+</tr>
+<tr class="row-even"><td><p>‘bizarrecolor’</p></td>
+<td><p>2</p></td>
+<td><p>to select (−1 &lt; g − r &lt; 4)&amp;(−1 &lt; r − z &lt; 4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘redshift’</p></td>
+<td><p>3</p></td>
+<td><p>to select (FLUX_X &gt; 0, for all X = {g, r, z, w1, w2})</p></td>
+</tr>
+<tr class="row-even"><td><p>‘foreground’</p></td>
+<td><p>4</p></td>
+<td><p>Not masked by bright star, median star, Globular Clusters, Planetary Nebulae, and local large galaxies.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
