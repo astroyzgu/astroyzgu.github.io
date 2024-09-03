@@ -98,7 +98,7 @@ Note: In this version, we only use the archive spec-z collected by Zhou et al. 2
 
 |  colname       | dtype| comments
 |----------------|------|--------
-| 'igal'         |   i8 | Unique id in this catalog 
+| 'igal'         |   i8 | Unique id in this catalog 0-331569897 (id in the cutout catalog)
 | 'RA'           |   f8 | Right ascension at equinox J2000. 
 | 'DEC'          |   f8 | Declination at equinox J2000. 
 | 'z'            |   f8 | Redshift (PHOTZ or SPECZ). 
