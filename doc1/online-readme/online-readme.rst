@@ -10,4 +10,4 @@ DESI
    :maxdepth: 1
 
    SEEDCAT/index.rst
-   asfunc/index.rst 
+   SLITLESS/index.rst 
