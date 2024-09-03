@@ -24,7 +24,6 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="asfunc" href="../asfunc/index.html" />
     <link rel="prev" title="SEEDCAT" href="index.html" /> 
 </head>
 
@@ -55,7 +54,6 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">The lsdr9-based catalog</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../asfunc/index.html">asfunc</a></li>
 </ul>
 </li>
 </ul>
@@ -190,8 +188,8 @@
 </ol>
 <ul class="simple">
 <li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
-<li><p>if EXT w/o spec but w/i gaia,  reject star (star: gaia - r &lt; 0.6);</p></li>
-<li><p>if EXT w/o spec and w/o gaia,  reject star (star: z − W1 &lt; 0.8 × (r − z) − 0.6)</p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star using gaia - r &lt; 0.6;</p></li>
+<li><p>if EXT w/o spec and w/o gaia,  reject star using z − W1 &lt; 0.8 × (r − z) − 0.6</p></li>
 <li><p>if PSF w/o spec, reject them all.</p></li>
 </ul>
 </p>
@@ -211,8 +209,8 @@
 </ol>
 <ul class="simple">
 <li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
-<li><p>if EXT w/o spec but w/i gaia,  reject star (star: gaia - r &lt; 0.6);</p></li>
-<li><p><del> if EXT w/o spec and w/o gaia,  reject star (star: z − W1 &lt; 0.8 × (r − z) − 0.6)</del></p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star using gaia - r &lt; 0.6;</p></li>
+<li><p><del> if EXT w/o spec and w/o gaia, reject using z − W1 &lt; 0.8 × (r − z) − 0.6</del></p></li>
 <li><p>if PSF w/o spec, reject them all.</p></li>
 </ul>
 </p>
@@ -231,7 +229,7 @@
 <tbody>
 <tr class="row-even"><td><p>‘igal’</p></td>
 <td><p>i8</p></td>
-<td><p>Unique id in this catalog</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
 </tr>
 <tr class="row-odd"><td><p>‘RA’</p></td>
 <td><p>f8</p></td>
@@ -296,7 +294,7 @@
 <p><img alt="regionid01234" src="../../_images/regionid01234.png" /></p>
 </p>
 </details> 
-<p>Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs.</p>
+<p>Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs. Contact me.</p>
 <p> </p>
 <p> </p>
 </section>
@@ -308,7 +306,6 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="SEEDCAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../asfunc/index.html" class="btn btn-neutral float-right" title="asfunc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
