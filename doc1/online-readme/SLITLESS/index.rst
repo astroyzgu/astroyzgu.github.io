@@ -8,5 +8,3 @@ Subdirectories:
    :maxdepth: 1
 
    scripts.md 
-
-

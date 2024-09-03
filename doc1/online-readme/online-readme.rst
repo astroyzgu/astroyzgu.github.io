@@ -1,11 +1,6 @@
 online-readme 
 ======================
 
- 
-
-DESI
-^^^^^^^^^^^^^^
-
 .. toctree::
    :maxdepth: 1
 
