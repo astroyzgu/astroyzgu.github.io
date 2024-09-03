@@ -1,4 +1,4 @@
-SEEDCAT
+CSSTMOCK
 =============
 
   
@@ -7,6 +7,4 @@ Subdirectories:
 .. toctree::
    :maxdepth: 1
 
-   description.md
-
-
+   scripts.md 

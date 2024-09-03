@@ -4,5 +4,5 @@ online-readme
 .. toctree::
    :maxdepth: 1
 
-   SEEDCAT/index.rst
-   SLITLESS/index.rst 
+   DESISEEDCAT/index.rst
+   CSSTSLITLESS/index.rst 

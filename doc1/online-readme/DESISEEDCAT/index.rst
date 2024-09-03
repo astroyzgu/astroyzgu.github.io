@@ -1,4 +1,4 @@
-CSST
+DESI
 =============
 
   
@@ -7,4 +7,6 @@ Subdirectories:
 .. toctree::
    :maxdepth: 1
 
-   scripts.md 
+   description.md
+
+
