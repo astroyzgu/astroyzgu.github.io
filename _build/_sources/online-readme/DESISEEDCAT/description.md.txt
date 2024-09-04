@@ -59,10 +59,10 @@ Condition:
 5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
 6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
 7. remove STAR
-  * if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
-  * if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
-  * if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6
-  * if PSF w/o spec, reject them all. 
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+    - if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6
+    - if PSF w/o spec, reject them all. 
 </p>
 </details> 
 
@@ -79,10 +79,10 @@ Condition:
 5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
 6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
 7. remove STAR
-  * if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
-  * if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
-  * <del> if EXT w/o spec and w/o gaia, reject using z − W1 < 0.8 × (r − z) − 0.6</del>
-  * if PSF w/o spec, reject them all. 
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+    - <del> if EXT w/o spec and w/o gaia, reject using z − W1 < 0.8 × (r − z) − 0.6</del>
+    - if PSF w/o spec, reject them all. 
 </p>
 </details> 
 
@@ -99,10 +99,10 @@ Condition:
 5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
 6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
 7. remove STAR
-  * if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
-  * if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
-  * <del> if EXT w/o spec and w/o gaia, reject using z − W1 < 0.8 × (r − z) − 0.6</del>
-  * if PSF w/o spec, reject them all. 
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+    - <del> if EXT w/o spec and w/o gaia, reject using z − W1 < 0.8 × (r − z) − 0.6</del>
+    - if PSF w/o spec, reject them all. 
 </p>
 </details> 
 
@@ -124,10 +124,10 @@ Condition:
 5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
 6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
 7. remove STAR
-  * if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
-  * if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
-  * <del> if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6 </del>
-  * if PSF w/o spec, reject them all. 
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+    - <del> if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6 </del>
+    - if PSF w/o spec, reject them all. 
 </p>
 </details>
 
@@ -144,8 +144,8 @@ Condition:
 | 'z'            |   f8 | Redshift (PHOTZ or SPECZ). 
 | 'zerr'         |   f8 | Error of redshift. 0.0001 is settled for 'non DESI-SPECZ' 
 | 'zsrc'         |   i4 | Source of redshift. 0: 'PHOTZ';1,2:'non DESI-SPECZ';>=3:'DESI-SPECZ'  
-| 'lmstar_kcorr' |   f8 | Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
-| 'lmstar_cigale'|   f8 | Total mass of stars from cigale. Unit: $h^{-2} M_\odot $ 
+| 'lmass_kcorr' |   f8 | Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
+| 'lmass_cigale'|   f8 | Total mass of stars from cigale. Unit: $h^{-2} M_\odot $ 
 | 'lsfr_cigale'  |   f8 | Instantaneous star formation rate from cigale. Unit: $h^{-2} M_\odot/\rm year$ 
 | 'ldust_cigale' |   f8 | Estimated dust luminosity from cigale using an energy balance. Unit: $h^{-2} L_\odot$  
 | 'mag_X'        |   f8 | Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X). 
