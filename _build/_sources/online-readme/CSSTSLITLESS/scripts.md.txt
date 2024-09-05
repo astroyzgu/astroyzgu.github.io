@@ -1,6 +1,8 @@
 # CSST SLITLESS Catalog
 
-##### building
+##### slitless spectra 
+
+slitless spectra dataset (refer to Wen, et al.2024)
 
 Gravity location: /home/cossim/CSSTMOCK/slitless/wenrun/ 
 
@@ -10,11 +12,20 @@ Gravity location: /home/cossim/CSSTMOCK/slitless/wenrun/
 
 16 TB spectral data is uploading. 
 
-Gravity location: /home/cossim/CSSTMOCK/slitless/gongyan/ 
+#### slitless spectroscopic redshifts 
+
+Based on the [slitless spectra](#slitless-spectra), the following catalogs are under construction: 
+
+- Redshift catalog using Deep learning (refer to Zhou, et al.)
+- Redshift catalog using continuum (Wei, et al.) 
+- Redshift catalog using emssion line（Sui et al.）
+
+
+<!-- Gravity location: /home/cossim/CSSTMOCK/slitless/gongyan/ 
 
 ??? photo-z catalog
 
 
 Gravity location: /home/cossim/CSSTMOCK/slitless/jipeng/ 
 
-??? photo-z catalog
+??? photo-z catalog -->
