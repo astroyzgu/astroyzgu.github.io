@@ -247,7 +247,7 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.f
 </details> 
 <p> </p>
 <ul class="simple">
-<li><p><strong>Y1 catalog:</strong> The catalog updated to the iron version. (building)</p></li>
+<li><p><strong>Y1 catalog:</strong> The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron.</p></li>
 </ul>
 <p> </p>
 <ul class="simple">
@@ -306,6 +306,28 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.f
 <li><p><del> lmstar_cigale &gt; 6 </del></p></li>
 <li><p>z &gt; 0</p></li>
 <li><p>foregroud mask</p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+<li><p>remove STAR</p>
+<ul class="simple">
+<li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p><del> if EXT w/o spec but w/i gaia,  reject star using gaia - r &lt; 0.6; </del></p></li>
+<li><p><del> if EXT w/o spec and w/o gaia,  reject star using z − W1 &lt; 0.8 × (r − z) − 0.6 </del></p></li>
+<li><p>if PSF w/o spec, reject them all.</p></li>
+</ul>
+</li>
+</ol>
+</p>
+</details>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe6z21z3'  </b> </summary>
+<p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe6z21z3.fits (.csv)</p>
+<p>Condition:</p>
+<ol class="arabic simple">
+<li><p>appz &lt; 21</p></li>
+<li><p><del> lmstar_cigale &gt; 6 </del></p></li>
+<li><p>z &gt; 0</p></li>
+<li><p><del> foregroud mask </del></p></li>
 <li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
 <li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
 <li><p>remove STAR</p>
@@ -382,19 +404,19 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.f
 </tr>
 <tr class="row-even"><td><p>‘lmass_kcorr’</p></td>
 <td><p>f8</p></td>
-<td><p>Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+<td><p>log10 of Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>‘lmass_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+<td><p>log10 of Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>‘lsfr_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>Instantaneous star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot/\rm year\)</span></p></td>
+<td><p>log10 of Instantaneous star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot/\rm year\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>‘ldust_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(h^{-2} L_\odot\)</span></p></td>
+<td><p>log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(h^{-2} L_\odot\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>‘mag_X’</p></td>
 <td><p>f8</p></td>

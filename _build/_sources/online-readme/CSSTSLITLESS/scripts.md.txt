@@ -14,7 +14,7 @@ Gravity location: /home/cossim/CSSTMOCK/slitless/wenrun/
 
 #### slitless spectroscopic redshifts 
 
-Based on the [slitless spectra](#slitless-spectra), the following catalogs are under construction: 
+Based on the [slitless spectra](#slitless-spectra), the following redshift catalogs are under construction: 
 
 - Redshift catalog using Deep learning (refer to Zhou, et al.)
 - Redshift catalog using continuum (Wei, et al.) 

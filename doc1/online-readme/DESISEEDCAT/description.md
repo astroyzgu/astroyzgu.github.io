@@ -108,7 +108,9 @@ Condition:
 
 <p> </p>
 
-* **Y1 catalog:** The catalog updated to the iron version. (building)
+* **Y1 catalog:** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. 
+
+
 
 <p> </p>
 
@@ -177,6 +179,27 @@ Condition:
 </p>
 </details>
 
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe6z21z3'  </b> </summary>
+<p>
+
+Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe6z21z3.fits (.csv)
+
+Condition:
+
+1. appz < 21
+2. <del> lmstar_cigale > 6 </del>
+3. z > 0
+4. <del> foregroud mask </del>
+5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
+6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
+7. remove STAR
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - <del> if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; </del> 
+    - <del> if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6 </del>
+    - if PSF w/o spec, reject them all. 
+</p>
+</details>
+
 <p> </p>
 
 * **photo-z catalog:** The catalog with almost photo-z. In this version, we only use the archive spec-z collected by Zhou et al. 2021. 
@@ -215,10 +238,10 @@ Condition:
 | 'z'            |   f8 | Redshift (PHOTZ or SPECZ). 
 | 'zerr'         |   f8 | Error of redshift. 0.0001 is settled for 'non DESI-SPECZ' 
 | 'zsrc'         |   i4 | Source of redshift. 0: 'PHOTZ';1,2:'non DESI-SPECZ';>=3:'DESI-SPECZ'  
-| 'lmass_kcorr'  |   f8 | Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
-| 'lmass_cigale' |   f8 | Total mass of stars from cigale. Unit: $h^{-2} M_\odot $ 
-| 'lsfr_cigale'  |   f8 | Instantaneous star formation rate from cigale. Unit: $h^{-2} M_\odot/\rm year$ 
-| 'ldust_cigale' |   f8 | Estimated dust luminosity from cigale using an energy balance. Unit: $h^{-2} L_\odot$  
+| 'lmass_kcorr'  |   f8 | log10 of Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
+| 'lmass_cigale' |   f8 | log10 of Total mass of stars from cigale. Unit: $h^{-2} M_\odot $ 
+| 'lsfr_cigale'  |   f8 | log10 of Instantaneous star formation rate from cigale. Unit: $h^{-2} M_\odot/\rm year$ 
+| 'ldust_cigale' |   f8 | log10 of Estimated dust luminosity from cigale using an energy balance. Unit: $h^{-2} L_\odot$  
 | 'mag_X'        |   f8 | Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X). 
 | 'kcorr_X_0.5'  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}. 
 | 'MORPHTYPE'    |   S3 | Morphological types: "PSF", "REX", "DEV", "EXP", and "SER". 
