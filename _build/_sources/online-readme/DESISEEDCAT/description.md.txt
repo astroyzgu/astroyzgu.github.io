@@ -86,7 +86,7 @@ Condition:
 </p>
 </details> 
 
-<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z6'  </b> </summary>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z6' (recommend) </b> </summary>
 <p>
 Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.fits (.csv)
 
@@ -110,13 +110,53 @@ Condition:
 
 * **Y1 catalog:** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. 
 
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z4' (recommend) </b> </summary>
+<p>
+Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z4.fits (.csv)
 
+Condition: 
+
+1. appz < 21
+2. <del> lmstar_cigale > 6 </del>
+3. z > 0
+4. foregroud mask
+5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
+6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
+7. remove STAR
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+    - <del> if EXT w/o spec and w/o gaia, reject using z − W1 < 0.8 × (r − z) − 0.6</del>
+    - if PSF w/o spec, reject them all. 
+</p>
+</details> 
+
+
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe4z21z4'  </b> </summary>
+<p>
+
+Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe4z21z4.fits (.csv)
+
+Condition:
+
+1. appz < 21
+2. <del> lmstar_cigale > 6 </del>
+3. z > 0
+4. <del> foregroud mask </del> 
+5. BITMASK != 1,5,6,7,8,9,11,12,13 (refer to [the DR9 bitmasks](https://www.legacysurvey.org/dr9/bitmasks/))
+6. FRACFLUX_X < 0.5, FRACIN_X > 0.3, FRACMASKED_X < 0.4, for all X = {g, r, z} (refer to [the Tractor Catalog Format](https://www.legacysurvey.org/dr9/catalogs/))
+7. remove STAR
+    - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
+    - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
+    - <del> if EXT w/o spec and w/o gaia,  reject star using z − W1 < 0.8 × (r − z) − 0.6 </del>
+    - if PSF w/o spec, reject them all. 
+</p>
+</details>
 
 <p> </p>
 
-* **EDR catalog:** The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji. 
+* **EDR catalog:** The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which **has been pulished**. 
 
-<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z3'  </b> </summary>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z3' (recommend) </b> </summary>
 <p>
 
 Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z3.fits (.csv)
@@ -158,7 +198,7 @@ Condition:
 </p>
 </details>
 
-<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe5z21z3'  </b> </summary>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe5z21z3' </b> </summary>
 <p>
 
 Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe5z21z3.fits (.csv)
@@ -264,6 +304,22 @@ Note: In order to be more concise, I have kept only the necessary information. A
 <p> </p>
 
 
-### The supplementary catalogs (building)
+### The supplementary infomation (building)
 
 
+<details><summary><b> SED fitting using CIGALE </b> </summary>
+<p>
+
+| Key Parameters    | Configures |
+|-------------------|-----------|
+| SFH               |  exponentially declining
+| e-folding time    | 10^8 - 10^10 yr (10 steps)
+| age               | 5*10^7 - 10^10 yr (12 steps)
+| SPS models        | BC03
+| IMF                         | Chabrier (2003) 
+| metallicity                 | 0.02 
+| dust attenuation law        | Calzetti et al. (2000)
+| E_BVs_young                 | 0.01-1.2 (13 steps)|
+
+</p>
+</details>  

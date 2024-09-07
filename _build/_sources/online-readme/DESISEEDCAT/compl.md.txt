@@ -99,22 +99,7 @@ lsdr9-mk{zsrc}.fits
 | 'best.dust.luminosity'| | Estimated dust luminosity using an energy balance
 
 
-<details><summary><b> SED fitting using CIGALE </b> </summary>
-<p>
 
-| Key Parameters    | Configures |
-|-------------------|-----------|
-| SFH               |  exponentially declining
-| e-folding time    | 10^8 - 10^10 yr (10 steps)
-| age               | 5*10^7 - 10^10 yr (12 steps)
-| SPS models        | BC03
-| IMF                         | Chabrier (2003) 
-| metallicity                 | 0.02 
-| dust attenuation law        | Calzetti et al. (2000)
-| E_BVs_young                 | 0.01-1.2 (13 steps)|
-
-</p>
-</details>  
 
 <!-- ```
                        EXT-morph              PSF-morph           ALL

@@ -54,7 +54,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">The lsdr9-based catalog</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#the-summary-catalog">The summary catalog</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-cutout-catlogs-from-the-summary-catalog">The cutout catlogs from the summary catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-supplementary-catalogs-building">The supplementary catalogs (building)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-supplementary-infomation-building">The supplementary infomation (building)</a></li>
 </ul>
 </li>
 </ul>
@@ -223,7 +223,7 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe2z21z6.f
 </ol>
 </p>
 </details> 
-<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z6'  </b> </summary>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z6' (recommend) </b> </summary>
 <p>
 Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.fits (.csv)
 <p>Condition:</p>
@@ -249,11 +249,55 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.f
 <ul class="simple">
 <li><p><strong>Y1 catalog:</strong> The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron.</p></li>
 </ul>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z4' (recommend) </b> </summary>
+<p>
+Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z4.fits (.csv)
+<p>Condition:</p>
+<ol class="arabic simple">
+<li><p>appz &lt; 21</p></li>
+<li><p><del> lmstar_cigale &gt; 6 </del></p></li>
+<li><p>z &gt; 0</p></li>
+<li><p>foregroud mask</p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+<li><p>remove STAR</p>
+<ul class="simple">
+<li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star using gaia - r &lt; 0.6;</p></li>
+<li><p><del> if EXT w/o spec and w/o gaia, reject using z − W1 &lt; 0.8 × (r − z) − 0.6</del></p></li>
+<li><p>if PSF w/o spec, reject them all.</p></li>
+</ul>
+</li>
+</ol>
+</p>
+</details> 
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe4z21z4'  </b> </summary>
+<p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe4z21z4.fits (.csv)</p>
+<p>Condition:</p>
+<ol class="arabic simple">
+<li><p>appz &lt; 21</p></li>
+<li><p><del> lmstar_cigale &gt; 6 </del></p></li>
+<li><p>z &gt; 0</p></li>
+<li><p><del> foregroud mask </del></p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+<li><p>remove STAR</p>
+<ul class="simple">
+<li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star using gaia - r &lt; 0.6;</p></li>
+<li><p><del> if EXT w/o spec and w/o gaia,  reject star using z − W1 &lt; 0.8 × (r − z) − 0.6 </del></p></li>
+<li><p>if PSF w/o spec, reject them all.</p></li>
+</ul>
+</li>
+</ol>
+</p>
+</details>
 <p> </p>
 <ul class="simple">
-<li><p><strong>EDR catalog:</strong> The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji.</p></li>
+<li><p><strong>EDR catalog:</strong> The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which <strong>has been pulished</strong>.</p></li>
 </ul>
-<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z3'  </b> </summary>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe3z21z3' (recommend) </b> </summary>
 <p>
 <p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z3.fits (.csv)</p>
 <p>Condition:</p>
@@ -297,7 +341,7 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.f
 </ol>
 </p>
 </details>
-<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe5z21z3'  </b> </summary>
+<details style="padding-left: 2em;"><summary><b> the cutout catalog 'safe5z21z3' </b> </summary>
 <p>
 <p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe5z21z3.fits (.csv)</p>
 <p>Condition:</p>
@@ -451,8 +495,45 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z6.f
 <p> </p>
 </section>
 </section>
-<section id="the-supplementary-catalogs-building">
-<h2>The supplementary catalogs (building)<a class="headerlink" href="#the-supplementary-catalogs-building" title="Permalink to this heading"></a></h2>
+<section id="the-supplementary-infomation-building">
+<h2>The supplementary infomation (building)<a class="headerlink" href="#the-supplementary-infomation-building" title="Permalink to this heading"></a></h2>
+<details><summary><b> SED fitting using CIGALE </b> </summary>
+<p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key Parameters</p></th>
+<th class="head"><p>Configures</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SFH</p></td>
+<td><p>exponentially declining</p></td>
+</tr>
+<tr class="row-odd"><td><p>e-folding time</p></td>
+<td><p>10^8 - 10^10 yr (10 steps)</p></td>
+</tr>
+<tr class="row-even"><td><p>age</p></td>
+<td><p>5*10^7 - 10^10 yr (12 steps)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPS models</p></td>
+<td><p>BC03</p></td>
+</tr>
+<tr class="row-even"><td><p>IMF</p></td>
+<td><p>Chabrier (2003)</p></td>
+</tr>
+<tr class="row-odd"><td><p>metallicity</p></td>
+<td><p>0.02</p></td>
+</tr>
+<tr class="row-even"><td><p>dust attenuation law</p></td>
+<td><p>Calzetti et al. (2000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>E_BVs_young</p></td>
+<td><p>0.01-1.2 (13 steps)</p></td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>  
 </section>
 </section>
 
