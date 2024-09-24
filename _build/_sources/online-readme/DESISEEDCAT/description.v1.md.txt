@@ -1,5 +1,7 @@
 # The lsdr9-based catalog (v1)
 
+**The galaxy catalog can be viewed at this [link](#the-list-of-galaxy-catalogs).**
+
 #### The summary catalog 
 
 We have reconstructed the summary catalog based on [DESI Legacy Imaging Surveys (dr9)](https://www.legacysurvey.org/dr9/description/), which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO). 
@@ -42,10 +44,10 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 
 #### The galaxy sample selected from the summary catalog 
 
-**All of the following tables can be consolidated from this sweep catalog with 331,569,898 objects.** 
+**All of the following tables can be consolidated from this sweep catalog (331,569,898 objects in total). As the spectroscopic redshift data continues to be updated, we have constructed different versions of galaxy catalogs using the following criterion.** 
 
-<details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary>
-<p>
+<!-- <details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary
+<p> -->
 
 1. appz < 21
 2. z > 0.001. If no spec-z, we use photo-z instead.
@@ -57,10 +59,13 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
     - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
     - if PSF w/o spec, reject them all. 
 
-</p>
-</details> 
+<!-- </p>
+</details>  -->
 
 <p> </p>
+
+##### The list of galaxy catalogs
+
 
 * **Y3 catalog (138012818):** The latest catalog updated to the jura version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in jura. If no spec-z, we use photo-z instead. 
 
@@ -68,14 +73,13 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 
 <p> </p>
 
-* **Y1 catalog:** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. 
+* **Y1 catalog (137538086):** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. If no spec-z, we use photo-z instead. 
 
-    Gravity location: coming soon. 
-    <!-- Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)  -->
+    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)
 
 <p> </p>
 
-* **EDR catalog (136727324):** The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which **has been pulished**. 
+* **EDR catalog (136727324):** The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which **has been pulished**. If no spec-z, we use photo-z instead. 
 
     Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.edr.v1.fits (.csv)
 
@@ -96,9 +100,9 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 | 'zerr'         |   f8 | Error of redshift. 0.0001 is settled for 'non DESI-SPECZ' 
 | 'zsrc'         |   i4 | Source of redshift. 0: 'PHOTZ';1,2:'non DESI-SPECZ';>=3:'DESI-SPECZ'  
 | 'lmass_kcorr'  |   f8 | log10 of Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
-| 'lmass_cigale' |   f8 | log10 of Total mass of stars from cigale. Unit: $h^{-2} M_\odot $ 
-| 'lsfr_cigale'  |   f8 | Cautious. log10 of Instantaneous star formation rate from cigale. Unit: $h^{-2} M_\odot/\rm year$ 
-| 'ldust_cigale' |   f8 | Cautious. log10 of Estimated dust luminosity from cigale using an energy balance. Unit: $h^{-2} L_\odot$  
+| 'lmass_cigale' |   f8 | log10 of Total mass of stars from cigale. Unit: $ M_\odot $; ($h=0.7$; $\Omega_M = 0.3$)
+| 'lsfr_cigale'  |   f8 | log10 of star formation rate from cigale. Unit: $ M_\odot/\rm year$ 
+| 'ldust_cigale' |   f8 | log10 of Estimated dust luminosity from cigale using an energy balance. Unit: $L_\odot$  
 | 'mag_X'        |   f8 | Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X). 
 | 'kcorr_X_0.5'  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}. 
 | 'MORPHTYPE'    |   S3 | Morphological types: "PSF", "REX", "DEV", "EXP", and "SER". 
@@ -135,6 +139,8 @@ Note: In order to be more concise, I have kept only the necessary information. A
 |    BGS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    MWS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    SCND_TARGET | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
+
+
 
 <!-- <details><summary><b> SED fitting using CIGALE </b> </summary>
 <p>

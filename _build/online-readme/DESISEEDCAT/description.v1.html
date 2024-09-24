@@ -98,6 +98,7 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog-v1">
 <h1>The lsdr9-based catalog (v1)<a class="headerlink" href="#the-lsdr9-based-catalog-v1" title="Permalink to this heading"></a></h1>
+<p><strong>The galaxy catalog can be viewed at this <a class="reference internal" href="#the-list-of-galaxy-catalogs"><span class="xref myst">link</span></a>.</strong></p>
 <section id="the-summary-catalog">
 <h2>The summary catalog<a class="headerlink" href="#the-summary-catalog" title="Permalink to this heading"></a></h2>
 <p>We have reconstructed the summary catalog based on <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">DESI Legacy Imaging Surveys (dr9)</a>, which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO).</p>
@@ -175,9 +176,9 @@
 </section>
 <section id="the-galaxy-sample-selected-from-the-summary-catalog">
 <h2>The galaxy sample selected from the summary catalog<a class="headerlink" href="#the-galaxy-sample-selected-from-the-summary-catalog" title="Permalink to this heading"></a></h2>
-<p><strong>All of the following tables can be consolidated from this sweep catalog with 331,569,898 objects.</strong></p>
-<details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary>
-<p>
+<p><strong>All of the following tables can be consolidated from this sweep catalog (331,569,898 objects in total). As the spectroscopic redshift data continues to be updated, we have constructed different versions of galaxy catalogs using the following criterion.</strong></p>
+<!-- <details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary
+<p> -->
 <ol class="arabic simple">
 <li><p>appz &lt; 21</p></li>
 <li><p>z &gt; 0.001. If no spec-z, we use photo-z instead.</p></li>
@@ -192,9 +193,11 @@
 </ul>
 </li>
 </ol>
-</p>
-</details> 
+<!-- </p>
+</details>  -->
 <p> </p>
+<section id="the-list-of-galaxy-catalogs">
+<h3>The list of galaxy catalogs<a class="headerlink" href="#the-list-of-galaxy-catalogs" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p><strong>Y3 catalog (138012818):</strong> The latest catalog updated to the jura version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in jura. If no spec-z, we use photo-z instead.</p>
 <p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y3.v1.fits (.csv)</p>
@@ -202,18 +205,18 @@
 </ul>
 <p> </p>
 <ul>
-<li><p><strong>Y1 catalog:</strong> The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron.</p>
-<p>Gravity location: coming soon.</p>
-  <!-- Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)  -->
+<li><p><strong>Y1 catalog (137538086):</strong> The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. If no spec-z, we use photo-z instead.</p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)</p>
 </li>
 </ul>
 <p> </p>
 <ul>
-<li><p><strong>EDR catalog (136727324):</strong> The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which <strong>has been pulished</strong>.</p>
+<li><p><strong>EDR catalog (136727324):</strong> The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which <strong>has been pulished</strong>. If no spec-z, we use photo-z instead.</p>
 <p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.edr.v1.fits (.csv)</p>
 </li>
 </ul>
 <p> </p>
+</section>
 <section id="the-data-format-of-the-cutout-catlogs">
 <h3>The Data format of the cutout catlogs<a class="headerlink" href="#the-data-format-of-the-cutout-catlogs" title="Permalink to this heading"></a></h3>
 <table class="docutils align-default">
@@ -254,15 +257,15 @@
 </tr>
 <tr class="row-odd"><td><p>‘lmass_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+<td><p>log10 of Total mass of stars from cigale. Unit: $ M_\odot <span class="math notranslate nohighlight">\(; (\)</span>h=0.7$; <span class="math notranslate nohighlight">\(\Omega_M = 0.3\)</span>)</p></td>
 </tr>
 <tr class="row-even"><td><p>‘lsfr_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>Cautious. log10 of Instantaneous star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot/\rm year\)</span></p></td>
+<td><p>log10 of star formation rate from cigale. Unit: $ M_\odot/\rm year$</p></td>
 </tr>
 <tr class="row-odd"><td><p>‘ldust_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>Cautious. log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(h^{-2} L_\odot\)</span></p></td>
+<td><p>log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(L_\odot\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>‘mag_X’</p></td>
 <td><p>f8</p></td>

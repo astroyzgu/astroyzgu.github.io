@@ -1,5 +1,7 @@
 # The lsdr9-based catalog (v1)
 
+**The galaxy catalog can be viewed at this [link](#the-list-of-galaxy-catalogs).**
+
 #### The summary catalog 
 
 We have reconstructed the summary catalog based on [DESI Legacy Imaging Surveys (dr9)](https://www.legacysurvey.org/dr9/description/), which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO). 
@@ -42,10 +44,10 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 
 #### The galaxy sample selected from the summary catalog 
 
-**All of the following tables can be consolidated from this sweep catalog with 331,569,898 objects.** 
+**All of the following tables can be consolidated from this sweep catalog (331,569,898 objects in total). As the spectroscopic redshift data continues to be updated, we have constructed different versions of galaxy catalogs using the following criterion.** 
 
-<details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary>
-<p>
+<!-- <details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary
+<p> -->
 
 1. appz < 21
 2. z > 0.001. If no spec-z, we use photo-z instead.
@@ -57,10 +59,13 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
     - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
     - if PSF w/o spec, reject them all. 
 
-</p>
-</details> 
+<!-- </p>
+</details>  -->
 
 <p> </p>
+
+##### The list of galaxy catalogs
+
 
 * **Y3 catalog (138012818):** The latest catalog updated to the jura version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in jura. If no spec-z, we use photo-z instead. 
 
