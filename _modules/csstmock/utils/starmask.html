@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>csstmock.utils.starmask &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../online-readme/online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../online-documents.html">online documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">csstmock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">csstmock.utils.starmask</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for csstmock.utils.starmask</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="viewcode-block" id="starmask"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask">[docs]</a><span class="k">class</span> <span class="nc">starmask</span><span class="p">():</span> 
+    <span class="c1">#def __init__(self, star, gala): </span>
+    <span class="c1">#    self.star = star</span>
+    <span class="c1">#    self.gala = gala</span>
+<div class="viewcode-block" id="starmask.xyz2ruv"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.xyz2ruv">[docs]</a>    <span class="k">def</span> <span class="nf">xyz2ruv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>  
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        球坐标-&gt; 笛卡尔坐标</span>
+<span class="sd">        u0 = 0, ==&gt; u = [-180, 180]; u0 = 180, ==&gt; u = [0, 360]</span>
+<span class="sd">        v0 = 0, ==&gt; v = [-90, 90];   v0 = 90, ==&gt; v = [0, 180]</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">z</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">;</span> 
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span></div>
+
+<div class="viewcode-block" id="starmask.ruv2xyz"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.ruv2xyz">[docs]</a>    <span class="k">def</span> <span class="nf">ruv2xyz</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="mf">180.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span></div>
+    
+<div class="viewcode-block" id="starmask.uniform_sph"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.uniform_sph">[docs]</a>    <span class="k">def</span> <span class="nf">uniform_sph</span><span class="p">(</span><span class="n">RAlim</span><span class="p">,</span> <span class="n">DEClim</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Draw a uniform sample on a sphere</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        RAlim : tuple</span>
+<span class="sd">            select Right Ascension between RAlim[0] and RAlim[1]</span>
+<span class="sd">            units are degrees</span>
+<span class="sd">        DEClim : tuple</span>
+<span class="sd">            select Declination between DEClim[0] and DEClim[1]</span>
+<span class="sd">        size : int (optional)</span>
+<span class="sd">            the size of the random arrays to return (default = 1)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        RA, DEC : ndarray</span>
+<span class="sd">            the random sample on the sphere within the given limits.</span>
+<span class="sd">            arrays have shape equal to size.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">zlim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">DEClim</span><span class="p">)</span> <span class="o">/</span> <span class="mf">180.</span><span class="p">)</span>
+
+        <span class="n">z</span> <span class="o">=</span> <span class="n">zlim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">zlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">zlim</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">DEC</span> <span class="o">=</span> <span class="p">(</span><span class="mf">180.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">RA</span> <span class="o">=</span> <span class="n">RAlim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">RAlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">RAlim</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">RA</span><span class="p">,</span> <span class="n">DEC</span></div>
+
+<div class="viewcode-block" id="starmask.sphrand"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.sphrand">[docs]</a>    <span class="k">def</span> <span class="nf">sphrand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">box</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="n">xyz</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span> 
+        <span class="c1">#</span>
+        <span class="c1">#----- unifrom distribution on the sphere </span>
+        <span class="c1"># Lambert azimuthal equal-area projection</span>
+        <span class="c1"># 从球面上的点（0,0,-1） ==&gt; 投影 ==&gt; z = 0的平面</span>
+        <span class="c1"># α = arctan(y/x); r = sqrt(x^2+y^2)</span>
+        <span class="c1"># δ = 2arcsin(r);  </span>
+        <span class="c1"># r&lt;1的区域生成n个随机数</span>
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">box</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+        <span class="n">a_range</span> <span class="o">=</span> <span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+        <span class="n">r_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mi">90</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># (0,1) </span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">*</span><span class="n">a_range</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">r</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">*</span><span class="n">r_range</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+        <span class="c1">#x = r*np.cos(alpha) </span>
+        <span class="c1">#y = r*np.sin(alpha) </span>
+        <span class="c1">#data  = np.vstack([x, y]).T</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="c1"># arcsin==&gt;(0,90)</span>
+        <span class="n">data</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">alpha</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">180</span><span class="p">,</span> <span class="n">delta</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">180</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">if</span> <span class="n">xyz</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span> 
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>  
+            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>  
+            <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> 
+            <span class="n">data</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+<div class="viewcode-block" id="starmask.crosscorr"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.crosscorr">[docs]</a>    <span class="nd">@classmethod</span> 
+    <span class="k">def</span> <span class="nf">crosscorr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">star</span><span class="p">,</span> <span class="n">gala</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span> 
+        <span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">KDTree</span>
+        <span class="n">KDs</span> <span class="o">=</span> <span class="n">KDTree</span><span class="p">(</span><span class="n">star</span><span class="p">)</span>
+        <span class="n">KDg</span> <span class="o">=</span> <span class="n">KDTree</span><span class="p">(</span><span class="n">gala</span><span class="p">)</span>
+
+        <span class="n">leng</span> <span class="o">=</span> <span class="n">KDg</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">return_length</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span> <span class="p">[[</span><span class="n">ii</span><span class="p">]</span><span class="o">*</span><span class="n">leng</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">leng</span><span class="p">))</span> <span class="p">]</span> <span class="p">)</span>
+
+        <span class="n">indx</span> <span class="o">=</span> <span class="n">KDg</span><span class="o">.</span><span class="n">query_ball_point</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">return_sorted</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> 
+        <span class="n">idxg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">indx</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">idxg</span> </div>
+    
+<div class="viewcode-block" id="starmask.mv2dxyz"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.mv2dxyz">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">mv2dxyz</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">from_vec</span><span class="p">,</span> <span class="n">to_vec</span><span class="p">):</span>   
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        move points following the rotation from 1 point (from_vec) to another (to_vec)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+        <span class="n">from_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">from_vec</span><span class="p">)</span> 
+        <span class="n">to_vec</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">to_vec</span><span class="p">)</span> 
+        <span class="n">vec</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span> 
+        <span class="n">from_vec</span>  <span class="o">=</span> <span class="n">from_vec</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">from_vec</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+        <span class="n">to_vec</span>    <span class="o">=</span> <span class="n">to_vec</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">to_vec</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+        <span class="c1">#norm1  = norm(  from_vec, axis = 1)     </span>
+        <span class="c1">#norm2  = norm(  to_vec, axis = 1) </span>
+        <span class="c1">#print(norm1, norm2) </span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">from_vec</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">to_vec</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>  
+        <span class="n">cs</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">from_vec</span><span class="o">*</span><span class="n">to_vec</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span> <span class="c1"># print(cos.shape, norm1.shape, norm2.shape)</span>
+        <span class="n">vec_cross</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">from_vec</span><span class="p">,</span><span class="n">to_vec</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">sn</span>        <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">vec_cross</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span> 
+        <span class="c1">#angle     = np.arctan2(sn, cs)</span>
+        <span class="c1">#print(cs, np.cos(angle) )</span>
+        <span class="c1">#print(sn, np.sin(angle) )</span>
+
+        <span class="n">vec_cross</span>  <span class="o">=</span> <span class="n">vec_cross</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">vec_cross</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">vec_cross</span><span class="p">[:,</span><span class="mi">0</span><span class="p">];</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">vec_cross</span><span class="p">[:,</span><span class="mi">1</span><span class="p">];</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">vec_cross</span><span class="p">[:,</span><span class="mi">2</span><span class="p">];</span> <span class="n">z0</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">x_</span> <span class="o">=</span> <span class="p">(</span> <span class="n">cs</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x0</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="n">sn</span><span class="o">*</span><span class="n">z</span> <span class="p">)</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">z0</span>
+        <span class="n">y_</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">x0</span> <span class="o">+</span> <span class="p">(</span>  <span class="n">cs</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="o">-</span><span class="n">sn</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">z0</span>
+        <span class="n">z_</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="o">-</span><span class="n">sn</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">x0</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="n">x</span> <span class="p">)</span><span class="o">*</span><span class="n">y0</span> <span class="o">+</span> <span class="p">(</span> <span class="n">cs</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">z0</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x_</span><span class="p">,</span> <span class="n">y_</span><span class="p">,</span> <span class="n">z_</span><span class="p">])</span><span class="o">.</span><span class="n">T</span></div>
+<div class="viewcode-block" id="starmask.run"><a class="viewcode-back" href="../../../csstmock.utils.html#csstmock.utils.starmask.starmask.run">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gala</span><span class="p">,</span> <span class="n">star</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">idxs</span><span class="p">,</span> <span class="n">idxg</span> <span class="o">=</span> <span class="n">starmask</span><span class="o">.</span><span class="n">crosscorr</span><span class="p">(</span><span class="n">star</span><span class="p">,</span> <span class="n">gala</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">dxyz</span>       <span class="o">=</span> <span class="n">starmask</span><span class="o">.</span><span class="n">mv2dxyz</span><span class="p">(</span><span class="n">gala</span><span class="p">[</span><span class="n">idxg</span><span class="p">],</span> <span class="n">from_vec</span> <span class="o">=</span> <span class="n">star</span><span class="p">[</span><span class="n">idxs</span><span class="p">],</span> <span class="n">to_vec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">a_</span><span class="p">,</span> <span class="n">d_</span>  <span class="o">=</span> <span class="n">starmask</span><span class="o">.</span><span class="n">xyz2ruv</span><span class="p">(</span><span class="n">dxyz</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">dxyz</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">dxyz</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">a_</span><span class="p">,</span> <span class="n">d_</span></div></div>
+    
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
