@@ -68,10 +68,9 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 
 <p> </p>
 
-* **Y1 catalog:** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. 
+* **Y1 catalog (137538086):** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. 
 
-    Gravity location: coming soon. 
-    <!-- Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)  -->
+    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)
 
 <p> </p>
 
@@ -96,9 +95,9 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 | 'zerr'         |   f8 | Error of redshift. 0.0001 is settled for 'non DESI-SPECZ' 
 | 'zsrc'         |   i4 | Source of redshift. 0: 'PHOTZ';1,2:'non DESI-SPECZ';>=3:'DESI-SPECZ'  
 | 'lmass_kcorr'  |   f8 | log10 of Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
-| 'lmass_cigale' |   f8 | log10 of Total mass of stars from cigale. Unit: $h^{-2} M_\odot $ 
-| 'lsfr_cigale'  |   f8 | Cautious. log10 of Instantaneous star formation rate from cigale. Unit: $h^{-2} M_\odot/\rm year$ 
-| 'ldust_cigale' |   f8 | Cautious. log10 of Estimated dust luminosity from cigale using an energy balance. Unit: $h^{-2} L_\odot$  
+| 'lmass_cigale' |   f8 | log10 of Total mass of stars from cigale. Unit: $ M_\odot $; ($h=0.7$; $\Omega_M = 0.3$)
+| 'lsfr_cigale'  |   f8 | log10 of star formation rate from cigale. Unit: $ M_\odot/\rm year$ 
+| 'ldust_cigale' |   f8 | log10 of Estimated dust luminosity from cigale using an energy balance. Unit: $L_\odot$  
 | 'mag_X'        |   f8 | Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X). 
 | 'kcorr_X_0.5'  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}. 
 | 'MORPHTYPE'    |   S3 | Morphological types: "PSF", "REX", "DEV", "EXP", and "SER". 
@@ -135,6 +134,8 @@ Note: In order to be more concise, I have kept only the necessary information. A
 |    BGS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    MWS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    SCND_TARGET | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
+
+
 
 <!-- <details><summary><b> SED fitting using CIGALE </b> </summary>
 <p>
