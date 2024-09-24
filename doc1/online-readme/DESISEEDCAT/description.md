@@ -1,4 +1,7 @@
-# The lsdr9-based catalog 
+# The lsdr9-based catalog (v0)
+
+
+[New version v1 can be seen here.](description.v1.md)
 
 #### The summary catalog 
 

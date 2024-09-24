@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The lsdr9-based catalog &mdash; csstmock 0.0.0 documentation</title>
+  <title>The lsdr9-based catalog (v0) &mdash; csstmock 0.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
 
@@ -23,9 +23,7 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="CSSTMOCK" href="../CSSTSLITLESS/index.html" />
-    <link rel="prev" title="DESI" href="index.html" /> 
+    <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,20 +46,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../online-readme.html">online-readme</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">DESI</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">The lsdr9-based catalog</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-summary-catalog">The summary catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-cutout-catlogs-from-the-summary-catalog">The cutout catlogs from the summary catalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-supplementary-infomation-building">The supplementary infomation (building)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../CSSTSLITLESS/index.html">CSSTMOCK</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme.html">online-readme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../online-documents.html">online documents</a></li>
 </ul>
 <ul>
@@ -84,9 +70,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../online-readme.html">online-readme</a></li>
-          <li class="breadcrumb-item"><a href="index.html">DESI</a></li>
-      <li class="breadcrumb-item active">The lsdr9-based catalog</li>
+      <li class="breadcrumb-item active">The lsdr9-based catalog (v0)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/online-readme/DESISEEDCAT/description.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,8 +80,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog">
-<h1>The lsdr9-based catalog<a class="headerlink" href="#the-lsdr9-based-catalog" title="Permalink to this heading"></a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog-v0">
+<h1>The lsdr9-based catalog (v0)<a class="headerlink" href="#the-lsdr9-based-catalog-v0" title="Permalink to this heading"></a></h1>
+<p><a class="reference internal" href="description.v1.html"><span class="std std-doc">New version v1 can be seen here.</span></a></p>
 <section id="the-summary-catalog">
 <h2>The summary catalog<a class="headerlink" href="#the-summary-catalog" title="Permalink to this heading"></a></h2>
 <p>We have reconstructed the summary catalog based on <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">DESI Legacy Imaging Surveys (dr9)</a>, which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO).</p>
@@ -456,11 +441,11 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z4.f
 </tr>
 <tr class="row-even"><td><p>‘lsfr_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of Instantaneous star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot/\rm year\)</span></p></td>
+<td><p>Cautious. log10 of Instantaneous star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot/\rm year\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>‘ldust_cigale’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(h^{-2} L_\odot\)</span></p></td>
+<td><p>Cautious. log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(h^{-2} L_\odot\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>‘mag_X’</p></td>
 <td><p>f8</p></td>
@@ -540,10 +525,7 @@ Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.safe3z21z4.f
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="DESI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../CSSTSLITLESS/index.html" class="btn btn-neutral float-right" title="CSSTMOCK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
