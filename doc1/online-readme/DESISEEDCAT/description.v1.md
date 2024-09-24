@@ -11,7 +11,7 @@ The primary selection is that:
 3. apparent magnitude limits are mag_z <= 21 or mag_r <= 21; 
 4. unique sources (Sources are resolved as distinct by only counting BASS and MzLS sources if they are both at Declination > 32.375° and north of the Galactic Plane, or, otherwise counting DECam sources.) 
 
-<details><summary><b> The footprint of the sweep catalog (r<21|z<21>) </b> </summary>
+<details><summary><b> The footprint of the sweep catalog (r<21|z<21) </b> </summary>
 <p>
 
 ![footpring](footprint-dr9.png)
@@ -40,7 +40,7 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 * north_ngc (b > 0 & dec > 32.375) use the filters of BASS_G, BASS_R, MZLS_Z, WISE_W1 and WISE_W2. 
 * south_ngc and south_sgc use the filters of DECAM_G, DECAM_R, and DECAM_Z, WISE_W1 and WISE_W2.  
 
-#### The sample selection from the summary catalog 
+#### The galaxy sample selected from the summary catalog 
 
 **All of the following tables can be consolidated from this sweep catalog with 331,569,898 objects.** 
 

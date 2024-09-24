@@ -14,7 +14,7 @@ The primary selection is that:
 3. apparent magnitude limits are mag_z <= 21 or mag_r <= 21; 
 4. unique sources (Sources are resolved as distinct by only counting BASS and MzLS sources if they are both at Declination > 32.375° and north of the Galactic Plane, or, otherwise counting DECam sources.) 
 
-<details><summary><b> The footprint of the sweep catalog (r<21|z<21>) </b> </summary>
+<details><summary><b> The footprint of the sweep catalog (r<21|(z<21) </b> </summary>
 <p>
 
 ![footpring](footprint-dr9.png)
