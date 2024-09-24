@@ -47,8 +47,6 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 <details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary>
 <p>
 
-Condition: 
-
 1. appz < 21
 2. z > 0.001. If no spec-z, we use photo-z instead.
 3. foregroud mask
@@ -58,6 +56,7 @@ Condition:
     - if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting 
     - if EXT w/o spec but w/i gaia,  reject star using gaia - r < 0.6; 
     - if PSF w/o spec, reject them all. 
+
 </p>
 </details> 
 
@@ -121,8 +120,21 @@ Note: In order to be more concise, I have kept only the necessary information. A
 <p> </p>
 <p> </p>
 
-### The supplementary infomation (building)
+#### The supplementary infomation (building)
 
+##### lsdr9_link*.fits
+
+|  colname       | dtype| comments
+|----------------|------|--------
+| 'igal'         |   i8 | Unique id in this catalog 0-331569897 (id in the cutout catalog)
+| 'RELEASE'      |   i8 | the record of processing run; A unique identifier is release,brickid,objid. 
+| 'BRICKID'      |   i8 | brick ID [1,662174], encoding the sky position of brick; 
+| 'OBJID'        |   i8 | catalog object number within this brick; 
+| 'TARGETID'     |   i8 | Unique ID of spectroscopic targets; if not DESI targets, -99. 
+|    DESI_TARGET | int64| Target masks record the reasons why each target was selected for DESI observations; refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
+|    BGS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
+|    MWS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
+|    SCND_TARGET | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 
 <!-- <details><summary><b> SED fitting using CIGALE </b> </summary>
 <p>
