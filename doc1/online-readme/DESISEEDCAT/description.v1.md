@@ -69,19 +69,19 @@ The total number of the objects with r < 21 or z < 21 is 331,569,898. In the act
 
 * **Y3 catalog (138012818):** The latest catalog updated to the jura version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in jura. If no spec-z, we use photo-z instead. 
 
-    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y3.v1.fits (.csv)
+    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y3.v2.fits (.csv)
 
 <p> </p>
 
 * **Y1 catalog (137538086):** The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. If no spec-z, we use photo-z instead. 
 
-    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v1.fits (.csv)
+    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v2.fits (.csv)
 
 <p> </p>
 
 * **EDR catalog (136727324):** The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which **has been pulished**. If no spec-z, we use photo-z instead. 
 
-    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.edr.v1.fits (.csv)
+    Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.edr.v2.fits (.csv)
 
 <p> </p>
 
