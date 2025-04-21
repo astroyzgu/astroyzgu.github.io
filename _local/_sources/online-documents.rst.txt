@@ -1,6 +1,16 @@
 online documents
 =============
 
+
+New pipeline code should go on GitHub by default:  https://github.com/desihub . Send Stephen your GitHub ID to get added to the developer list. In addition there is a "cosmodesi" repository, ​https://github.com/cosmodesi. 
+This is primarily for post-processing analysis.
+
+To create a new package, examine the DESI template for [Python](https://github.com/desihub/desitemplate) or [C++](https://github.com/desihub/desitemplate_cpp).
+
+Modify as needed, e.g. remove the bin/ directory if you are not creating any command-line scripts. Then send it to GitHub following the directions at https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/ .
+
+https://www.iau.org/publications/proceedings_rules/units/
+
 package 
 ^^^^^^^^^^^^^ 
 
@@ -52,10 +62,10 @@ Mock galaxy:
  - Correlation Function
 
 	https://github.com/cheng-zhao/FCFC#introduction\
+
 - spec/SED 
 
  - Bayesian: https://bayesed.readthedocs.io/en/v2.0/index.html
 
  - 天文光谱处理软件pPXF的认识和使用: https://www.bilibili.com/video/BV1ke4y1n7JH/
  - 天文光谱处理软件Starlight的认识和使用: https://www.bilibili.com/video/BV1vd4y1i7iZ/?spm_id_from=333.788.recommend_more_video.-1
-
