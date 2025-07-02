@@ -83,6 +83,13 @@
   <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog-v3">
 <h1>The lsdr9-based catalog (v3)<a class="headerlink" href="#the-lsdr9-based-catalog-v3" title="Permalink to this heading"></a></h1>
 <p><strong>The galaxy catalog can be viewed at this <a class="reference internal" href="#the-list-of-galaxy-catalogs"><span class="xref myst">link</span></a>.</strong></p>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading"></a></h2>
+</section>
+<section id="reference-linking">
+<h2>Reference linking<a class="headerlink" href="#reference-linking" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://www.legacysurvey.org/dr9/files/">Files of Legacy Survey DR9</a></p>
+</section>
 <section id="the-summary-catalog">
 <h2>The summary catalog<a class="headerlink" href="#the-summary-catalog" title="Permalink to this heading"></a></h2>
 <p>We have reconstructed the summary catalog based on <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">DESI Legacy Imaging Surveys (dr9)</a>, which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO).</p>
@@ -214,7 +221,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>‘igal’</p></td>
+<tr class="row-even"><td><p>‘IGAL’</p></td>
 <td><p>i8</p></td>
 <td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
 </tr>
@@ -226,56 +233,49 @@
 <td><p>f8</p></td>
 <td><p>Declination at equinox J2000.</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘z’</p></td>
+<tr class="row-odd"><td><p>‘Z_PHOT’</p></td>
 <td><p>f8</p></td>
-<td><p>Redshift (PHOTZ or SPECZ).</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>‘zerr’</p></td>
+<tr class="row-even"><td><p>‘Z_PHOT_ERR’</p></td>
 <td><p>f8</p></td>
-<td><p>Error of redshift. 0.0001 is settled for ‘non DESI-SPECZ’</p></td>
+<td><p>‘Z_PHOT_STD’ from</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘zsrc’</p></td>
-<td><p>i4</p></td>
-<td><p>Source of redshift. 0: ‘PHOTZ’;1,2:’non DESI-SPECZ’;&gt;=3:’DESI-SPECZ’</p></td>
-</tr>
-<tr class="row-even"><td><p>‘lmass_kcorr’</p></td>
+<tr class="row-odd"><td><p>‘Z_SPEC’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>‘lmass_cigale’</p></td>
+<tr class="row-even"><td><p>‘Z_SPEC_ERR’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot\)</span>; (<span class="math notranslate nohighlight">\(h=0.7\)</span>; <span class="math notranslate nohighlight">\(\Omega_M = 0.3\)</span>)</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>‘lsfr_cigale’</p></td>
+<tr class="row-odd"><td><p>‘MAG_X’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot/\rm year\)</span></p></td>
+<td><p>Apparent magnitude X = {G, R, Z, W1, W2, W3, W4}, MAG_X     = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X).</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘ldust_cigale’</p></td>
+<tr class="row-even"><td><p>‘MAG_X_ERR’</p></td>
 <td><p>f8</p></td>
-<td><p>log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(L_\odot\)</span></p></td>
+<td><p>Apparent magnitude X = {G, R, Z, W1, W2, W3, W4}, MAG_X_ERR = 22.5 - 2.5log10(FLUX_IVAR_X/MW_TRANSMISION_X).</p></td>
 </tr>
-<tr class="row-even"><td><p>‘mag_X’</p></td>
-<td><p>f8</p></td>
-<td><p>Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X).</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘kcorr_X_0.5’</p></td>
-<td><p>f8</p></td>
-<td><p>kcorrect to z = 0.5, X = {g,r,z,w1,w2}.</p></td>
-</tr>
-<tr class="row-even"><td><p>‘MORPHTYPE’</p></td>
+<tr class="row-odd"><td><p>‘MORPHTYPE’</p></td>
 <td><p>S3</p></td>
 <td><p>Morphological types: “PSF”, “REX”, “DEV”, “EXP”, and “SER”.</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘regionid’</p></td>
+<tr class="row-even"><td><p>‘REGIONID’</p></td>
 <td><p>i4</p></td>
 <td><p>0, two tails; 1&amp;2: ngc; 3&amp;4: sgc;</p></td>
 </tr>
-<tr class="row-even"><td><p>‘tgttype’</p></td>
-<td><p>i4</p></td>
-<td><p>0, star; 1, galaxy; 2, QSO; -1, unclassified.</p></td>
-</tr>
 </tbody>
 </table>
+<p>| ‘kcorr_X_0.5’  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}.
+| ‘tgttype’      |   i4 | 0, star; 1, galaxy; 2, QSO; -1, unclassified.
+| ‘lmass_kcorr’  |   f8 | log10 of Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span>
+| ‘lmass_cigale’ |   f8 | log10 of Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot\)</span>; (<span class="math notranslate nohighlight">\(h=0.7\)</span>; <span class="math notranslate nohighlight">\(\Omega_M = 0.3\)</span>)
+| ‘lsfr_cigale’  |   f8 | log10 of star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot/\rm year\)</span>
+| ‘ldust_cigale’ |   f8 | log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(L_\odot\)</span><br />
+| ‘Z’            |   f8 | Redshift (PHOTZ or SPECZ).
+| ‘ZERR’         |   f8 | Error of redshift. 0.0001 is settled for ‘non DESI-SPECZ’
+| ‘ZSRC’         |   i4 | Source of redshift. 0: ‘PHOTZ’;1,2:’non DESI-SPECZ’;&gt;=3:’DESI-SPECZ’</p>
 <details><summary><b> Illustration of regionid </b> </summary>
 <p>
 <p><img alt="regionid01234" src="../../_images/regionid01234.png" /></p>
@@ -299,53 +299,65 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>‘igal’</p></td>
+<tr class="row-even"><td><p>IGAL</p></td>
 <td><p>i8</p></td>
 <td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘RELEASE’</p></td>
+<tr class="row-odd"><td><p>REGION</p></td>
+<td><p>s5</p></td>
+<td><p>denote either “north” for BASS/MzLS or “south” for DECaLS. marking object from which sweeps catalogs, <a class="reference external" href="https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/">north</a> or <a class="reference external" href="https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/">south</a> <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">(subsets of Tractor catalogs)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKMIN</p></td>
+<td><p>s7</p></td>
+<td><p><region>/sweep/9.0/sweep-<brickmin>-<brickmax>.fits</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKMAX</p></td>
+<td><p>s7</p></td>
+<td><p><region>/sweep/9.0/sweep-<brickmin>-<brickmax>.fits (e.g, sweep-020p025-030p030.fits)</p></td>
+</tr>
+<tr class="row-even"><td><p>RELEASE</p></td>
 <td><p>i8</p></td>
 <td><p>the record of processing run; A unique identifier is release,brickid,objid.</p></td>
 </tr>
-<tr class="row-even"><td><p>‘BRICKID’</p></td>
+<tr class="row-odd"><td><p>BRICKID</p></td>
 <td><p>i8</p></td>
 <td><p>brick ID [1,662174], encoding the sky position of brick;</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘OBJID’</p></td>
+<tr class="row-even"><td><p>OBJID</p></td>
 <td><p>i8</p></td>
 <td><p>catalog object number within this brick;</p></td>
 </tr>
-<tr class="row-even"><td><p>‘REGION’</p></td>
-<td><p>s1</p></td>
-<td><p>‘N’ or ‘S’, marking object from which sweeps catalogs, <a class="reference external" href="https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/">north/sweep</a> or <a class="reference external" href="https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/">south/sweep</a> <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">(subsets of Tractor catalogs)</a></p></td>
+<tr class="row-odd"><td><p>REF_CAT</p></td>
+<td><p>s2</p></td>
+<td><p>Reference catalog source for this star: “T2” for Tycho-2, “G2” for Gaia DR2, “L3” for the SGA, empty otherwise.</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘RA’</p></td>
-<td><p>f8</p></td>
-<td><p>Right ascension at equinox J2000</p></td>
-</tr>
-<tr class="row-even"><td><p>‘DEC’</p></td>
-<td><p>f8</p></td>
-<td><p>Declination at equinox J2000</p></td>
-</tr>
-<tr class="row-odd"><td><p>‘TARGETID’</p></td>
+<tr class="row-even"><td><p>TARGETID</p></td>
 <td><p>i8</p></td>
 <td><p>Unique ID of spectroscopic targets; if not DESI targets, -99.</p></td>
 </tr>
-<tr class="row-even"><td><p>DESI_TARGET</p></td>
+<tr class="row-odd"><td><p>DESI_TARGET</p></td>
 <td><p>int64</p></td>
 <td><p>Target masks record the reasons why each target was selected for DESI observations; refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>BGS_TARGET</p></td>
+<tr class="row-even"><td><p>BGS_TARGET</p></td>
 <td><p>int64</p></td>
 <td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
 </tr>
-<tr class="row-even"><td><p>MWS_TARGET</p></td>
+<tr class="row-odd"><td><p>MWS_TARGET</p></td>
 <td><p>int64</p></td>
 <td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>SCND_TARGET</p></td>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
 <td><p>int64</p></td>
 <td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td><p>Bitwise mask indicating that an object touches a pixel in the coadd/<em>/</em>/<em>maskbits</em> maps <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">(see the DR9 bitmasks page)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>FITBITS</p></td>
+<td><p>int16</p></td>
+<td><p>Bitwise mask detailing properties of how a source was fit <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">(see the DR9 bitmasks page)</a></p></td>
 </tr>
 </tbody>
 </table>

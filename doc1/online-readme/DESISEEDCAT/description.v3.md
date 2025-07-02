@@ -2,6 +2,12 @@
 
 **The galaxy catalog can be viewed at this [link](#the-list-of-galaxy-catalogs).**
 
+#### Glossary 
+
+#### Reference linking
+
+[Files of Legacy Survey DR9](https://www.legacysurvey.org/dr9/files/)
+
 #### The summary catalog 
 
 We have reconstructed the summary catalog based on [DESI Legacy Imaging Surveys (dr9)](https://www.legacysurvey.org/dr9/description/), which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO). 
@@ -86,22 +92,28 @@ Note that The majority difference are that we put local large galaxies back to t
 
 |  colname       | dtype| comments
 |----------------|------|--------
-| 'igal'         |   i8 | Unique id in this catalog 0-331569897 (id in the cutout catalog)
+| 'IGAL'         |   i8 | Unique id in this catalog 0-331569897 (id in the cutout catalog)
 | 'RA'           |   f8 | Right ascension at equinox J2000. 
 | 'DEC'          |   f8 | Declination at equinox J2000. 
-| 'z'            |   f8 | Redshift (PHOTZ or SPECZ). 
-| 'zerr'         |   f8 | Error of redshift. 0.0001 is settled for 'non DESI-SPECZ' 
-| 'zsrc'         |   i4 | Source of redshift. 0: 'PHOTZ';1,2:'non DESI-SPECZ';>=3:'DESI-SPECZ'  
+| 'Z_PHOT'       |   f8 | 
+| 'Z_PHOT_ERR'   |   f8 | 'Z_PHOT_STD' from  
+| 'Z_SPEC'       |   f8 | 
+| 'Z_SPEC_ERR'   |   f8 | 
+| 'MAG_X'        |   f8 | Apparent magnitude X = {G, R, Z, W1, W2, W3, W4}, MAG_X     = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X). 
+| 'MAG_X_ERR'    |   f8 | Apparent magnitude X = {G, R, Z, W1, W2, W3, W4}, MAG_X_ERR = 22.5 - 2.5log10(FLUX_IVAR_X/MW_TRANSMISION_X). 
+| 'MORPHTYPE'    |   S3 | Morphological types: "PSF", "REX", "DEV", "EXP", and "SER". 
+| 'REGIONID'     |   i4 | 0, two tails; 1&2: ngc; 3&4: sgc; 
+
+
+| 'kcorr_X_0.5'  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}. 
+| 'tgttype'      |   i4 | 0, star; 1, galaxy; 2, QSO; -1, unclassified. 
 | 'lmass_kcorr'  |   f8 | log10 of Stellar mass from K-correction. Unit: $h^{-2} M_\odot $ 
 | 'lmass_cigale' |   f8 | log10 of Total mass of stars from cigale. Unit: $M_\odot$; ($h=0.7$; $\Omega_M = 0.3$)
 | 'lsfr_cigale'  |   f8 | log10 of star formation rate from cigale. Unit: $M_\odot/\rm year$ 
 | 'ldust_cigale' |   f8 | log10 of Estimated dust luminosity from cigale using an energy balance. Unit: $L_\odot$  
-| 'mag_X'        |   f8 | Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X). 
-| 'kcorr_X_0.5'  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}. 
-| 'MORPHTYPE'    |   S3 | Morphological types: "PSF", "REX", "DEV", "EXP", and "SER". 
-| 'regionid'     |   i4 | 0, two tails; 1&2: ngc; 3&4: sgc; 
-| 'tgttype'      |   i4 | 0, star; 1, galaxy; 2, QSO; -1, unclassified. 
-
+| 'Z'            |   f8 | Redshift (PHOTZ or SPECZ). 
+| 'ZERR'         |   f8 | Error of redshift. 0.0001 is settled for 'non DESI-SPECZ' 
+| 'ZSRC'         |   i4 | Source of redshift. 0: 'PHOTZ';1,2:'non DESI-SPECZ';>=3:'DESI-SPECZ'
 <details><summary><b> Illustration of regionid </b> </summary>
 <p>
 
@@ -123,18 +135,22 @@ Note: In order to be more concise, I have kept only the necessary information. A
 
 |  colname       | dtype| comments
 |----------------|------|--------
-| 'igal'         |   i8 | Unique id in this catalog 0-331569897 (id in the cutout catalog)
-| 'RELEASE'      |   i8 | the record of processing run; A unique identifier is release,brickid,objid. 
-| 'BRICKID'      |   i8 | brick ID [1,662174], encoding the sky position of brick; 
-| 'OBJID'        |   i8 | catalog object number within this brick; 
-| 'REGION'       |   s1 | 'N' or 'S', marking object from which sweeps catalogs, [north/sweep](https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/) or [south/sweep](https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/) [(subsets of Tractor catalogs)](https://www.legacysurvey.org/dr9/description/)
-| 'RA'           |   f8 | Right ascension at equinox J2000
-| 'DEC'          |   f8 | Declination at equinox J2000 
-| 'TARGETID'     |   i8 | Unique ID of spectroscopic targets; if not DESI targets, -99. 
+|    IGAL        |   i8 | Unique id in this catalog 0-331569897 (id in the cutout catalog)
+|    REGION      |    s5| denote either "north" for BASS/MzLS or "south" for DECaLS. marking object from which sweeps catalogs, [north](https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/) or [south](https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/) [(subsets of Tractor catalogs)](https://www.legacysurvey.org/dr9/description/)
+|    BRICKMIN    |    s7| <region>/sweep/9.0/sweep-<brickmin>-<brickmax>.fits
+|    BRICKMAX    |    s7| <region>/sweep/9.0/sweep-<brickmin>-<brickmax>.fits (e.g, sweep-020p025-030p030.fits) 
+|  RELEASE       |   i8 | the record of processing run; A unique identifier is release,brickid,objid. 
+|  BRICKID       |   i8 | brick ID [1,662174], encoding the sky position of brick; 
+|  OBJID         |   i8 | catalog object number within this brick; 
+|  REF_CAT       |   s2 | Reference catalog source for this star: "T2" for Tycho-2, "G2" for Gaia DR2, "L3" for the SGA, empty otherwise. 
+|    TARGETID    |   i8 | Unique ID of spectroscopic targets; if not DESI targets, -99. 
 |    DESI_TARGET | int64| Target masks record the reasons why each target was selected for DESI observations; refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    BGS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    MWS_TARGET  | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
 |    SCND_TARGET | int64| also refer to [Target masks](https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks)
+| MASKBITS| int16 |Bitwise mask indicating that an object touches a pixel in the coadd/*/*/*maskbits* maps [(see the DR9 bitmasks page)](https://www.legacysurvey.org/dr9/bitmasks/)
+| FITBITS | int16 | Bitwise mask detailing properties of how a source was fit [(see the DR9 bitmasks page)](https://www.legacysurvey.org/dr9/bitmasks/)
+
 
 * If you want other [Tractor photometry from lsdr9](https://www.legacysurvey.org/dr9/catalogs/#toc-entry-1),  see Please look here.
 
