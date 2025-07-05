@@ -9,4 +9,5 @@ Subdirectories:
 
    justspecsimu.v1.md
    desispecdata.v1.md
+   desisoftware.v1.md
    download.md 
