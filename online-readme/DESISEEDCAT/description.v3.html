@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The lsdr9-based catalog (v3) &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=7026087e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../online-readme.html">online-readme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../online-documents.html">online documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">csstmock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The lsdr9-based catalog (v3)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/online-readme/DESISEEDCAT/description.v3.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog-v3">
+<h1>The lsdr9-based catalog (v3)<a class="headerlink" href="#the-lsdr9-based-catalog-v3" title="Link to this heading"></a></h1>
+<p><strong>The galaxy catalog can be viewed at this <a class="reference internal" href="#the-list-of-galaxy-catalogs"><span class="xref myst">link</span></a>.</strong></p>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading"></a></h2>
+</section>
+<section id="reference-linking">
+<h2>Reference linking<a class="headerlink" href="#reference-linking" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://www.legacysurvey.org/dr9/files/">Files of Legacy Survey DR9</a></p>
+</section>
+<section id="the-summary-catalog">
+<h2>The summary catalog<a class="headerlink" href="#the-summary-catalog" title="Link to this heading"></a></h2>
+<p>We have reconstructed the summary catalog based on <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">DESI Legacy Imaging Surveys (dr9)</a>, which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO).</p>
+<p>The primary selection is that:</p>
+<ol class="arabic simple">
+<li><p>NOBS_{X} &gt; 0, X = {g, r, z}, the object should be observed in each optical band;</p></li>
+<li><p>MORPHTYPE !=  ‘DUP’, use the <a class="reference external" href="https://www.legacysurvey.org/dr9/description/#morphological-classification">five morphological types</a> procedured by the fitting of <a class="reference external" href="https://github.com/dstndstn/tractor">the Tractor</a>;  MORPHTYPE == REX, DEV, EXP, SER, or PSF.</p></li>
+<li><p>apparent magnitude limits are mag_z &lt;= 21 or mag_r &lt;= 21;</p></li>
+<li><p>unique sources (Sources are resolved as distinct by only counting BASS and MzLS sources if they are both at Declination &gt; 32.375° and north of the Galactic Plane, or, otherwise counting DECam sources.)</p></li>
+</ol>
+<details><summary><b> The footprint of the sweep catalog (r<21|z<21) </b> </summary>
+<p>
+<p><img alt="footpring" src="../../_images/footprint-dr9.png" /></p>
+</p>
+</details> 
+<p> </p>
+<p>The total number of the objects with r &lt; 21 or z &lt; 21 is 331,569,898. In the actual process, the summary catalog is archived into six parts based on morphology and position, as shown in the Table.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>folder name</p></th>
+<th class="head"><p>number of record</p></th>
+<th class="head"><p>id in the cutout catalogs</p></th>
+<th class="head"><p>sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ext_northngc</p></td>
+<td><p>40360233</p></td>
+<td><p>0 - 40360232</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ext_southngc</p></td>
+<td><p>49149992</p></td>
+<td><p>40360233 - 89510224</p></td>
+<td><p>163318454</p></td>
+</tr>
+<tr class="row-even"><td><p>ext_southsgc</p></td>
+<td><p>73808229</p></td>
+<td><p>89510225 -163318453</p></td>
+<td><p>↑</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>psf_northngc</p></td>
+<td><p>44493809</p></td>
+<td><p>163318454 -207812262</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>psf_southngc</p></td>
+<td><p>53155166</p></td>
+<td><p>207812263 -260967428</p></td>
+<td><p>168251444</p></td>
+</tr>
+<tr class="row-even"><td><p>psf_southsgc</p></td>
+<td><p>70602469</p></td>
+<td><p>260967429 -331569897</p></td>
+<td><p>↑</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>ext means that the morphological type is ‘REX’, ‘EXP’, ‘DEV’, or ‘SER’.</p></li>
+<li><p>psf means that the morphological type is ‘PSF’.</p></li>
+<li><p>north_ngc (b &gt; 0 &amp; dec &gt; 32.375) use the filters of BASS_G, BASS_R, MZLS_Z, WISE_W1 and WISE_W2.</p></li>
+<li><p>south_ngc and south_sgc use the filters of DECAM_G, DECAM_R, and DECAM_Z, WISE_W1 and WISE_W2.</p></li>
+</ul>
+</section>
+<section id="the-galaxy-sample-selected-from-the-summary-catalog">
+<h2>The galaxy sample selected from the summary catalog<a class="headerlink" href="#the-galaxy-sample-selected-from-the-summary-catalog" title="Link to this heading"></a></h2>
+<p><strong>All of the following tables can be consolidated from this sweep catalog (331,569,898 objects in total). As the spectroscopic redshift data continues to be updated, we have constructed different versions of galaxy catalogs using the following criterion.</strong></p>
+<!-- <details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary
+<p> -->
+<section id="step1-the-photometry-source-catalog-with-photo-z">
+<h3>Step1, The photometry source catalog with photo-z<a class="headerlink" href="#step1-the-photometry-source-catalog-with-photo-z" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Apparent magnitude limit of appz &lt; 21</p></li>
+<li><p>Foregroud mask of <a class="reference external" href="https://www.legacysurvey.org/dr9/external/#toc-entry-5">“BRIGHT”, “MEDIUM-bright” stars, Globular Clusters and Planetary Nebulae</a></p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+</ol>
+<p>Note that The majority difference are that we put local large galaxies back to the galaxy catalog, rather than masking them.</p>
+</section>
+<section id="step2-updatad-to-desi-spectroscopic-data-release">
+<h3>Step2, Updatad to DESI spectroscopic data release<a class="headerlink" href="#step2-updatad-to-desi-spectroscopic-data-release" title="Link to this heading"></a></h3>
+<ol class="arabic simple" start="5">
+<li><p>Updating to spez-z</p>
+<ul class="simple">
+<li><p>If spec-z from BRIGHT and DARK programs of SV3 or main survey, we use spec-z classified as GALAXY and QSO.</p></li>
+<li><p>If no spec-z, we use photo-z instead.</p></li>
+</ul>
+</li>
+<li><p>Remove STARs in 3 different situations</p>
+<ul class="simple">
+<li><p>if w/i spec, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p>if w/o spec, EXT type but in gaia, reject stars using gaia - r &lt; 0.6;</p></li>
+<li><p>if w/o spec and PSF type, reject them all.</p></li>
+</ul>
+</li>
+<li><p>Set a lower limit of z &gt; 0.001</p></li>
+</ol>
+<!-- </p>
+</details>  -->
+<p> </p>
+</section>
+<section id="the-list-of-galaxy-catalogs">
+<h3>The list of galaxy catalogs<a class="headerlink" href="#the-list-of-galaxy-catalogs" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong>bright galaxy catalog updated to Y3 loa:</strong> The latest catalog updated to the loa version. In this version, we apply a brighter magnitude cut of r &lt; 19.5 to match the BGS-BRGIHT targets in the DESI Bright Galaxy Survey. We only involve spec-z from the main galaxy sample of SDSS dr16 and from BGS-BRGIHT sample in loa. If there is no spec-z from their two sample, we use photo-z instead.</p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data3/lsdr9_prop.bright.y3.v3.fits (.csv)</p>
+</li>
+</ul>
+<p> </p>
+</section>
+<section id="the-data-format-of-the-cutout-catlogs-lsdr9-prop-fits">
+<h3>The data format of the cutout catlogs, lsdr9_prop.*.fits<a class="headerlink" href="#the-data-format-of-the-cutout-catlogs-lsdr9-prop-fits" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘IGAL’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘RA’</p></td>
+<td><p>f8</p></td>
+<td><p>Right ascension at equinox J2000.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘DEC’</p></td>
+<td><p>f8</p></td>
+<td><p>Declination at equinox J2000.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘Z_PHOT’</p></td>
+<td><p>f8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘Z_PHOT_ERR’</p></td>
+<td><p>f8</p></td>
+<td><p>‘Z_PHOT_STD’ from</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘Z_SPEC’</p></td>
+<td><p>f8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘Z_SPEC_ERR’</p></td>
+<td><p>f8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘MAG_X’</p></td>
+<td><p>f8</p></td>
+<td><p>Apparent magnitude X = {G, R, Z, W1, W2, W3, W4}, MAG_X     = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X).</p></td>
+</tr>
+<tr class="row-even"><td><p>‘MAG_X_ERR’</p></td>
+<td><p>f8</p></td>
+<td><p>Apparent magnitude X = {G, R, Z, W1, W2, W3, W4}, MAG_X_ERR = 22.5 - 2.5log10(FLUX_IVAR_X/MW_TRANSMISION_X).</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘MORPHTYPE’</p></td>
+<td><p>S3</p></td>
+<td><p>Morphological types: “PSF”, “REX”, “DEV”, “EXP”, and “SER”.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘REGIONID’</p></td>
+<td><p>i4</p></td>
+<td><p>0, two tails; 1&amp;2: ngc; 3&amp;4: sgc;</p></td>
+</tr>
+</tbody>
+</table>
+<p>| ‘kcorr_X_0.5’  |   f8 | kcorrect to z = 0.5, X = {g,r,z,w1,w2}.
+| ‘tgttype’      |   i4 | 0, star; 1, galaxy; 2, QSO; -1, unclassified.
+| ‘lmass_kcorr’  |   f8 | log10 of Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span>
+| ‘lmass_cigale’ |   f8 | log10 of Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot\)</span>; (<span class="math notranslate nohighlight">\(h=0.7\)</span>; <span class="math notranslate nohighlight">\(\Omega_M = 0.3\)</span>)
+| ‘lsfr_cigale’  |   f8 | log10 of star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot/\rm year\)</span>
+| ‘ldust_cigale’ |   f8 | log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(L_\odot\)</span><br />
+| ‘Z’            |   f8 | Redshift (PHOTZ or SPECZ).
+| ‘ZERR’         |   f8 | Error of redshift. 0.0001 is settled for ‘non DESI-SPECZ’
+| ‘ZSRC’         |   i4 | Source of redshift. 0: ‘PHOTZ’;1,2:’non DESI-SPECZ’;&gt;=3:’DESI-SPECZ’</p>
+<details><summary><b> Illustration of regionid </b> </summary>
+<p>
+<p><img alt="regionid01234" src="../../_images/regionid01234.png" /></p>
+</p>
+</details> 
+<p> </p>
+<p>Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs. Contact me.</p>
+<p> </p>
+<p> </p>
+</section>
+</section>
+<section id="the-supplementary-infomation-building">
+<h2>The supplementary infomation (building)<a class="headerlink" href="#the-supplementary-infomation-building" title="Link to this heading"></a></h2>
+<section id="lsdr9-link-fits">
+<h3>lsdr9_link.*.fits<a class="headerlink" href="#lsdr9-link-fits" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IGAL</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
+</tr>
+<tr class="row-odd"><td><p>REGION</p></td>
+<td><p>s5</p></td>
+<td><p>denote either “north” for BASS/MzLS or “south” for DECaLS. marking object from which sweeps catalogs, <a class="reference external" href="https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/north/sweep/">north</a> or <a class="reference external" href="https://portal.nersc.gov/cfs/cosmo/data/legacysurvey/dr9/south/sweep/">south</a> <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">(subsets of Tractor catalogs)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>BRICKMIN</p></td>
+<td><p>s7</p></td>
+<td><p><region>/sweep/9.0/sweep-<brickmin>-<brickmax>.fits</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKMAX</p></td>
+<td><p>s7</p></td>
+<td><p><region>/sweep/9.0/sweep-<brickmin>-<brickmax>.fits (e.g, sweep-020p025-030p030.fits)</p></td>
+</tr>
+<tr class="row-even"><td><p>RELEASE</p></td>
+<td><p>i8</p></td>
+<td><p>the record of processing run; A unique identifier is release,brickid,objid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BRICKID</p></td>
+<td><p>i8</p></td>
+<td><p>brick ID [1,662174], encoding the sky position of brick;</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJID</p></td>
+<td><p>i8</p></td>
+<td><p>catalog object number within this brick;</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_CAT</p></td>
+<td><p>s2</p></td>
+<td><p>Reference catalog source for this star: “T2” for Tycho-2, “G2” for Gaia DR2, “L3” for the SGA, empty otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p>TARGETID</p></td>
+<td><p>i8</p></td>
+<td><p>Unique ID of spectroscopic targets; if not DESI targets, -99.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>Target masks record the reasons why each target was selected for DESI observations; refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-even"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>MASKBITS</p></td>
+<td><p>int16</p></td>
+<td><p>Bitwise mask indicating that an object touches a pixel in the coadd/<em>/</em>/<em>maskbits</em> maps <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">(see the DR9 bitmasks page)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>FITBITS</p></td>
+<td><p>int16</p></td>
+<td><p>Bitwise mask detailing properties of how a source was fit <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">(see the DR9 bitmasks page)</a></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>If you want other <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/#toc-entry-1">Tractor photometry from lsdr9</a>,  see Please look here.</p>
+<p>We have a copy of <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">sweeps catalogs</a> in GRAVITY: /home/cossim/DESI/sweep/&lt;REGION&gt;/sweep-&lt;RAmin&gt;&lt;DECmin&gt;-&lt;RAmax&gt;&lt;DECmax&gt;.fits
+It is easy to find the object using the following steps.</p>
+<ol class="arabic simple">
+<li><p>Using ‘REGION’ columns to local the directory, ‘south’ or ‘north’.</p></li>
+<li><p>Using ‘RA’ and ‘DEC’ columns to find in which file, (RAmin &lt;= RA &lt; RAmax)&amp;(DECmin &lt;= DEC &lt; DECmax).</p></li>
+<li><p>Using ‘RELEASE’, ‘BRICKID’, ‘OBJID’ columns to match the object</p></li>
+</ol>
+</li>
+<li><p>If you want to know which one is selected as DESI targets, e.g., BGS, please look here.</p>
+<p>It is easy to pick up the targets using the following python code.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span> <span class="pre">&amp;</span> <span class="pre">2**0</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, LRG</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span> <span class="pre">&amp;</span> <span class="pre">2**1</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, ELG</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span> <span class="pre">&amp;</span> <span class="pre">2**2</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, QSO</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DESI_TARGET</span> <span class="pre">&amp;</span> <span class="pre">2**60&gt;</span> <span class="pre">0</span></code>, BGS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span> <span class="pre">&amp;</span> <span class="pre">2**0</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, BGS-FAINT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BGS_TARGET</span> <span class="pre">&amp;</span> <span class="pre">2**1</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, BGS-BRIGHT</p></li>
+</ol>
+<p><strong>Note</strong> that these sources are DESI’s observation targets, but it does not mean that these sources have already had DESI’s spectral observations. See the explanation of <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">TRAGET MASK</a> for more details.</p>
+</li>
+</ul>
+</section>
+<section id="lsdr9-kcorr-zz-fits">
+<h3>lsdr9_kcorr&lt;zz&gt;.*.fits &lt;&gt;<a class="headerlink" href="#lsdr9-kcorr-zz-fits" title="Link to this heading"></a></h3>
+<p>&lt;zz&gt; = 01, 02, 03, 04, 05, it means the catalog contain the value kcorrect to z = 0.1, 0.2, 0.3, 0.4 and 0.5.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘igal’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘kcorr_X’</p></td>
+<td><p>f8</p></td>
+<td><p>X = {g,r,z,w1,w2}.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lsdr9-group-fits">
+<h3>lsdr9_group.*.fits<a class="headerlink" href="#lsdr9-group-fits" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘igal’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘groupid’</p></td>
+<td><p>i8</p></td>
+<td><p>groupid with b &gt; 0 less than groupid with b &lt; 0 (b is galactic latitude of group)</p></td>
+</tr>
+<tr class="row-even"><td><p>‘groupra’</p></td>
+<td><p>f8</p></td>
+<td><p>Right ascension of group at equinox J2000.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘groupdec’</p></td>
+<td><p>f8</p></td>
+<td><p>Declination of group at equinox J2000</p></td>
+</tr>
+<tr class="row-even"><td><p>‘groupz’</p></td>
+<td><p>f8</p></td>
+<td><p>Redshift of group</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘grouplogm’</p></td>
+<td><p>f8</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>‘rank’</p></td>
+<td><p>i8</p></td>
+<td><p>0, central; &gt;= 1, satelite.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-extended-halo-based-group-catalog">
+<h3>the extended halo-based group catalog<a class="headerlink" href="#the-extended-halo-based-group-catalog" title="Link to this heading"></a></h3>
+<p>The updated version of extended halo-based group catalog based on DESI legecy Imaging Surveys DR9 and the spectroscopic data release of iron. We refer to Yang et al. (2021) for more details of the extended halo-based group finder.</p>
+<p>I. galaxy catalog</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$1  igal         Unique id 
+$2  RELEASE      from LS DR9
+$3  BRICKID      from LS DR9
+$4  OBJID        from LS DR9
+$5  RA           Right ascension at equinox J2000.
+$6  DEC          Declination at equinox J2000. 
+$7  z            Redshift
+$8  zerr         Redshift Error
+$9  zsrc         Source of Redshift. 0: ‘PHOTZ’; &gt;0: &#39;SPECZ&#39;
+$10 mag_z        mag_z = 22.5 - 2.5log10(FLUX_Z/MW_TRANSMISION_Z)
+$11 korr_z_05    kcorrect to z = 0.5 
+</pre></div>
+</div>
+<p>II. group properties</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$1 igrp          Unique id of group 
+$2 grp_ra        Right ascension of group 
+$3 grp_dec       Declination of group 
+$4 grp_z         redshift of group
+$5 grp_logm      the log10 of halo mass, log M/(Msun/h),  
+$6 grp_logl      the log10 of characteristic group luminosity,  log L/(Lsun/h^2) 
+</pre></div>
+</div>
+<p>III. galaxy-group relationship</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$1 igal          Unique id of galaxy 
+$2 igrp          Unique id of group 
+$3 rank          0, central; &gt;= 1, satelite. 
+</pre></div>
+</div>
+<!-- <details><summary><b> SED fitting using CIGALE </b> </summary>
+<p>
+
+| Key Parameters    | Configures |
+|-------------------|-----------|
+| SFH               |  exponentially declining
+| e-folding time    | 10^8 - 10^10 yr (10 steps)
+| age               | 5*10^7 - 10^10 yr (12 steps)
+| SPS models        | BC03
+| IMF                         | Chabrier (2003) 
+| metallicity                 | 0.02 
+| dust attenuation law        | Calzetti et al. (2000)
+| E_BVs_young                 | 0.01-1.2 (13 steps)|
+</p>
+</details>  --></section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
