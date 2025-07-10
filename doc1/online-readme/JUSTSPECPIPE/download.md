@@ -15,8 +15,8 @@ Welcome to the download center. Below you’ll find the available files for down
 The raw data files and the intermediate files of the DESI (or JUST) spectrographs, which can also be found in the DESI data model under [NIGHT/EXPID/desi-EXPID.fits](https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_DATA/NIGHT/EXPID/desi-EXPID.html), [redux/SPECPROD/preproc](
 https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/preproc/NIGHT/EXPID/index.html) and [redux/SPECPROD/exposures](
 https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/index.html).  
-- **[Download Now](https://gravity.sjtu.edu.cn/file/share/MT8VCfkk)** 
-<!-- (https://gravity.sjtu.edu.cn/file/share/k49W09Os) password justpipe2026  -->
+- **[Download Now](https://gravity.sjtu.edu.cn/file/share/-b-3oZg7)** 
+<!-- (https://gravity.sjtu.edu.cn/file/share/-b-3oZg7) password justspec2026  -->
 
 | Data ID 	| Description                                                                                                         	| Date(s)           	| Intermediate file(s)
 |---------	|---------------------------------------------------------------------------------------------------------------------	|-------------------	| --|
