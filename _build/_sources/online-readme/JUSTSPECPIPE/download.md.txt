@@ -3,20 +3,30 @@
 Welcome to the download center. Below you’ll find the available files for download. 
 
 ---
+rsync -r guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/spectro/data/20220610/
 
-### Available Files
 
-#### Dataset 0: test file 
+### Available Files on Gravity 
+
+#### /home/cossim/DESI/spectro/data/
+
+##### Partial Raw Data: 
+- **Descrition**: This directory contains a partial copy (NIGHT: 20210610, 20220610) of the DESI public data from https://data.desi.lbl.gov/public/dr1/spectro/data/.  
+- **link**: Not available 
+
+#### fileserver (~/.fileServer/justspecpipe)
+
+##### Dataset 0: test file 
 - **Description**: A test file for verifying the download functionality
 - **[Download Now](https://gravity.sjtu.edu.cn/file/share/Q_WdxwoR)** 
 
-#### Dataset 1: The raw data and intermediate files used for testing code
+##### Dataset 1: The raw data and intermediate files used for testing code
 - **Descrition**: 
 The raw data files and the intermediate files of the DESI (or JUST) spectrographs, which can also be found in the DESI data model under [NIGHT/EXPID/desi-EXPID.fits](https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_DATA/NIGHT/EXPID/desi-EXPID.html), [redux/SPECPROD/preproc](
 https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/preproc/NIGHT/EXPID/index.html) and [redux/SPECPROD/exposures](
 https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/exposures/NIGHT/EXPID/index.html).  
 - **[Download Now](https://gravity.sjtu.edu.cn/file/share/-b-3oZg7)** 
-<!-- (https://gravity.sjtu.edu.cn/file/share/-b-3oZg7) password justspecpipe2026  -->
+<!-- (https://gravity.sjtu.edu.cn/file/share/-b-3oZg7) password justspec2026  -->
 
 | Data ID 	| Description                                                                                                         	| Date(s)           	| Intermediate file(s)
 |---------	|---------------------------------------------------------------------------------------------------------------------	|-------------------	| --|
@@ -27,8 +37,7 @@ https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/expos
 | -       	| -                                                                                                                   	| -                 	|
 | ?????????   	| Additional dataset placeholder <br>[Detailed description can go here]                                               	| YYYYMMDD-YYYYMMDD 	|
 
-
-#### File ?: The placeholder 
+##### File ?: The placeholder 
 - **Descrition**: The placeholder  
 - **link**: The placeholder 
 
