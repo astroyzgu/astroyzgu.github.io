@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The lsdr9-based catalog (v1) &mdash; csstmock 0.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=7026087e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CSSTMOCK" href="../CSSTSLITLESS/index.html" />
+    <link rel="prev" title="DESI" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            csstmock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../online-readme.html">online-readme</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">DESI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The lsdr9-based catalog (v1)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-summary-catalog">The summary catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-galaxy-sample-selected-from-the-summary-catalog">The galaxy sample selected from the summary catalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-supplementary-infomation-building">The supplementary infomation (building)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CSSTSLITLESS/index.html">CSSTMOCK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../JUSTSPECPIPE/index.html">JUSTSPECPIPE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../online-documents.html">online documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">csstmock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">Change Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">csstmock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../online-readme.html">online-readme</a></li>
+          <li class="breadcrumb-item"><a href="index.html">DESI</a></li>
+      <li class="breadcrumb-item active">The lsdr9-based catalog (v1)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/online-readme/DESISEEDCAT/description.v1.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="the-lsdr9-based-catalog-v1">
+<h1>The lsdr9-based catalog (v1)<a class="headerlink" href="#the-lsdr9-based-catalog-v1" title="Link to this heading"></a></h1>
+<p><strong>The galaxy catalog can be viewed at this <a class="reference internal" href="#the-list-of-galaxy-catalogs"><span class="xref myst">link</span></a>.</strong></p>
+<section id="the-summary-catalog">
+<h2>The summary catalog<a class="headerlink" href="#the-summary-catalog" title="Link to this heading"></a></h2>
+<p>We have reconstructed the summary catalog based on <a class="reference external" href="https://www.legacysurvey.org/dr9/description/">DESI Legacy Imaging Surveys (dr9)</a>, which has de-extinction magnitude limits of 21 on the r-band or z-band. The summary catalog covers ~20000 deg^2. It contains ~331M objects (might be star, galaxy or QSO).</p>
+<p>The primary selection is that:</p>
+<ol class="arabic simple">
+<li><p>NOBS_{X} &gt; 0, X = {g, r, z}, the object should be observed in each optical band;</p></li>
+<li><p>MORPHTYPE !=  ‘DUP’, use the <a class="reference external" href="https://www.legacysurvey.org/dr9/description/#morphological-classification">five morphological types</a> procedured by the fitting of <a class="reference external" href="https://github.com/dstndstn/tractor">the Tractor</a>;  MORPHTYPE == REX, DEV, EXP, SER, or PSF.</p></li>
+<li><p>apparent magnitude limits are mag_z &lt;= 21 or mag_r &lt;= 21;</p></li>
+<li><p>unique sources (Sources are resolved as distinct by only counting BASS and MzLS sources if they are both at Declination &gt; 32.375° and north of the Galactic Plane, or, otherwise counting DECam sources.)</p></li>
+</ol>
+<details><summary><b> The footprint of the sweep catalog (r<21|z<21) </b> </summary>
+<p>
+<p><img alt="footpring" src="../../_images/footprint-dr9.png" /></p>
+</p>
+</details> 
+<p> </p>
+<p>The total number of the objects with r &lt; 21 or z &lt; 21 is 331,569,898. In the actual process, the summary catalog is archived into six parts based on morphology and position, as shown in the Table.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>folder name</p></th>
+<th class="head"><p>number of record</p></th>
+<th class="head"><p>id in the cutout catalogs</p></th>
+<th class="head"><p>sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ext_northngc</p></td>
+<td><p>40360233</p></td>
+<td><p>0 - 40360232</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ext_southngc</p></td>
+<td><p>49149992</p></td>
+<td><p>40360233 - 89510224</p></td>
+<td><p>163318454</p></td>
+</tr>
+<tr class="row-even"><td><p>ext_southsgc</p></td>
+<td><p>73808229</p></td>
+<td><p>89510225 -163318453</p></td>
+<td><p>↑</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>psf_northngc</p></td>
+<td><p>44493809</p></td>
+<td><p>163318454 -207812262</p></td>
+<td><p>↓</p></td>
+</tr>
+<tr class="row-odd"><td><p>psf_southngc</p></td>
+<td><p>53155166</p></td>
+<td><p>207812263 -260967428</p></td>
+<td><p>168251444</p></td>
+</tr>
+<tr class="row-even"><td><p>psf_southsgc</p></td>
+<td><p>70602469</p></td>
+<td><p>260967429 -331569897</p></td>
+<td><p>↑</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>ext means that the morphological type is ‘REX’, ‘EXP’, ‘DEV’, or ‘SER’.</p></li>
+<li><p>psf means that the morphological type is ‘PSF’.</p></li>
+<li><p>north_ngc (b &gt; 0 &amp; dec &gt; 32.375) use the filters of BASS_G, BASS_R, MZLS_Z, WISE_W1 and WISE_W2.</p></li>
+<li><p>south_ngc and south_sgc use the filters of DECAM_G, DECAM_R, and DECAM_Z, WISE_W1 and WISE_W2.</p></li>
+</ul>
+</section>
+<section id="the-galaxy-sample-selected-from-the-summary-catalog">
+<h2>The galaxy sample selected from the summary catalog<a class="headerlink" href="#the-galaxy-sample-selected-from-the-summary-catalog" title="Link to this heading"></a></h2>
+<p><strong>All of the following tables can be consolidated from this sweep catalog (331,569,898 objects in total). As the spectroscopic redshift data continues to be updated, we have constructed different versions of galaxy catalogs using the following criterion.</strong></p>
+<!-- <details style="padding-left: 2em;"><summary><b> Sample selection </b> </summary
+<p> -->
+<ol class="arabic simple">
+<li><p>appz &lt; 21</p></li>
+<li><p>z &gt; 0.001. If no spec-z, we use photo-z instead.</p></li>
+<li><p>foregroud mask</p></li>
+<li><p>BITMASK != 1,5,6,7,8,9,11,12,13 (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/bitmasks/">the DR9 bitmasks</a>)</p></li>
+<li><p>FRACFLUX_X &lt; 0.5, FRACIN_X &gt; 0.3, FRACMASKED_X &lt; 0.4, for all X = {g, r, z} (refer to <a class="reference external" href="https://www.legacysurvey.org/dr9/catalogs/">the Tractor Catalog Format</a>)</p></li>
+<li><p>remove STAR</p>
+<ul class="simple">
+<li><p>if w/i spec regradless EXT or PSF, reject star using the REDROCK results of spectral fitting</p></li>
+<li><p>if EXT w/o spec but w/i gaia,  reject star using gaia - r &lt; 0.6;</p></li>
+<li><p>if PSF w/o spec, reject them all.</p></li>
+</ul>
+</li>
+</ol>
+<!-- </p>
+</details>  -->
+<p> </p>
+<section id="the-list-of-galaxy-catalogs">
+<h3>The list of galaxy catalogs<a class="headerlink" href="#the-list-of-galaxy-catalogs" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong>Y3 catalog (138012818):</strong> The latest catalog updated to the jura version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in jura. If no spec-z, we use photo-z instead.</p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y3.v2.fits (.csv)</p>
+</li>
+</ul>
+<p> </p>
+<ul>
+<li><p><strong>Y1 catalog (137538086):</strong> The catalog updated to the iron version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in iron. If no spec-z, we use photo-z instead.</p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.y1.v2.fits (.csv)</p>
+</li>
+</ul>
+<p> </p>
+<ul>
+<li><p><strong>EDR catalog (136727324):</strong> The catalog updated to the fuji version. In this version, we only use the archive spec-z collected by Zhou et al. 2021 and the DESI spec-z released in fuji, which <strong>has been pulished</strong>. If no spec-z, we use photo-z instead.</p>
+<p>Gravity location: /home/yzgu/data/desi/yzgu/seedcat/data/lsdr9_prop.edr.v2.fits (.csv)</p>
+</li>
+</ul>
+<p> </p>
+</section>
+<section id="the-data-format-of-the-cutout-catlogs">
+<h3>The Data format of the cutout catlogs<a class="headerlink" href="#the-data-format-of-the-cutout-catlogs" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘igal’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘RA’</p></td>
+<td><p>f8</p></td>
+<td><p>Right ascension at equinox J2000.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘DEC’</p></td>
+<td><p>f8</p></td>
+<td><p>Declination at equinox J2000.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘z’</p></td>
+<td><p>f8</p></td>
+<td><p>Redshift (PHOTZ or SPECZ).</p></td>
+</tr>
+<tr class="row-even"><td><p>‘zerr’</p></td>
+<td><p>f8</p></td>
+<td><p>Error of redshift. 0.0001 is settled for ‘non DESI-SPECZ’</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘zsrc’</p></td>
+<td><p>i4</p></td>
+<td><p>Source of redshift. 0: ‘PHOTZ’;1,2:’non DESI-SPECZ’;&gt;=3:’DESI-SPECZ’</p></td>
+</tr>
+<tr class="row-even"><td><p>‘lmass_kcorr’</p></td>
+<td><p>f8</p></td>
+<td><p>log10 of Stellar mass from K-correction. Unit: <span class="math notranslate nohighlight">\(h^{-2} M_\odot \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘lmass_cigale’</p></td>
+<td><p>f8</p></td>
+<td><p>log10 of Total mass of stars from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot\)</span>; (<span class="math notranslate nohighlight">\(h=0.7\)</span>; <span class="math notranslate nohighlight">\(\Omega_M = 0.3\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p>‘lsfr_cigale’</p></td>
+<td><p>f8</p></td>
+<td><p>log10 of star formation rate from cigale. Unit: <span class="math notranslate nohighlight">\(M_\odot/\rm year\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘ldust_cigale’</p></td>
+<td><p>f8</p></td>
+<td><p>log10 of Estimated dust luminosity from cigale using an energy balance. Unit: <span class="math notranslate nohighlight">\(L_\odot\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>‘mag_X’</p></td>
+<td><p>f8</p></td>
+<td><p>Apparent magnitude, mag_X = 22.5 - 2.5log10(FLUX_X/MW_TRANSMISION_X).</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘kcorr_X_0.5’</p></td>
+<td><p>f8</p></td>
+<td><p>kcorrect to z = 0.5, X = {g,r,z,w1,w2}.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘MORPHTYPE’</p></td>
+<td><p>S3</p></td>
+<td><p>Morphological types: “PSF”, “REX”, “DEV”, “EXP”, and “SER”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘regionid’</p></td>
+<td><p>i4</p></td>
+<td><p>0, two tails; 1&amp;2: ngc; 3&amp;4: sgc;</p></td>
+</tr>
+<tr class="row-even"><td><p>‘tgttype’</p></td>
+<td><p>i4</p></td>
+<td><p>0, star; 1, galaxy; 2, QSO; -1, unclassified.</p></td>
+</tr>
+</tbody>
+</table>
+<details><summary><b> Illustration of regionid </b> </summary>
+<p>
+<p><img alt="regionid01234" src="../../_images/regionid01234.png" /></p>
+</p>
+</details> 
+<p> </p>
+<p>Note: In order to be more concise, I have kept only the necessary information. Additional information can be obtained through the supplementary catalogs. Contact me.</p>
+<p> </p>
+<p> </p>
+</section>
+</section>
+<section id="the-supplementary-infomation-building">
+<h2>The supplementary infomation (building)<a class="headerlink" href="#the-supplementary-infomation-building" title="Link to this heading"></a></h2>
+<section id="lsdr9-link-fits">
+<h3>lsdr9_link*.fits<a class="headerlink" href="#lsdr9-link-fits" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>colname</p></th>
+<th class="head"><p>dtype</p></th>
+<th class="head"><p>comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘igal’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique id in this catalog 0-331569897 (id in the cutout catalog)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘RELEASE’</p></td>
+<td><p>i8</p></td>
+<td><p>the record of processing run; A unique identifier is release,brickid,objid.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘BRICKID’</p></td>
+<td><p>i8</p></td>
+<td><p>brick ID [1,662174], encoding the sky position of brick;</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘OBJID’</p></td>
+<td><p>i8</p></td>
+<td><p>catalog object number within this brick;</p></td>
+</tr>
+<tr class="row-even"><td><p>‘TARGETID’</p></td>
+<td><p>i8</p></td>
+<td><p>Unique ID of spectroscopic targets; if not DESI targets, -99.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DESI_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>Target masks record the reasons why each target was selected for DESI observations; refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-even"><td><p>BGS_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>MWS_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+<tr class="row-even"><td><p>SCND_TARGET</p></td>
+<td><p>int64</p></td>
+<td><p>also refer to <a class="reference external" href="https://desidatamodel.readthedocs.io/en/latest/bitmasks.html#target-masks">Target masks</a></p></td>
+</tr>
+</tbody>
+</table>
+<!-- <details><summary><b> SED fitting using CIGALE </b> </summary>
+<p>
+
+| Key Parameters    | Configures |
+|-------------------|-----------|
+| SFH               |  exponentially declining
+| e-folding time    | 10^8 - 10^10 yr (10 steps)
+| age               | 5*10^7 - 10^10 yr (12 steps)
+| SPS models        | BC03
+| IMF                         | Chabrier (2003) 
+| metallicity                 | 0.02 
+| dust attenuation law        | Calzetti et al. (2000)
+| E_BVs_young                 | 0.01-1.2 (13 steps)|
+</p>
+</details>  --></section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="DESI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../CSSTSLITLESS/index.html" class="btn btn-neutral float-right" title="CSSTMOCK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, 0.0.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
