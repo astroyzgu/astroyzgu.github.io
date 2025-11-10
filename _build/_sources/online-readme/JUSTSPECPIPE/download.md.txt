@@ -3,18 +3,20 @@
 Welcome to the download center. Below you’ll find the available files for download. 
 
 ---
-rsync -r guyizhou@perlmutter.nersc.gov:/global/cfs/cdirs/desi/spectro/data/20220610/
-
 
 ### Available Files on Gravity 
 
-#### /home/cossim/DESI/spectro/data/
 
-##### Partial Raw Data: 
-- **Descrition**: This directory contains a partial copy (NIGHT: 20210610, 20220610) of the DESI public data from https://data.desi.lbl.gov/public/dr1/spectro/data/.  
-- **link**: Not available 
+#### - 1. DESI raw Data ($DESI_ROOR/spectro/data/, $DESI_ROOR=/home/cossim/DESI)
 
-#### fileserver (~/.fileServer/justspecpipe)
+##### Partial Raw Data and redux: 
+- **Descrition**: This directory contains a partial copy (NIGHT: 20210610, 20220610) of the DESI public data from https://data.desi.lbl.gov/public/dr1/spectro/data/. 
+- **Reduced Data**: The corresponding loa data reductions are located in:
+    * $DESI_ROOR/spectro/redux/loa/preproc
+    * $DESI_ROOR/spectro/redux/loa/exposures
+- **link**: Not available online
+
+#### - 2. fileserver (~/.fileServer/justspecpipe)
 
 ##### Dataset 0: test file 
 - **Description**: A test file for verifying the download functionality
@@ -40,8 +42,6 @@ https://desidatamodel.readthedocs.io/en/latest/DESI_SPECTRO_REDUX/SPECPROD/expos
 ##### File ?: The placeholder 
 - **Descrition**: The placeholder  
 - **link**: The placeholder 
-
-
 
 <!-- #### File 2: Software Installer  
 - **Description**: The latest version of the software.  

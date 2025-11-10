@@ -1,5 +1,13 @@
 # bash
 
+## file system 
+
+```
+# 文件夹 755 (rwxr-xr-x)，文件 664 (rw-rw-r--)
+find loa -type d -exec chmod 755 {} \;
+find loa -type f -exec chmod 664 {} \; 
+```
+
 ### works in PYTHON
 
 ```

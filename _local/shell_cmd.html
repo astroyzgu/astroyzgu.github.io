@@ -54,20 +54,23 @@
 <li class="toctree-l1"><a class="reference internal" href="astro/astro.html">天文物理基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="online-documents.html">online documents</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">bash</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#works-in-python">works in PYTHON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1"></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#shell">用到的shell命令</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tail-head">tail &amp; head</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#paste">paste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-system">file system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#works-in-python">works in PYTHON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell">用到的shell命令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tail-head">tail &amp; head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#paste">paste</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#download-upload">download/upload</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#compresion-decompression">compresion/decompression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#shell-script">shell script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">文本处理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">字符串的赋值，替换和打印</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">替换</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">判断字符串中是否包含某串字符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-upload">download/upload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compresion-decompression">compresion/decompression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell-script">shell script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">文本处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">字符串的赋值，替换和打印</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">替换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">判断字符串中是否包含某串字符</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -100,8 +103,15 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="bash">
 <h1>bash<a class="headerlink" href="#bash" title="Permalink to this heading"></a></h1>
+<section id="file-system">
+<h2>file system<a class="headerlink" href="#file-system" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件夹 755 (rwxr-xr-x)，文件 664 (rw-rw-r--)</span>
+<span class="n">find</span> <span class="n">loa</span> <span class="o">-</span><span class="nb">type</span> <span class="n">d</span> <span class="o">-</span><span class="n">exec</span> <span class="n">chmod</span> <span class="mi">755</span> <span class="p">{}</span> \<span class="p">;</span>
+<span class="n">find</span> <span class="n">loa</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">exec</span> <span class="n">chmod</span> <span class="mi">664</span> <span class="p">{}</span> \<span class="p">;</span> 
+</pre></div>
+</div>
 <section id="works-in-python">
-<h2>works in PYTHON<a class="headerlink" href="#works-in-python" title="Permalink to this heading"></a></h2>
+<h3>works in PYTHON<a class="headerlink" href="#works-in-python" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/Users/yzastro/github-local/github-notebook/&#39;</span>
@@ -111,17 +121,17 @@
 </div>
 </section>
 <section id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<h3><a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">-q</span> <span class="pre">-o</span> <span class="pre">pack.zip</span> <span class="pre">mark/</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">--max-depth=1</span> <span class="pre">#linux查询文件及文件夹大小</span></code></p>
 </section>
 <section id="shell">
-<h2>用到的shell命令<a class="headerlink" href="#shell" title="Permalink to this heading"></a></h2>
+<h3>用到的shell命令<a class="headerlink" href="#shell" title="Permalink to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">awk,</span> <span class="pre">cat,</span> <span class="pre">grep,</span> <span class="pre">sort</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">-nk</span> <span class="pre">1</span> <span class="pre">filename</span></code> 参考：http://man.linuxde.net/sort</p>
 <p><code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'244d'</span> <span class="pre">filename</span>&#160; <span class="pre">#</span> <span class="pre">Remove</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">244</span> <span class="pre">lines</span> <span class="pre">(-i,</span> <span class="pre">Edit</span> <span class="pre">the</span> <span class="pre">file</span> <span class="pre">diectly)</span></code></p>
 <section id="tail-head">
-<h3>tail &amp; head<a class="headerlink" href="#tail-head" title="Permalink to this heading"></a></h3>
+<h4>tail &amp; head<a class="headerlink" href="#tail-head" title="Permalink to this heading"></a></h4>
 <p>tail(head) - output the last(beginning) part of files</p>
 <p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-n</span>&#160; <span class="pre">4</span> <span class="pre">COSMOS.txt</span> <span class="pre">#</span> <span class="pre">print</span> <span class="pre">last</span> <span class="pre">4</span> <span class="pre">lines</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-n</span> <span class="pre">+4</span> <span class="pre">COSMOS.txt</span> <span class="pre">#</span> <span class="pre">output</span> <span class="pre">starting</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">Kth</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">end</span></code></p>
@@ -140,7 +150,7 @@
 </div>
 </section>
 <section id="paste">
-<h3>paste<a class="headerlink" href="#paste" title="Permalink to this heading"></a></h3>
+<h4>paste<a class="headerlink" href="#paste" title="Permalink to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  paste -d -s file1 file2
   选项含义如下：
   -d 指定不同于空格或t a b键的域分隔符。例如用@分隔域，使用-d @。
@@ -151,7 +161,7 @@
 </section>
 </section>
 <section id="download-upload">
-<h2>download/upload<a class="headerlink" href="#download-upload" title="Permalink to this heading"></a></h2>
+<h3>download/upload<a class="headerlink" href="#download-upload" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>服务器上传或下载
 rsync –progress -avz  username&#64;192.160.0.1:/data/reduction  .</p></li>
@@ -162,20 +172,20 @@ wget -c -r -np -k -L -p -A ‘*.fits’ http://data/location</p></li>
 <p>https://docs.hpc.sjtu.edu.cn/transport/transportskills.html#id1</p>
 </section>
 <section id="compresion-decompression">
-<h2>compresion/decompression<a class="headerlink" href="#compresion-decompression" title="Permalink to this heading"></a></h2>
+<h3>compresion/decompression<a class="headerlink" href="#compresion-decompression" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">bzip2</span> <span class="o">-</span><span class="n">d</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
    <span class="n">tar</span> <span class="o">-</span><span class="n">xf</span> <span class="o">*.</span><span class="n">tar</span>
 </pre></div>
 </div>
 </section>
 <section id="shell-script">
-<h2>shell script<a class="headerlink" href="#shell-script" title="Permalink to this heading"></a></h2>
+<h3>shell script<a class="headerlink" href="#shell-script" title="Permalink to this heading"></a></h3>
 </section>
 <section id="id2">
-<h2>文本处理<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h3>文本处理<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <p>[Linux sed 命令]{https://www.runoob.com/linux/linux-comm-sed.html}</p>
 <section id="id3">
-<h3>字符串的赋值，替换和打印<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<h4>字符串的赋值，替换和打印<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sciname=&#39;../image/smacs0723-f356w_test_sci.fits&#39;
 whtname=${sciname/sci/wht}
 echo &#39;sciname:  &#39; $sciname
@@ -184,7 +194,7 @@ echo &#39;whtname:  &#39; $whtname
 </div>
 </section>
 <section id="id4">
-<h3>替换<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<h4>替换<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;stdin output&quot;</span><span class="o">|</span><span class="n">sed</span> <span class="s1">&#39;s/$/ works/g&#39;</span>
 
 <span class="c1"># or </span>
@@ -197,7 +207,7 @@ echo &#39;whtname:  &#39; $whtname
 </div>
 </section>
 <section id="id5">
-<h3>判断字符串中是否包含某串字符<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<h4>判断字符串中是否包含某串字符<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if echo $whtname | grep sci; then 
    echo &#39;contain sci&#39;
 else 
@@ -205,6 +215,7 @@ else
 fi
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 </section>

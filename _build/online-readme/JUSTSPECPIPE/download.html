@@ -18,6 +18,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/sphinx_highlight.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -49,7 +52,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../online-readme.html">online-readme</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../DESISEEDCAT/index.html">DESI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../CSSTSLITLESS/index.html">CSSTMOCK</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">JUSTSPECSIMU</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">JUSTSPECPIPE</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="justspecsimu.v1.html">Simulation of JUST multi-fiber spectrograph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="desispecdata.v1.html">raw data from DESI DR1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="desisoftware.v1.html">desispec</a></li>
@@ -86,7 +89,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../online-readme.html">online-readme</a></li>
-          <li class="breadcrumb-item"><a href="index.html">JUSTSPECSIMU</a></li>
+          <li class="breadcrumb-item"><a href="index.html">JUSTSPECPIPE</a></li>
       <li class="breadcrumb-item active">Download Center</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/online-readme/JUSTSPECPIPE/download.md.txt" rel="nofollow"> View page source</a>
@@ -101,21 +104,26 @@
 <h1>Download Center<a class="headerlink" href="#download-center" title="Permalink to this heading"></a></h1>
 <p>Welcome to the download center. Below you’ll find the available files for download.</p>
 <hr class="docutils" />
-<p>rsync -r guyizhou&#64;perlmutter.nersc.gov:/global/cfs/cdirs/desi/spectro/data/20220610/</p>
 <section id="available-files-on-gravity">
 <h2>Available Files on Gravity<a class="headerlink" href="#available-files-on-gravity" title="Permalink to this heading"></a></h2>
-<section id="home-cossim-desi-spectro-data">
-<h3>/home/cossim/DESI/spectro/data/<a class="headerlink" href="#home-cossim-desi-spectro-data" title="Permalink to this heading"></a></h3>
-<section id="partial-raw-data">
-<h4>Partial Raw Data:<a class="headerlink" href="#partial-raw-data" title="Permalink to this heading"></a></h4>
+<section id="desi-raw-data-desi-roor-spectro-data-desi-roor-home-cossim-desi">
+<h3>- 1. DESI raw Data (<span class="math notranslate nohighlight">\(DESI_ROOR/spectro/data/, \)</span>DESI_ROOR=/home/cossim/DESI)<a class="headerlink" href="#desi-raw-data-desi-roor-spectro-data-desi-roor-home-cossim-desi" title="Permalink to this heading"></a></h3>
+<section id="partial-raw-data-and-redux">
+<h4>Partial Raw Data and redux:<a class="headerlink" href="#partial-raw-data-and-redux" title="Permalink to this heading"></a></h4>
 <ul class="simple">
 <li><p><strong>Descrition</strong>: This directory contains a partial copy (NIGHT: 20210610, 20220610) of the DESI public data from https://data.desi.lbl.gov/public/dr1/spectro/data/.</p></li>
-<li><p><strong>link</strong>: Not available</p></li>
+<li><p><strong>Reduced Data</strong>: The corresponding loa data reductions are located in:</p>
+<ul>
+<li><p>$DESI_ROOR/spectro/redux/loa/preproc</p></li>
+<li><p>$DESI_ROOR/spectro/redux/loa/exposures</p></li>
+</ul>
+</li>
+<li><p><strong>link</strong>: Not available online</p></li>
 </ul>
 </section>
 </section>
 <section id="fileserver-fileserver-justspecpipe">
-<h3>fileserver (~/.fileServer/justspecpipe)<a class="headerlink" href="#fileserver-fileserver-justspecpipe" title="Permalink to this heading"></a></h3>
+<h3>- 2. fileserver (~/.fileServer/justspecpipe)<a class="headerlink" href="#fileserver-fileserver-justspecpipe" title="Permalink to this heading"></a></h3>
 <section id="dataset-0-test-file">
 <h4>Dataset 0: test file<a class="headerlink" href="#dataset-0-test-file" title="Permalink to this heading"></a></h4>
 <ul class="simple">
